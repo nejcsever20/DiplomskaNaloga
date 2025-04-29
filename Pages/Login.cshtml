@@ -1,0 +1,71 @@
+﻿@page
+@model diploma.Pages.LoginModel
+@{
+    ViewData["Title"] = "Prijava";
+}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 50px;
+        background-color: #f2f2f2;
+    }
+
+    .login-form {
+        background: white;
+        padding: 50px;
+        border-radius: 8px;
+        max-width: 400px;
+        margin: auto;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+        .login-form h2 {
+            text-align: center;
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            .form-group button:hover {
+                background-color: #45a049;
+            }
+</style>
+<div class="login-form">
+    <h2>Prijava</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="email">Email naslov</label>
+            <input type="email" id="email" name="email" placeholder="ime.priimek@gorenje.com" required />
+        </div>
+        <div class="form-group">
+            <label for="geslo">Geslo</label>
+            <input type="password" id="geslo" name="geslo" required />
+        </div>
+        <div class="form-group">
+            <button type="submit">Prijavi se</button>
+        </div>
+    </form>
+</div>
