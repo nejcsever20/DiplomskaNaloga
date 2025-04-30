@@ -2,8 +2,8 @@
     // Info button logic
     document.querySelectorAll(".info-btn").forEach(function (btn) {
         btn.addEventListener("click", function () {
-            const id = this.dataset.id; // Get the ID from the clicked button's data-id attribute
-            const url = `https://localhost:7059/Skladi%C5%A1%C4%8Dnik/Index?handler=GetTransportInfo&id=${id}`; // Insert the dynamic id in the URL
+            const id = this.dataset.id;
+            const url = `/Skladiščnik/Index?handler=GetTransportInfo&id=${id}`;
 
             fetch(url)
                 .then(res => res.json())
@@ -13,7 +13,6 @@
                         return;
                     }
 
-                    // Update modal with transport data
                     document.getElementById("modal-stTransporta").textContent = data.stTransporta || "N/A";
                     document.getElementById("modal-registracija").textContent = data.registracija || "N/A";
                     document.getElementById("modal-voznik").textContent = data.voznik || "N/A";

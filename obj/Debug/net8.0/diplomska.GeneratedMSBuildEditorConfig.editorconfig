@@ -42,6 +42,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxFeHRlcm5hbExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Areas/Identity/Pages/Account/ExternalLoginCallback.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxFeHRlcm5hbExvZ2luQ2FsbGJhY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -234,8 +238,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2tsYWRpxaHEjW5pa1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Skladiščnik/LoadingCheckout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2tsYWRpxaHEjW5pa1xMb2FkaW5nQ2hlY2tvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Skladiščnik/Naklad.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2tsYWRpxaHEjW5pa1xOYWtsYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Skladiščnik/SkladiščnikPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2tsYWRpxaHEjW5pa1xTa2xhZGnFocSNbmlrUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Skladiščnik/Unload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2tsYWRpxaHEjW5pa1xVbmxvYWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/_ViewImports.cshtml]

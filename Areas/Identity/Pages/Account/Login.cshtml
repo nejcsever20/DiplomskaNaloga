@@ -55,8 +55,9 @@
                 {
                     <div>
                         <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
+                            There are no external authentication services configured. See this
+                            <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article</a>
+                            about setting up this ASP.NET application to support logging in via external services.
                         </p>
                     </div>
                 }
@@ -67,7 +68,11 @@
                             <p>
                                 @foreach (var provider in Model.ExternalLogins!)
                                 {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                    <button type="submit" class="btn btn-danger" name="provider" value="@provider.Name"
+                                            title="Log in using your @provider.DisplayName account">
+                                        <img src="https://developers.google.com/identity/images/g-logo.png" width="20" height="20" style="margin-right: 5px;" />
+                                        Log in with @provider.DisplayName
+                                    </button>
                                 }
                             </p>
                         </div>
@@ -77,6 +82,7 @@
         </section>
     </div>
 </div>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

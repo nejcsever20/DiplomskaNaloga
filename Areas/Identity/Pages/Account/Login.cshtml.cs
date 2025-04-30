@@ -116,6 +116,7 @@ namespace diplomska.Areas.Identity.Pages.Account
                         return RedirectToPage("/Admin/AdminPage");
                     }
 
+
                     return LocalRedirect(returnUrl);
                 }
 

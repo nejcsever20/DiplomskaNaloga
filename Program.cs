@@ -1,6 +1,9 @@
 using diplomska.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.Google;
+using diplomska.Services;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +30,16 @@ builder.Services.AddCors(options =>
 
 // Add Razor Pages
 builder.Services.AddRazorPages();
+
+// Add Google Authentication
+builder.Services.AddAuthentication()
+    .AddGoogle(options =>
+    {
+        options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+        options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+    });
+
+builder.Services.AddSingleton<IEmailSender, DummyEmailSender>();
 
 var app = builder.Build();
 
@@ -79,7 +92,7 @@ app.UseRouting();
 // Enable CORS
 app.UseCors("AllowAll");
 
-app.UseAuthentication();
+app.UseAuthentication(); // This should come before UseAuthorization()
 app.UseAuthorization();
 
 app.MapRazorPages();

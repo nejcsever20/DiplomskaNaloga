@@ -1,6 +1,7 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace diplomska.Pages.Skladiščnik
+namespace diplomska.Pages.Skladiscnik
 {
     public class SkladiščnikPageModel : PageModel
     {

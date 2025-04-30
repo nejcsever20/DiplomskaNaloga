@@ -11,5 +11,6 @@ namespace diplomska.Data
         { }
 
         public DbSet<Transport> Transport { get; set; }
+        public DbSet<Izkladisceno> Izkladisceno { get; set; }
     }
 }

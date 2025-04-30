@@ -1,0 +1,16 @@
+﻿@page
+@model diplomska.Pages.Skladiščnik.UnloadModel
+
+<h1>Unload</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Kolicina">Količina:</label>
+        <input type="number" class="form-control" id="Kolicina" name="Kolicina" value="@Model.Kolicina" />
+    </div>
+    <div class="form-group">
+        <label for="Palete">Palete:</label>
+        <input type="number" class="form-control" id="Palete" name="Palete" value="@Model.Palete" />
+    </div>
+    <button type="submit" class="btn btn-primary">Unload</button>
+</form>
