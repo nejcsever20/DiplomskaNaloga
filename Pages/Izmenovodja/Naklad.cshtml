@@ -1,0 +1,197 @@
+﻿@page
+@model diplomska.Pages.Izmenovodja.NakladModel
+@using diplomska.Models
+@using Microsoft.AspNetCore.Mvc.Rendering
+@{
+    ViewData["Title"] = "Začetek, konec naklada";
+}
+
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, textarea, select {
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+            .back-button:hover {
+                background-color: #e53935;
+            }
+    </style>
+</head>
+<body>
+    <h1>Začetek, konec naklada</h1>
+
+    <div>
+        <label>Št. transporta:</label>
+        <span>@Model.StTransporta</span>
+    </div>
+
+    <hr />
+
+    <form method="post">
+        <div>
+            <label>Rampa 1:</label>
+            <input type="number" asp-for="Rampa1" />
+        </div>
+
+        <div>
+            <label>Rampa 2:</label>
+            <input type="number" asp-for="Rampa2" />
+        </div>
+
+        <div>
+            <label>Carinska vrvica:</label>
+            <input type="text" asp-for="CarinskaVrvicva" />
+        </div>
+
+        <div>
+            <label>Ustreznost vozilca:</label>
+            <input type="text" asp-for="UstreznostVozilca" />
+        </div>
+
+        <div>
+            <label>Začetek naklada:</label>
+            <input type="datetime-local" asp-for="ZacetekNaklada" />
+            <button type="submit" asp-page-handler="SetTimes">Nastavi</button>
+        </div>
+
+        <div>
+            <label>Konec naklada:</label>
+            <input type="datetime-local" asp-for="KonecNaklada" />
+            <button type="submit" asp-page-handler="SetTimes">Nastavi</button>
+        </div>
+
+        <div>
+            <label>Voznik zavrnil začetek zaradi pavze:</label>
+            <input type="datetime-local" asp-for="ZavrnilZacetek" />
+            <button type="submit" asp-page-handler="SetTimes">Nastavi</button>
+        </div>
+    </form>
+
+    <hr />
+
+    <h3>Izkladiščeno</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Količina</th>
+                <th>Palete</th>
+                <th>Skladiščnik</th>
+                <th>Datum</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.IzkladiscenoList != null && Model.IzkladiscenoList.Any())
+            {
+                @foreach (var item in Model.IzkladiscenoList)
+                {
+                    <tr>
+                        <td>@item.Kolicina</td>
+                        <td>@item.Palete</td>
+                        <td>@item.Skladiscnik</td>
+                        <td>@item.Datum.ToString("dd.MM.yyyy HH:mm")</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4">Ni podatkov za izkladiščeno.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h4>Dodaj izkladiščeno</h4>
+    <form method="post" asp-page-handler="SaveData">
+        <div>
+            <label>Količina:</label>
+            <input type="number" asp-for="Kolicina" required />
+        </div>
+        <div>
+            <label>Palete:</label>
+            <input type="number" asp-for="Palete" required />
+        </div>
+        <div>
+            <label>Skladiščnik:</label>
+            <select asp-for="Skladiscnik" asp-items="Model.SkladiscnikSelectList" required></select>
+        </div>
+        <button type="submit">Dodaj</button>
+    </form>
+
+    <hr />
+
+    <h4>Opombe</h4>
+    <form method="post" asp-page-handler="AddNote">
+        <textarea asp-for="Notes" rows="4" cols="50"></textarea><br />
+        <button type="submit">Dodaj</button>
+    </form>
+
+    <a href="javascript:history.back()" class="back-button">Nazaj</a>
+</body>
+</html>

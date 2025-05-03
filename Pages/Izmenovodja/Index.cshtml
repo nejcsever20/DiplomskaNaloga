@@ -1,6 +1,5 @@
 ﻿@page
-@model diplomska.Pages.Skladiščnik.IndexModel
-
+@model diplomska.Pages.Izmenovodja.IndexModel
 @{
     ViewData["Title"] = "Index";
 }
@@ -106,20 +105,20 @@
                 <td>@Html.DisplayFor(modelItem => item.NAVISZacetekSklada)</td>
                 <td>@Html.DisplayFor(modelItem => item.NAVISKonecSklada)</td>
                 <td>
-                    @if(item.DolocenSkladiscnikId == User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value)
+                    @if (item.DolocenSkladiscnikId == User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value)
                     {
                         <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
                         <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
                     }
-                    <a asp-page="./Details" asp-route-id="@item.Id"></a>
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
                 </td>
             </tr>
         }
     </tbody>
-    <a href="/Skladiščnik/Naklad">Naklad</a>
+    <a href="/Izmenovodja/Naklad">Naklad</a>
 </table>
 
-<a href="/Skladiščnik/LoadingCheckout">Checkout</a>
+<a href="/Izmenovodja/LoadingCheckout">Checkout</a>
 
 <!-- Modal -->
 <div id="infoModal" class="modal">

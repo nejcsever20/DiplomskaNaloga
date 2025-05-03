@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,7 +10,7 @@ using diplomska.Models;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 
-namespace diplomska.Pages.Skladiščnik
+namespace diplomska.Pages.Izmenovodja
 {
     [Authorize] // ensures only logged-in users can access this page
     public class IndexModel : PageModel

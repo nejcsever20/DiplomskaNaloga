@@ -96,5 +96,4 @@ app.UseAuthentication(); // This should come before UseAuthorization()
 app.UseAuthorization();
 
 app.MapRazorPages();
-
 app.Run();

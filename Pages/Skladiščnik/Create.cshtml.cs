@@ -7,23 +7,35 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using diplomska.Data;
 using diplomska.Models;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Identity;
 
 namespace diplomska.Pages.Skladiščnik
 {
     public class CreateModel : PageModel
     {
         private readonly diplomska.Data.ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public CreateModel(diplomska.Data.ApplicationDbContext context)
+        public CreateModel(diplomska.Data.ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
-        public IActionResult OnGet()
+        public async Task<IActionResult> OnGetAsync()
         {
-        ViewData["DolocenSkladiscnikId"] = new SelectList(_context.Users, "Id", "UserName");
+            var skladiščniki = await _userManager.GetUsersInRoleAsync("Skladiščnik");
+
+            ViewData["DolocenSkladiscnikId"] = new SelectList(
+                skladiščniki,
+                "Id",
+                "UserName"
+            );
+
             return Page();
         }
+
 
         [BindProperty]
         public Transport Transport { get; set; } = default!;
@@ -31,10 +43,8 @@ namespace diplomska.Pages.Skladiščnik
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            Transport.DolocenSkladiscnikId = currentUserId;
 
             _context.Transport.Add(Transport);
             await _context.SaveChangesAsync();

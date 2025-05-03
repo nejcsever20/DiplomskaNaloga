@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -65,23 +66,22 @@ namespace diplomska.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
-                    // Ensure the role exists before assigning it
-                    var roleExists = await _roleManager.RoleExistsAsync(Input.Role);
-                    if (!roleExists)
+                    // Ensure the role exists
+                    if (!await _roleManager.RoleExistsAsync(Input.Role))
                     {
-                        // Create the role if it doesn't exist
                         await _roleManager.CreateAsync(new IdentityRole(Input.Role));
                     }
 
-                    // Assign the role to the user
+                    // Assign role
                     await _userManager.AddToRoleAsync(user, Input.Role);
 
-                    _logger.LogInformation("User created a new account with password.");
+                    // Add claim to mark user as unapproved
+                    await _userManager.AddClaimAsync(user, new Claim("IsApproved", "False"));
 
-                    // Sign in the user automatically
-                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    _logger.LogInformation("User created a new account with password but requires approval.");
 
-                    return LocalRedirect(returnUrl);
+                    // DO NOT sign in user immediately. Wait for Izmenovodja to approve.
+                    return RedirectToPage("RegisterConfirmation");
                 }
 
                 foreach (var error in result.Errors)
@@ -90,7 +90,9 @@ namespace diplomska.Areas.Identity.Pages.Account
                 }
             }
 
+            // If we got this far, something failed
             return Page();
         }
+
     }
 }

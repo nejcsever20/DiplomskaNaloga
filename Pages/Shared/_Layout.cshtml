@@ -25,18 +25,55 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
-                        </li>
 
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <!-- Show Role-based Links -->
+                            @if (User.IsInRole("Izmenovodja"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Izmenovodja/Index">Izmenovodja Dashboard</a>
+                                </li>
+                            }
+                            @if (User.IsInRole("Skladisnik"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Skladisnik/Index">Skladiščnik Dashboard</a>
+                                </li>
+                            }
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Index">Admin Dashboard</a>
+                                </li>
+                            }
+
+                            <!-- Display user's Role in Navbar -->
+                            <li class="nav-item">
+                                <span class="nav-link text-dark">Hello, @User.Identity.Name (@(User.IsInRole("Izmenovodja") ? "Izmenovodja" : (User.IsInRole("Skladisnik") ? "Skladiščnik" : (User.IsInRole("Admin") ? "Admin" : ""))) )</span>
+                            </li>
+
+                            <!-- Common Links for Authenticated Users -->
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Logout">Logout</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <!-- Links for Unauthenticated Users -->
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
