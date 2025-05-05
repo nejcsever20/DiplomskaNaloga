@@ -4,11 +4,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using diplomska.Areas.Identity.Pages.Account;
 using Microsoft.EntityFrameworkCore;
-using SixLabors.ImageSharp.Formats.Png;
-using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
+using diplomska.Services; // Make sure to include this for UserApprovalService
 
 namespace diplomska.Pages.Izmenovodja
 {
@@ -17,21 +15,27 @@ namespace diplomska.Pages.Izmenovodja
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ILogger<ConfirmRegisterModel> _logger;
+        private readonly UserApprovalService _userApprovalService; // Inject the approval service
 
         public ConfirmRegisterModel(
             UserManager<IdentityUser> userManager,
             RoleManager<IdentityRole> roleManager,
-            ILogger<ConfirmRegisterModel > logger)
+            ILogger<ConfirmRegisterModel> logger,
+            UserApprovalService userApprovalService)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _logger = logger;
+            _userApprovalService = userApprovalService; // Initialize the service
         }
 
         public List<IdentityUser> PendingUsers { get; set; } = new List<IdentityUser>();
 
         public async Task OnGetAsync()
         {
+            // Approve specific users first
+            await _userApprovalService.ApproveSpecificUsers();
+
             var users = await _userManager.Users.ToListAsync();
             var pendingUsers = new List<IdentityUser>();
 
@@ -59,30 +63,34 @@ namespace diplomska.Pages.Izmenovodja
             var user = await _userManager.FindByIdAsync(id);
             if (user == null)
             {
+                _logger.LogWarning("User not found with ID: " + id); // Log user not found
                 return NotFound();
             }
 
             // Ensure user has "Izmenovodja" role
-            var roles = await _userManager.GetRolesAsync(user);
-            if (!roles.Contains("Izmenovodja"))
+            var currentUser = await _userManager.GetUserAsync(User);
+            var currentRoles = await _userManager.GetRolesAsync(currentUser);
+            if (!currentRoles.Contains("Izmenovodja"))
             {
-                return Forbid(); // Return 403 Forbidden if the user isn't an Izmenovodja
+                _logger.LogWarning("User is not authorized to approve: " + currentUser.Email);
+                return Forbid();
             }
 
-            // Set the "IsApproved" claim to "True" to indicate the user has been approved
+            // Set the "IsApproved" claim to "True"
             var isApprovedClaim = await _userManager.GetClaimsAsync(user);
             var claim = isApprovedClaim.FirstOrDefault(c => c.Type == "IsApproved");
 
             if (claim != null)
             {
                 await _userManager.RemoveClaimAsync(user, claim);
+                _logger.LogInformation($"Removed previous approval claim for user {user.Email}");
             }
 
             await _userManager.AddClaimAsync(user, new Claim("IsApproved", "True"));
-
             _logger.LogInformation($"User {user.Email} has been approved by Izmenovodja.");
 
             return RedirectToPage();
         }
+
     }
 }

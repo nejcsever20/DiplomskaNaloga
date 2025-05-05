@@ -17,6 +17,8 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddRoleManager<RoleManager<IdentityRole>>();  // Add RoleManager service if you plan to use roles
 
+builder.Services.AddScoped<UserApprovalService>();
+
 // Add CORS policy
 builder.Services.AddCors(options =>
 {
