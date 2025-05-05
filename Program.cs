@@ -43,6 +43,8 @@ builder.Services.AddAuthentication()
 
 builder.Services.AddSingleton<IEmailSender, DummyEmailSender>();
 
+builder.Services.AddScoped<CustomEmailSender>();
+
 var app = builder.Build();
 
 // Ensure roles are created when the application starts

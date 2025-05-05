@@ -1,0 +1,86 @@
+﻿@page
+@model diplomska.Pages.Admin.ManageUsersModel
+@{
+    ViewData["Title"] = "Manage Users";
+}
+
+<h2>Manage Users</h2>
+
+@if (Model.Users != null && Model.Users.Count > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>User Name</th>
+                <th>Role(s)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var userWithRoles in Model.Users)
+            {
+                var emailParts = userWithRoles.User.Email.Split('@')[0].Split('.');
+                var firstName = emailParts.Length > 0 ? char.ToUpper(emailParts[0][0]) + emailParts[0].Substring(1) : "";
+                var lastName = emailParts.Length > 1 ? char.ToUpper(emailParts[1][0]) + emailParts[1].Substring(1) : "";
+
+                <tr>
+                    <td>@userWithRoles.User.Email</td>
+                    <td>@firstName @lastName</td>
+                    <td>
+                        @foreach (var role in userWithRoles.Roles)
+                        {
+                            <span class="badge bg-secondary">@role</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-page="/Admin/EditUser" asp-route-id="@userWithRoles.User.Id" class="btn btn-sm btn-warning">Edit</a>
+                        <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                data-userid="@userWithRoles.User.Id" data-username="@userWithRoles.User.UserName">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No users found.</p>
+}
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="Delete">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete <strong id="usernameDisplay"></strong>?</p>
+                    <input type="hidden" name="UserId" id="userIdInput" />
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const deleteModal = document.getElementById('deleteModal');
+        deleteModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const userId = button.getAttribute('data-userid');
+            const username = button.getAttribute('data-username');
+            document.getElementById('userIdInput').value = userId;
+            document.getElementById('usernameDisplay').textContent = username;
+        });
+    </script>
+}

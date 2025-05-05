@@ -6,7 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
-using diplomska.Services; // Make sure to include this for UserApprovalService
+using diplomska.Services;
+using Microsoft.Identity.Client; // Make sure to include this for UserApprovalService
 
 namespace diplomska.Pages.Izmenovodja
 {
@@ -16,17 +17,20 @@ namespace diplomska.Pages.Izmenovodja
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ILogger<ConfirmRegisterModel> _logger;
         private readonly UserApprovalService _userApprovalService; // Inject the approval service
+        private readonly CustomEmailSender _customEmailSender;
 
         public ConfirmRegisterModel(
             UserManager<IdentityUser> userManager,
             RoleManager<IdentityRole> roleManager,
             ILogger<ConfirmRegisterModel> logger,
-            UserApprovalService userApprovalService)
+            UserApprovalService userApprovalService,
+            CustomEmailSender customEmailSender)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _logger = logger;
             _userApprovalService = userApprovalService; // Initialize the service
+            _customEmailSender = customEmailSender;
         }
 
         public List<IdentityUser> PendingUsers { get; set; } = new List<IdentityUser>();
@@ -92,5 +96,22 @@ namespace diplomska.Pages.Izmenovodja
             return RedirectToPage();
         }
 
+        public async Task<IActionResult> OnPostApproveUserAsync(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if(user != null)
+            {
+                user.EmailConfirmed = true;
+                await _userManager.UpdateAsync(user);
+
+                await _customEmailSender.SendCustomHtmlEmailAsync(
+                    user.Email,
+                    "Account Approved",
+                    "<p>Your account has been approved by the izmenovodja. You may now log in.</p>"
+                );
+            }
+
+            return RedirectToPage();
+        }
     }
 }

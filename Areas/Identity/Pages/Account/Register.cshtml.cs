@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
+using diplomska.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -13,17 +14,20 @@ namespace diplomska.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly CustomEmailSender _customEmailSender;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager,
+            CustomEmailSender customEmailSender)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _roleManager = roleManager;
+            _customEmailSender = customEmailSender;
         }
 
         [BindProperty]
@@ -79,6 +83,12 @@ namespace diplomska.Areas.Identity.Pages.Account
                     await _userManager.AddClaimAsync(user, new Claim("IsApproved", "False"));
 
                     _logger.LogInformation("User created a new account with password but requires approval.");
+
+                    await _customEmailSender.SendCustomHtmlEmailAsync(
+                        Input.Email,
+                        "Registration Successful",
+                        "<p>You have successfully registered. Please wait for the izmenovodja to confirm your account.</p>"
+                    );
 
                     // DO NOT sign in user immediately. Wait for Izmenovodja to approve.
                     return RedirectToPage("RegisterConfirmation");

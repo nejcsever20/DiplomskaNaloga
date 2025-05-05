@@ -1,0 +1,119 @@
+﻿@page
+@model diplomska.Pages.Admin.ManageRolesModel
+@{
+    ViewData["Title"] = "Manage Roles";
+}
+
+<h2>Manage Roles</h2>
+
+@if (Model.Users != null && Model.Users.Count > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var userWithRoles in Model.Users)
+            {
+                <tr>
+                    <td>@userWithRoles.Email</td>
+                    <td>
+                        @foreach (var role in userWithRoles.Roles)
+                        {
+                            <span class="badge bg-secondary">@role</span>
+                        }
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#roleModal"
+                                data-userid="@userWithRoles.UserId" 
+                                data-username="@userWithRoles.Email"
+                                data-useremail="@userWithRoles.Email"
+                                data-roles="@string.Join(",", userWithRoles.Roles)">
+                            Manage Roles
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No users found.</p>
+}
+
+<!-- Modal for Managing Roles -->
+<div class="modal fade" id="roleModal" tabindex="-1" aria-labelledby="roleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="UpdateRoles">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="roleModalLabel">Manage Roles for <span id="modalUserEmail"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="UserId" id="userIdInput" />
+                    <div class="mb-3">
+                        <label class="form-label">Select Roles</label>
+                        <select name="Roles" class="form-select" multiple id="roleSelect">
+                            @foreach (var role in Model.AllRoles)
+                            {
+                                <option value="@role">@role</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <h6>Remove Roles</h6>
+                        @foreach (var role in Model.AllRoles)
+                        {
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="removeRole@role" name="RemoveRoles" value="@role" />
+                                <label class="form-check-label" for="removeRole@role">@role</label>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Handling Modal for Managing Roles
+        const roleModal = document.getElementById('roleModal');
+        roleModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const userId = button.getAttribute('data-userid');
+            const userName = button.getAttribute('data-username');
+            const userEmail = button.getAttribute('data-useremail');
+            const roles = button.getAttribute('data-roles').split(',');
+
+            // Set the modal title with user email
+            document.getElementById('modalUserEmail').textContent = userEmail;
+            document.getElementById('userIdInput').value = userId;
+
+            const roleSelect = document.getElementById('roleSelect');
+            // Reset all selections first
+            for (let option of roleSelect.options) {
+                option.selected = roles.includes(option.value);
+            }
+
+            // Update the checkboxes for removing roles
+            for (let role of roles) {
+                const removeRoleCheckbox = document.getElementById(`removeRole${role}`);
+                if (removeRoleCheckbox) {
+                    removeRoleCheckbox.checked = true;
+                }
+            }
+        });
+    </script>
+}

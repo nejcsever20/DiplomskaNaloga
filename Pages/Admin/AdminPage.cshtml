@@ -56,23 +56,23 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
-            <a class="navbar-brand" asp-area="" asp-page="/Index">diplomska</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+        <a class="navbar-brand" asp-area="" asp-page="/Index">diplomska</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
                 @if (User.IsInRole("Admin"))
                 {
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Index">Admin Dashboard</a>
                     </li>
                 }
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Logout">Logout</a>
-                    </li>
-                </ul>
-            </div>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Logout">Logout</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Main Content -->
@@ -85,8 +85,8 @@
             <div class="card-header">Role Management</div>
             <div class="card-body button-group">
                 <a asp-page="/Admin/ManageUsers" class="btn btn-dark">Manage Users</a>
-                <a asp-page="/Admin/AssignRoles" class="btn btn-dark">Assign Roles</a>
-                <a asp-page="/Admin/RemoveRoles" class="btn btn-dark">Remove Roles</a>
+                <a asp-page="/Admin/ManageRoles" class="btn btn-dark">Manage Roles</a>
+                <a asp-page="/Admin/ManageRoles" class="btn btn-dark">Remove Roles</a>
             </div>
         </div>
 
@@ -113,11 +113,10 @@
             <div class="card-body button-group">
                 <a asp-page="/Admin/SystemLogs" class="btn btn-dark">View Logs</a>
                 <a asp-page="/Admin/Reports" class="btn btn-dark">View Reports</a>
-                <a asp-page="/Admin/ApproveUsers" class="btn btn-dark">Approve Users</a>
+                <a asp-page="/Izmenovodja/ConfirmRegister" class="btn btn-dark">Approve Users</a>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
