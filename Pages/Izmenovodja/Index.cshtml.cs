@@ -48,5 +48,25 @@ namespace diplomska.Pages.Izmenovodja
 
             return new JsonResult(transport);
         }
+
+        //This method will handle update sp line directly into the database
+        public async Task<IActionResult> OnPostUpdateSpAsync(int id, bool sp)
+        {
+            var transport = await _context.Transport.FindAsync(id);
+            if(transport != null)
+            {
+                transport.Sp = sp; // update the vlaue!
+                await _context.SaveChangesAsync();
+                return new JsonResult(new
+                {
+                    success = true
+                });
+            }
+
+            return new JsonResult(new
+            {
+                success = false
+            });
+        }
     }
 }

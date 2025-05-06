@@ -206,6 +206,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWFuYWdlVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Admin/SetSmtpPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU2V0U210cFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -216,6 +220,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Izmenovodja/ConfirmRegister.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSXptZW5vdm9kamFcQ29uZmlybVJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Izmenovodja/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSXptZW5vdm9kamFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Izmenovodja/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSXptZW5vdm9kamFcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Izmenovodja/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSXptZW5vdm9kamFcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Izmenovodja/Index.cshtml]
@@ -288,6 +304,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Services/SystemLogs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = U2VydmljZXNcU3lzdGVtTG9ncy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Shared/_Layout.cshtml]

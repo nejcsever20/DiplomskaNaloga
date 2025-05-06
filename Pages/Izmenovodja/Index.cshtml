@@ -107,10 +107,9 @@
                 <td>
                     @if (item.DolocenSkladiscnikId == User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value)
                     {
-                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
-                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
                     }
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                    
                 </td>
             </tr>
         }
@@ -133,4 +132,35 @@
 </div>
 @section Scripts {
     <script src="~/js/transport-info.js"></script> <!-- Make sure the path is correct -->
+
+    <script>
+    $(document).ready(function () {
+        // Toggle checkbox value for 'Sp' on click
+        $('.sp-toggle').change(function () {
+            var transportId = $(this).data('id');
+            var newSpValue = $(this).prop('checked');
+
+            // Make AJAX call to update the 'Sp' value in the database
+            $.ajax({
+                url: '@Url.Page("/Izmenovodja/Index", "OnPostUpdateSp")', // Updated URL to the correct handler
+                type: 'POST',
+                data: {
+                    id: transportId,
+                    sp: newSpValue
+                },
+                success: function (response) {
+                    if (response.success) {
+                        console.log('Sp value updated successfully');
+                    } else {
+                        console.log('Failed to update Sp value');
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error updating Sp value: ' + error);
+                    alert('Failed to update Sp value');
+                }
+            });
+        });
+    });
+</script>
 }

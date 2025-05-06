@@ -1,0 +1,93 @@
+﻿@page
+@model diplomska.Pages.Izmenovodja.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Transport</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Transport.Sp" /> @Html.DisplayNameFor(model => model.Transport.Sp)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transport.SK" class="control-label"></label>
+                <input asp-for="Transport.SK" class="form-control" />
+                <span asp-validation-for="Transport.SK" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transport.Skladisce" class="control-label"></label>
+                <input asp-for="Transport.Skladisce" class="form-control" />
+                <span asp-validation-for="Transport.Skladisce" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transport.VrstaTransporta" class="control-label"></label>
+                <input asp-for="Transport.VrstaTransporta" class="form-control" />
+                <span asp-validation-for="Transport.VrstaTransporta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transport.StTransporta" class="control-label"></label>
+                <input asp-for="Transport.StTransporta" class="form-control" />
+                <span asp-validation-for="Transport.StTransporta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transport.PlaniranPrihod" class="control-label"></label>
+                <input asp-for="Transport.PlaniranPrihod" class="form-control" />
+                <span asp-validation-for="Transport.PlaniranPrihod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transport.PavzaVoznika" class="control-label"></label>
+                <input asp-for="Transport.PavzaVoznika" class="form-control" />
+                <span asp-validation-for="Transport.PavzaVoznika" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transport.DolocenSkladiscnikId" class="control-label"></label>
+                <select asp-for="Transport.DolocenSkladiscnikId" class ="form-control" asp-items="ViewBag.DolocenSkladiscnikId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transport.Registracija" class="control-label"></label>
+                <input asp-for="Transport.Registracija" class="form-control" />
+                <span asp-validation-for="Transport.Registracija" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transport.VrstaPrevoznegaSredstva" class="control-label"></label>
+                <input asp-for="Transport.VrstaPrevoznegaSredstva" class="form-control" />
+                <span asp-validation-for="Transport.VrstaPrevoznegaSredstva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transport.Voznik" class="control-label"></label>
+                <input asp-for="Transport.Voznik" class="form-control" />
+                <span asp-validation-for="Transport.Voznik" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transport.NAVISZacetekSklada" class="control-label"></label>
+                <input asp-for="Transport.NAVISZacetekSklada" class="form-control" />
+                <span asp-validation-for="Transport.NAVISZacetekSklada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transport.NAVISKonecSklada" class="control-label"></label>
+                <input asp-for="Transport.NAVISKonecSklada" class="form-control" />
+                <span asp-validation-for="Transport.NAVISKonecSklada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

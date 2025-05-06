@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using diplomska.Services;
-using Microsoft.Identity.Client; // Make sure to include this for UserApprovalService
+using Microsoft.Extensions.Logging;
 
 namespace diplomska.Pages.Izmenovodja
 {
@@ -16,7 +16,7 @@ namespace diplomska.Pages.Izmenovodja
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ILogger<ConfirmRegisterModel> _logger;
-        private readonly UserApprovalService _userApprovalService; // Inject the approval service
+        private readonly UserApprovalService _userApprovalService;
         private readonly CustomEmailSender _customEmailSender;
 
         public ConfirmRegisterModel(
@@ -29,7 +29,7 @@ namespace diplomska.Pages.Izmenovodja
             _userManager = userManager;
             _roleManager = roleManager;
             _logger = logger;
-            _userApprovalService = userApprovalService; // Initialize the service
+            _userApprovalService = userApprovalService;
             _customEmailSender = customEmailSender;
         }
 
@@ -37,7 +37,6 @@ namespace diplomska.Pages.Izmenovodja
 
         public async Task OnGetAsync()
         {
-            // Approve specific users first
             await _userApprovalService.ApproveSpecificUsers();
 
             var users = await _userManager.Users.ToListAsync();
@@ -46,8 +45,7 @@ namespace diplomska.Pages.Izmenovodja
             foreach (var user in users)
             {
                 var claims = await _userManager.GetClaimsAsync(user);
-                var isApprovedClaim = claims.FirstOrDefault(c => c.Type == "IsApproved" && c.Value == "False");
-                if (isApprovedClaim != null)
+                if (claims.Any(c => c.Type == "IsApproved" && c.Value == "False"))
                 {
                     pendingUsers.Add(user);
                 }
@@ -56,60 +54,43 @@ namespace diplomska.Pages.Izmenovodja
             PendingUsers = pendingUsers;
         }
 
-        public async Task<IActionResult> OnPostAsync(string id)
+        public async Task<IActionResult> OnPostAsync(string userId)
         {
-            if (string.IsNullOrEmpty(id))
-            {
+            if (string.IsNullOrEmpty(userId))
                 return NotFound();
-            }
 
-            // Find the user by ID
-            var user = await _userManager.FindByIdAsync(id);
+            var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
-            {
-                _logger.LogWarning("User not found with ID: " + id); // Log user not found
                 return NotFound();
-            }
 
-            // Ensure user has "Izmenovodja" role
             var currentUser = await _userManager.GetUserAsync(User);
             var currentRoles = await _userManager.GetRolesAsync(currentUser);
             if (!currentRoles.Contains("Izmenovodja"))
-            {
-                _logger.LogWarning("User is not authorized to approve: " + currentUser.Email);
                 return Forbid();
-            }
 
-            // Set the "IsApproved" claim to "True"
-            var isApprovedClaim = await _userManager.GetClaimsAsync(user);
-            var claim = isApprovedClaim.FirstOrDefault(c => c.Type == "IsApproved");
-
-            if (claim != null)
+            // Remove old claim
+            var claims = await _userManager.GetClaimsAsync(user);
+            var isApprovedClaim = claims.FirstOrDefault(c => c.Type == "IsApproved");
+            if (isApprovedClaim != null)
             {
-                await _userManager.RemoveClaimAsync(user, claim);
-                _logger.LogInformation($"Removed previous approval claim for user {user.Email}");
+                await _userManager.RemoveClaimAsync(user, isApprovedClaim);
+                _logger.LogInformation($"Removed old IsApproved claim for {user.Email}");
             }
 
+            // Add approved claim
             await _userManager.AddClaimAsync(user, new Claim("IsApproved", "True"));
-            _logger.LogInformation($"User {user.Email} has been approved by Izmenovodja.");
+            _logger.LogInformation($"Approved user {user.Email}");
 
-            return RedirectToPage();
-        }
+            // Optional: mark email as confirmed
+            user.EmailConfirmed = true;
+            await _userManager.UpdateAsync(user);
 
-        public async Task<IActionResult> OnPostApproveUserAsync(string userId)
-        {
-            var user = await _userManager.FindByIdAsync(userId);
-            if(user != null)
-            {
-                user.EmailConfirmed = true;
-                await _userManager.UpdateAsync(user);
-
-                await _customEmailSender.SendCustomHtmlEmailAsync(
-                    user.Email,
-                    "Account Approved",
-                    "<p>Your account has been approved by the izmenovodja. You may now log in.</p>"
-                );
-            }
+            // ✅ Send approval email
+            await _customEmailSender.SendCustomHtmlEmailAsync(
+                user.Email,
+                "Your Account Has Been Approved",
+                "<p>Your account has been approved by the izmenovodja. You may now log in.</p>"
+            );
 
             return RedirectToPage();
         }

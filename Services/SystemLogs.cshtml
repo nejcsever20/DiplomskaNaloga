@@ -1,0 +1,30 @@
+﻿@page
+@model diplomska.Pages.Services.SystemLogsModel
+
+@{
+    ViewData["Title"] = "System Logs";
+}
+
+<div class="container mt-4">
+    <h2>@ViewData["Title"]</h2>
+
+    <div class="card mt-3">
+        <div class="card-header">
+            Recent Logs
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                @foreach (var log in Model.LogEntries)
+                {
+                    <li class="list-group-item">
+                        <strong>@log.Timestamp:</strong> @log.Message
+                        @if (!string.IsNullOrEmpty(log.Exception))
+                        {
+                            <p><em>Error Details:</em> @log.Exception</p>
+                        }
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

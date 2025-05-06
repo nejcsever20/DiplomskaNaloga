@@ -52,7 +52,7 @@ namespace diplomska.Pages.Admin
             }
 
             user.Email = Input.Email;
-            user.UserName = Input.Email;  // Ensure the username is updated to match the new email.
+            user.UserName = Input.Email;  // Ensure the username is updated to match the new email;
 
             var result = await _userManager.UpdateAsync(user);
             if (!result.Succeeded)

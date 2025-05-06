@@ -19,14 +19,14 @@
             {
                 <li class="list-group-item">
                     @user.Email
-                    <form method="post" asp-route-id="@user.Id" class="d-inline">
+                    <form method="post">
+                        <input type="hidden" name="userId" value="@user.Id" />
                         <button type="submit" class="btn btn-success btn-sm">Approve</button>
                     </form>
                 </li>
             }
         </ul>
     </div>
-
 </div>
 
 @section Scripts {

@@ -45,9 +45,14 @@ namespace diplomska.Pages.Izmenovodja
             if (string.IsNullOrWhiteSpace(userId))
                 return Page();
 
+            // get every single user
+            var allUsers = await _userManager.Users.ToListAsync();
+
             // Get the list of users for Skladiscnik dropdown
-            var skladiscniki = await _userManager.Users
-                .Select(u => new { FullName = u.UserName }).ToListAsync();
+            var skladiscniki = allUsers
+                   .Where(u => _userManager.IsInRoleAsync(u, "Skladiščnik").Result) // This will filter users by role in memory
+                   .Select(u => new { FullName = u.UserName })
+                   .ToList();
 
             // Fill the Skladiscnik dropdown
             SkladiscnikSelectList = new SelectList(skladiscniki, "FullName", "FullName");
@@ -101,6 +106,17 @@ namespace diplomska.Pages.Izmenovodja
         public async Task<IActionResult> OnPostAddNote()
         {
             // Logic for adding a note goes here if necessary.
+            return RedirectToPage();
+        }
+
+        public async Task<IActionResult> OnPostDeleteItem(int itemId)
+        {
+            var item = await _context.Izkladisceno.FindAsync(itemId);
+            if(item != null)
+            {
+                _context.Izkladisceno.Remove(item);
+                await _context.SaveChangesAsync();
+            }
             return RedirectToPage();
         }
     }

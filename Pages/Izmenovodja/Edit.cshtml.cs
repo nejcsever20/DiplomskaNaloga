@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using diplomska.Data;
 using diplomska.Models;
 
-namespace diplomska.Pages.Skladiščnik
+
+namespace diplomska.Pages.Izmenovodja
 {
     public class EditModel : PageModel
     {
@@ -30,13 +31,13 @@ namespace diplomska.Pages.Skladiščnik
                 return NotFound();
             }
 
-            var transport =  await _context.Transport.FirstOrDefaultAsync(m => m.Id == id);
+            var transport = await _context.Transport.FirstOrDefaultAsync(m => m.Id == id);
             if (transport == null)
             {
                 return NotFound();
             }
             Transport = transport;
-           ViewData["DolocenSkladiscnikId"] = new SelectList(_context.Users, "Id", "UserName");
+            ViewData["DolocenSkladiscnikId"] = new SelectList(_context.Users, "Id", "UserName");
             return Page();
         }
 

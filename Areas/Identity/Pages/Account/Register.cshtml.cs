@@ -51,7 +51,7 @@ namespace diplomska.Areas.Identity.Pages.Account
             public string ConfirmPassword { get; set; }
 
             [Required]
-            public string Role { get; set; }  // Role selection
+            public string Role { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -70,27 +70,23 @@ namespace diplomska.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
-                    // Ensure the role exists
                     if (!await _roleManager.RoleExistsAsync(Input.Role))
                     {
                         await _roleManager.CreateAsync(new IdentityRole(Input.Role));
                     }
 
-                    // Assign role
                     await _userManager.AddToRoleAsync(user, Input.Role);
-
-                    // Add claim to mark user as unapproved
                     await _userManager.AddClaimAsync(user, new Claim("IsApproved", "False"));
 
-                    _logger.LogInformation("User created a new account with password but requires approval.");
+                    _logger.LogInformation("User registered and is awaiting approval.");
 
+                    // ✅ Email to user
                     await _customEmailSender.SendCustomHtmlEmailAsync(
                         Input.Email,
                         "Registration Successful",
-                        "<p>You have successfully registered. Please wait for the izmenovodja to confirm your account.</p>"
+                        "<p>You have successfully registered. Please wait for the izmenovodja to approve your account.</p>"
                     );
 
-                    // DO NOT sign in user immediately. Wait for Izmenovodja to approve.
                     return RedirectToPage("RegisterConfirmation");
                 }
 
@@ -100,9 +96,7 @@ namespace diplomska.Areas.Identity.Pages.Account
                 }
             }
 
-            // If we got this far, something failed
             return Page();
         }
-
     }
 }

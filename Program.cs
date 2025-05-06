@@ -15,7 +15,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
     options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddRoleManager<RoleManager<IdentityRole>>();  // Add RoleManager service if you plan to use roles
+    .AddRoleManager<RoleManager<IdentityRole>>()
+    .AddDefaultTokenProviders(); // Required for password reset, email confirmation, etc.
 
 builder.Services.AddScoped<UserApprovalService>();
 
@@ -42,8 +43,9 @@ builder.Services.AddAuthentication()
     });
 
 builder.Services.AddSingleton<IEmailSender, DummyEmailSender>();
-
 builder.Services.AddScoped<CustomEmailSender>();
+builder.Services.AddScoped<ISystemLogs, SystemLogs>();
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
