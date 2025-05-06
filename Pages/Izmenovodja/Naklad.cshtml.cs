@@ -112,7 +112,7 @@ namespace diplomska.Pages.Izmenovodja
         public async Task<IActionResult> OnPostDeleteItem(int itemId)
         {
             var item = await _context.Izkladisceno.FindAsync(itemId);
-            if(item != null)
+            if (item != null)
             {
                 _context.Izkladisceno.Remove(item);
                 await _context.SaveChangesAsync();

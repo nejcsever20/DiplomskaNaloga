@@ -1,4 +1,6 @@
-﻿namespace diplomska.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace diplomska.Models
 {
     public class Izkladisceno
     {

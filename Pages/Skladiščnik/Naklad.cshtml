@@ -135,37 +135,46 @@
 
     <hr />
 
-    <h3>Izkladiščeno</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Količina</th>
-                <th>Palete</th>
-                <th>Skladiščnik</th>
-                <th>Datum</th>
-            </tr>
-        </thead>
-        <tbody>
-            @if (Model.IzkladiscenoList != null && Model.IzkladiscenoList.Any())
-            {
-                @foreach (var item in Model.IzkladiscenoList)
-                {
-                    <tr>
-                        <td>@item.Kolicina</td>
-                        <td>@item.Palete</td>
-                        <td>@item.Skladiscnik</td>
-                        <td>@item.Datum.ToString("dd.MM.yyyy HH:mm")</td>
-                    </tr>
-                }
-            }
-            else
+<h3>Izkladiščeno</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Količina</th>
+            <th>Palete</th>
+            <th>Skladiščnik</th>
+            <th>Datum</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.IzkladiscenoList != null && Model.IzkladiscenoList.Any())
+        {
+            @foreach (var item in Model.IzkladiscenoList)
             {
                 <tr>
-                    <td colspan="4">Ni podatkov za izkladiščeno.</td>
+                    <td>@item.Kolicina</td>
+                    <td>@item.Palete</td>
+                    <td>@item.Skladiscnik</td>
+                    <td>@item.Datum.ToString("dd.MM.yyyy HH:mm")</td>
+                    <td>
+                        @if (item.Skladiscnik == User.Identity.Name)
+                        {
+                            <form method="post" asp-page-handler="Delete" asp-route-id="@item.Id">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        }
+                    </td>
                 </tr>
             }
-        </tbody>
-    </table>
+        }
+        else
+        {
+            <tr>
+                <td colspan="5">Ni podatkov za izkladiščeno.</td>
+            </tr>
+        }
+    </tbody>
+</table>
 
     <h4>Dodaj izkladiščeno</h4>
     <form method="post" asp-page-handler="SaveData">

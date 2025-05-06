@@ -36,7 +36,7 @@ namespace diplomska.Pages.Skladiščnik
         [BindProperty] public string Notes { get; set; }
 
         public SelectList SkladiscnikSelectList { get; set; }
-        public List<Izkladisceno> IzkladiscenoList { get; set; } = new List<Izkladisceno>(); // Initialize as empty list
+        public List<Izkladisceno> IzkladiscenoList { get; set; } = new List<Izkladisceno>();
 
         public async Task<IActionResult> OnGet()
         {
@@ -44,15 +44,24 @@ namespace diplomska.Pages.Skladiščnik
             if (string.IsNullOrWhiteSpace(userId))
                 return Page();
 
-            // Get the list of users for Skladiscnik dropdown
-            var skladiscniki = await _userManager.Users
-                .Select(u => new { FullName = u.UserName }).ToListAsync();
+            // Get all users from the database
+            var allUsers = await _userManager.Users.ToListAsync();
+
+            // Filter the users who are in the "Skladiščnik" role using IsInRoleAsync
+            var skladiscniki = new List<object>();
+            foreach (var user in allUsers)
+            {
+                if (await _userManager.IsInRoleAsync(user, "Skladiščnik"))
+                {
+                    skladiscniki.Add(new { FullName = user.UserName });
+                }
+            }
 
             // Fill the Skladiscnik dropdown
             SkladiscnikSelectList = new SelectList(skladiscniki, "FullName", "FullName");
 
             // Get the list of already existing Izkladisceno entries
-            IzkladiscenoList = await _context.Izkladisceno.ToListAsync();  // Ensure this is properly initialized
+            IzkladiscenoList = await _context.Izkladisceno.ToListAsync();
 
             // Simulate Transport and StTransporta (you may need to load these based on actual transport data)
             var transport = await _context.Transport.OrderByDescending(t => t.Id).FirstOrDefaultAsync();
@@ -90,7 +99,7 @@ namespace diplomska.Pages.Skladiščnik
             await _context.SaveChangesAsync();
 
             // After saving, reload the list of Izkladisceno entries
-            IzkladiscenoList = await _context.Izkladisceno.ToListAsync();  // Reload updated list
+            IzkladiscenoList = await _context.Izkladisceno.ToListAsync();
 
             // Redirect to the same page to show the updated list
             return RedirectToPage();
@@ -102,5 +111,29 @@ namespace diplomska.Pages.Skladiščnik
             // Logic for adding a note goes here if necessary.
             return RedirectToPage();
         }
+
+        // Handler for deleting an entry
+        public async Task<IActionResult> OnPostDelete(long id)
+        {
+            var izkladisceno = await _context.Izkladisceno.FindAsync(id);
+            if (izkladisceno == null)
+            {
+                return NotFound();
+            }
+
+            var currentUser = User.Identity?.Name;
+            if (izkladisceno.Skladiscnik != currentUser)
+            {
+                return Unauthorized(); // Only the user who created the record can delete it
+            }
+
+            // Delete the entry
+            _context.Izkladisceno.Remove(izkladisceno);
+            await _context.SaveChangesAsync();
+
+            // Redirect to the same page to show the updated list
+            return RedirectToPage();
+        }
     }
+
 }
