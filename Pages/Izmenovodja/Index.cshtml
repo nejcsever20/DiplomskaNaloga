@@ -1,5 +1,7 @@
 ﻿@page
+@using diplomska.Models
 @model diplomska.Pages.Izmenovodja.IndexModel
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -39,6 +41,11 @@
         width: 80%;
     }
 
+        .modal-content h2,
+        .modal-content p {
+            font-size: 28px;
+        }
+
     .close-btn {
         color: #aaa;
         float: right;
@@ -53,6 +60,16 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+    #printContent, #printContent * {
+        visibility: visible;
+    }
+
+    #printContent {
+        font-size: 30px;
+        margin: 0 auto;
+        width: 80%;
+    }
 </style>
 
 <h1>Index</h1>
@@ -96,7 +113,11 @@
                 <td>@Html.DisplayFor(modelItem => item.PlaniranPrihod)</td>
                 <td>@Html.DisplayFor(modelItem => item.PavzaVoznika)</td>
                 <td>
-                    <button class="info-btn" data-id="@item.Id">
+                    <button class="info-btn"
+                            data-id="@item.Id"
+                            data-transporta="@item.StTransporta"
+                            data-registracija="@item.Registracija"
+                            data-voznik="@item.Voznik">
                         <span class="info-icon">i</span>
                     </button>
                 </td>
@@ -107,17 +128,16 @@
                 <td>
                     @if (item.DolocenSkladiscnikId == User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value)
                     {
-                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
                     }
-                    
+                    <a href="/Skladiščnik/LoadingCheckout?TransportId=@item.Id" class="btn btn-primary">Checkout</a>
+                    <a href="/Skladiščnik/Naklad" class="btn btn-primary">Naklad</a>
                 </td>
             </tr>
         }
     </tbody>
-    <a href="/Izmenovodja/Naklad">Naklad</a>
 </table>
-
-<a href="/Izmenovodja/LoadingCheckout">Checkout</a>
 
 <!-- Modal -->
 <div id="infoModal" class="modal">
@@ -127,40 +147,49 @@
         <p>Št. Transporta: <span id="modal-stTransporta"></span></p>
         <p>Registracija: <span id="modal-registracija"></span></p>
         <p>Voznik: <span id="modal-voznik"></span></p>
-        <button id="print-btn" class="btn btn-primary">Print</button>
+        <button id="print-btn" class="btn btn-primary print-btn">Print</button>
     </div>
 </div>
+
+<!-- Print Content -->
+<div id="printContent" style="display:none;">
+    <h2>Registracija</h2>
+    <p>Št. Transporta: <span id="print-stTransporta"></span></p>
+    <p>Registracija: <span id="print-registracija"></span></p>
+    <p>Voznik: <span id="print-voznik"></span></p>
+</div>
+
 @section Scripts {
-    <script src="~/js/transport-info.js"></script> <!-- Make sure the path is correct -->
-
     <script>
-    $(document).ready(function () {
-        // Toggle checkbox value for 'Sp' on click
-        $('.sp-toggle').change(function () {
-            var transportId = $(this).data('id');
-            var newSpValue = $(this).prop('checked');
+        const infoBtns = document.querySelectorAll(".info-btn");
+        const modal = document.getElementById("infoModal");
+        const closeModal = document.querySelector(".close-btn");
+        const printBtn = document.getElementById("print-btn");
 
-            // Make AJAX call to update the 'Sp' value in the database
-            $.ajax({
-                url: '@Url.Page("/Izmenovodja/Index", "OnPostUpdateSp")', // Updated URL to the correct handler
-                type: 'POST',
-                data: {
-                    id: transportId,
-                    sp: newSpValue
-                },
-                success: function (response) {
-                    if (response.success) {
-                        console.log('Sp value updated successfully');
-                    } else {
-                        console.log('Failed to update Sp value');
-                    }
-                },
-                error: function (xhr, status, error) {
-                    console.error('Error updating Sp value: ' + error);
-                    alert('Failed to update Sp value');
-                }
+        infoBtns.forEach(btn => {
+            btn.addEventListener("click", function () {
+                const transporta = this.dataset.transporta;
+                const registracija = this.dataset.registracija;
+                const voznik = this.dataset.voznik;
+
+                document.getElementById("modal-stTransporta").textContent = transporta;
+                document.getElementById("modal-registracija").textContent = registracija;
+                document.getElementById("modal-voznik").textContent = voznik;
+
+                modal.style.display = "block";
             });
         });
-    });
-</script>
+
+        closeModal.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        printBtn.addEventListener("click", function () {
+            document.getElementById("print-stTransporta").textContent = document.getElementById("modal-stTransporta").textContent;
+            document.getElementById("print-registracija").textContent = document.getElementById("modal-registracija").textContent;
+            document.getElementById("print-voznik").textContent = document.getElementById("modal-voznik").textContent;
+
+            window.print();
+        });
+    </script>
 }

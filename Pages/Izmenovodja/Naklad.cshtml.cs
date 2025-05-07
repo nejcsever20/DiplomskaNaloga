@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace diplomska.Pages.Izmenovodja
 {
     public class NakladModel : PageModel
@@ -37,7 +36,7 @@ namespace diplomska.Pages.Izmenovodja
         [BindProperty] public string Notes { get; set; }
 
         public SelectList SkladiscnikSelectList { get; set; }
-        public List<Izkladisceno> IzkladiscenoList { get; set; } = new List<Izkladisceno>(); // Initialize as empty list
+        public List<Izkladisceno> IzkladiscenoList { get; set; } = new List<Izkladisceno>();
 
         public async Task<IActionResult> OnGet()
         {
@@ -45,31 +44,49 @@ namespace diplomska.Pages.Izmenovodja
             if (string.IsNullOrWhiteSpace(userId))
                 return Page();
 
-            // get every single user
+            // Get all users from the database
             var allUsers = await _userManager.Users.ToListAsync();
 
-            // Get the list of users for Skladiscnik dropdown
-            var skladiscniki = allUsers
-                   .Where(u => _userManager.IsInRoleAsync(u, "Skladiščnik").Result) // This will filter users by role in memory
-                   .Select(u => new { FullName = u.UserName })
-                   .ToList();
+            // Filter the users who are in the "Skladiščnik" role
+            var skladiscniki = new List<object>();
+            foreach (var user in allUsers)
+            {
+                if (await _userManager.IsInRoleAsync(user, "Skladiščnik"))
+                {
+                    skladiscniki.Add(new { FullName = user.UserName });
+                }
+            }
 
             // Fill the Skladiscnik dropdown
             SkladiscnikSelectList = new SelectList(skladiscniki, "FullName", "FullName");
 
             // Get the list of already existing Izkladisceno entries
-            IzkladiscenoList = await _context.Izkladisceno.ToListAsync();  // Ensure this is properly initialized
+            IzkladiscenoList = await _context.Izkladisceno
+                                              .Select(item => new Izkladisceno
+                                              {
+                                                  Kolicina = item.Kolicina ?? 0,   // Default to 0 if Kolicina is NULL
+                                                  Palete = item.Palete ?? 0,       // Default to 0 if Palete is NULL
+                                                  Datum = item.Datum, // Default to DateTime.MinValue if Datum is NULL
+                                                  Skladiscnik = item.Skladiscnik,
+                                              })
+                                              .ToListAsync();
 
-            // Simulate Transport and StTransporta (you may need to load these based on actual transport data)
+            // Get the latest transport data
             var transport = await _context.Transport.OrderByDescending(t => t.Id).FirstOrDefaultAsync();
             if (transport != null)
             {
-                TransportId = transport.Id;  // Safely assign non-nullable long
-                StTransporta = transport.StTransporta ?? 0;  // Use 0 as fallback if null
+                TransportId = transport.Id;  // Set the transport Id
+                StTransporta = transport.StTransporta ?? 0;  // Set StTransporta to 0 if null
+            }
+            else
+            {
+                TransportId = 0;  // Handle the case where there are no transports
+                StTransporta = 0;
             }
 
             return Page();
         }
+
 
         // Handler to save the data
         public async Task<IActionResult> OnPostSaveData()
@@ -82,25 +99,32 @@ namespace diplomska.Pages.Izmenovodja
                 return Unauthorized();
             }
 
+            // Example: fetch a valid transport (you should replace this logic with actual selection or input)
+            var transport = await _context.Transport.FirstOrDefaultAsync(); // adjust to your actual table name and logic
+            if (transport == null)
+            {
+                ModelState.AddModelError(string.Empty, "No valid transport found. Please create one first.");
+                return Page();
+            }
+
             var izkladisceno = new Izkladisceno
             {
                 Kolicina = Kolicina ?? 0,
                 Palete = Palete ?? 0,
                 Skladiscnik = Skladiscnik ?? "Unknown",
                 Datum = DateTime.Now,
-                SkladiscnikId = userId
+                SkladiscnikId = userId,
+                TransportId = transport.Id // ✅ This is the required line
             };
 
-            // Save to the database
             _context.Izkladisceno.Add(izkladisceno);
             await _context.SaveChangesAsync();
 
-            // After saving, reload the list of Izkladisceno entries
-            IzkladiscenoList = await _context.Izkladisceno.ToListAsync();  // Reload updated list
+            IzkladiscenoList = await _context.Izkladisceno.ToListAsync();
 
-            // Redirect to the same page to show the updated list
             return RedirectToPage();
         }
+
 
         // Handler for adding notes
         public async Task<IActionResult> OnPostAddNote()
@@ -109,14 +133,26 @@ namespace diplomska.Pages.Izmenovodja
             return RedirectToPage();
         }
 
-        public async Task<IActionResult> OnPostDeleteItem(int itemId)
+        // Handler for deleting an entry
+        public async Task<IActionResult> OnPostDelete(long id)
         {
-            var item = await _context.Izkladisceno.FindAsync(itemId);
-            if (item != null)
+            var izkladisceno = await _context.Izkladisceno.FindAsync(id);
+            if (izkladisceno == null)
             {
-                _context.Izkladisceno.Remove(item);
-                await _context.SaveChangesAsync();
+                return NotFound();
             }
+
+            var currentUser = User.Identity?.Name;
+            if (izkladisceno.Skladiscnik != currentUser)
+            {
+                return Unauthorized(); // Only the user who created the record can delete it
+            }
+
+            // Delete the entry
+            _context.Izkladisceno.Remove(izkladisceno);
+            await _context.SaveChangesAsync();
+
+            // Redirect to the same page to show the updated list
             return RedirectToPage();
         }
     }
