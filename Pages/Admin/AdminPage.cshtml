@@ -65,7 +65,7 @@
                 @if (User.IsInRole("Admin"))
                 {
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Index">Admin Dashboard</a>
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Admin/AdminPage">Admin Dashboard</a>
                     </li>
                 }
                 <li class="nav-item">
@@ -86,7 +86,7 @@
             <div class="card-body button-group">
                 <a asp-page="/Admin/ManageUsers" class="btn btn-dark">Manage Users</a>
                 <a asp-page="/Admin/ManageRoles" class="btn btn-dark">Manage Roles</a>
-                <a asp-page="/Admin/ManageRoles" class="btn btn-dark">Remove Roles</a>
+                <a asp-page="/Admin/RemoveRoles" class="btn btn-dark">Add or Remove Roles</a>
             </div>
         </div>
 

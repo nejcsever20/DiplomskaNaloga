@@ -1,0 +1,114 @@
+﻿@page
+@model diplomska.Pages.Admin.RemoveRolesModel
+@{
+    ViewData["Title"] = "Upravljanje vlogami";
+}
+
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+        }
+
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, button {
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+        .alert {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .alert-success {
+            color: green;
+        }
+
+        .alert-danger {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upravljanje vlogami</h1>
+
+    <form method="post">
+        <div>
+            <label>Nova vloga:</label>
+            <input type="text" asp-for="NewRoleName" placeholder="Vnesite ime nove vloge" required />
+        </div>
+
+        <button type="submit" asp-page-handler="CreateRole">Ustvari vlogo</button>
+    </form>
+
+    @if (Model.CreateRoleSuccess)
+    {
+        <div class="alert alert-success">Vloga uspešno ustvarjena!</div>
+    }
+
+    @if (Model.CreateRoleError != null)
+    {
+        <div class="alert alert-danger">@Model.CreateRoleError</div>
+    }
+
+    <hr />
+
+    <h3>Obstoječe vloge:</h3>
+
+    <form method="post">
+        <div>
+            <label>Izberite vlogo za izbris:</label>
+            <select asp-for="RoleToDelete" asp-items="Model.Roles">
+                <option value="">Izberi vlogo za izbris</option>
+            </select>
+        </div>
+
+        <button type="submit" asp-page-handler="DeleteRole">Izbriši vlogo</button>
+    </form>
+
+    @if (Model.DeleteRoleSuccess)
+    {
+        <div class="alert alert-success">Vloga uspešno odstranjena!</div>
+    }
+
+    @if (Model.DeleteRoleError != null)
+    {
+        <div class="alert alert-danger">@Model.DeleteRoleError</div>
+    }
+
+    <a href="javascript:history.back()" class="back-button">Nazaj</a>
+
+</body>
+</html>

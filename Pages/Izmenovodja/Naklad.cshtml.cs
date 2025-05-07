@@ -37,12 +37,14 @@ namespace diplomska.Pages.Izmenovodja
         public List<Izkladisceno> IzkladiscenoList { get; set; } = new();
         public SelectList SkladiscnikSelectList { get; set; }
 
+        // Load data on page load
         public async Task<IActionResult> OnGetAsync()
         {
             await LoadData();
             return Page();
         }
 
+        // Set times for the process
         public async Task<IActionResult> OnPostSetTimesAsync()
         {
             TempData["SuccessMessage"] = "Čas uspešno nastavljen.";
@@ -50,6 +52,7 @@ namespace diplomska.Pages.Izmenovodja
             return Page();
         }
 
+        // Save new Izkladisceno entry
         public async Task<IActionResult> OnPostSaveDataAsync()
         {
             var item = new Izkladisceno
@@ -67,34 +70,41 @@ namespace diplomska.Pages.Izmenovodja
             return RedirectToPage();
         }
 
+        // Delete Izkladisceno entry
         public async Task<IActionResult> OnPostDeleteAsync(int id)
         {
             var currentUser = await _userManager.GetUserAsync(User);
+
+            // Check if the current user is in the Izmenovodja role
             if (!await _userManager.IsInRoleAsync(currentUser, "Izmenovodja"))
             {
-                return Forbid();
+                return Forbid(); // If not an Izmenovodja, deny access
             }
 
+            // Find the record to delete
             var record = await _context.Izkladisceno.FindAsync(id);
             if (record == null)
             {
                 TempData["ErrorMessage"] = "Zapis ni bil najden.";
-                return RedirectToPage();
+                return RedirectToPage(); // Redirect to the same page if the record isn't found
             }
 
+            // Delete the record and save changes to the database
             _context.Izkladisceno.Remove(record);
             await _context.SaveChangesAsync();
 
             TempData["SuccessMessage"] = "Zapis uspešno izbrisan.";
-            return RedirectToPage();
+            return RedirectToPage(); // Redirect to refresh the page after deletion
         }
 
+        // Add a note for the process
         public async Task<IActionResult> OnPostAddNoteAsync()
         {
             TempData["SuccessMessage"] = "Opomba dodana.";
             return RedirectToPage();
         }
 
+        // Load data for Izkladisceno list and Skladiscnik select list
         private async Task LoadData()
         {
             IzkladiscenoList = await _context.Izkladisceno.OrderByDescending(x => x.Datum).ToListAsync();
