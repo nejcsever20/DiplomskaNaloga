@@ -2,8 +2,13 @@
 @model diplomska.Pages.Izmenovodja.NakladModel
 @using diplomska.Models
 @using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
+
 @{
     ViewData["Title"] = "Začetek, konec naklada";
+    var currentUser = await UserManager.GetUserAsync(User);
+    var isIzmenovodja = currentUser != null && await UserManager.IsInRoleAsync(currentUser, "Izmenovodja");
 }
 
 <!DOCTYPE html>
@@ -73,7 +78,6 @@
             background-color: #f44336;
             color: white;
             padding: 10px 20px;
-            text-align: center;
             border-radius: 5px;
             text-decoration: none;
         }
@@ -98,7 +102,6 @@
 <body>
     <h1>Začetek, konec naklada</h1>
 
-    <!-- Display the transport number -->
     <div>
         <label>Št. transporta:</label>
         <span>@Model.StTransporta</span>
@@ -106,27 +109,11 @@
 
     <hr />
 
-    <!-- Form for setting times -->
     <form method="post">
-        <div>
-            <label>Rampa 1:</label>
-            <input type="number" asp-for="Rampa1" />
-        </div>
-
-        <div>
-            <label>Rampa 2:</label>
-            <input type="number" asp-for="Rampa2" />
-        </div>
-
-        <div>
-            <label>Carinska vrvica:</label>
-            <input type="text" asp-for="CarinskaVrvicva" />
-        </div>
-
-        <div>
-            <label>Ustreznost vozilca:</label>
-            <input type="text" asp-for="UstreznostVozilca" />
-        </div>
+        <div><label>Rampa 1:</label><input type="number" asp-for="Rampa1" /></div>
+        <div><label>Rampa 2:</label><input type="number" asp-for="Rampa2" /></div>
+        <div><label>Carinska vrvica:</label><input type="text" asp-for="CarinskaVrvicva" /></div>
+        <div><label>Ustreznost vozilca:</label><input type="text" asp-for="UstreznostVozilca" /></div>
 
         <div>
             <label>Začetek naklada:</label>
@@ -149,7 +136,6 @@
 
     <hr />
 
-    <!-- Display success or error messages -->
     @if (TempData["SuccessMessage"] != null)
     {
         <div class="alert-success">@TempData["SuccessMessage"]</div>
@@ -160,7 +146,6 @@
         <div class="alert-error">@TempData["ErrorMessage"]</div>
     }
 
-    <!-- Display Izkladiščeno table -->
     <h3>Izkladiščeno</h3>
     <table>
         <thead>
@@ -183,7 +168,7 @@
                         <td>@item.Skladiscnik</td>
                         <td>@item.Datum.ToString("dd.MM.yyyy HH:mm")</td>
                         <td>
-                            @if (item.Skladiscnik == User.Identity.Name)
+                            @if (isIzmenovodja)
                             {
                                 <form method="post" asp-page-handler="Delete" asp-route-id="@item.Id">
                                     <button type="submit" class="btn btn-danger">Delete</button>
@@ -202,27 +187,16 @@
         </tbody>
     </table>
 
-    <!-- Form for adding Izkladiščeno -->
     <h4>Dodaj izkladiščeno</h4>
     <form method="post" asp-page-handler="SaveData">
-        <div>
-            <label>Količina:</label>
-            <input type="number" asp-for="Kolicina" required />
-        </div>
-        <div>
-            <label>Palete:</label>
-            <input type="number" asp-for="Palete" required />
-        </div>
-        <div>
-            <label>Skladiščnik:</label>
-            <select asp-for="Skladiscnik" asp-items="Model.SkladiscnikSelectList" required></select>
-        </div>
+        <div><label>Količina:</label><input type="number" asp-for="Kolicina" required /></div>
+        <div><label>Palete:</label><input type="number" asp-for="Palete" required /></div>
+        <div><label>Skladiščnik:</label><select asp-for="Skladiscnik" asp-items="Model.SkladiscnikSelectList" required></select></div>
         <button type="submit">Dodaj</button>
     </form>
 
     <hr />
 
-    <!-- Form for adding Notes -->
     <h4>Opombe</h4>
     <form method="post" asp-page-handler="AddNote">
         <textarea asp-for="Notes" rows="4" cols="50"></textarea><br />
