@@ -81,11 +81,24 @@
             .back-button:hover {
                 background-color: #e53935;
             }
+
+        .alert-success {
+            color: green;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .alert-error {
+            color: red;
+            font-weight: bold;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
     <h1>Začetek, konec naklada</h1>
 
+    <!-- Display the transport number -->
     <div>
         <label>Št. transporta:</label>
         <span>@Model.StTransporta</span>
@@ -93,6 +106,7 @@
 
     <hr />
 
+    <!-- Form for setting times -->
     <form method="post">
         <div>
             <label>Rampa 1:</label>
@@ -135,47 +149,60 @@
 
     <hr />
 
-<h3>Izkladiščeno</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Količina</th>
-            <th>Palete</th>
-            <th>Skladiščnik</th>
-            <th>Datum</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if (Model.IzkladiscenoList != null && Model.IzkladiscenoList.Any())
-        {
-            @foreach (var item in Model.IzkladiscenoList)
+    <!-- Display success or error messages -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert-error">@TempData["ErrorMessage"]</div>
+    }
+
+    <!-- Display Izkladiščeno table -->
+    <h3>Izkladiščeno</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Količina</th>
+                <th>Palete</th>
+                <th>Skladiščnik</th>
+                <th>Datum</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.IzkladiscenoList != null && Model.IzkladiscenoList.Any())
+            {
+                @foreach (var item in Model.IzkladiscenoList)
+                {
+                    <tr>
+                        <td>@item.Kolicina</td>
+                        <td>@item.Palete</td>
+                        <td>@item.Skladiscnik</td>
+                        <td>@item.Datum.ToString("dd.MM.yyyy HH:mm")</td>
+                        <td>
+                            @if (item.Skladiscnik == User.Identity.Name)
+                            {
+                                <form method="post" asp-page-handler="Delete" asp-route-id="@item.Id">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+            else
             {
                 <tr>
-                    <td>@item.Kolicina</td>
-                    <td>@item.Palete</td>
-                    <td>@item.Skladiscnik</td>
-                    <td>@item.Datum.ToString("dd.MM.yyyy HH:mm")</td>
-                    <td>
-                        @if (item.Skladiscnik == User.Identity.Name)
-                        {
-                            <form method="post" asp-page-handler="Delete" asp-route-id="@item.Id">
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        }
-                    </td>
+                    <td colspan="5">Ni podatkov za izkladiščeno.</td>
                 </tr>
             }
-        }
-        else
-        {
-            <tr>
-                <td colspan="5">Ni podatkov za izkladiščeno.</td>
-            </tr>
-        }
-    </tbody>
-</table>
+        </tbody>
+    </table>
 
+    <!-- Form for adding Izkladiščeno -->
     <h4>Dodaj izkladiščeno</h4>
     <form method="post" asp-page-handler="SaveData">
         <div>
@@ -195,6 +222,7 @@
 
     <hr />
 
+    <!-- Form for adding Notes -->
     <h4>Opombe</h4>
     <form method="post" asp-page-handler="AddNote">
         <textarea asp-for="Notes" rows="4" cols="50"></textarea><br />

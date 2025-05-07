@@ -47,7 +47,7 @@ namespace diplomska.Pages.Skladiščnik
             // Get all users from the database
             var allUsers = await _userManager.Users.ToListAsync();
 
-            // Filter the users who are in the "Skladiščnik" role using IsInRoleAsync
+            // Filter the users who are in the "Skladiščnik" role
             var skladiscniki = new List<object>();
             foreach (var user in allUsers)
             {
@@ -61,18 +61,32 @@ namespace diplomska.Pages.Skladiščnik
             SkladiscnikSelectList = new SelectList(skladiscniki, "FullName", "FullName");
 
             // Get the list of already existing Izkladisceno entries
-            IzkladiscenoList = await _context.Izkladisceno.ToListAsync();
+            IzkladiscenoList = await _context.Izkladisceno
+                                              .Select(item => new Izkladisceno
+                                              {
+                                                  Kolicina = item.Kolicina ?? 0,   // Default to 0 if Kolicina is NULL
+                                                  Palete = item.Palete ?? 0,       // Default to 0 if Palete is NULL
+                                                  Datum = item.Datum, // Default to DateTime.MinValue if Datum is NULL
+                                                  Skladiscnik = item.Skladiscnik,
+                                              })
+                                              .ToListAsync();
 
-            // Simulate Transport and StTransporta (you may need to load these based on actual transport data)
+            // Get the latest transport data
             var transport = await _context.Transport.OrderByDescending(t => t.Id).FirstOrDefaultAsync();
             if (transport != null)
             {
-                TransportId = transport.Id.GetValueOrDefault();  // Safely assign non-nullable long
-                StTransporta = transport.StTransporta ?? 0;  // Use 0 as fallback if null
+                TransportId = transport.Id;  // Set the transport Id
+                StTransporta = transport.StTransporta ?? 0;  // Set StTransporta to 0 if null
+            }
+            else
+            {
+                TransportId = 0;  // Handle the case where there are no transports
+                StTransporta = 0;
             }
 
             return Page();
         }
+
 
         // Handler to save the data
         public async Task<IActionResult> OnPostSaveData()
@@ -85,25 +99,32 @@ namespace diplomska.Pages.Skladiščnik
                 return Unauthorized();
             }
 
+            // Example: fetch a valid transport (you should replace this logic with actual selection or input)
+            var transport = await _context.Transport.FirstOrDefaultAsync(); // adjust to your actual table name and logic
+            if (transport == null)
+            {
+                ModelState.AddModelError(string.Empty, "No valid transport found. Please create one first.");
+                return Page();
+            }
+
             var izkladisceno = new Izkladisceno
             {
                 Kolicina = Kolicina ?? 0,
                 Palete = Palete ?? 0,
                 Skladiscnik = Skladiscnik ?? "Unknown",
                 Datum = DateTime.Now,
-                SkladiscnikId = userId
+                SkladiscnikId = userId,
+                TransportId = transport.Id // ✅ This is the required line
             };
 
-            // Save to the database
             _context.Izkladisceno.Add(izkladisceno);
             await _context.SaveChangesAsync();
 
-            // After saving, reload the list of Izkladisceno entries
             IzkladiscenoList = await _context.Izkladisceno.ToListAsync();
 
-            // Redirect to the same page to show the updated list
             return RedirectToPage();
         }
+
 
         // Handler for adding notes
         public async Task<IActionResult> OnPostAddNote()

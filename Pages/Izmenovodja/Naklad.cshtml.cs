@@ -64,7 +64,7 @@ namespace diplomska.Pages.Izmenovodja
             var transport = await _context.Transport.OrderByDescending(t => t.Id).FirstOrDefaultAsync();
             if (transport != null)
             {
-                TransportId = transport.Id.GetValueOrDefault();  // Safely assign non-nullable long
+                TransportId = transport.Id;  // Safely assign non-nullable long
                 StTransporta = transport.StTransporta ?? 0;  // Use 0 as fallback if null
             }
 

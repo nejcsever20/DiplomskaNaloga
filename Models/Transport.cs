@@ -8,7 +8,7 @@ namespace diplomska.Models
     [Table("diplomska_Transports")]
     public class Transport
     {
-        public long? Id { get; set; }
+        public long Id { get; set; }
 
         public bool Sp { get; set; }
 

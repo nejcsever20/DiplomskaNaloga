@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Models
 @model diplomska.Pages.Skladiščnik.IndexModel
 
 @{
@@ -40,6 +41,11 @@
         width: 80%;
     }
 
+    .modal-content h2,
+    .modal-content p {
+        font-size: 28px;
+    }
+
     .close-btn {
         color: #aaa;
         float: right;
@@ -48,12 +54,22 @@
         cursor: pointer;
     }
 
-        .close-btn:hover,
-        .close-btn:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
+    .close-btn:hover,
+    .close-btn:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #printContent, #printContent * {
+            visibility: visible;
+    }
+
+    #printContent {
+        font-size: 30px;
+        margin: 0 auto;
+        width: 80%;
+    }
 </style>
 
 <h1>Index</h1>
@@ -97,7 +113,11 @@
                 <td>@Html.DisplayFor(modelItem => item.PlaniranPrihod)</td>
                 <td>@Html.DisplayFor(modelItem => item.PavzaVoznika)</td>
                 <td>
-                    <button class="info-btn" data-id="@item.Id">
+                    <button class="info-btn"
+                            data-id="@item.Id"
+                            data-transporta="@item.StTransporta"
+                            data-registracija="@item.Registracija"
+                            data-voznik="@item.Voznik">
                         <span class="info-icon">i</span>
                     </button>
                 </td>
@@ -111,15 +131,13 @@
                         <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
                         <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
                     }
-                    <a asp-page="./Details" asp-route-id="@item.Id"></a>
+                    <a href="/Skladiščnik/LoadingCheckout?TransportId=@item.Id" class="btn btn-primary">Checkout</a>
+                    <a href="/Skladiščnik/Naklad" class="btn btn-primary">Naklad</a>
                 </td>
             </tr>
         }
     </tbody>
-    <a href="/Skladiščnik/Naklad">Naklad</a>
 </table>
-
-<a href="/Skladiščnik/LoadingCheckout">Checkout</a>
 
 <!-- Modal -->
 <div id="infoModal" class="modal">
@@ -129,9 +147,49 @@
         <p>Št. Transporta: <span id="modal-stTransporta"></span></p>
         <p>Registracija: <span id="modal-registracija"></span></p>
         <p>Voznik: <span id="modal-voznik"></span></p>
-        <button id="print-btn" class="btn btn-primary">Print</button>
+        <button id="print-btn" class="btn btn-primary print-btn">Print</button>
     </div>
 </div>
+
+<!-- Print Content -->
+<div id="printContent" style="display:none;">
+    <h2>Registracija</h2>
+    <p>Št. Transporta: <span id="print-stTransporta"></span></p>
+    <p>Registracija: <span id="print-registracija"></span></p>
+    <p>Voznik: <span id="print-voznik"></span></p>
+</div>
+
 @section Scripts {
-    <script src="~/js/transport-info.js"></script> <!-- Make sure the path is correct -->
+    <script>
+        const infoBtns = document.querySelectorAll(".info-btn");
+        const modal = document.getElementById("infoModal");
+        const closeModal = document.querySelector(".close-btn");
+        const printBtn = document.getElementById("print-btn");
+
+        infoBtns.forEach(btn => {
+            btn.addEventListener("click", function () {
+                const transporta = this.dataset.transporta;
+                const registracija = this.dataset.registracija;
+                const voznik = this.dataset.voznik;
+
+                document.getElementById("modal-stTransporta").textContent = transporta;
+                document.getElementById("modal-registracija").textContent = registracija;
+                document.getElementById("modal-voznik").textContent = voznik;
+
+                modal.style.display = "block";
+            });
+        });
+
+        closeModal.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        printBtn.addEventListener("click", function () {
+            document.getElementById("print-stTransporta").textContent = document.getElementById("modal-stTransporta").textContent;
+            document.getElementById("print-registracija").textContent = document.getElementById("modal-registracija").textContent;
+            document.getElementById("print-voznik").textContent = document.getElementById("modal-voznik").textContent;
+
+            window.print();
+        });
+    </script>
 }

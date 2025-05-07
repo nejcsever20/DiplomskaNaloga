@@ -27,7 +27,7 @@ namespace diplomska.Areas.Identity.Pages.Account
         {
             [Required]
             [EmailAddress]
-            public string Email { get; set; }
+            public string? Email { get; set; }
         }
 
         public async Task<IActionResult> OnPostAsync()

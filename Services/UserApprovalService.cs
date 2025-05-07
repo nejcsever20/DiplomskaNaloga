@@ -23,7 +23,8 @@ namespace diplomska.Services
                 "Darko.Barko@gmail.com",
                 "deni.burgic@gmail.com",
                 "nejc.sever@gmail.com",
-                "test2@gmil.com",
+                "nejc.severmihelic@gorenje.com",
+                "deni.burgic@gorenje.com",
                 "test@izmenovodja.com",
                 "test@test.com",
                 "zan.oblak@gmail.com"
