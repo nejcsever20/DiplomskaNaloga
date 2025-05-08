@@ -1,8 +1,31 @@
-﻿@page
-@model ConfirmEmailModel
+@page
+@model diplomska.Areas.Identity.Pages.Account.ConfirmEmailModel
 @{
-    ViewData["Title"] = "Confirm email";
+    ViewData["Title"] = "Confirm Email";
 }
 
-<h1>@ViewData["Title"]</h1>
-<partial name="_StatusMessage" model="Model.StatusMessage" />
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow border-0">
+                <div class="card-header bg-success text-white text-center">
+                    <h3>@ViewData["Title"]</h3>
+                </div>
+                <div class="card-body">
+                    @if (!string.IsNullOrEmpty(Model.StatusMessage))
+                    {
+                        <div class="alert @(Model.StatusMessage.Contains("automatically approved") ? "alert-success" : "alert-info")" role="alert">
+                            @Model.StatusMessage
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-secondary">
+                            Email confirmation is being processed...
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

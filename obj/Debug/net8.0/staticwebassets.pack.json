@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\js\\UserActivityLogger.js",
+      "PackagePath": "staticwebassets\\js\\UserActivityLogger.js"
+    },
+    {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

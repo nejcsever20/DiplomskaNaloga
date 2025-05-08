@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "K09HOQ/uuSyC4Ua3STpLu6YKY2ubSxmyPBjOpRj9KuY=",
+  "Hash": "XEwUz0AtwOvGY3vX1sKAwpqLkY44sNT+4iQWf/HPTb8=",
   "Source": "diplomska",
   "BasePath": "_content/diplomska",
   "Mode": "Default",
@@ -1269,6 +1269,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\transport-info.js"
+    },
+    {
+      "Identity": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\js\\UserActivityLogger.js",
+      "SourceId": "diplomska",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\",
+      "BasePath": "_content/diplomska",
+      "RelativePath": "js/UserActivityLogger.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\UserActivityLogger.js"
     },
     {
       "Identity": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
