@@ -4,6 +4,8 @@ using diplomska.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace diplomska.Areas.Identity.Pages.Account
@@ -35,6 +37,7 @@ namespace diplomska.Areas.Identity.Pages.Account
 
         public string ReturnUrl { get; set; }
 
+        public List<SelectListItem> Roles { get; set; }
         public class InputModel
         {
             [Required]
@@ -57,6 +60,13 @@ namespace diplomska.Areas.Identity.Pages.Account
         public async Task OnGetAsync(string returnUrl = null)
         {
             ReturnUrl = returnUrl ?? Url.Content("~/");
+
+            Roles = await _roleManager.Roles
+            .Select(role => new SelectListItem
+            {
+                Text = role.Name,
+                Value = role.Name
+            }).ToListAsync();
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
@@ -77,6 +87,13 @@ namespace diplomska.Areas.Identity.Pages.Account
 
                     await _userManager.AddToRoleAsync(user, Input.Role);
                     await _userManager.AddClaimAsync(user, new Claim("IsApproved", "False"));
+
+                    Roles = await _roleManager.Roles
+                        .Select(role => new SelectListItem
+                        {
+                            Text = role.Name,
+                            Value = role.Name
+                        }).ToListAsync();
 
                     _logger.LogInformation("User registered and is awaiting approval.");
 
