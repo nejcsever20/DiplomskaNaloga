@@ -109,7 +109,12 @@
                 <td>@Html.DisplayFor(modelItem => item.SK)</td>
                 <td>@Html.DisplayFor(modelItem => item.Skladisce)</td>
                 <td>@Html.DisplayFor(modelItem => item.VrstaTransporta)</td>
-                <td>@Html.DisplayFor(modelItem => item.StTransporta)</td>
+                <td>
+                    <a href="/Izmenovodja/Naklad?id=@item.Id">
+                        @Html.DisplayFor(modelItem => item.StTransporta)
+                    </a>
+                </td>
+
                 <td>@Html.DisplayFor(modelItem => item.PlaniranPrihod)</td>
                 <td>@Html.DisplayFor(modelItem => item.PavzaVoznika)</td>
                 <td>
@@ -131,8 +136,6 @@
                         <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
                         <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
                     }
-                    <a href="/Izmenovodja/LoadingCheckout?TransportId=@item.Id" class="btn btn-primary">Checkout</a>
-                    <a href="/Izmenovodja/Naklad" class="btn btn-primary">Naklad</a>
                 </td>
             </tr>
         }

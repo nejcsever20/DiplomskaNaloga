@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XEwUz0AtwOvGY3vX1sKAwpqLkY44sNT+4iQWf/HPTb8=",
+  "Hash": "YtvK9xfI0vV4x2iJCsEgEbR+OEqpooQN0WUuM0CORqk=",
   "Source": "diplomska",
   "BasePath": "_content/diplomska",
   "Mode": "Default",
@@ -2371,6 +2371,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\pdfs\\LoadingCheckOut_12359_20250508_1514.pdf",
+      "SourceId": "diplomska",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\",
+      "BasePath": "_content/diplomska",
+      "RelativePath": "pdfs/LoadingCheckOut_12359_20250508_1514.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pdfs\\LoadingCheckOut_12359_20250508_1514.pdf"
+    },
+    {
+      "Identity": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\pdfs\\LoadingCheckOut_12359_20250508_1527.pdf",
+      "SourceId": "diplomska",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\",
+      "BasePath": "_content/diplomska",
+      "RelativePath": "pdfs/LoadingCheckOut_12359_20250508_1527.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pdfs\\LoadingCheckOut_12359_20250508_1527.pdf"
     }
   ]
 }

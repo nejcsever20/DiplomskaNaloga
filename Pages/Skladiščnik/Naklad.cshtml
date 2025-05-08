@@ -136,9 +136,27 @@
 
         <div>
             <label>Konec naklada:</label>
-            <input type="datetime-local" asp-for="KonecNaklada" />
-            <button type="submit" asp-page-handler="SetTimes">Nastavi</button>
+            <input type="datetime-local" id="konecNakladaInput" />
+            <a id="setTimesLink" href="#" class="btn btn-primary">Nastavi</a>
         </div>
+
+        <script>
+            document.getElementById("setTimesLink").addEventListener("click", function (e) {
+                e.preventDefault();
+                const datetimeValue = document.getElementById("konecNakladaInput").value;
+
+                if (!datetimeValue) {
+                    alert("Prosimo, izberite datum in čas.");
+                    return;
+                }
+
+                // Replace with your actual transport ID source if needed
+                const transportId = "@Model.TransportId"; // Make sure this is set in the model
+
+                // Redirect to the LoadingCheckout page with query parameters
+                window.location.href = `/Skladiščnik/LoadingCheckout?TransportId=${transportId}&KonecNaklada=${encodeURIComponent(datetimeValue)}`;
+            });
+        </script>
 
         <div>
             <label>Voznik zavrnil začetek zaradi pavze:</label>

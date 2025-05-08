@@ -57,7 +57,7 @@ namespace diplomska.Pages.Skladiščnik
         public string? DriverSignature { get; set; }
 
         [BindProperty]
-        public List<ChecklistItem> ChecklistItems { get; set; } = new List<ChecklistItem>
+        public List<ChecklistItem> ChecklistItems { get; set; } = new()
         {
             new() { Id = 1, Question = "The vehicle is clean" },
             new() { Id = 2, Question = "The vehicle is clean (no wet, greasy, or damp areas)" },
@@ -69,7 +69,6 @@ namespace diplomska.Pages.Skladiščnik
             new() { Id = 8, Question = "The transport vehicle is suitable" }
         };
 
-        // The OnGet method loads the data from the database
         public void OnGet()
         {
             TransportInfo = _context.Transport.FirstOrDefault(t => t.Id == TransportId);
@@ -96,81 +95,70 @@ namespace diplomska.Pages.Skladiščnik
             }
         }
 
-        // The OnPost method saves the data to the database
         public IActionResult OnPost()
         {
-            // Save Izkladisceno data
-            foreach (var izkladiscenoItem in IzkladiscenoItems)
+            foreach (var item in IzkladiscenoItems)
             {
-                // Ensure that the `Izkladisceno` object is populated correctly with the form values
                 _context.Izkladisceno.Add(new Izkladisceno
                 {
-                    Kolicina = izkladiscenoItem.Kolicina ?? 0, // Default to 0 if not set
-                    Palete = izkladiscenoItem.Palete, // Default to 0 if not set
-                    Skladiscnik = izkladiscenoItem.Skladiscnik ?? "Unknown", // Default value if not set
+                    Kolicina = item.Kolicina ?? 0,
+                    Palete = item.Palete,
+                    Skladiscnik = item.Skladiscnik ?? "Unknown",
                     Datum = DateTime.Now,
-                    TransportId = TransportId // Associating this item with the correct transport
+                    TransportId = TransportId
                 });
             }
 
-            // Save to the database
             _context.SaveChanges();
 
-            // Create the PDF document
             var document = new PdfDocument();
             var page = document.AddPage();
             var gfx = XGraphics.FromPdfPage(page);
             var font = new XFont("Verdana", 12, XFontStyle.Regular);
             var headerFont = new XFont("Verdana", 16, XFontStyle.Bold);
-            int yPoint = 40;
+            int y = 40;
 
-            // Title
             gfx.DrawString("Loading Check-Out Form", headerFont, XBrushes.Black,
-                new XRect(0, yPoint, page.Width, page.Height), XStringFormats.TopCenter);
-            yPoint += 40;
+                new XRect(0, y, page.Width, page.Height), XStringFormats.TopCenter);
+            y += 40;
 
-            // Transport raw info (no headers)
             gfx.DrawString($"{TransportInfo.Sp} {TransportInfo.SK} {TransportInfo.Skladisce} {TransportInfo.VrstaTransporta} " +
                 $"{TransportInfo.StTransporta} {TransportInfo.PlaniranPrihod} {TransportInfo.PavzaVoznika} " +
                 $"{TransportInfo.Registracija} {TransportInfo.VrstaPrevoznegaSredstva} {TransportInfo.Voznik} " +
-                $"{TransportInfo.NAVISZacetekSklada} {TransportInfo.NAVISKonecSklada}", font, XBrushes.Black, new XPoint(40, yPoint));
-            yPoint += 30;
+                $"{TransportInfo.NAVISZacetekSklada} {TransportInfo.NAVISKonecSklada}", font, XBrushes.Black, new XPoint(40, y));
+            y += 30;
 
-            // Basic Info
-            gfx.DrawString($"Start Loading: {StartLoading}", font, XBrushes.Black, new XPoint(40, yPoint)); yPoint += 20;
-            gfx.DrawString($"End Loading: {EndLoading}", font, XBrushes.Black, new XPoint(40, yPoint)); yPoint += 20;
-            gfx.DrawString($"CMR Number: {CmrNumber}", font, XBrushes.Black, new XPoint(40, yPoint)); yPoint += 20;
-            gfx.DrawString($"Transport Number: {TransportNumber}", font, XBrushes.Black, new XPoint(40, yPoint)); yPoint += 20;
-            gfx.DrawString($"Loaded Quantity: {LoadedQuantity}", font, XBrushes.Black, new XPoint(40, yPoint)); yPoint += 20;
-            gfx.DrawString($"Registration Plates: {RegistrationPlates}", font, XBrushes.Black, new XPoint(40, yPoint)); yPoint += 20;
-            gfx.DrawString($"Seal: {Seal}", font, XBrushes.Black, new XPoint(40, yPoint)); yPoint += 30;
+            gfx.DrawString($"Start Loading: {StartLoading}", font, XBrushes.Black, new XPoint(40, y)); y += 20;
+            gfx.DrawString($"End Loading: {EndLoading}", font, XBrushes.Black, new XPoint(40, y)); y += 20;
+            gfx.DrawString($"CMR Number: {CmrNumber}", font, XBrushes.Black, new XPoint(40, y)); y += 20;
+            gfx.DrawString($"Transport Number: {TransportNumber}", font, XBrushes.Black, new XPoint(40, y)); y += 20;
+            gfx.DrawString($"Loaded Quantity: {LoadedQuantity}", font, XBrushes.Black, new XPoint(40, y)); y += 20;
+            gfx.DrawString($"Registration Plates: {RegistrationPlates}", font, XBrushes.Black, new XPoint(40, y)); y += 20;
+            gfx.DrawString($"Seal: {Seal}", font, XBrushes.Black, new XPoint(40, y)); y += 30;
 
-            // Checklist
             foreach (var item in ChecklistItems)
             {
                 var answer = string.IsNullOrWhiteSpace(item.Answer) ? "Not answered" : item.Answer;
                 var comment = string.IsNullOrWhiteSpace(item.Comment) ? "No comment" : item.Comment;
-                gfx.DrawString($"- {item.Question}: {answer} | Comment: {comment}", font, XBrushes.Black, new XPoint(60, yPoint));
-                yPoint += 20;
+                gfx.DrawString($"- {item.Question}: {answer} | Comment: {comment}", font, XBrushes.Black, new XPoint(60, y));
+                y += 20;
             }
 
-            yPoint += 20;
+            y += 20;
 
-            // Izkladisceno section
             foreach (var i in IzkladiscenoItems)
             {
-                gfx.DrawString($"Qty: {i.Kolicina}, Pallets: {i.Palete}, By: {i.Skladiscnik}, On: {i.Datum:dd.MM.yyyy HH:mm}", font, XBrushes.Black, new XPoint(60, yPoint));
-                yPoint += 20;
+                gfx.DrawString($"Qty: {i.Kolicina}, Pallets: {i.Palete}, By: {i.Skladiscnik}, On: {i.Datum:dd.MM.yyyy HH:mm}", font, XBrushes.Black, new XPoint(60, y));
+                y += 20;
             }
 
-            yPoint += 20;
-
-            gfx.DrawString($"Warehouse Signature: {WarehouseSignature}", font, XBrushes.Black, new XPoint(40, yPoint)); yPoint += 20;
-            gfx.DrawString($"Driver Signature: {DriverSignature}", font, XBrushes.Black, new XPoint(40, yPoint));
+            y += 20;
+            gfx.DrawString($"Warehouse Signature: {WarehouseSignature}", font, XBrushes.Black, new XPoint(40, y)); y += 20;
+            gfx.DrawString($"Driver Signature: {DriverSignature}", font, XBrushes.Black, new XPoint(40, y));
 
             using var stream = new MemoryStream();
             document.Save(stream, false);
-            return File(stream.ToArray(), "application/pdf", "LoadingCheckOutForm.pdf");
+            return File(stream.ToArray(), "application/pdf", $"LoadingCheckOutForm_{TransportInfo.StTransporta}.pdf");
         }
 
         public class ChecklistItem

@@ -3,6 +3,21 @@
 
 @{
     ViewData["Title"] = "Loading CheckOut Form";
+    var pdfPath = TempData["GeneratedPdf"] as string;
+}
+
+@if (!string.IsNullOrEmpty(pdfPath))
+{
+    <script>
+        window.onload = function () {
+            const link = document.createElement("a");
+            link.href = "@pdfPath";
+            link.download = "";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+    </script>
 }
 
 <style>
@@ -14,7 +29,7 @@
 
     .checkout-form {
         background: white;
-        padding: 15px 15px 50px 15px; /* Extra bottom padding to avoid overlap */
+        padding: 15px 15px 50px 15px;
         border-radius: 6px;
         max-width: 700px;
         margin: auto;
@@ -92,7 +107,6 @@
     }
 </style>
 
-
 <div class="checkout-form">
     <form method="post">
         <fieldset>
@@ -110,10 +124,8 @@
             <label>Transport Number:</label>
             <input type="text" asp-for="TransportNumber" readonly />
 
-            <!-- Change Loaded Quantity to non-editable text -->
             <label>Loaded Quantity:</label>
             <span class="text-field">@Model.LoadedQuantity</span>
-
 
             <label>Registration Plates:</label>
             <input type="text" asp-for="RegistrationPlates" readonly />

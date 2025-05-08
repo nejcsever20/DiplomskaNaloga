@@ -253,6 +253,14 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\pdfs\\LoadingCheckOut_12359_20250508_1514.pdf",
+      "PackagePath": "staticwebassets\\pdfs\\LoadingCheckOut_12359_20250508_1514.pdf"
+    },
+    {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\pdfs\\LoadingCheckOut_12359_20250508_1527.pdf",
+      "PackagePath": "staticwebassets\\pdfs\\LoadingCheckOut_12359_20250508_1527.pdf"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.diplomska.props",
       "PackagePath": "build\\diplomska.props"
     },
