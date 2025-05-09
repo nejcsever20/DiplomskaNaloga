@@ -1,0 +1,55 @@
+﻿/* General styles */
+body {
+    background-color: #DDDDDD;
+    color: #125D98;
+}
+
+.page-header {
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: #125D98;
+}
+
+.lead {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #3C8DAD;
+}
+
+/* Card styles */
+.card {
+    background-color: #F5A962;
+    border: 1px solid #125D98;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.card-header {
+    background-color: #125D98;
+    color: #DDDDDD;
+    font-size: 1.5em;
+    padding: 10px;
+    border-bottom: 1px solid #125D98;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.btn-dark {
+    background-color: #125D98;
+    color: #DDDDDD;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+    .btn-dark:hover {
+        background-color: #3C8DAD;
+        color: #DDDDDD;
+    }

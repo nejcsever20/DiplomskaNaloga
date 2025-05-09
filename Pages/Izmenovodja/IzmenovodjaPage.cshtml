@@ -3,6 +3,9 @@
 @{
     ViewData["Title"] = "Izmenovodja!";
 }
+<head>
+    <link rel="stylesheet" href="~/css/izmenovodja.css"/>
+</head>
 
 <h1 class="page-header text-center">Lep pozdrav, Izmenovodja!</h1>
 <p class="text-center lead">This is the page for the Izmenovodja role. Use the links below to manage registrations and perform tasks related to your role.</p>
@@ -14,7 +17,5 @@
     <div class="card-body">
         <a asp-area="" asp-page="/Izmenovodja/ConfirmRegister" class="btn btn-dark">Confirm Account</a>
         <a asp-area="" asp-page="/Izmenovodja/Index" class="btn btn-dark">Go to Index</a>
-        <a asp-area="" asp-page="/Izmenovodja/LoadingCheckout" class="btn btn-dark">Loading Checkout</a>
-        <a asp-area="" asp-page="/Izmenovodja/Naklad" class="btn btn-dark">Naklad</a>
     </div>
 </div>
