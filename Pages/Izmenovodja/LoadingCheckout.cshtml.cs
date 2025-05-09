@@ -158,7 +158,7 @@ namespace diplomska.Pages.Izmenovodja
 
             using var stream = new MemoryStream();
             document.Save(stream, false);
-            return File(stream.ToArray(), "application/pdf", $"LoadingCheckOutForm_{TransportInfo.StTransporta}.pdf");
+            return File(stream.ToArray(), "application/pdf", $"LoadingCheckOutForm_Transport_{TransportInfo.StTransporta}.pdf");
         }
 
         public class ChecklistItem

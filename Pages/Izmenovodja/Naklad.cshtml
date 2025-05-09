@@ -157,13 +157,13 @@
         <div>
             <label>Začetek naklada:</label>
             <input type="datetime-local" asp-for="ZacetekNaklada" />
-            <button type="submit" asp-page-handler="SetTimes">Nastavi</button>
+            <button type="submit" asp-page-handler="SetTimes" class="btn btn-success">Nastavi</button>
         </div>
 
         <div>
             <label>Konec naklada:</label>
             <input type="datetime-local" id="konecNakladaInput" />
-            <a id="setTimesLink" href="#" class="btn btn-primary">Nastavi</a>
+            <a id="setTimesLink" href="#" class="btn btn-success">Nastavi</a>
         </div>
 
         <script>
@@ -187,7 +187,7 @@
         <div>
             <label>Voznik zavrnil začetek zaradi pavze:</label>
             <input type="datetime-local" asp-for="ZavrnilZacetek" />
-            <button type="submit" asp-page-handler="SetTimes">Nastavi</button>
+            <button type="submit" asp-page-handler="SetTimes" class="btn btn-success">Nastavi</button>
         </div>
     </form>
 
