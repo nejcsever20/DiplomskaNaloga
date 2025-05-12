@@ -3,8 +3,89 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<head>
+    <link rel="stylesheet" href="~/css/wave.css" />
+</head>
+<style>
 
+    /* General styles */
+    body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #123;
+        color: #125D98;
+        position: relative;
+    }
+
+    /* Content on top of waves */
+    .text-center {
+        position: relative;
+        z-index: 1;
+        padding-top: 100px;
+        text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+        color: #DDDDDD;
+    }
+
+    p {
+        color: #DDDDDD;
+        font-weight: bold;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .auth-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .auth-buttons a {
+        background-color: #125D98;
+        color: #DDDDDD !important;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .auth-buttons a:hover {
+        background-color: #3C8DAD;
+        color: #FFFFFF !important;
+    }
+</style>
+
+<!-- Page Content -->
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core" target="_blank">building Web apps with ASP.NET Core</a>.</p>
+
+    <div class="auth-buttons">
+        <a asp-area="Identity" asp-page="/Account/Login">Login</a>
+        <a asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </div>
 </div>
+
+<!-- Wave Animation -->
+<svg viewBox="0 0 2 1"
+     preserveAspectRatio="none">
+    <defs>
+        <path id="w"
+              d="
+      m0 1v-.5
+      q.5.5 1 0
+      t1 0 1 0 1 0
+      v.5z" />
+    </defs>
+    <g>
+        <use href="#w" y=".0" fill="#2d55aa" />
+        <use href="#w" y=".1" fill="#3461c1" />
+        <use href="#w" y=".2" fill="#4579e2" />
+    </g>
+</svg>

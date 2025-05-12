@@ -4,52 +4,83 @@ body {
     color: #125D98;
 }
 
+h1 {
+    text-align: center;
+}
+
+h2 {
+    color: #DDDDDD;
+}
+
+h3 {
+    color: #125D98;
+}
+/* Typography */
 .page-header {
     font-size: 2.5em;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
     color: #125D98;
 }
 
 .lead {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+    font-size: 1.4em;
+    margin-bottom: 30px;
     color: #3C8DAD;
+    text-align: center;
 }
 
 /* Card styles */
 .card {
-    background-color: #F5A962;
+    background-color: #3C8DAD;
     border: 1px solid #125D98;
     border-radius: 10px;
-    margin: 20px auto;
-    width: 80%;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
 
 .card-header {
     background-color: #125D98;
-    color: #DDDDDD;
-    font-size: 1.5em;
-    padding: 10px;
+    color: #b6ff00;
+    font-size: 1.6em;
+    padding: 15px 20px;
     border-bottom: 1px solid #125D98;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 
 .card-body {
-    padding: 20px;
+    padding: 25px;
+    color: #b6ff00;
+    font-size: 1em;
+    line-height: 1.6;
 }
 
+/* Button styles */
 .btn-dark {
     background-color: #125D98;
-    color: #DDDDDD;
+    color: #b6ff00;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 6px;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
 }
 
     .btn-dark:hover {
-        background-color: #3C8DAD;
-        color: #DDDDDD;
+        background-color: #003875;
+        color: #b6ff00;
+        transform: scale(1.05);
     }
