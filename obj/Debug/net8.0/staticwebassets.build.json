@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AH4wMfoJK/5zk6GalYYHPu4SFjNsvkL5cwDEldhBMH4=",
+  "Hash": "haRsVxT+n1Pg57FN/g3F2KYiMo1frWOfj2A/ByaeGWM=",
   "Source": "diplomska",
   "BasePath": "_content/diplomska",
   "Mode": "Default",
@@ -1383,6 +1383,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\skladiscnik.css"
+    },
+    {
+      "Identity": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\useraccessmethods.css",
+      "SourceId": "diplomska",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\",
+      "BasePath": "_content/diplomska",
+      "RelativePath": "css/useraccessmethods.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\useraccessmethods.css"
     },
     {
       "Identity": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\wave.css",

@@ -6,7 +6,11 @@
 <head>
     <link rel="stylesheet" href="~/css/admin.css" />
 </head>
+<style>
+    h2{color: black;}
+</style>
 <h2>Manage Users</h2>
+<a asp-page="/Admin/UserAccessMethods" class="btn btn-sm btn-secondary">External Logins</a>
 
 @if (Model.Users != null && Model.Users.Count > 0)
 {

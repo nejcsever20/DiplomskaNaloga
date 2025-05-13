@@ -45,6 +45,10 @@
       "PackagePath": "staticwebassets\\css\\skladiscnik.css"
     },
     {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\useraccessmethods.css",
+      "PackagePath": "staticwebassets\\css\\useraccessmethods.css"
+    },
+    {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\wave.css",
       "PackagePath": "staticwebassets\\css\\wave.css"
     },

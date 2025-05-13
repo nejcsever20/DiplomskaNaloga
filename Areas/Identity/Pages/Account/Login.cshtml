@@ -72,8 +72,22 @@
                                 @foreach (var provider in Model.ExternalLogins!)
                                 {
                                     <button type="submit" class="btn btn-danger" name="provider" value="@provider.Name"
-                                            title="Log in using your @provider.DisplayName account">
-                                        <img src="https://developers.google.com/identity/images/g-logo.png" width="20" height="20" style="margin-right: 5px;" />
+                                            title="Log in using your @provider.DisplayName account" style="display: flex; align-items: center; gap: 10px; padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 5px;">
+
+                                        @* Dynamically load the right icon based on the provider *@
+                                        @if (provider.Name == "Google")
+                                        {
+                                            <img src="https://developers.google.com/identity/images/g-logo.png" width="20" height="20" style="margin-right: 5px;" />
+                                        }
+                                        else if (provider.Name == "GitHub")
+                                        {
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20" height="20" style="margin-right: 5px;" />
+                                        }
+                                        else if (provider.Name == "Facebook")
+                                        {
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" width="20" height="20" style="margin-right: 5px;" />
+                                        }
+
                                         Log in with @provider.DisplayName
                                     </button>
                                 }
@@ -85,7 +99,6 @@
         </section>
     </div>
 </div>
-
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

@@ -1,0 +1,56 @@
+﻿/* Overall styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #DDDDDD;
+    color: #125D98;
+}
+
+/* Heading styles */
+h2, h3 {
+    color: #125D98;
+    font-size: 1.8em;
+    margin-top: 20px;
+}
+
+/* Table styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+    .table th, .table td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #DDDDDD;
+    }
+
+    .table th {
+        background-color: #125D98;
+        color: #fff;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #F9F9F9;
+    }
+
+/* Provider group styles */
+.provider-group {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 'All Users' table specific styles */
+.all-users {
+    background-color: #E7F7E7;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .all-users th {
+        background-color: #125D98;
+        color: #fff;
+    }

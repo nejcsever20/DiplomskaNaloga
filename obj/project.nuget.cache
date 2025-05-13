@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "dI627EV5OdI=",
+  "dgSpecHash": "cG6czk9lVW0=",
   "success": true,
   "projectFilePath": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\diplomska.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\nejc.severmihelic\\.nuget\\packages\\aspnet.security.oauth.github\\8.0.0\\aspnet.security.oauth.github.8.0.0.nupkg.sha512",
     "C:\\Users\\nejc.severmihelic\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\nejc.severmihelic\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\nejc.severmihelic\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

@@ -1,77 +1,89 @@
 using diplomska.Data;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication.Google;
 using diplomska.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.EntityFrameworkCore;
+using AspNet.Security.OAuth.GitHub;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure the database context (ApplicationDbContext)
+// Configure the database context
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Add Identity services with IdentityUser
+// Identity
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
-    options.SignIn.RequireConfirmedAccount = false)
-    .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddRoleManager<RoleManager<IdentityRole>>()
-    .AddDefaultTokenProviders(); // Required for password reset, email confirmation, etc.
+{
+    options.SignIn.RequireConfirmedAccount = false;
+})
+.AddEntityFrameworkStores<ApplicationDbContext>()
+.AddDefaultTokenProviders()
+.AddRoleManager<RoleManager<IdentityRole>>();
 
+// Custom services
 builder.Services.AddScoped<UserApprovalService>();
+builder.Services.AddScoped<CustomEmailSender>();
+builder.Services.AddScoped<ISystemLogs, SystemLogs>();
+builder.Services.AddSingleton<IEmailSender, DummyEmailSender>();
 
-// Add CORS policy
+// CORS policy
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.AllowAnyOrigin() // Allow any origin
-              .AllowAnyMethod()  // Allow any HTTP method
-              .AllowAnyHeader(); // Allow any header
+        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
     });
 });
 
-// Add Razor Pages
+// Razor Pages
 builder.Services.AddRazorPages();
 
-// Add Google Authentication
-builder.Services.AddAuthentication()
-    .AddGoogle(options =>
-    {
-        options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
-        options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
-    });
+// Authentication
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+})
+.AddCookie()
+.AddGoogle(options =>
+{
+    options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+})
+.AddGitHub(options =>
+{
+    options.ClientId = builder.Configuration["Authentication:GitHub:ClientId"];
+    options.ClientSecret = builder.Configuration["Authentication:GitHub:ClientSecret"];
+    options.CallbackPath = "/signin-github"; // Must match GitHub app settings
+    options.Scope.Add("user:email"); // Optional: get verified email
+});
 
-builder.Services.AddSingleton<IEmailSender, DummyEmailSender>();
-builder.Services.AddScoped<CustomEmailSender>();
-builder.Services.AddScoped<ISystemLogs, SystemLogs>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Ensure roles are created when the application starts
+// Role and admin setup
 using (var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();  // Use IdentityUser here
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
 
-    // Define roles you want to create
     string[] roleNames = { "Skladiščnik", "Izmenovodja", "Admin" };
 
     foreach (var roleName in roleNames)
     {
-        var roleExist = await roleManager.RoleExistsAsync(roleName);
-        if (!roleExist)
+        if (!await roleManager.RoleExistsAsync(roleName))
         {
             await roleManager.CreateAsync(new IdentityRole(roleName));
         }
     }
 
-    // Create a default Admin user (if needed)
     var defaultAdminEmail = "admin@yourdomain.com";
     var defaultAdminPassword = "Admin@123";
-    var adminUser = await userManager.FindByEmailAsync(defaultAdminEmail);
 
+    var adminUser = await userManager.FindByEmailAsync(defaultAdminEmail);
     if (adminUser == null)
     {
         adminUser = new IdentityUser { UserName = defaultAdminEmail, Email = defaultAdminEmail };
@@ -83,7 +95,7 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-// Configure the HTTP request pipeline
+// Middleware
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
@@ -94,11 +106,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
-// Enable CORS
 app.UseCors("AllowAll");
 
-app.UseAuthentication(); // This should come before UseAuthorization()
+app.UseAuthentication(); // Always before authorization
 app.UseAuthorization();
 
 app.MapRazorPages();
