@@ -1,4 +1,4 @@
-﻿/* General styles */
+﻿/* ===== General styles ===== */
 body {
     background-color: #DDDDDD;
     color: #125D98;
@@ -7,206 +7,28 @@ body {
     padding: 0;
 }
 
-/* Header styles */
 h1, h2, h3 {
     text-align: center;
-    margin-bottom: 15px;
-}
-
-h2 {
-    color: #DDDDDD;
-}
-
-h3 {
     color: #125D98;
-}
-
-/* Table styles */
-.table {
-    width: 100%;
-    border-collapse: collapse;
     margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
-    .table th, .table td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #DDDDDD;
-    }
-
-    .table th {
-        background-color: #125D98;
-        color: #fff;
-    }
-
-    .table tr:nth-child(even) {
-        background-color: #F9F9F9;
-    }
-
-    /* Table hover effect */
-    .table tbody tr:hover {
-        background-color: #F1F1F1;
-    }
-
-/* Provider group styling */
-.provider-group {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+/* ===== Login Form Container ===== */
+#account {
+    background-color: #3C8DAD;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
 }
 
-/* All Users Table */
-.all-users {
-    background-color: #E7F7E7;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-    .all-users th {
-        background-color: #125D98;
-        color: #fff;
+    #account h2 {
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 10px;
     }
 
-/* Button Styles */
-.btn-primary {
-    background-color: #125D98;
-    border-color: #125D98;
-    border-radius: 30px;
-    padding: 12px 30px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    font-size: 16px;
-}
-
-    .btn-primary:hover {
-        background-color: #3C8DAD;
-        border-color: #3C8DAD;
-    }
-
-    .btn-primary:active {
-        background-color: #0A467A;
-        border-color: #0A467A;
-    }
-
-.btn-danger {
-    background-color: #F5A962;
-    border-color: #F5A962;
-    border-radius: 30px;
-    padding: 12px 30px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    font-size: 16px;
-}
-
-    .btn-danger:hover {
-        background-color: #DDDDDD;
-        border-color: #DDDDDD;
-        color: #125D98;
-    }
-
-    .btn-danger:active {
-        background-color: #F5A962;
-        border-color: #F5A962;
-    }
-
-/* Layout styles */
-.row {
-    margin: 0 auto;
-}
-
-.col-md-4,
-.col-md-6 {
-    margin: 0 auto;
-}
-
-.col-md-offset-2 {
-    margin-left: 16.6667%;
-}
-
-/* Styling for each login section group */
-.login-provider-group {
-    margin-bottom: 30px;
-}
-
-/* Keyframes for button hover effects */
-@keyframes extend {
-    0% {
-        width: 200px;
-        height: 60px;
-        border-radius: 30px;
-    }
-
-    10% {
-        width: 210px;
-        height: 70px;
-        background-color: #ffffff;
-        margin-left: -5px;
-        margin-top: -5px;
-    }
-
-    20% {
-        width: 200px;
-        height: 60px;
-        background-color: #3C8DAD;
-        margin-left: 0;
-        margin-top: 0;
-    }
-
-    100% {
-        width: 60px;
-        height: 60px;
-        border-radius: 30px;
-        background-color: #3C8DAD;
-    }
-}
-
-@keyframes disappear {
-    0% {
-        opacity: 1;
-    }
-
-    20% {
-        color: #fff;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes appear {
-    0% {
-        opacity: 0;
-    }
-
-    70% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Anchor links styles */
-a {
-    color: #125D98 !important;
-    text-decoration: none !important;
-}
-
-/* Error message styling */
-#Input_Password-error, #Input_Email-error {
-    color: #0A467A; /* Darker blue for error messages */
-    font-size: 14px;
-}
-
-/* General form control styles */
+/* ===== Input Styles ===== */
 .form-control {
     border: 1px solid #125D98;
     background-color: #DDDDDD;
@@ -220,16 +42,143 @@ a {
     color: #125D98;
 }
 
-/* Text for validation */
-.text-danger {
-    color: #F5A962;
+/* ===== Checkbox and Link Styles ===== */
+.checkbox label,
+a {
+    color: #ffffff !important;
+    font-size: 14px;
+    text-decoration: none !important;
 }
 
-/* Select dropdown styles */
-.form-select {
-    border: 1px solid #125D98;
-    background-color: #DDDDDD;
+.checkbox label {
+    margin-left: 5px;
+}
+
+a:hover {
+    text-decoration: underline !important;
+}
+
+/* ===== Button Styles ===== */
+#login-submit {
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    background-color: #125D98;
+    color: #DDDDDD;
+    border: 2px solid #125D98;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+    #login-submit:hover {
+        background-color: #3C8DAD;
+        border-color: #3C8DAD;
+    }
+
+    #login-submit > span {
+        font-size: 18px;
+        color: #DDDDDD;
+        position: relative;
+        z-index: 2;
+    }
+
+    #login-submit img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    /* Animations */
+    #login-submit:active {
+        animation: extend 1s ease-in-out forwards;
+    }
+
+        #login-submit:active > span {
+            animation: disappear 1s ease-in-out forwards;
+        }
+
+        #login-submit:active > img {
+            animation: appear 1s ease-in-out forwards;
+        }
+
+/* ===== Validation ===== */
+.text-danger,
+#Input_Password-error,
+#Input_Email-error {
+    color: #F5A962;
+    font-size: 14px;
+}
+
+/* ===== External Login Section ===== */
+#external-account {
+    background-color: #6FB1C7; /* Lighter blue like left side */
+    padding: 25px;
+    border-radius: 12px;
     color: #125D98;
-    padding: 12px;
-    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-left: 40px; /* Push to the right */
+}
+
+    #external-account h3 {
+        color: #125D98;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    #external-account button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin: 10px auto;
+        font-size: 15px;
+        transition: background-color 0.3s ease;
+    }
+
+        #external-account button:hover {
+            background-color: #444;
+        }
+
+/* ===== Animations ===== */
+@keyframes extend {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

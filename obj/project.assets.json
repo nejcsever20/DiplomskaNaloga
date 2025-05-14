@@ -18,6 +18,22 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "AspNet.Security.OAuth.Yahoo/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/AspNet.Security.OAuth.Yahoo.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AspNet.Security.OAuth.Yahoo.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Azure.Core/1.38.0": {
         "type": "package",
         "dependencies": {
@@ -656,6 +672,22 @@
             "locale": "zh-Hant"
           }
         }
+      },
+      "Microsoft.AspNetCore.Authentication.Facebook/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Microsoft.AspNetCore.Authentication.Google/8.0.0": {
         "type": "package",
@@ -3177,6 +3209,21 @@
         "lib/net8.0/AspNet.Security.OAuth.GitHub.xml"
       ]
     },
+    "AspNet.Security.OAuth.Yahoo/8.0.0": {
+      "sha512": "ZHeuiuYN+hhEmoYdiCCwNuMj/hscPhgUcnuilof9IdUDdABOG9/xOvUS+9wzuzBIlScf6GVX4BayQdDxkf4QLQ==",
+      "type": "package",
+      "path": "aspnet.security.oauth.yahoo/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "README.md",
+        "aspnet.security.oauth.yahoo.8.0.0.nupkg.sha512",
+        "aspnet.security.oauth.yahoo.nuspec",
+        "lib/net8.0/AspNet.Security.OAuth.Yahoo.dll",
+        "lib/net8.0/AspNet.Security.OAuth.Yahoo.xml"
+      ]
+    },
     "Azure.Core/1.38.0": {
       "sha512": "IuEgCoVA0ef7E4pQtpC3+TkPbzaoQfa77HlfJDmfuaJUCVJmn7fT0izamZiryW5sYUFKizsftIxMkXKbgIcPMQ==",
       "type": "package",
@@ -3959,6 +4006,21 @@
         "lib/netstandard1.0/zh-Hant/Humanizer.resources.dll",
         "lib/netstandard2.0/zh-Hant/Humanizer.resources.dll",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Facebook/8.0.0": {
+      "sha512": "fniH775aegFKKbTGNtbjbczcs/DEEaYo8pSJNHwUoVQKaYgJ7C4YDHo30jeUk1XZrBaksSTEK8NFUmxPWQOBHg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.facebook/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net8.0/Microsoft.AspNetCore.Authentication.Facebook.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Authentication.Facebook.xml",
+        "microsoft.aspnetcore.authentication.facebook.8.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.facebook.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication.Google/8.0.0": {
@@ -8588,6 +8650,8 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "AspNet.Security.OAuth.GitHub >= 8.0.0",
+      "AspNet.Security.OAuth.Yahoo >= 8.0.0",
+      "Microsoft.AspNetCore.Authentication.Facebook >= 8.0.0",
       "Microsoft.AspNetCore.Authentication.Google >= 8.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.11",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.11",
@@ -8650,6 +8714,14 @@
         "targetAlias": "net8.0",
         "dependencies": {
           "AspNet.Security.OAuth.GitHub": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
+          "AspNet.Security.OAuth.Yahoo": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Facebook": {
             "target": "Package",
             "version": "[8.0.0, )"
           },

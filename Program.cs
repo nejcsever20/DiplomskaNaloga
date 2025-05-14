@@ -58,6 +58,21 @@ builder.Services.AddAuthentication(options =>
     options.ClientSecret = builder.Configuration["Authentication:GitHub:ClientSecret"];
     options.CallbackPath = "/signin-github"; // Must match GitHub app settings
     options.Scope.Add("user:email"); // Optional: get verified email
+})
+.AddYahoo(options =>
+{
+    options.ClientId = builder.Configuration["Authentication:Yahoo:ClientId"];
+    options.ClientSecret = builder.Configuration["Authentication:Yahoo:ClientSecret"];
+
+})
+.AddFacebook(options =>
+{
+    options.AppId = builder.Configuration["Authentication:Facebook:AppId"];
+    options.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"];
+    options.Scope.Add("email");
+    options.Fields.Add("name");
+    options.Fields.Add("email");
+    options.SaveTokens = true;
 });
 
 builder.Services.AddControllersWithViews();
@@ -102,6 +117,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+app.UseCookiePolicy(); 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

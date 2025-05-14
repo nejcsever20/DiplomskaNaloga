@@ -300,3 +300,5 @@ C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\Mic
 C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\SendGrid.dll
 C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\StarkbankEcdsa.dll
 C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\AspNet.Security.OAuth.GitHub.dll
+C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\AspNet.Security.OAuth.Yahoo.dll
+C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Facebook.dll

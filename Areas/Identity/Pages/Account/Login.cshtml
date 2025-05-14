@@ -5,97 +5,98 @@
     ViewData["Title"] = "Log in";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
 <div class="row">
-    <div class="col-md-4">
+    <!-- LEFT: Email/Password Login -->
+    <div class="col-md-6">
         <section>
             <form id="account" method="post">
-                <h2 id="login">Login</h2>
+                <h2>Login</h2>
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
                 <div class="form-floating mb-3">
                     <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                    <label asp-for="Input.Email" class="form-label">Email</label>
+                    <label asp-for="Input.Email">Email</label>
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
+
                 <div class="form-floating mb-3">
                     <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
-                    <label asp-for="Input.Password" class="form-label">Password</label>
+                    <label asp-for="Input.Password">Password</label>
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
-                <div class="checkbox mb-3">
-                    <label asp-for="Input.RememberMe" class="form-label">
-                        <input class="form-check-input" asp-for="Input.RememberMe" />
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" asp-for="Input.RememberMe" />
+                    <label class="form-check-label" asp-for="Input.RememberMe">
                         @Html.DisplayNameFor(m => m.Input.RememberMe)
                     </label>
                 </div>
+
+                <button id="login-submit" type="submit" class="w-100 btn btn-primary mb-3">
+                    Login
+                </button>
+
                 <div>
-                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">
-                        <span>Login</span>
-                        <img src="login.png" alt="Loading" />
-                    </button>
-                </div>
-                <div>
-                    <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-                    </p>
-                    <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
-                    </p>
+                    <p><a asp-page="./ForgotPassword">Forgot your password?</a></p>
+                    <p><a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a></p>
+                    <p><a asp-page="./ResendEmailConfirmation">Resend email confirmation</a></p>
                 </div>
             </form>
         </section>
     </div>
-    <div class="col-md-6 col-md-offset-2">
+
+    <!-- RIGHT: External Logins -->
+    <div class="col-md-6">
         <section>
-            <h3>Use another service to log in.</h3>
+            <h3>Use another service to log in</h3>
             <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this
-                            <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article</a>
-                            about setting up this ASP.NET application to support logging in via external services.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins!)
-                                {
-                                    <button type="submit" class="btn btn-danger" name="provider" value="@provider.Name"
-                                            title="Log in using your @provider.DisplayName account" style="display: flex; align-items: center; gap: 10px; padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 5px;">
-
-                                        @* Dynamically load the right icon based on the provider *@
-                                        @if (provider.Name == "Google")
-                                        {
-                                            <img src="https://developers.google.com/identity/images/g-logo.png" width="20" height="20" style="margin-right: 5px;" />
-                                        }
-                                        else if (provider.Name == "GitHub")
-                                        {
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="20" height="20" style="margin-right: 5px;" />
-                                        }
-                                        else if (provider.Name == "Facebook")
-                                        {
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" width="20" height="20" style="margin-right: 5px;" />
-                                        }
-
-                                        Log in with @provider.DisplayName
-                                    </button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
+            @if ((Model.ExternalLogins?.Count ?? 0) == 0)
+            {
+                <div class="alert alert-info">
+                    There are no external authentication services configured.
+                    See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article</a> to set them up.
+                </div>
             }
+            else
+            {
+                <form asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    @foreach (var provider in Model.ExternalLogins!)
+                    {
+                        var iconUrl = provider.Name switch
+                        {
+                            "Google" => "https://developers.google.com/identity/images/g-logo.png",
+                            "GitHub" => "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
+                            "Facebook" => "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
+                            "Yahoo" => "https://s.yimg.com/rz/p/yahoo_frontpage_en-US_s_f_p_bestfit_frontpage.png",
+                            "Gitlab" => "https://about.gitlab.com/images/press/logo/png/gitlab-icon-rgb.png",
+                            "Visual Studio" => "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+                            _ => ""
+                        };
+
+                        <button type="submit" class="btn btn-dark d-flex align-items-center mb-2" name="provider" value="@provider.Name"
+                                title="Log in using your @provider.DisplayName account" style="gap: 10px;">
+                            <img src="@iconUrl" width="20" height="20" style="margin-right: 5px;" />
+                            Log in with @provider.DisplayName
+                        </button>
+                    }
+                </form>
+            }
+
+            <div class="mt-4">
+                <h5>Like us on Facebook</h5>
+                <div class="fb-like"
+                     data-href="https://www.facebook.com/YOUR_PAGE_URL"
+                     data-width=""
+                     data-layout="standard"
+                     data-action="like"
+                     data-size="small"
+                     data-share="true"
+                     data-show-faces="true">
+                </div>
+            </div>
         </section>
     </div>
 </div>
@@ -103,4 +104,23 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
     <link rel="stylesheet" href="~/css/login.css" />
+
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '654764344284057',
+                xfbml: true,
+                version: 'v22.0'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 }

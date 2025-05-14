@@ -9,6 +9,8 @@
       "diplomska/1.0.0": {
         "dependencies": {
           "AspNet.Security.OAuth.GitHub": "8.0.0",
+          "AspNet.Security.OAuth.Yahoo": "8.0.0",
+          "Microsoft.AspNetCore.Authentication.Facebook": "8.0.0",
           "Microsoft.AspNetCore.Authentication.Google": "8.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.11",
           "Microsoft.AspNetCore.Identity.UI": "8.0.11",
@@ -26,6 +28,14 @@
       "AspNet.Security.OAuth.GitHub/8.0.0": {
         "runtime": {
           "lib/net8.0/AspNet.Security.OAuth.GitHub.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.56464"
+          }
+        }
+      },
+      "AspNet.Security.OAuth.Yahoo/8.0.0": {
+        "runtime": {
+          "lib/net8.0/AspNet.Security.OAuth.Yahoo.dll": {
             "assemblyVersion": "8.0.0.0",
             "fileVersion": "8.0.23.56464"
           }
@@ -603,6 +613,14 @@
         "resources": {
           "lib/net6.0/zh-Hant/Humanizer.resources.dll": {
             "locale": "zh-Hant"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Facebook/8.0.0": {
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53112"
           }
         }
       },
@@ -2255,6 +2273,13 @@
       "path": "aspnet.security.oauth.github/8.0.0",
       "hashPath": "aspnet.security.oauth.github.8.0.0.nupkg.sha512"
     },
+    "AspNet.Security.OAuth.Yahoo/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZHeuiuYN+hhEmoYdiCCwNuMj/hscPhgUcnuilof9IdUDdABOG9/xOvUS+9wzuzBIlScf6GVX4BayQdDxkf4QLQ==",
+      "path": "aspnet.security.oauth.yahoo/8.0.0",
+      "hashPath": "aspnet.security.oauth.yahoo.8.0.0.nupkg.sha512"
+    },
     "Azure.Core/1.38.0": {
       "type": "package",
       "serviceable": true,
@@ -2618,6 +2643,13 @@
       "sha512": "sha512-VIXB7HCUC34OoaGnO3HJVtSv2/wljPhjV7eKH4+TFPgQdJj2lvHNKY41Dtg0Bphu7X5UaXFR4zrYYyo+GNOjbA==",
       "path": "humanizer.core.zh-hant/2.14.1",
       "hashPath": "humanizer.core.zh-hant.2.14.1.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Facebook/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fniH775aegFKKbTGNtbjbczcs/DEEaYo8pSJNHwUoVQKaYgJ7C4YDHo30jeUk1XZrBaksSTEK8NFUmxPWQOBHg==",
+      "path": "microsoft.aspnetcore.authentication.facebook/8.0.0",
+      "hashPath": "microsoft.aspnetcore.authentication.facebook.8.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.Google/8.0.0": {
       "type": "package",

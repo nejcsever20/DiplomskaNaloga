@@ -20,6 +20,7 @@
             font-size: 16px;
             text-align: left;
             width: 100%;
+            transition: background-color 0.3s ease;
         }
 
             .dropdown-button:hover {
@@ -27,19 +28,27 @@
             }
 
         .dropdown-content {
-            display: none;
-            padding-top: 10px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
         }
+
+            .dropdown-content.show {
+                max-height: 1000px; /* or an appropriate high value */
+                opacity: 1;
+            }
 
             .dropdown-content table {
                 margin-top: 10px;
             }
+
     </style>
 
     <script>
         function toggleDropdown(id) {
             const content = document.getElementById(id);
-            content.style.display = content.style.display === "none" ? "block" : "none";
+            content.classList.toggle("show");
         }
     </script>
 </head>
@@ -71,6 +80,7 @@
         </table>
     </div>
 </div>
+
 
 <!-- Repeat for Facebook -->
 <div class="dropdown-section provider-group">
@@ -149,7 +159,83 @@
         </table>
     </div>
 </div>
+<!-- Yahoo Users -->
+<div class="dropdown-section provider-group">
+    <button class="dropdown-button" onclick="toggleDropdown('yahoo-users')">Yahoo Users</button>
+    <div id="yahoo-users" class="dropdown-content">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Login Provider</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model.UsersWithLoginMethods.Where(u => u.LoginProvider == "Yahoo"))
+                {
+                    <tr>
+                        <td>@user.UserName</td>
+                        <td>@user.Email</td>
+                        <td>@user.LoginProvider</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 
+<!-- GitLab Users -->
+<div class="dropdown-section provider-group">
+    <button class="dropdown-button" onclick="toggleDropdown('gitlab-users')">GitLab Users</button>
+    <div id="gitlab-users" class="dropdown-content">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Login Provider</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model.UsersWithLoginMethods.Where(u => u.LoginProvider == "GitLab"))
+                {
+                    <tr>
+                        <td>@user.UserName</td>
+                        <td>@user.Email</td>
+                        <td>@user.LoginProvider</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Visual Studio Users -->
+<div class="dropdown-section provider-group">
+    <button class="dropdown-button" onclick="toggleDropdown('visualstudio-users')">Visual Studio Users</button>
+    <div id="visualstudio-users" class="dropdown-content">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Login Provider</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model.UsersWithLoginMethods.Where(u => u.LoginProvider == "VisualStudio"))
+                {
+                    <tr>
+                        <td>@user.UserName</td>
+                        <td>@user.Email</td>
+                        <td>@user.LoginProvider</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 <!-- Local Users -->
 <div class="dropdown-section provider-group">
     <button class="dropdown-button" onclick="toggleDropdown('local-users')">Local Users</button>
