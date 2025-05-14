@@ -303,3 +303,4 @@ C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\Asp
 C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\AspNet.Security.OAuth.Yahoo.dll
 C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Facebook.dll
 C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\AspNet.Security.OAuth.GitLab.dll
+C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\AspNet.Security.OAuth.Twitter.dll

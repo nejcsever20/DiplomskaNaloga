@@ -10,6 +10,7 @@
         "dependencies": {
           "AspNet.Security.OAuth.GitHub": "8.0.0",
           "AspNet.Security.OAuth.GitLab": "8.0.0",
+          "AspNet.Security.OAuth.Twitter": "8.0.0",
           "AspNet.Security.OAuth.Yahoo": "8.0.0",
           "Microsoft.AspNetCore.Authentication.Facebook": "8.0.0",
           "Microsoft.AspNetCore.Authentication.Google": "8.0.0",
@@ -37,6 +38,14 @@
       "AspNet.Security.OAuth.GitLab/8.0.0": {
         "runtime": {
           "lib/net8.0/AspNet.Security.OAuth.GitLab.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.56464"
+          }
+        }
+      },
+      "AspNet.Security.OAuth.Twitter/8.0.0": {
+        "runtime": {
+          "lib/net8.0/AspNet.Security.OAuth.Twitter.dll": {
             "assemblyVersion": "8.0.0.0",
             "fileVersion": "8.0.23.56464"
           }
@@ -2288,6 +2297,13 @@
       "sha512": "sha512-soi0N2umIXo6zvGJGU92qVN5JRJS7/TXApMk+b8wME7JgupgI4dztGk0BBry6yYK9W7zz3s8xIN5hfsMvF/rxg==",
       "path": "aspnet.security.oauth.gitlab/8.0.0",
       "hashPath": "aspnet.security.oauth.gitlab.8.0.0.nupkg.sha512"
+    },
+    "AspNet.Security.OAuth.Twitter/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-g2LL70RdNTyEt0XGrjGAsry12jRZ5H0sDKl7RDDLK0k48P05zAM3rTEoxWBfsRXWkiPwgKKVtY47fDfXmdWWYg==",
+      "path": "aspnet.security.oauth.twitter/8.0.0",
+      "hashPath": "aspnet.security.oauth.twitter.8.0.0.nupkg.sha512"
     },
     "AspNet.Security.OAuth.Yahoo/8.0.0": {
       "type": "package",
