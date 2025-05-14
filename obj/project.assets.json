@@ -18,6 +18,38 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "AspNet.Security.OAuth.GitLab/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/AspNet.Security.OAuth.GitLab.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AspNet.Security.OAuth.GitLab.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "AspNet.Security.OAuth.Twitter/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/AspNet.Security.OAuth.Twitter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AspNet.Security.OAuth.Twitter.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "AspNet.Security.OAuth.Yahoo/8.0.0": {
         "type": "package",
         "compile": {
@@ -3207,6 +3239,36 @@
         "aspnet.security.oauth.github.nuspec",
         "lib/net8.0/AspNet.Security.OAuth.GitHub.dll",
         "lib/net8.0/AspNet.Security.OAuth.GitHub.xml"
+      ]
+    },
+    "AspNet.Security.OAuth.GitLab/8.0.0": {
+      "sha512": "soi0N2umIXo6zvGJGU92qVN5JRJS7/TXApMk+b8wME7JgupgI4dztGk0BBry6yYK9W7zz3s8xIN5hfsMvF/rxg==",
+      "type": "package",
+      "path": "aspnet.security.oauth.gitlab/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "README.md",
+        "aspnet.security.oauth.gitlab.8.0.0.nupkg.sha512",
+        "aspnet.security.oauth.gitlab.nuspec",
+        "lib/net8.0/AspNet.Security.OAuth.GitLab.dll",
+        "lib/net8.0/AspNet.Security.OAuth.GitLab.xml"
+      ]
+    },
+    "AspNet.Security.OAuth.Twitter/8.0.0": {
+      "sha512": "g2LL70RdNTyEt0XGrjGAsry12jRZ5H0sDKl7RDDLK0k48P05zAM3rTEoxWBfsRXWkiPwgKKVtY47fDfXmdWWYg==",
+      "type": "package",
+      "path": "aspnet.security.oauth.twitter/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "README.md",
+        "aspnet.security.oauth.twitter.8.0.0.nupkg.sha512",
+        "aspnet.security.oauth.twitter.nuspec",
+        "lib/net8.0/AspNet.Security.OAuth.Twitter.dll",
+        "lib/net8.0/AspNet.Security.OAuth.Twitter.xml"
       ]
     },
     "AspNet.Security.OAuth.Yahoo/8.0.0": {
@@ -8650,6 +8712,8 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "AspNet.Security.OAuth.GitHub >= 8.0.0",
+      "AspNet.Security.OAuth.GitLab >= 8.0.0",
+      "AspNet.Security.OAuth.Twitter >= 8.0.0",
       "AspNet.Security.OAuth.Yahoo >= 8.0.0",
       "Microsoft.AspNetCore.Authentication.Facebook >= 8.0.0",
       "Microsoft.AspNetCore.Authentication.Google >= 8.0.0",
@@ -8714,6 +8778,14 @@
         "targetAlias": "net8.0",
         "dependencies": {
           "AspNet.Security.OAuth.GitHub": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
+          "AspNet.Security.OAuth.GitLab": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
+          "AspNet.Security.OAuth.Twitter": {
             "target": "Package",
             "version": "[8.0.0, )"
           },

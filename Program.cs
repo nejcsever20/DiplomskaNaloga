@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using AspNet.Security.OAuth.GitHub;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -69,9 +71,29 @@ builder.Services.AddAuthentication(options =>
 {
     options.AppId = builder.Configuration["Authentication:Facebook:AppId"];
     options.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"];
-    options.Scope.Add("email");
-    options.Fields.Add("name");
-    options.Fields.Add("email");
+    options.Scope.Add("email");// needed
+    options.Fields.Add("name");// needed
+    options.Fields.Add("email");// needed
+    options.Fields.Add("picture"); // needed
+    options.SaveTokens = true; // save access token if you want to use graph api later on
+    options.CallbackPath = "/signin-facebook"; //set correct callback path
+})
+.AddGitLab(options =>
+{
+    options.ClientId = builder.Configuration["Authentication:Gitlab:ApplicationId"];
+    options.ClientSecret = builder.Configuration["Authentication:GitLab:Secret"];
+    options.CallbackPath = new PathString("/signin-gitlab");
+
+    options.AuthorizationEndpoint = "https://gitlab.com/oauth/authorize";
+    options.TokenEndpoint = "https://gitlab.com/oauth/token";
+    options.UserInformationEndpoint = "https://gitlab.com/api/v4/user";
+
+    options.Scope.Add("read_user"); // Required for email + profile access
+
+    options.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "id");
+    options.ClaimActions.MapJsonKey(ClaimTypes.Name, "username");
+    options.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
+
     options.SaveTokens = true;
 });
 

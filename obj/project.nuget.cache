@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "uD2vpe5ZTos=",
+  "dgSpecHash": "aOk57HK9ieE=",
   "success": true,
   "projectFilePath": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\diplomska.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nejc.severmihelic\\.nuget\\packages\\aspnet.security.oauth.github\\8.0.0\\aspnet.security.oauth.github.8.0.0.nupkg.sha512",
+    "C:\\Users\\nejc.severmihelic\\.nuget\\packages\\aspnet.security.oauth.gitlab\\8.0.0\\aspnet.security.oauth.gitlab.8.0.0.nupkg.sha512",
+    "C:\\Users\\nejc.severmihelic\\.nuget\\packages\\aspnet.security.oauth.twitter\\8.0.0\\aspnet.security.oauth.twitter.8.0.0.nupkg.sha512",
     "C:\\Users\\nejc.severmihelic\\.nuget\\packages\\aspnet.security.oauth.yahoo\\8.0.0\\aspnet.security.oauth.yahoo.8.0.0.nupkg.sha512",
     "C:\\Users\\nejc.severmihelic\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\nejc.severmihelic\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

@@ -172,6 +172,11 @@
                 </tr>
             </thead>
             <tbody>
+                <tr>
+                    <td>yahoo_demo_user</td>
+                    <td>demo_user@yahoo.com</td>
+                    <td>Yahoo</td>
+                </tr>
                 @foreach (var user in Model.UsersWithLoginMethods.Where(u => u.LoginProvider == "Yahoo"))
                 {
                     <tr>
@@ -211,31 +216,6 @@
     </div>
 </div>
 
-<!-- Visual Studio Users -->
-<div class="dropdown-section provider-group">
-    <button class="dropdown-button" onclick="toggleDropdown('visualstudio-users')">Visual Studio Users</button>
-    <div id="visualstudio-users" class="dropdown-content">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Login Provider</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var user in Model.UsersWithLoginMethods.Where(u => u.LoginProvider == "VisualStudio"))
-                {
-                    <tr>
-                        <td>@user.UserName</td>
-                        <td>@user.Email</td>
-                        <td>@user.LoginProvider</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</div>
 <!-- Local Users -->
 <div class="dropdown-section provider-group">
     <button class="dropdown-button" onclick="toggleDropdown('local-users')">Local Users</button>

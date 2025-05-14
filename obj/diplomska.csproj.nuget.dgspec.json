@@ -54,6 +54,14 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
+            "AspNet.Security.OAuth.GitLab": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "AspNet.Security.OAuth.Twitter": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "AspNet.Security.OAuth.Yahoo": {
               "target": "Package",
               "version": "[8.0.0, )"

@@ -43,6 +43,7 @@
                     <p><a asp-page="./ForgotPassword">Forgot your password?</a></p>
                     <p><a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a></p>
                     <p><a asp-page="./ResendEmailConfirmation">Resend email confirmation</a></p>
+                    <a href="~/FakeLogin">Simulate Yahoo Login</a>
                 </div>
             </form>
         </section>
@@ -72,7 +73,6 @@
                             "Facebook" => "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
                             "Yahoo" => "https://s.yimg.com/rz/p/yahoo_frontpage_en-US_s_f_p_bestfit_frontpage.png",
                             "Gitlab" => "https://about.gitlab.com/images/press/logo/png/gitlab-icon-rgb.png",
-                            "Visual Studio" => "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
                             _ => ""
                         };
 
