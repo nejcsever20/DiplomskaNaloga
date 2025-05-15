@@ -4,35 +4,34 @@
     ViewData["Title"] = "Register";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1 class="animate-fade">@ViewData["Title"]</h1>
 
-<div class="row">
-    <div class="col-md-4">
+<div class="row animate-fade">
+    <div class="col-md-4 animate-slide-up">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <h2>Create a new account.</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
 
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3 animate-delay-1">
                 <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
                 <label asp-for="Input.Email">Email</label>
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
 
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3 animate-delay-2">
                 <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
                 <label asp-for="Input.Password">Password</label>
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
 
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3 animate-delay-3">
                 <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
                 <label asp-for="Input.ConfirmPassword">Confirm Password</label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
 
-            <!-- Role dropdown -->
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3 animate-delay-4">
                 <select asp-for="Input.Role" class="form-select" aria-required="true">
                     <option value="">Select a Role</option>
                     @foreach (var role in Model.RoleOptions)
@@ -44,7 +43,7 @@
                 <span asp-validation-for="Input.Role" class="text-danger"></span>
             </div>
 
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary animate-delay-5">Register</button>
         </form>
     </div>
 </div>
@@ -52,4 +51,12 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
     <link rel="stylesheet" href="~/css/register.css" />
+    <script>
+        // Force reflow to trigger animations if needed
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('animate-fade');
+            document.querySelectorAll('.animate-slide-up, .animate-delay-1, .animate-delay-2, .animate-delay-3, .animate-delay-4, .animate-delay-5')
+                .forEach(el => el.style.animationPlayState = 'running');
+        });
+    </script>
 }

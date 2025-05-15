@@ -5,12 +5,107 @@
 }
 <head>
     <link rel="stylesheet" href="~/css/admin.css" />
+    <style>
+        /* Animations */
+        @@keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @@keyframes scaleFadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .fadeIn {
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .fadeIn.delay-1 { animation-delay: 0.1s; }
+        .fadeIn.delay-2 { animation-delay: 0.2s; }
+        .fadeIn.delay-3 { animation-delay: 0.3s; }
+
+        .slide-badge {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100px;
+            height: 32px;
+
+            font-size: 0.85rem;
+            text-align: center;
+            border-radius: 12px;
+            margin: 4px;
+
+            animation: fadeInUp 0.4s ease forwards;
+            animation-delay: 0.2s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+
+        .btn-primary {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+
+        .modal.fade .modal-dialog {
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+            transform: translateY(30px);
+            opacity: 0;
+        }
+
+        .modal.fade.show .modal-dialog {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        td {
+            color: #125D98 !important;
+        }
+        .form-select{
+            color: #125D98;
+        }
+
+        .form-label{
+            color: #F5A962;
+        }
+
+        .form-check-input{
+            color: #F5A962;
+            background-color: #DDDDDD !important;
+        }
+
+        .form-check-label{
+            color: #125D98;
+        }
+
+        .modal-body{
+            background-color: #125D98;
+        }
+
+        h6{
+            color: #F5A962;
+            background-color: #125D98;
+        }
+
+        .bright-box {
+            background-color: #f8f9fa; /* Light gray (Bootstrap's bg-light) */
+            padding: 1rem;
+            border-radius: 8px;
+        }
+    </style>
 </head>
-<h2>Manage Roles</h2>
+
+<h2 class="fadeIn delay-1">Manage Roles</h2>
 
 @if (Model.Users != null && Model.Users.Count > 0)
 {
-    <table class="table table-striped">
+    <table class="table table-striped fadeIn delay-2">
         <thead>
             <tr>
                 <th>Email</th>
@@ -21,17 +116,17 @@
         <tbody>
             @foreach (var userWithRoles in Model.Users)
             {
-                <tr>
+                <tr class="fadeIn delay-3">
                     <td>@userWithRoles.Email</td>
                     <td>
                         @foreach (var role in userWithRoles.Roles)
                         {
-                            <span class="badge bg-secondary">@role</span>
+                            <span class="badge bg-secondary slide-badge">@role</span>
                         }
                     </td>
                     <td>
                         <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#roleModal"
-                                data-userid="@userWithRoles.UserId" 
+                                data-userid="@userWithRoles.UserId"
                                 data-username="@userWithRoles.Email"
                                 data-useremail="@userWithRoles.Email"
                                 data-roles="@string.Join(",", userWithRoles.Roles)">
@@ -45,21 +140,21 @@
 }
 else
 {
-    <p>No users found.</p>
+    <p class="fadeIn delay-2">No users found.</p>
 }
 
 <!-- Modal for Managing Roles -->
 <div class="modal fade" id="roleModal" tabindex="-1" aria-labelledby="roleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" style="animation: scaleFadeIn 0.4s ease;">
             <form method="post" asp-page-handler="UpdateRoles">
                 <div class="modal-header">
                     <h5 class="modal-title" id="roleModalLabel">Manage Roles for <span id="modalUserEmail"></span></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body fadeIn delay-1">
                     <input type="hidden" name="UserId" id="userIdInput" />
-                    <div class="mb-3">
+                    <div class="mb-3 fadeIn delay-2">
                         <label class="form-label">Select Roles</label>
                         <select name="Roles" class="form-select" multiple id="roleSelect">
                             @foreach (var role in Model.AllRoles)
@@ -68,53 +163,47 @@ else
                             }
                         </select>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 fadeIn delay-3 bright-box">
                         <h6>Remove Roles</h6>
                         @foreach (var role in Model.AllRoles)
                         {
-                            <div class="form-check">
+                            <div class="form-check fadeIn delay-3">
                                 <input type="checkbox" class="form-check-input" id="removeRole@role" name="RemoveRoles" value="@role" />
                                 <label class="form-check-label" for="removeRole@role">@role</label>
                             </div>
                         }
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer fadeIn delay-2">
                     <button type="submit" class="btn btn-primary">Save Changes</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                 </div>
             </form>
-            <a href="/Admin/RemoveRoles">Remove Roles</a>
         </div>
     </div>
 </div>
 
 @section Scripts {
     <script>
-        // Handling Modal for Managing Roles
         const roleModal = document.getElementById('roleModal');
         roleModal.addEventListener('show.bs.modal', function (event) {
             const button = event.relatedTarget;
             const userId = button.getAttribute('data-userid');
-            const userName = button.getAttribute('data-username');
             const userEmail = button.getAttribute('data-useremail');
             const roles = button.getAttribute('data-roles').split(',');
 
-            // Set the modal title with user email
             document.getElementById('modalUserEmail').textContent = userEmail;
             document.getElementById('userIdInput').value = userId;
 
             const roleSelect = document.getElementById('roleSelect');
-            // Reset all selections first
             for (let option of roleSelect.options) {
                 option.selected = roles.includes(option.value);
             }
 
-            // Update the checkboxes for removing roles
             for (let role of roles) {
-                const removeRoleCheckbox = document.getElementById(`removeRole${role}`);
-                if (removeRoleCheckbox) {
-                    removeRoleCheckbox.checked = true;
+                const checkbox = document.getElementById(`removeRole${role}`);
+                if (checkbox) {
+                    checkbox.checked = true;
                 }
             }
         });

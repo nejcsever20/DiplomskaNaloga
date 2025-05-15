@@ -1,0 +1,177 @@
+﻿/* Color Variables */
+:root {
+    --color-light-gray: #DDDDDD;
+    --color-white: #FFFFFF;
+    --color-dark-blue: #125D98;
+    --color-mid-blue: #3C8DAD;
+    --color-warm-orange: #F5A962;
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-light-gray);
+    color: var(--color-dark-blue);
+}
+
+/* About Container */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 2rem;
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Section */
+.image-section {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+    .image-section img,
+    .developer-image {
+        max-width: 100%;
+        border-radius: 16px;
+        border: 4px solid var(--color-mid-blue);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        opacity: 0.8;
+        transform: scale(1);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+        .developer-image:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+/* Info Section */
+.info-section {
+    flex: 2;
+    padding: 20px;
+}
+
+    .info-section h1 {
+        color: var(--color-dark-blue);
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .info-section h3 {
+        color: var(--color-mid-blue);
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .info-section p,
+    .info-section li {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        color: var(--color-dark-blue);
+    }
+
+    .info-section ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .info-section a {
+        color: var(--color-warm-orange);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+        .info-section a:hover {
+            text-decoration: underline;
+            color: var(--color-mid-blue);
+        }
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--color-warm-orange);
+    border: 1px solid var(--color-warm-orange);
+    color: var(--color-dark-blue);
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+        background-color: var(--color-mid-blue);
+        border-color: var(--color-mid-blue);
+        color: var(--color-light-gray);
+    }
+
+/* Back Button */
+.back-button {
+    margin-top: 3rem;
+}
+
+    .back-button a {
+        font-weight: 600;
+        color: var(--color-dark-blue);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .back-button a:hover {
+            color: var(--color-warm-orange);
+            text-decoration: underline;
+        }
+
+/* Modal Layout */
+.modal-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 10px;
+    color: var(--color-light-gray);
+}
+
+.modal-card {
+    background: var(--color-white);
+    border-radius: 10px;
+    border: 1px solid var(--color-dark-blue);
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+    .modal-card:hover {
+        box-shadow: 0 6px 20px rgba(19, 93, 152, 0.4);
+    }
+
+    .modal-card h5 {
+        color: var(--color-dark-blue);
+        margin-bottom: 10px;
+    }
+
+    .modal-card p {
+        color: var(--color-mid-blue);
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+
+/* Modal Components */
+.modal-header {
+    background-color: var(--color-mid-blue);
+    color: var(--color-light-gray);
+}
+
+.modal-footer {
+    background-color: var(--color-light-gray);
+}

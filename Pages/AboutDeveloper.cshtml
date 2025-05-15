@@ -1,0 +1,223 @@
+﻿@page
+@model diplomska.Pages.AboutDeveloperModel
+@{
+    ViewData["Title"] = "About the Developer";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/about.css" />
+</head>
+
+<div class="about-container">
+    <div class="image-section">
+        <img src="~/images/developer.jpg" alt="Developer" class="developer-image" />
+    </div>
+    <div class="info-section">
+        <h1>Hi, I'm Your Developer 👋</h1>
+        <p>I’m passionate about building fast, modern, and secure web applications. This project was developed using ASP.NET Core with attention to performance and user experience.</p>
+
+        <h3>Contact Info</h3>
+        <ul>
+            <li><strong>Email:</strong> developer@example.com</li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a></li>
+        </ul>
+
+        <!-- Modal trigger button -->
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bigModal">
+            Open Modal Grid
+        </button>
+
+        <!-- Big Modal with grid of panels -->
+        <div class="modal fade" id="bigModal" tabindex="-1" aria-labelledby="bigModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="bigModalLabel">Multiple Panels in One Modal</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-grid-container">
+
+                            <!-- Panel 1: Opens Resume Modal -->
+                            <div class="modal-card">
+                                <h5>Resume</h5>
+                                <p>View my professional resume.</p>
+                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#resumeModal" data-bs-dismiss="modal">Open Resume</button>
+                            </div>
+
+                            <!-- Panel 2: Opens Programming Languages Modal -->
+                            <div class="modal-card">
+                                <h5>Programming Languages</h5>
+                                <p>Languages I’m proficient in.</p>
+                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#languagesModal" data-bs-dismiss="modal">View Languages</button>
+                            </div>
+
+                            <!-- Panel 3: Opens Hobbies Modal -->
+                            <div class="modal-card">
+                                <h5>Hobbies</h5>
+                                <p>What I enjoy doing in my free time.</p>
+                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#hobbiesModal" data-bs-dismiss="modal">View Hobbies</button>
+                            </div>
+
+                            <!-- Panel 4: Opens Contact Info Modal -->
+                            <div class="modal-card">
+                                <h5>Contact Information</h5>
+                                <p>How to get in touch with me.</p>
+                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal" data-bs-dismiss="modal">Contact Info</button>
+                            </div>
+
+                            <!-- Panel 5: Opens Social Media Modal -->
+                            <div class="modal-card">
+                                <h5>Social Media</h5>
+                                <p>Follow me on social platforms.</p>
+                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#socialModal" data-bs-dismiss="modal">Social Links</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resume Modal -->
+        <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="resumeModalLabel">My Resume</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Professional Summary:</strong></p>
+                        <p>Experienced softwared developer.</p>
+                        <p><strong>Work Experience:</strong></p>
+                        <ul>
+                            <li>Gorenje d.o.o. - Senior Developer (2019 - Present)</li>
+                            <li>HRC d.o.o. B - Developer (2015 - 2019)</li>
+                        </ul>
+                        <p><strong>Education:</strong> Bachelor’s in Computer Science</p>
+                        <!-- Add more resume details as needed -->
+                        <a href="~/files/Resume.pdf" download="My_Resume.pdf" class="btn btn-blue">
+                            Download Resume
+                        </a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Programming Languages Modal -->
+        <div class="modal fade" id="languagesModal" tabindex="-1" aria-labelledby="languagesModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="languagesModalLabel">Programming Languages</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li>C#</li>
+                            <li>JavaScript / TypeScript</li>
+                            <li>PHP</li>
+                            <li>Python</li>
+                            <li>SQL</li>
+                            <li>HTML / CSS</li>
+                            <li>Java</li>
+                            <li>Ruby on Rails</li>
+                            <li>C++</li>
+                            <li>Dart</li>
+                            <li>Flutter</li>
+                            <li>PL/SQL</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hobbies Modal -->
+        <div class="modal fade" id="hobbiesModal" tabindex="-1" aria-labelledby="hobbiesModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="hobbiesModalLabel">Hobbies</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li>Reading Tech Blogs</li>
+                            <li>Playing Chess</li>
+                            <li>Hiking and Nature Walks</li>
+                            <li>Music</li>
+                            <li>Open Source Contribution</li>
+                            <li>Video Games (rarely)</li>
+                            <li>Gym</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info Modal -->
+        <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalLabel">Contact Information</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li><strong>Email:</strong> nejc.severmihelic@business.com</li>
+                            <li><strong>GitHub:</strong> <a href="https://github.com/nejcsever20/DiplomskaNaloga" target="_blank" rel="noopener noreferrer">github</a></li>
+                            <li><strong>GitHub #2:</strong> <a href="https://github.com/nejcsever2004" target="_blank" rel="noopener noreferrer">github</a></li>
+                            <li><strong>GitHub #3:</strong> <a href="https://github.com/anonymousvssv20" target="_blank" rel="noopener noreferrer">github</a></li>
+                            <li><strong>Phone:</strong> +386 41-233-545</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media Modal-->
+        <div class="modal fade" id="socialModal" tabindex="-1" aria-labelledby="socialModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="socialModalLabel">Social Media Profiles</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li><a href="https://twitter.com/realkirito18" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                            <li><a href="https://www.facebook.com/nejc.severmihelic.5?locale=sl_SI" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                            <li><a href="https://instagram.com/nsm_2004_20" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                            <li><a href="https://discord.com/nsm19_" target="_blank" rel="noopener noreferrer">Discord</a></li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-button">
+            <a asp-page="/Index">← Back to Home</a>
+        </div>
+    </div>
+</div>

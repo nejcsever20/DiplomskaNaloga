@@ -59,6 +59,24 @@
         background-color: #3C8DAD;
         color: #FFFFFF !important;
     }
+
+    .auth-dev-button {
+        background-color: #125D98;
+        color: #DDDDDD;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+    }
+
+        .auth-dev-button:hover {
+            background-color: #3C8DAD;
+            color: #FFFFFF;
+        }
 </style>
 
 <!-- Page Content -->
@@ -69,6 +87,9 @@
     <div class="auth-buttons">
         <a asp-area="Identity" asp-page="/Account/Login">Login</a>
         <a asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </div>
+    <div class="auth-dev-buttons">
+        <a href="./AboutDeveloper">About the Developer</a>
     </div>
 </div>
 

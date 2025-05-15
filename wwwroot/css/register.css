@@ -2,11 +2,14 @@
 body {
     background-color: #DDDDDD;
     color: #125D98;
+    animation: fadeIn 2s ease-in-out forwards;
+    opacity: 0;
 }
-h1{
-    text-align: center;
 
+h1 {
+    text-align: center;
 }
+
 h2 {
     color: #DDDDDD;
 }
@@ -18,7 +21,8 @@ h2 {
     border-radius: 10px;
 }
 
-.form-control {
+.form-control,
+.form-select {
     border: 1px solid #125D98;
     background-color: #DDDDDD;
     color: #125D98;
@@ -32,16 +36,13 @@ h2 {
     color: #F5A962;
 }
 
-.form-select {
-    border: 1px solid #125D98;
-    background-color: #DDDDDD;
-    color: #125D98;
-}
-
 /* Button styles */
 #registerSubmit {
     background-color: #125D98;
     color: #DDDDDD;
+    animation: slideInLeft 1.5s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-50px);
 }
 
 .btn-primary {
@@ -54,11 +55,78 @@ h2 {
         border-color: #3C8DAD;
     }
 
-/* Layout styles */
-.row {
+/* Layout */
+.row, .col-md-4 {
     margin: 0 auto;
 }
 
-.col-md-4 {
-    margin: 0 auto;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation classes */
+.animate-fade {
+    animation: fadeIn 1.5s ease-in-out forwards;
+    opacity: 0;
+}
+
+.animate-slide-up {
+    animation: slideUp 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+.animate-delay-1 {
+    animation: fadeIn 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.animate-delay-2 {
+    animation: fadeIn 0.6s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+.animate-delay-3 {
+    animation: fadeIn 0.6s ease-out 0.9s forwards;
+    opacity: 0;
+}
+
+.animate-delay-4 {
+    animation: fadeIn 0.6s ease-out 1.2s forwards;
+    opacity: 0;
+}
+
+.animate-delay-5 {
+    animation: slideUp 0.6s ease-out 1.5s forwards;
+    opacity: 0;
 }
