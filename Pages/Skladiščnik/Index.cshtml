@@ -18,10 +18,6 @@
         text-decoration: underline;
     }
 
-    .info-icon {
-        font-weight: bold;
-    }
-
     .modal {
         display: none;
         position: fixed;
@@ -43,11 +39,6 @@
         width: 80%;
     }
 
-    .modal-content h2,
-    .modal-content p {
-        font-size: 28px;
-    }
-
     .close-btn {
         color: #aaa;
         float: right;
@@ -56,22 +47,39 @@
         cursor: pointer;
     }
 
-    .close-btn:hover,
-    .close-btn:focus {
-        color: black;
-        text-decoration: none;
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+    .st-transporta-btn {
+        background: none;
+        border: none;
+        color: blue;
+        text-decoration: underline;
         cursor: pointer;
+        font-size: 1em;
+        padding: 0;
     }
 
-    #printContent, #printContent * {
-            visibility: visible;
+    #loginModal input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
     }
 
-    #printContent {
-        font-size: 30px;
-        margin: 0 auto;
-        width: 80%;
+    #loginModal form div {
+        margin-bottom: 15px;
     }
+
+    .checkbox-group {
+        margin-top: 20px;
+    }
+
+        .checkbox-group label {
+            margin-right: 15px;
+        }
 </style>
 
 <h1>Index</h1>
@@ -112,11 +120,10 @@
                 <td>@Html.DisplayFor(modelItem => item.Skladisce)</td>
                 <td>@Html.DisplayFor(modelItem => item.VrstaTransporta)</td>
                 <td>
-                    <a href="/Skladiščnik/Naklad?id=@item.Id">
-                        @Html.DisplayFor(modelItem => item.StTransporta)
-                    </a>
+                    <button class="st-transporta-btn open-login-modal" data-id="@item.Id" data-st="@item.StTransporta">
+                        @item.StTransporta
+                    </button>
                 </td>
-
                 <td>@Html.DisplayFor(modelItem => item.PlaniranPrihod)</td>
                 <td>@Html.DisplayFor(modelItem => item.PavzaVoznika)</td>
                 <td>
@@ -133,7 +140,7 @@
                 <td>@Html.DisplayFor(modelItem => item.NAVISZacetekSklada)</td>
                 <td>@Html.DisplayFor(modelItem => item.NAVISKonecSklada)</td>
                 <td>
-                    @if(item.DolocenSkladiscnikId == User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value)
+                    @if (item.DolocenSkladiscnikId == User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value)
                     {
                         <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
                     }
@@ -143,7 +150,7 @@
     </tbody>
 </table>
 
-<!-- Modal -->
+<!-- Info Modal -->
 <div id="infoModal" class="modal">
     <div class="modal-content">
         <span class="close-btn">&times;</span>
@@ -151,6 +158,13 @@
         <p>Št. Transporta: <span id="modal-stTransporta"></span></p>
         <p>Registracija: <span id="modal-registracija"></span></p>
         <p>Voznik: <span id="modal-voznik"></span></p>
+
+        <div class="checkbox-group">
+            <label><input type="checkbox" id="navis-check" /> NAVIS</label>
+            <label><input type="checkbox" id="stb-check" disabled /> STB</label>
+            <label><input type="checkbox" id="cs-check" disabled /> CS</label>
+        </div>
+
         <button id="print-btn" class="btn btn-primary print-btn">Print</button>
     </div>
 </div>
@@ -163,6 +177,26 @@
     <p>Voznik: <span id="print-voznik"></span></p>
 </div>
 
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn login-close">&times;</span>
+        <h2>Prijava za transport: <span id="login-st"></span></h2>
+        <input type="hidden" id="login-transport-id" />
+        <form id="login-form">
+            <div>
+                <label for="username">Uporabniško ime:</label>
+                <input type="text" id="username" name="username" required />
+            </div>
+            <div>
+                <label for="password">Geslo:</label>
+                <input type="password" id="password" name="password" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Prijava</button>
+        </form>
+    </div>
+</div>
+
 @section Scripts {
     <script>
         const infoBtns = document.querySelectorAll(".info-btn");
@@ -170,15 +204,21 @@
         const closeModal = document.querySelector(".close-btn");
         const printBtn = document.getElementById("print-btn");
 
+        let currentTransportId = null;
+
         infoBtns.forEach(btn => {
             btn.addEventListener("click", function () {
                 const transporta = this.dataset.transporta;
                 const registracija = this.dataset.registracija;
                 const voznik = this.dataset.voznik;
+                currentTransportId = this.dataset.id;
 
                 document.getElementById("modal-stTransporta").textContent = transporta;
                 document.getElementById("modal-registracija").textContent = registracija;
                 document.getElementById("modal-voznik").textContent = voznik;
+
+                // Reset checkbox state
+                document.getElementById("navis-check").checked = false;
 
                 modal.style.display = "block";
             });
@@ -188,12 +228,68 @@
             modal.style.display = "none";
         });
 
+        window.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+
         printBtn.addEventListener("click", function () {
             document.getElementById("print-stTransporta").textContent = document.getElementById("modal-stTransporta").textContent;
             document.getElementById("print-registracija").textContent = document.getElementById("modal-registracija").textContent;
             document.getElementById("print-voznik").textContent = document.getElementById("modal-voznik").textContent;
 
-            window.print();
+            const navisChecked = document.getElementById("navis-check").checked;
+
+            if (currentTransportId && navisChecked) {
+                window.location.href = `/Skladiščnik/Naklad?id=${currentTransportId}&type=NAVIS`;
+            } else {
+                alert("Prosimo, označite 'NAVIS' polje za nadaljevanje.");
+            }
+        });
+
+        // LOGIN MODAL LOGIC
+        const loginModal = document.getElementById("loginModal");
+        const loginCloseBtn = document.querySelector(".login-close");
+        const loginForm = document.getElementById("login-form");
+        const loginStDisplay = document.getElementById("login-st");
+        const loginTransportIdInput = document.getElementById("login-transport-id");
+
+        document.querySelectorAll(".open-login-modal").forEach(btn => {
+            btn.addEventListener("click", function () {
+                const id = this.dataset.id;
+                const st = this.dataset.st;
+
+                loginStDisplay.textContent = st;
+                loginTransportIdInput.value = id;
+
+                loginModal.style.display = "block";
+            });
+        });
+
+        loginCloseBtn.addEventListener("click", () => {
+            loginModal.style.display = "none";
+        });
+
+        window.addEventListener("click", function (event) {
+            if (event.target === loginModal) {
+                loginModal.style.display = "none";
+            }
+        });
+
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const id = loginTransportIdInput.value;
+
+            if (username && password) {
+                loginModal.style.display = "none";
+                window.location.href = `/Skladiščnik/Naklad?id=${id}`;
+            } else {
+                alert("Prosimo, izpolnite vsa polja.");
+            }
         });
     </script>
 }

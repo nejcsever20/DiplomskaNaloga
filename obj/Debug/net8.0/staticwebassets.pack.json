@@ -61,8 +61,8 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\developer.jpg.png",
-      "PackagePath": "staticwebassets\\images\\developer.jpg.png"
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\developer.jpg",
+      "PackagePath": "staticwebassets\\images\\developer.jpg"
     },
     {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\js\\UserActivityLogger.js",
