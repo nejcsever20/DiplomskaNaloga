@@ -6,6 +6,35 @@
 
 <head>
     <link rel="stylesheet" href="~/css/about.css" />
+    <style>
+        .collapsible-container {
+            position: relative;
+            max-height: 4.5em;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+            .collapsible-container.expanded {
+                max-height: 1000px;
+            }
+
+        .show-more-btn {
+            display: inline-block;
+            cursor: pointer;
+            color: #0d6efd;
+            font-weight: bold;
+            margin-top: 0.5em;
+            user-select: none;
+        }
+
+            .show-more-btn::after {
+                content: ' ▼';
+            }
+
+        .collapsible-container.expanded + .show-more-btn::after {
+            content: ' ▲';
+        }
+    </style>
 </head>
 
 <div class="about-container">
@@ -14,18 +43,21 @@
     </div>
     <div class="info-section">
         <h1>Hi, I'm Your Developer 👋</h1>
-        <p>
-            I'm a passionate software developer with a strong focus on building modern web applications, particularly using ASP.NET Razor Pages—
-            the very framework I used for this project. This website was developed as part of my diploma thesis to showcase not just my technical abilities,
-            but also my creativity and attention to user experience.
 
-            Over the years, I've worked on several full-stack applications ranging from small business websites to internal enterprise tools. I enjoy experimenting
-            with different web technologies and staying up-to-date with the latest trends in UI/UX design.
+        <div id="aboutText" class="collapsible-container">
+            <p>
+                I'm a passionate software developer with a strong focus on building modern web applications, particularly using ASP.NET Razor Pages—
+                the very framework I used for this project. This website was developed as part of my diploma thesis to showcase not just my technical abilities,
+                but also my creativity and attention to user experience.
 
-            My favorite tools and languages include C#, HTML, CSS, and frameworks like TailwindCSS for rapid and elegant UI design. I also enjoy diving into
-            JavaScript, TypeScript, and occasionally dabbling in Python and PHP for fun or utility scripting.
-        </p>
+                Over the years, I've worked on several full-stack applications ranging from small business websites to internal enterprise tools. I enjoy experimenting
+                with different web technologies and staying up-to-date with the latest trends in UI/UX design.
 
+                My favorite tools and languages include C#, HTML, CSS, and frameworks like TailwindCSS for rapid and elegant UI design. I also enjoy diving into
+                JavaScript, TypeScript, and occasionally dabbling in Python and PHP for fun or utility scripting.
+            </p>
+        </div>
+        <span class="show-more-btn" onclick="toggleCollapse()">Show more</span>
 
         <h3>Contact Info</h3>
         <ul>
@@ -34,12 +66,10 @@
             <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a></li>
         </ul>
 
-        <!-- Modal trigger button -->
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bigModal">
             More about me!
         </button>
 
-        <!-- Big Modal with grid of panels -->
         <div class="modal fade" id="bigModal" tabindex="-1" aria-labelledby="bigModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-scrollable">
                 <div class="modal-content">
@@ -50,51 +80,50 @@
                     <div class="modal-body">
                         <div class="modal-grid-container">
 
-                            <!-- Panel 1: Opens Resume Modal -->
                             <div class="modal-card">
                                 <h5>Resume</h5>
                                 <p>View my professional resume.</p>
                                 <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#resumeModal" data-bs-dismiss="modal">Open Resume</button>
                             </div>
 
-                            <!-- Panel 2: Opens Programming Languages Modal -->
                             <div class="modal-card">
                                 <h5>Programming Languages</h5>
                                 <p>Languages I’m proficient in.</p>
                                 <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#languagesModal" data-bs-dismiss="modal">View Languages</button>
                             </div>
 
-                            <!-- Panel 3: Opens Hobbies Modal -->
                             <div class="modal-card">
                                 <h5>Hobbies</h5>
                                 <p>What I enjoy doing in my free time.</p>
                                 <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#hobbiesModal" data-bs-dismiss="modal">View Hobbies</button>
                             </div>
 
-                            <!-- Panel 4: Opens Contact Info Modal -->
                             <div class="modal-card">
                                 <h5>Contact Information</h5>
                                 <p>How to get in touch with me.</p>
                                 <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal" data-bs-dismiss="modal">Contact Info</button>
                             </div>
 
-                            <!-- Panel 5: Opens Social Media Modal -->
                             <div class="modal-card">
                                 <h5>Social Media</h5>
                                 <p>Follow me on social platforms.</p>
                                 <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#socialModal" data-bs-dismiss="modal">Social Links</button>
                             </div>
 
+                            <div class="modal-card">
+                                <h5>More about me</h5>
+                                <p>If you want to know more</p>
+                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#moreAboutDeveloperModal" data-bs-dismiss="modal">About the DEV</button>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close All</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Resume Modal -->
         <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-scrollable">
                 <div class="modal-content">
@@ -153,7 +182,6 @@
             </div>
         </div>
 
-        <!-- Programming Languages Modal -->
         <div class="modal fade" id="languagesModal" tabindex="-1" aria-labelledby="languagesModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-md modal-dialog-scrollable">
                 <div class="modal-content">
@@ -184,7 +212,6 @@
             </div>
         </div>
 
-        <!-- Hobbies Modal -->
         <div class="modal fade" id="hobbiesModal" tabindex="-1" aria-labelledby="hobbiesModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-md modal-dialog-scrollable">
                 <div class="modal-content">
@@ -210,7 +237,6 @@
             </div>
         </div>
 
-        <!-- Contact Info Modal -->
         <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-md modal-dialog-scrollable">
                 <div class="modal-content">
@@ -234,7 +260,6 @@
             </div>
         </div>
 
-        <!-- Social Media Modal-->
         <div class="modal fade" id="socialModal" tabindex="-1" aria-labelledby="socialModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-md modal-dialog-scrollable">
                 <div class="modal-content">
@@ -257,8 +282,54 @@
             </div>
         </div>
 
+        <div class="modal fade" id="moreAboutDeveloperModal" tabindex="-1" aria-labelledby="aboutDevModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="aboutDevModalLabel">About the Developer</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>Name:</strong> Nejc Sever Mihelič</p>
+                        <p><strong>Role:</strong> Full-Stack Developer</p>
+                        <p><strong>Experience:</strong> 4+ years in web developemnt</p>
+                        <p>20 Year old passionate developer!</p>
+                        <p><strong>Specialties:</strong></p>
+                        <ul>
+                            <li>Building scalable web applications</li>
+                            <li>API integration and backend architecture</li>
+                            <li>Responsive UI/UX design</li>
+                            <li>Database design and optimization</li>
+                        </ul>
+                        <p><strong>Tools & Technologies:</strong></p>
+                        <ul>
+                            <li>Git, Docker, Postman</li>
+                            <li>CI/CD (GitHub Actions)</li>
+                            <li>Agile / Scrum methodologies</li>
+                        </ul>
+                        <p><strong>Passion Projects:</strong></p>
+                        <ul>
+                            <li>Open-source contributions on GitHub</li>
+                            <li>Building educational tools for developers</li>
+                            <li>Writing technical blogs</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="back-button">
             <a asp-page="/Index">← Back to Home</a>
         </div>
     </div>
 </div>
+
+<script>
+    function toggleCollapse() {
+        const container = document.getElementById('aboutText');
+        container.classList.toggle('expanded');
+    }
+</script>
