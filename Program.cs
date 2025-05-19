@@ -8,8 +8,21 @@ using Microsoft.EntityFrameworkCore;
 using AspNet.Security.OAuth.GitHub;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
+using Microsoft.AspNetCore.HttpLogging;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Added logging
+builder.Services.AddHttpLogging(logging =>
+{
+    logging.LoggingFields = HttpLoggingFields.All;
+    logging.RequestHeaders.Add("sec-ch-ua");
+    logging.ResponseHeaders.Add("MyResponseHeader");
+    logging.MediaTypeOptions.AddText("application/json");
+    logging.RequestBodyLogLimit = 4096;
+    logging.ResponseBodyLogLimit = 4096;
+    logging.CombineLogs = true;
+});
 
 // Configure the database context
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -139,10 +152,28 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.Use(async (context, next) =>
+{
+    var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
+
+    var path = context.Request.Path;
+    var method = context.Request.Method;
+    var query = context.Request.QueryString.HasValue ? context.Request.QueryString.Value : "none";
+    var referer = context.Request.Headers["Referer"].ToString() ?? "none";
+
+    logger.LogInformation("Visited: {Method} {Path}{Query} | From: {Referer}",
+        method,
+        path,
+        query,
+        referer);
+
+    await next();
+});
 
 app.UseCookiePolicy(); 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseHttpLogging();
 
 app.UseRouting();
 app.UseCors("AllowAll");

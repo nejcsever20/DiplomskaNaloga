@@ -14,7 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\click-tracker.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\css\privacypolicy.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\click-tracker.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,6 +45,10 @@
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\files\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\click-tracker.js" />
   </ItemGroup>
 
 </Project>
