@@ -158,13 +158,6 @@
         <p>Št. Transporta: <span id="modal-stTransporta"></span></p>
         <p>Registracija: <span id="modal-registracija"></span></p>
         <p>Voznik: <span id="modal-voznik"></span></p>
-
-        <div class="checkbox-group">
-            <label><input type="checkbox" id="navis-check" /> NAVIS</label>
-            <label><input type="checkbox" id="stb-check" disabled /> STB</label>
-            <label><input type="checkbox" id="cs-check" disabled /> CS</label>
-        </div>
-
         <button id="print-btn" class="btn btn-primary print-btn">Print</button>
     </div>
 </div>
@@ -176,6 +169,7 @@
     <p>Registracija: <span id="print-registracija"></span></p>
     <p>Voznik: <span id="print-voznik"></span></p>
 </div>
+
 
 <!-- Login Modal -->
 <div id="loginModal" class="modal">
@@ -191,6 +185,9 @@
             <div>
                 <label for="password">Geslo:</label>
                 <input type="password" id="password" name="password" required />
+            </div>
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="navis-check" /> NAVIS</label>
             </div>
             <button type="submit" class="btn btn-primary">Prijava</button>
         </form>
@@ -217,9 +214,6 @@
                 document.getElementById("modal-registracija").textContent = registracija;
                 document.getElementById("modal-voznik").textContent = voznik;
 
-                // Reset checkbox state
-                document.getElementById("navis-check").checked = false;
-
                 modal.style.display = "block";
             });
         });
@@ -235,18 +229,28 @@
         });
 
         printBtn.addEventListener("click", function () {
+            // Copy content into print section
             document.getElementById("print-stTransporta").textContent = document.getElementById("modal-stTransporta").textContent;
             document.getElementById("print-registracija").textContent = document.getElementById("modal-registracija").textContent;
             document.getElementById("print-voznik").textContent = document.getElementById("modal-voznik").textContent;
 
-            const navisChecked = document.getElementById("navis-check").checked;
+            // Save original page content
+            const originalContents = document.body.innerHTML;
+            const printContents = document.getElementById("printContent").innerHTML;
 
-            if (currentTransportId && navisChecked) {
-                window.location.href = `/Skladiščnik/Naklad?id=${currentTransportId}&type=NAVIS`;
-            } else {
-                alert("Prosimo, označite 'NAVIS' polje za nadaljevanje.");
-            }
+            // Replace body content with print content
+            document.body.innerHTML = printContents;
+
+            // Trigger print dialog
+            window.print();
+
+            // Restore original page content
+            document.body.innerHTML = originalContents;
+
+            // Reattach event listeners (necessary because of body overwrite)
+            window.location.reload(); // reload is a simple fix to fully restore interactivity
         });
+
 
         // LOGIN MODAL LOGIC
         const loginModal = document.getElementById("loginModal");
@@ -262,6 +266,9 @@
 
                 loginStDisplay.textContent = st;
                 loginTransportIdInput.value = id;
+
+                // Reset NAVIS checkbox
+                document.getElementById("navis-check").checked = false;
 
                 loginModal.style.display = "block";
             });
@@ -283,10 +290,16 @@
             const username = document.getElementById("username").value.trim();
             const password = document.getElementById("password").value.trim();
             const id = loginTransportIdInput.value;
+            const navisChecked = document.getElementById("navis-check").checked;
 
             if (username && password) {
                 loginModal.style.display = "none";
-                window.location.href = `/Skladiščnik/Naklad?id=${id}`;
+
+                if (navisChecked) {
+                    window.location.href = `/Skladiščnik/Naklad?id=${id}&type=NAVIS`;
+                } else {
+                    window.location.href = `/Skladiščnik/Naklad?id=${id}`;
+                }
             } else {
                 alert("Prosimo, izpolnite vsa polja.");
             }
