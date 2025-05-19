@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\admin.css"
     },
     {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\editaboutuser.css",
+      "PackagePath": "staticwebassets\\css\\editaboutuser.css"
+    },
+    {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\forgotpassword.css",
       "PackagePath": "staticwebassets\\css\\forgotpassword.css"
     },
@@ -67,6 +71,10 @@
     {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\developer.jpg",
       "PackagePath": "staticwebassets\\images\\developer.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\profile-icon.png",
+      "PackagePath": "staticwebassets\\images\\profile-icon.png"
     },
     {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\js\\UserActivityLogger.js",
