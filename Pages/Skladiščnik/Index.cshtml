@@ -80,7 +80,12 @@
         .checkbox-group label {
             margin-right: 15px;
         }
-</style>
+
+    #navis-check {
+        margin: 0;
+        padding: 0;
+    }
+    </style>
 
 <h1>Index</h1>
 
@@ -187,8 +192,12 @@
                 <input type="password" id="password" name="password" required />
             </div>
             <div class="checkbox-group">
-                <label><input type="checkbox" id="navis-check" /> NAVIS</label>
+                <label for="navis-check" style="white-space: nowrap;">
+                    <input type="checkbox" id="navis-check" style="vertical-align: middle; margin:0;"/>
+                    <span style="margin: 0; padding:0;">NAVIS</span>
+                </label>
             </div>
+
             <button type="submit" class="btn btn-primary">Prijava</button>
         </form>
     </div>
