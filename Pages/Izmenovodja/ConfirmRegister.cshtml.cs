@@ -54,7 +54,7 @@ namespace diplomska.Pages.Izmenovodja
             PendingUsers = pendingUsers;
         }
 
-        public async Task<IActionResult> OnPostAsync(string userId)
+        public async Task<IActionResult> OnPostApproveAsync(string userId)
         {
             if (string.IsNullOrEmpty(userId))
                 return NotFound();
@@ -68,7 +68,6 @@ namespace diplomska.Pages.Izmenovodja
             if (!currentRoles.Contains("Izmenovodja"))
                 return Forbid();
 
-            // Remove old claim
             var claims = await _userManager.GetClaimsAsync(user);
             var isApprovedClaim = claims.FirstOrDefault(c => c.Type == "IsApproved");
             if (isApprovedClaim != null)
@@ -77,20 +76,43 @@ namespace diplomska.Pages.Izmenovodja
                 _logger.LogInformation($"Removed old IsApproved claim for {user.Email}");
             }
 
-            // Add approved claim
             await _userManager.AddClaimAsync(user, new Claim("IsApproved", "True"));
             _logger.LogInformation($"Approved user {user.Email}");
 
-            // Optional: mark email as confirmed
             user.EmailConfirmed = true;
             await _userManager.UpdateAsync(user);
 
-            // ✅ Send approval email
             await _customEmailSender.SendCustomHtmlEmailAsync(
                 user.Email,
                 "Your Account Has Been Approved",
                 "<p>Your account has been approved by the izmenovodja. You may now log in.</p>"
             );
+
+            return RedirectToPage();
+        }
+
+        public async Task<IActionResult> OnPostDeclineAsync(string userId)
+        {
+            if (string.IsNullOrEmpty(userId))
+                return NotFound();
+
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+                return NotFound();
+
+            var currentUser = await _userManager.GetUserAsync(User);
+            var currentRoles = await _userManager.GetRolesAsync(currentUser);
+            if (!currentRoles.Contains("Izmenovodja"))
+                return Forbid();
+
+            await _customEmailSender.SendCustomHtmlEmailAsync(
+                user.Email,
+                "Account Registration Declined",
+                "<p>Your registration has been declined by the izmenovodja.</p>"
+            );
+
+            await _userManager.DeleteAsync(user);
+            _logger.LogInformation($"Declined and deleted user {user.Email}");
 
             return RedirectToPage();
         }
