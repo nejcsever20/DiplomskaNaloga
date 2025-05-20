@@ -2,20 +2,55 @@
 @model LogoutModel
 @{
     ViewData["Title"] = "Log out";
+    Layout = null; // Use this if you're intentionally avoiding the shared layout
 }
 
-<header>
-    <h1>@ViewData["Title"]</h1>
-    @{
-        if (User.Identity?.IsAuthenticated ?? false)
-        {
-            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
-                <button type="submit" class="nav-link btn btn-link text-dark">Click here to Logout</button>
-            </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - diplomska</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/logout.css" />
+    <script>
+        let secondsLeft = 5;
+
+        function updateCountdown() {
+            const countdownElement = document.getElementById("countdown");
+            if (secondsLeft > 0) {
+                countdownElement.textContent = `Redirecting to home in ${secondsLeft} second${secondsLeft === 1 ? "" : "s"}...`;
+                secondsLeft--;
+                setTimeout(updateCountdown, 1000);
+            } else {
+                window.location.href = "/";
+            }
         }
-        else
-        {
-            <p>You have successfully logged out of the application.</p>
-        }
-    }
-</header>
+
+        window.onload = updateCountdown;
+    </script>
+</head>
+<body>
+    <div class="logout-page">
+        <div class="wave"></div>
+
+        <div class="logout-container">
+            <h1>@ViewData["Title"]</h1>
+
+            @if (User.Identity?.IsAuthenticated ?? false)
+            {
+                <form asp-area="Identity"
+                      asp-page="/Account/Logout"
+                      asp-route-returnUrl="@Url.Page("/", new { area = "" })"
+                      method="post">
+                    <button type="submit">Click here to Logout</button>
+                </form>
+            }
+            else
+            {
+                <p>You have successfully logged out of the application.</p>
+                <p class="redirect-message" id="countdown">Redirecting to home in 10 seconds...</p>
+            }
+        </div>
+    </div>
+</body>
+</html>
