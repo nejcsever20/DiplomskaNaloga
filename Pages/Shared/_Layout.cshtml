@@ -15,8 +15,8 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top py-1">
+            <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">diplomska</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNav"
@@ -29,10 +29,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="/Index">Home</a>
+                            <a class="nav-link" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link" asp-page="/Privacy">Privacy</a>
                         </li>
 
                         @if (User.Identity != null && User.Identity.IsAuthenticated)
@@ -40,36 +40,35 @@
                             if (User.IsInRole("Izmenovodja"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-page="/Izmenovodja/Index">Izmenovodja Dashboard</a>
+                                    <a class="nav-link" asp-page="/Izmenovodja/Index">Izmenovodja Dashboard</a>
                                 </li>
                             }
                             else if (User.IsInRole("Skladisnik"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-page="/Skladisnik/Index">Skladiščnik Dashboard</a>
+                                    <a class="nav-link" asp-page="/Skladisnik/Index">Skladiščnik Dashboard</a>
                                 </li>
                             }
                             else if (User.IsInRole("Admin"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-page="/Admin/Index">Admin Dashboard</a>
+                                    <a class="nav-link" asp-page="/Admin/Index">Admin Dashboard</a>
                                 </li>
                             }
                         }
                     </ul>
 
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav ms-auto">
                         @if (User.Identity != null && User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="~/images/profile-icon.png"
-                                         alt="Profile"
-                                         class="rounded-circle me-2"
-                                         style="width: 32px; height: 32px;" />
-                                    <span class="fw-semibold">@User.Identity?.Name</span>
+                                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="me-2">
+                                        <img src="~/images/profile-icon.png" alt="Profile" width="30" height="30" class="rounded-circle" />
+                                    </span>
+                                    <span>@User.Identity.Name</span>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                                <ul class="dropdown-menu dropdown-menu-end">
                                     <li>
                                         <span class="dropdown-item-text text-muted">
                                             Role:
@@ -81,12 +80,13 @@
                                         </span>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" asp-page="/EditAccountItems">
-                                            <strong>@User.Identity?.Name ?? "User"</strong> (Edit Profile)
-                                        </a>
+                                        <a class="dropdown-item" asp-page="/EditAccountItems">Edit My Profile</a>
                                     </li>
+                                    <li><hr class="dropdown-divider" /></li>
                                     <li>
-                                        <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout">Logout</a>
+                                        <form method="post" asp-area="Identity" asp-page="/Account/Logout" id="logoutForm">
+                                            <button type="submit" class="dropdown-item">Logout</button>
+                                        </form>
                                     </li>
                                 </ul>
                             </li>
@@ -94,19 +94,20 @@
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                                <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                                <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Register</a>
                             </li>
                         }
                     </ul>
                 </div>
             </div>
         </nav>
+
     </header>
 
-    <div class="container">
+    <div class="container pt-5 mt-4">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

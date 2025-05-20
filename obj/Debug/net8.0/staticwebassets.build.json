@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "T2Qcr+vA0bg9hhMCXxEiKY7xwWiBZ+jFSUWftnBLo30=",
+  "Hash": "L2Om3tGc/CeQ2rtnD9GotL1iJPNV880JB9lQcQsTGSY=",
   "Source": "diplomska",
   "BasePath": "_content/diplomska",
   "Mode": "Default",
@@ -1535,6 +1535,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\profile-icon.png"
+    },
+    {
+      "Identity": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\profiles\\00bd7c32-9a96-4008-8982-dc60f9a0b549_developer.jpg",
+      "SourceId": "diplomska",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\",
+      "BasePath": "_content/diplomska",
+      "RelativePath": "images/profiles/00bd7c32-9a96-4008-8982-dc60f9a0b549_developer.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\profiles\\00bd7c32-9a96-4008-8982-dc60f9a0b549_developer.jpg"
     },
     {
       "Identity": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\js\\site.js",

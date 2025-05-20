@@ -77,6 +77,10 @@
       "PackagePath": "staticwebassets\\images\\profile-icon.png"
     },
     {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\profiles\\00bd7c32-9a96-4008-8982-dc60f9a0b549_developer.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\00bd7c32-9a96-4008-8982-dc60f9a0b549_developer.jpg"
+    },
+    {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\js\\UserActivityLogger.js",
       "PackagePath": "staticwebassets\\js\\UserActivityLogger.js"
     },
