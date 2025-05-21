@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using diplomska.Data;
 using diplomska.Models;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace diplomska.Pages.Skladiščnik
 {
-    [Authorize] // ensures only logged-in users can access this page
     public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _context;
@@ -22,31 +18,24 @@ namespace diplomska.Pages.Skladiščnik
             _context = context;
         }
 
-        public IList<Transport> Transport { get; set; } = default!;
+        public IList<Transport> Transport { get; set; } = new List<Transport>();
+
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
 
         public async Task OnGetAsync()
         {
-            Transport = await _context.Transport
-                .Include(t => t.DolocenSkladiscnikNavigation)
-                .ToListAsync();
-        }
+            var query = _context.Transport.AsQueryable();
 
-        public async Task<IActionResult> OnGetGetTransportInfo(int id)
-        {
-            var transport = await _context.Transport
-                .Where(t => t.Id == id)
-                .Select(t => new
-                {
-                    stTransporta = t.StTransporta,
-                    registracija = t.Registracija,
-                    voznik = t.Voznik
-                })
-                .FirstOrDefaultAsync();
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                query = query.Where(t =>
+                    t.StTransporta.ToString().Contains(SearchString) ||
+                    t.Registracija.Contains(SearchString) ||
+                    t.Voznik.Contains(SearchString));
+            }
 
-            if (transport == null)
-                return new JsonResult(new { error = "Transport not found" });
-
-            return new JsonResult(transport);
+            Transport = await query.ToListAsync();
         }
     }
 }

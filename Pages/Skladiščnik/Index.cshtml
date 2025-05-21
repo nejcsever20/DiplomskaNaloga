@@ -5,9 +5,11 @@
 @{
     ViewData["Title"] = "Index";
 }
+
 <head>
     <link rel="stylesheet" href="~/css/skladiscnik.css" />
 </head>
+
 <style>
     .info-btn {
         background-color: transparent;
@@ -85,75 +87,98 @@
         margin: 0;
         padding: 0;
     }
-    </style>
+
+    .zoom-input {
+        transition: transform 0.3s ease;
+    }
+
+        .zoom-input.typing {
+            transform: scale(1.05);
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            border-color: #007bff;
+        }
+</style>
 
 <h1>Index</h1>
+
+<form method="get" class="mb-3">
+    <input type="text" name="SearchString" value="@Model.SearchString"
+           placeholder="Search Transport, Registration or Driver"
+           class="form-control zoom-input" />
+</form>
 
 <p>
     <a asp-page="Create">Create New</a>
 </p>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.Transport[0].Sp)</th>
-            <th>@Html.DisplayNameFor(model => model.Transport[0].SK)</th>
-            <th>@Html.DisplayNameFor(model => model.Transport[0].Skladisce)</th>
-            <th>@Html.DisplayNameFor(model => model.Transport[0].VrstaTransporta)</th>
-            <th>@Html.DisplayNameFor(model => model.Transport[0].StTransporta)</th>
-            <th>@Html.DisplayNameFor(model => model.Transport[0].PlaniranPrihod)</th>
-            <th>@Html.DisplayNameFor(model => model.Transport[0].PavzaVoznika)</th>
-            <th>@Html.DisplayNameFor(model => model.Transport[0].Registracija)</th>
-            <th>@Html.DisplayNameFor(model => model.Transport[0].VrstaPrevoznegaSredstva)</th>
-            <th>@Html.DisplayNameFor(model => model.Transport[0].Voznik)</th>
-            <th>@Html.DisplayNameFor(model => model.Transport[0].NAVISZacetekSklada)</th>
-            <th>@Html.DisplayNameFor(model => model.Transport[0].NAVISKonecSklada)</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Transport)
-        {
+@if (Model.Transport.Count == 0)
+{
+    <p><strong>Ni zadetkov.</strong></p>
+}
+else
+{
+    <table class="table">
+        <thead>
             <tr>
-                <td>
-                    <input type="checkbox" class="sp-toggle" data-id="@item.Id" @(item.Sp ? "checked" : "") />
-                    <span class="sp-display" data-id="@item.Id" hidden>
-                        @Html.Raw(item.Sp ? $"<a href='/Naklad/Details?id={item.Id}'>true</a>" : "false")
-                    </span>
-                </td>
-                <td>@Html.DisplayFor(modelItem => item.SK)</td>
-                <td>@Html.DisplayFor(modelItem => item.Skladisce)</td>
-                <td>@Html.DisplayFor(modelItem => item.VrstaTransporta)</td>
-                <td>
-                    <button class="st-transporta-btn open-login-modal" data-id="@item.Id" data-st="@item.StTransporta">
-                        @item.StTransporta
-                    </button>
-                </td>
-                <td>@Html.DisplayFor(modelItem => item.PlaniranPrihod)</td>
-                <td>@Html.DisplayFor(modelItem => item.PavzaVoznika)</td>
-                <td>
-                    <button class="info-btn"
-                            data-id="@item.Id"
-                            data-transporta="@item.StTransporta"
-                            data-registracija="@item.Registracija"
-                            data-voznik="@item.Voznik">
-                        <span class="info-icon">i</span>
-                    </button>
-                </td>
-                <td>@Html.DisplayFor(modelItem => item.VrstaPrevoznegaSredstva)</td>
-                <td>@Html.DisplayFor(modelItem => item.Voznik)</td>
-                <td>@Html.DisplayFor(modelItem => item.NAVISZacetekSklada)</td>
-                <td>@Html.DisplayFor(modelItem => item.NAVISKonecSklada)</td>
-                <td>
-                    @if (item.DolocenSkladiscnikId == User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value)
-                    {
-                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
-                    }
-                </td>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].Sp)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].SK)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].Skladisce)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].VrstaTransporta)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].StTransporta)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].PlaniranPrihod)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].PavzaVoznika)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].Registracija)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].VrstaPrevoznegaSredstva)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].Voznik)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].NAVISZacetekSklada)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].NAVISKonecSklada)</th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Transport)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" class="sp-toggle" data-id="@item.Id" @(item.Sp ? "checked" : "") />
+                        <span class="sp-display" data-id="@item.Id" hidden>
+                            @Html.Raw(item.Sp ? $"<a href='/Naklad/Details?id={item.Id}'>true</a>" : "false")
+                        </span>
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.SK)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Skladisce)</td>
+                    <td>@Html.DisplayFor(modelItem => item.VrstaTransporta)</td>
+                    <td>
+                        <button class="st-transporta-btn open-login-modal" data-id="@item.Id" data-st="@item.StTransporta">
+                            @item.StTransporta
+                        </button>
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.PlaniranPrihod)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PavzaVoznika)</td>
+                    <td>
+                        <button class="info-btn"
+                                data-id="@item.Id"
+                                data-transporta="@item.StTransporta"
+                                data-registracija="@item.Registracija"
+                                data-voznik="@item.Voznik">
+                            <span class="info-icon">i</span>
+                        </button>
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.VrstaPrevoznegaSredstva)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Voznik)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NAVISZacetekSklada)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NAVISKonecSklada)</td>
+                    <td>
+                        @if (item.DolocenSkladiscnikId == User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value)
+                        {
+                            <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
 <!-- Info Modal -->
 <div id="infoModal" class="modal">
@@ -175,7 +200,6 @@
     <p>Voznik: <span id="print-voznik"></span></p>
 </div>
 
-
 <!-- Login Modal -->
 <div id="loginModal" class="modal">
     <div class="modal-content">
@@ -193,7 +217,7 @@
             </div>
             <div class="checkbox-group">
                 <label for="navis-check" style="white-space: nowrap;">
-                    <input type="checkbox" id="navis-check" style="vertical-align: middle; margin:0;"/>
+                    <input type="checkbox" id="navis-check" style="vertical-align: middle;" />
                     <span style="margin: 0; padding:0;">NAVIS</span>
                 </label>
             </div>
@@ -210,107 +234,74 @@
         const closeModal = document.querySelector(".close-btn");
         const printBtn = document.getElementById("print-btn");
 
-        let currentTransportId = null;
-
         infoBtns.forEach(btn => {
             btn.addEventListener("click", function () {
-                const transporta = this.dataset.transporta;
-                const registracija = this.dataset.registracija;
-                const voznik = this.dataset.voznik;
-                currentTransportId = this.dataset.id;
-
-                document.getElementById("modal-stTransporta").textContent = transporta;
-                document.getElementById("modal-registracija").textContent = registracija;
-                document.getElementById("modal-voznik").textContent = voznik;
-
+                document.getElementById("modal-stTransporta").textContent = this.dataset.transporta;
+                document.getElementById("modal-registracija").textContent = this.dataset.registracija;
+                document.getElementById("modal-voznik").textContent = this.dataset.voznik;
                 modal.style.display = "block";
             });
         });
 
-        closeModal.addEventListener("click", function () {
-            modal.style.display = "none";
-        });
+        closeModal.addEventListener("click", () => modal.style.display = "none");
+        window.addEventListener("click", e => { if (e.target === modal) modal.style.display = "none"; });
 
-        window.addEventListener("click", function (event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-
-        printBtn.addEventListener("click", function () {
-            // Copy content into print section
+        printBtn.addEventListener("click", () => {
             document.getElementById("print-stTransporta").textContent = document.getElementById("modal-stTransporta").textContent;
             document.getElementById("print-registracija").textContent = document.getElementById("modal-registracija").textContent;
             document.getElementById("print-voznik").textContent = document.getElementById("modal-voznik").textContent;
-
-            // Save original page content
-            const originalContents = document.body.innerHTML;
-            const printContents = document.getElementById("printContent").innerHTML;
-
-            // Replace body content with print content
-            document.body.innerHTML = printContents;
-
-            // Trigger print dialog
+            const original = document.body.innerHTML;
+            document.body.innerHTML = document.getElementById("printContent").innerHTML;
             window.print();
-
-            // Restore original page content
-            document.body.innerHTML = originalContents;
-
-            // Reattach event listeners (necessary because of body overwrite)
-            window.location.reload(); // reload is a simple fix to fully restore interactivity
+            document.body.innerHTML = original;
+            window.location.reload();
         });
-
 
         // LOGIN MODAL LOGIC
         const loginModal = document.getElementById("loginModal");
         const loginCloseBtn = document.querySelector(".login-close");
         const loginForm = document.getElementById("login-form");
-        const loginStDisplay = document.getElementById("login-st");
-        const loginTransportIdInput = document.getElementById("login-transport-id");
 
         document.querySelectorAll(".open-login-modal").forEach(btn => {
             btn.addEventListener("click", function () {
-                const id = this.dataset.id;
-                const st = this.dataset.st;
-
-                loginStDisplay.textContent = st;
-                loginTransportIdInput.value = id;
-
-                // Reset NAVIS checkbox
+                document.getElementById("login-st").textContent = this.dataset.st;
+                document.getElementById("login-transport-id").value = this.dataset.id;
                 document.getElementById("navis-check").checked = false;
-
                 loginModal.style.display = "block";
             });
         });
 
-        loginCloseBtn.addEventListener("click", () => {
-            loginModal.style.display = "none";
-        });
-
-        window.addEventListener("click", function (event) {
-            if (event.target === loginModal) {
-                loginModal.style.display = "none";
-            }
-        });
+        loginCloseBtn.addEventListener("click", () => loginModal.style.display = "none");
+        window.addEventListener("click", e => { if (e.target === loginModal) loginModal.style.display = "none"; });
 
         loginForm.addEventListener("submit", function (e) {
             e.preventDefault();
-
             const username = document.getElementById("username").value.trim();
             const password = document.getElementById("password").value.trim();
-            const id = loginTransportIdInput.value;
-            const navisChecked = document.getElementById("navis-check").checked;
-
+            const id = document.getElementById("login-transport-id").value;
+            const navis = document.getElementById("navis-check").checked;
             if (username && password) {
                 loginModal.style.display = "none";
-
-                if (navisChecked) {
-                    window.location.href = `/Skladiščnik/Naklad?id=${id}&type=NAVIS`;
-                } else {
-                    window.location.href = `/Skladiščnik/Naklad?id=${id}`;
-                }
+                const type = navis ? "&type=NAVIS" : "";
+                window.location.href = `/Skladiščnik/Naklad?id=${id}${type}`;
             } else {
                 alert("Prosimo, izpolnite vsa polja.");
+            }
+        });
+
+        //zoom something idk
+        document.addEventListener("DOMContentLoaded", function () {
+            const input = document.querySelector(".zoom-input");
+
+            if (input) {
+                input.addEventListener("input", function () {
+                    input.classList.add("typing");
+
+                    clearTimeout(input._zoomTimeout);
+                    input._zoomTimeout = setTimeout(() => {
+                        input.classList.remove("typing");
+                    }, 400); // Reset zoom shortly after typing stops
+                });
             }
         });
     </script>
