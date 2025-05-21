@@ -15,12 +15,17 @@ var builder = WebApplication.CreateBuilder(args);
 // Added logging
 builder.Services.AddHttpLogging(logging =>
 {
-    logging.LoggingFields = HttpLoggingFields.All;
+    logging.LoggingFields = HttpLoggingFields.RequestPath | HttpLoggingFields.RequestMethod | HttpLoggingFields.RequestHeaders;
+
+    // Log only specific headers if needed
+    logging.RequestHeaders.Add("User-Agent");
     logging.RequestHeaders.Add("sec-ch-ua");
-    logging.ResponseHeaders.Add("MyResponseHeader");
-    logging.MediaTypeOptions.AddText("application/json");
-    logging.RequestBodyLogLimit = 4096;
-    logging.ResponseBodyLogLimit = 4096;
+
+    // Do NOT log body content to limit noise
+    logging.RequestBodyLogLimit = 0;
+    logging.ResponseBodyLogLimit = 0;
+
+    // Optional: combine logs into one entry per request
     logging.CombineLogs = true;
 });
 
