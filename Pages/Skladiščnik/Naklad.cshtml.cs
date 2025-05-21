@@ -38,6 +38,8 @@ namespace diplomska.Pages.Skladiščnik
         public SelectList SkladiscnikSelectList { get; set; }
         public List<Izkladisceno> IzkladiscenoList { get; set; } = new List<Izkladisceno>();
 
+        public List<string> ChartLabels { get; set; } = new List<string>();
+        public List<int> ChartData { get; set; } = new List<int>();
         public async Task<IActionResult> OnGet()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -83,6 +85,19 @@ namespace diplomska.Pages.Skladiščnik
                 TransportId = 0;  // Handle the case where there are no transports
                 StTransporta = 0;
             }
+
+            var groupedData = await _context.Izkladisceno
+             .GroupBy(i => i.Skladiscnik)
+             .Select(g => new
+             {
+                 Skladiscnik = g.Key,
+                 TotalKolicina = g.Sum(x => x.Kolicina ?? 0)
+             })
+             .ToListAsync();
+
+            ChartLabels = groupedData.Select(g => g.Skladiscnik ?? "Unknown").ToList();
+            ChartData = groupedData.Select(g => g.TotalKolicina).ToList();
+
 
             return Page();
         }

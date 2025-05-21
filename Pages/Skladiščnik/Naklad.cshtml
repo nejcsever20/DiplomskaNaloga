@@ -249,5 +249,49 @@
     </form>
 
     <a href="javascript:history.back()" class="back-button">Nazaj</a>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <h3>Količina po skladiščniku</h3>
+    <canvas id="kolicinaChart" width="600" height="300"></canvas>
+
+    <script>
+        const ctx = document.getElementById('kolicinaChart').getContext('2d'); //nastavitev da se dobi elemenet
+
+        const labels = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.ChartLabels)); //ordiantna in abscisna os
+        const data = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.ChartData)); // info
+
+        const kolicinaChart = new Chart(ctx, { // kolicinska nastavitev in prikaz
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Skupna količina',
+                    data: data,
+                    backgroundColor: 'rgba(54, 162, 235, 0.7)', // ozadje
+                    borderColor: 'rgba(54, 162, 235, 1)', // barva robnika
+                    borderWidth: 1
+                }]
+            },
+            options: { // opcije
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                },
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true
+                    }
+                }
+            }
+        });
+    </script>
+
 </body>
 </html>
