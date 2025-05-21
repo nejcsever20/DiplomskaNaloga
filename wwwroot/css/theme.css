@@ -1,0 +1,90 @@
+﻿/* Theme Base Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+[data-theme="light"] {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+[data-theme="dark"] {
+    background-color: #1e1e1e;
+    color: #dddddd;
+}
+
+.theme-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-right: 10px;
+}
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: .4s;
+}
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        border-radius: 50%;
+        transition: .4s;
+    }
+
+input:checked + .slider {
+    background-color: #125D98;
+}
+
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+
+.mode-label {
+    vertical-align: middle;
+    font-size: 1.2rem;
+}
+
+.save-btn {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #3C8DAD;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+    .save-btn:hover {
+        background-color: #125D98;
+    }

@@ -1,0 +1,34 @@
+﻿@page
+@model EditThemeModel
+@{
+    ViewData["Title"] = "Edit Theme";
+    Layout = "_Layout"; // or your chosen layout
+}
+
+@section Styles {
+    <style>
+        .theme-toggle-container {
+            max-width: 500px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background-color: var(--bg);
+            color: var(--text);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+            .theme-toggle-container input[type="submit"] {
+                margin-top: 1rem;
+            }
+    </style>
+}
+
+<div class="theme-toggle-container">
+    <h2>Edit Theme</h2>
+    <form method="post">
+        <p>Current theme: <strong>@Model.CurrentTheme</strong></p>
+        <input type="hidden" name="theme" value="@(Model.CurrentTheme == "dark" ? "light" : "dark")" />
+        <input type="submit" value="Switch to @(Model.CurrentTheme == "dark" ? "Light" : "Dark") Mode" class="btn btn-primary" />
+    </form>
+</div>

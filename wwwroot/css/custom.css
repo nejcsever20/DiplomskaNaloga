@@ -1,0 +1,457 @@
+﻿:root {
+    --bg: #your-custom-bg !important;
+    --text: #your-custom-text !important;
+    --card-bg: #your-custom-card-bg !important;
+}
+
+body {
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.card {
+    background-color: var(--card-bg) !important;
+}
+/* ---------- admin.css styles ---------- */
+/* General styles */
+body {
+    background-color: #DDDDDD;
+    color: #125D98;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    color: #DDDDDD;
+}
+
+h3 {
+    color: #125D98;
+}
+
+/* Typography */
+.page-header {
+    font-size: 2.5em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #125D98;
+}
+
+.lead {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    color: #3C8DAD;
+    text-align: center;
+}
+
+/* Card styles */
+.card {
+    background-color: #3C8DAD;
+    border: 1px solid #125D98;
+    border-radius: 10px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+.card-header {
+    background-color: #125D98;
+    color: #b6ff00;
+    font-size: 1.6em;
+    padding: 15px 20px;
+    border-bottom: 1px solid #125D98;
+}
+
+.card-body {
+    padding: 25px;
+    color: #b6ff00;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Button styles */
+.btn-dark {
+    background-color: #125D98;
+    color: #b6ff00;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+    .btn-dark:hover {
+        background-color: #003875;
+        color: #b6ff00;
+        transform: scale(1.05);
+    }
+
+/* ---------- editboutuser.css styles ---------- */
+/* Base Layout */
+body {
+    background-color: #DDDDDD;
+    font-family: 'Segoe UI', Tahoma, Verdana, Geneva, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    overflow-x: hidden;
+}
+
+/* Zoom-in animation */
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Title */
+h2 {
+    color: #125D98;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 35px;
+    animation: zoomIn 0.6s ease-in-out;
+}
+
+/* Form */
+form {
+    background-color: #125D98;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    animation: zoomIn 0.7s ease-in-out;
+}
+
+    /* Form groups */
+    form div {
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+    }
+
+        form div:hover {
+            transform: scale(1.02);
+        }
+
+/* Labels */
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #F5A962;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    padding: 0.6rem;
+    border: 2px solid #3C8DAD;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="file"]:focus {
+        outline: none;
+        border-color: #F5A962;
+        transform: scale(1.02);
+    }
+
+/* Validation messages */
+span.field-validation-error {
+    color: #F5A962;
+    font-size: 0.9rem;
+}
+
+/* Profile image preview */
+img {
+    margin-top: 0.5rem;
+    border-radius: 6px;
+    border: 2px solid #3C8DAD;
+    transition: transform 0.4s ease;
+}
+
+    img:hover {
+        transform: scale(1.1);
+    }
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: #3C8DAD;
+    color: white;
+    margin-top: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    button[type="submit"]:hover {
+        background-color: #F5A962;
+        transform: scale(1.05);
+    }
+
+/* File input specific style */
+#ProfileImage {
+    color: #DDDDDD;
+}
+
+/* ---------- izmenovodja.css styles ---------- */
+/* General styles */
+body {
+    background-color: #DDDDDD;
+    color: #125D98;
+}
+
+.page-header {
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: #125D98;
+}
+
+.lead {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #3C8DAD;
+}
+
+/* Card styles */
+.card {
+    background-color: #3C8DAD;
+    border: 1px solid #125D98;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.card-header {
+    background-color: #125D98;
+    color: #DDDDDD;
+    font-size: 1.5em;
+    padding: 10px;
+    border-bottom: 1px solid #125D98;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.btn-dark {
+    background-color: #125D98;
+    color: #DDDDDD;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+    .btn-dark:hover {
+        background-color: #3C8DAD;
+        color: #DDDDDD;
+    }
+
+/* ---------- site.css styles ---------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+/* ---------- skladiščnik.css styles ---------- */
+/* General styles */
+body {
+    background-color: #DDDDDD;
+    color: #125D98;
+}
+
+.page-header {
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: #125D98;
+}
+
+.lead {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #3C8DAD;
+}
+
+/* Card styles */
+.card {
+    background-color: #F5A962;
+    border: 1px solid #125D98;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.card-header {
+    background-color: #125D98;
+    color: #DDDDDD;
+    font-size: 1.5em;
+    padding: 10px;
+    border-bottom: 1px solid #125D98;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.btn-dark {
+    background-color: #125D98;
+    color: #DDDDDD;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+    .btn-dark:hover {
+        background-color: #3C8DAD;
+        color: #DDDDDD;
+    }
+
+/* ---------- theme.css styles ---------- */
+/* Theme Base Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+[data-theme="light"] {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+[data-theme="dark"] {
+    background-color: #1e1e1e;
+    color: #dddddd;
+}
+
+.theme-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-right: 10px;
+}
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: .4s;
+}
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        border-radius: 50%;
+        transition: .4s;
+    }
+
+input:checked + .slider {
+    background-color: #125D98;
+}
+
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+
+.mode-label {
+    vertical-align: middle;
+    font-size: 1.2rem;
+}
+
+.save-btn {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #3C8DAD;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+    .save-btn:hover {
+        background-color: #125D98;
+    }

@@ -3,16 +3,53 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
+@{
+    var theme = Context.Request.Cookies["theme"] ?? "light";
+}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="@theme">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@ViewData["Title"] - diplomska</title>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/diplomska.styles.css" asp-append-version="true" />
+
+    @* Include custom styles only if theme is "custom" *@
+    @if (theme == "custom")
+    {
+        <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
+    }
+
+    @RenderSection("Styles", required: false)
+
+    <style>
+        @if (theme != "custom")
+        {
+            <text>
+                :root {
+                    --bg: @(theme == "dark" ? "#1e1e1e" : "#ffffff");
+                    --text: @(theme == "dark" ? "#dddddd" : "#000000");
+                    --card-bg: @(theme == "dark" ? "#2e2e2e" : "#f8f9fa");
+                }
+            </text>
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top py-1">
@@ -29,13 +66,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Index">Home</a>
+                            <a class="nav-link" asp-page="/Index" aria-current="page">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-page="/Privacy">Privacy</a>
                         </li>
 
-                        @if (User.Identity != null && User.Identity.IsAuthenticated)
+                        @if (User.Identity?.IsAuthenticated ?? false)
                         {
                             if (User.IsInRole("Izmenovodja"))
                             {
@@ -59,7 +96,7 @@
                     </ul>
 
                     <ul class="navbar-nav ms-auto">
-                        @if (User.Identity != null && User.Identity.IsAuthenticated)
+                        @if (User.Identity?.IsAuthenticated ?? false)
                         {
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -74,14 +111,26 @@
                                             Role:
                                             @(
                                                 User.IsInRole("Izmenovodja") ? "Izmenovodja" :
-                                                User.IsInRole("Skladiščnik") ? "Skladiščnik" :
+                                                User.IsInRole("Skladisnik") ? "Skladiščnik" :
                                                 User.IsInRole("Admin") ? "Admin" :
                                                 "Unknown"
-                                                )
+                                            )
                                         </span>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" asp-page="/EditAccountItems">Edit My Profile</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-page="/EditTheme">Change Theme</a>
+                                    </li>
+                                    <li>
+                                        <form method="post" asp-page="/SetTheme" class="dropdown-item px-3">
+                                            <select name="theme" class="form-select form-select-sm" onchange="this.form.submit()">
+                                                <option value="light" selected="@(theme == "light")">Light</option>
+                                                <option value="dark" selected="@(theme == "dark")">Dark</option>
+                                                <option value="custom" selected="@(theme == "custom")">Custom</option>
+                                            </select>
+                                        </form>
                                     </li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li>

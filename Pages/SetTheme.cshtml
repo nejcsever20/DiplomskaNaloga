@@ -1,0 +1,19 @@
+﻿@page
+@model SetThemeModel
+
+<style>
+    :root[data-theme='dark'] {
+        --bg: #1e1e1e;
+        --text: #ffffff;
+    }
+
+    :root[data-theme='light'] {
+        --bg: #ffffff;
+        --text: #000000;
+    }
+
+    body {
+        background-color: var(--bg);
+        color: var(--text);
+    }
+</style>

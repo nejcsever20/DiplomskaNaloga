@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\admin.css"
     },
     {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\custom.css",
+      "PackagePath": "staticwebassets\\css\\custom.css"
+    },
+    {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\editaboutuser.css",
       "PackagePath": "staticwebassets\\css\\editaboutuser.css"
     },
@@ -31,6 +35,10 @@
     {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\login2fa.css",
+      "PackagePath": "staticwebassets\\css\\login2fa.css"
     },
     {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\logout.css",
@@ -59,6 +67,10 @@
     {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\skladiscnik.css",
       "PackagePath": "staticwebassets\\css\\skladiscnik.css"
+    },
+    {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\theme.css",
+      "PackagePath": "staticwebassets\\css\\theme.css"
     },
     {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\useraccessmethods.css",
