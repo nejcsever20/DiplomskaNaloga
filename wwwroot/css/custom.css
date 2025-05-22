@@ -1,13 +1,18 @@
-﻿:root {
-    --bg: #your-custom-bg !important;
-    --text: #your-custom-text !important;
-    --card-bg: #your-custom-card-bg !important;
+﻿[data-theme="dark"] {
+    --bg: #1e1e1e;
+    --text: #dddddd;
+    --card-bg: #2a2a2a;
+}
+
+[data-theme="light"] {
+    --bg: #ffffff;
+    --text: #000000;
+    --card-bg: #f4f4f4;
 }
 
 body {
-    background-color: var(--bg) !important;
-    color: var(--text) !important;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 .card {

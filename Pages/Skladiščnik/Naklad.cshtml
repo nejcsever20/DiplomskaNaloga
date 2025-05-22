@@ -121,17 +121,30 @@
 
         <div>
             <label>Carinska vrvica:</label>
-            <input type="text" asp-for="CarinskaVrvicva" />
+            <select asp-for="CarinskaVrvicva">
+                <option value="">-------Izberi-------</option>
+                <option value="Prisotna">Prisotna</option>
+                <option value="Ni Prisotna">Ni Prisotna</option>
+                <option value="CTN">CTN</option>
+            </select>
         </div>
 
         <div>
             <label>Ustreznost vozilca:</label>
-            <input type="text" asp-for="UstreznostVozilca" />
+            <select asp-for="CarinskaVrvicva">
+                <option value="">-------Izberi-------</option>
+                <option value="neustrezno">neustrezno</option>
+                <option value="ustrezno">ustrezno</option>
+                <option value="delno neustrezno">delno neustrezno</option>
+                <option value="delno ustrezno">delno ustrezno</option>
+            </select>
         </div>
 
         <div>
             <label>Začetek naklada:</label>
-            <input type="datetime-local" asp-for="ZacetekNaklada" />
+            <input type="datetime-local" asp-for="ZacetekNaklada"
+                   value="@(Model.ZacetekNaklada.HasValue ? Model.ZacetekNaklada.Value.ToString("yyyy-MM-ddTHH:mm") : "")"
+                   class="form-control" />
             <button type="submit" asp-page-handler="SetTimes" class="btn btn-success">Nastavi</button>
         </div>
 

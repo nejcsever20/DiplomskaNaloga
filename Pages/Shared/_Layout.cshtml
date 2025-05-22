@@ -47,6 +47,12 @@
         .card {
             background-color: var(--card-bg);
         }
+
+        select.theme-select {
+            width: 100%;
+            font-size: 0.875rem;
+            padding: 0.25rem 0.5rem;
+        }
     </style>
 </head>
 
@@ -123,12 +129,33 @@
                                     <li>
                                         <a class="dropdown-item" asp-page="/EditTheme">Change Theme</a>
                                     </li>
-                                    <li>
-                                        <form method="post" asp-page="/SetTheme" class="dropdown-item px-3">
-                                            <select name="theme" class="form-select form-select-sm" onchange="this.form.submit()">
-                                                <option value="light" selected="@(theme == "light")">Light</option>
-                                                <option value="dark" selected="@(theme == "dark")">Dark</option>
-                                                <option value="custom" selected="@(theme == "custom")">Custom</option>
+                                    <li class="px-3">
+                                        <form method="post" asp-page="/SetTheme">
+                                            <select name="theme" class="theme-select form-select form-select-sm" onchange="this.form.submit()">
+                                                @if (theme == "light")
+                                                {
+                                                    <text>
+                                                        <option value="light" selected="selected">Light</option>
+                                                        <option value="dark">Dark</option>
+                                                        <option value="custom">Custom</option>
+                                                    </text>
+                                                }
+                                                else if (theme == "dark")
+                                                {
+                                                    <text>
+                                                        <option value="light">Light</option>
+                                                        <option value="dark" selected="selected">Dark</option>
+                                                        <option value="custom">Custom</option>
+                                                    </text>
+                                                }
+                                                else
+                                                {
+                                                    <text>
+                                                        <option value="light">Light</option>
+                                                        <option value="dark">Dark</option>
+                                                        <option value="custom" selected="selected">Custom</option>
+                                                    </text>
+                                                }
                                             </select>
                                         </form>
                                     </li>

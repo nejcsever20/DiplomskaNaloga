@@ -304,3 +304,10 @@ C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\Asp
 C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Facebook.dll
 C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\AspNet.Security.OAuth.GitLab.dll
 C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\AspNet.Security.OAuth.Twitter.dll
+C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\ClosedXML.dll
+C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\ClosedXML.Parser.dll
+C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\ExcelNumberFormat.dll
+C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\RBush.dll
+C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\System.IO.Packaging.dll

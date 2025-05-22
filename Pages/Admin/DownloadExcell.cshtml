@@ -1,0 +1,11 @@
+﻿@page
+@model diplomska.Pages.Admin.DownloadExcellModel
+@{
+    ViewData["Title"] = "Download Excel";
+}
+
+<h1>Download Excell Data</h1>
+
+<form method="post" asp-page-handler="DownloadAllData">
+    <button type="submit" class="btn btn-primary">Download Excel File</button>
+</form>

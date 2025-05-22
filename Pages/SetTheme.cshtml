@@ -2,14 +2,16 @@
 @model SetThemeModel
 
 <style>
-    :root[data-theme='dark'] {
+    [data-theme="dark"] {
         --bg: #1e1e1e;
-        --text: #ffffff;
+        --text: #dddddd;
+        --card-bg: #2a2a2a;
     }
 
-    :root[data-theme='light'] {
+    [data-theme="light"] {
         --bg: #ffffff;
         --text: #000000;
+        --card-bg: #f4f4f4;
     }
 
     body {
@@ -17,3 +19,25 @@
         color: var(--text);
     }
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.getElementById("theme");
+        console.log(themeToggle);
+        if (themeToggle) {
+            themeToggle.addEventListener("change", async () => {
+                const theme = themeToggle.checked ? "dark" : "light";
+
+                await fetch("/SetTheme", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: `theme=${theme}`
+                });
+
+                document.documentElement.setAttribute("data-theme", theme);
+            });
+        }
+    });
+</script>

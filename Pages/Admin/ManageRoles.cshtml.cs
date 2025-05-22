@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -12,35 +13,38 @@ namespace diplomska.Pages.Admin
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IEmailSender _emailSender;
 
-        public ManageRolesModel(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+        public ManageRolesModel(
+            UserManager<IdentityUser> userManager,
+            RoleManager<IdentityRole> roleManager,
+            IEmailSender emailSender)
         {
             _userManager = userManager;
             _roleManager = roleManager;
+            _emailSender = emailSender;
         }
 
-        // Change this from IdentityUser to UserWithRoles
         public List<UserWithRoles> Users { get; set; }
         public List<string> AllRoles { get; set; }
 
         public async Task OnGetAsync()
         {
-            // Fetching the list of users with their roles asynchronously
-            var users = await _userManager.Users.ToListAsync(); // Use async to fetch users
+            var users = await _userManager.Users.ToListAsync();
             Users = new List<UserWithRoles>();
 
             foreach (var user in users)
             {
-                var roles = await _userManager.GetRolesAsync(user); // Fetch roles asynchronously for each user
+                var roles = await _userManager.GetRolesAsync(user);
                 Users.Add(new UserWithRoles
                 {
                     UserId = user.Id,
                     Email = user.Email,
-                    Roles = roles.ToList() // Convert to list
+                    Roles = roles.ToList()
                 });
             }
 
-            AllRoles = await _roleManager.Roles.Select(r => r.Name).ToListAsync(); // Get all available roles asynchronously
+            AllRoles = await _roleManager.Roles.Select(r => r.Name).ToListAsync();
         }
 
         public async Task<IActionResult> OnPostUpdateRolesAsync(string userId, List<string> Roles, List<string> RemoveRoles)
@@ -48,10 +52,9 @@ namespace diplomska.Pages.Admin
             var user = await _userManager.FindByIdAsync(userId);
             if (user != null)
             {
-                // Get current roles of the user
                 var currentRoles = await _userManager.GetRolesAsync(user);
 
-                // Remove roles
+                // Remove selected roles
                 if (RemoveRoles != null)
                 {
                     foreach (var role in RemoveRoles)
@@ -75,11 +78,16 @@ namespace diplomska.Pages.Admin
                     }
                 }
 
-                // Return back to the page after changes
+                // Send email notification
+                var updatedRoles = await _userManager.GetRolesAsync(user);
+                string subject = "Your account roles have been updated";
+                string message = $"Hello,\n\nYour roles have been updated. Your current roles are: {string.Join(", ", updatedRoles)}.\n\nIf you believe this is a mistake, please contact support.";
+
+                await _emailSender.SendEmailAsync(user.Email, subject, message);
+
                 return RedirectToPage();
             }
 
-            // If user not found
             return NotFound();
         }
 

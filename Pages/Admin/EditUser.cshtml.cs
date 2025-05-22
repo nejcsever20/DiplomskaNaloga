@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
@@ -12,11 +13,16 @@ namespace diplomska.Pages.Admin
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IEmailSender _emailSender;
 
-        public EditUserModel(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+        public EditUserModel(
+            UserManager<IdentityUser> userManager,
+            RoleManager<IdentityRole> roleManager,
+            IEmailSender emailSender)
         {
             _userManager = userManager;
             _roleManager = roleManager;
+            _emailSender = emailSender;
         }
 
         [BindProperty]
@@ -49,19 +55,15 @@ namespace diplomska.Pages.Admin
             if (user == null)
                 return NotFound();
 
-            // Get all roles
             AllRoles = _roleManager.Roles.Select(r => r.Name).ToList();
-
-            // Get user's current roles
             var roles = await _userManager.GetRolesAsync(user);
 
-            // Bind data to the Input model
             Input = new EditUserInputModel
             {
                 Id = user.Id,
                 Email = user.Email,
                 UserName = user.UserName,
-                Role = roles.FirstOrDefault()  // Default to the first role the user has
+                Role = roles.FirstOrDefault()
             };
 
             return Page();
@@ -69,10 +71,8 @@ namespace diplomska.Pages.Admin
 
         public async Task<IActionResult> OnPostAsync()
         {
-            // Reload the roles to show in the select list
             AllRoles = _roleManager.Roles.Select(r => r.Name).ToList();
 
-            // Ensure the model state is valid
             if (!ModelState.IsValid)
                 return Page();
 
@@ -80,11 +80,9 @@ namespace diplomska.Pages.Admin
             if (user == null)
                 return NotFound();
 
-            // Update user details
             user.Email = Input.Email;
             user.UserName = Input.UserName;
 
-            // Update user information
             var updateResult = await _userManager.UpdateAsync(user);
             if (!updateResult.Succeeded)
             {
@@ -93,12 +91,10 @@ namespace diplomska.Pages.Admin
                 return Page();
             }
 
-            // Update user's role
             var currentRoles = await _userManager.GetRolesAsync(user);
             await _userManager.RemoveFromRolesAsync(user, currentRoles);
             await _userManager.AddToRoleAsync(user, Input.Role);
 
-            // Change password if provided
             if (!string.IsNullOrEmpty(Input.NewPassword))
             {
                 var token = await _userManager.GeneratePasswordResetTokenAsync(user);
@@ -110,9 +106,14 @@ namespace diplomska.Pages.Admin
                         ModelState.AddModelError(string.Empty, error.Description);
                     return Page();
                 }
+
+                // Send email notification about password change
+                string subject = "Your password has been changed";
+                string message = $"Hello,\n\nYour password was recently changed by an administrator.\n\nIf you did not request this change, please contact support immediately.";
+
+                await _emailSender.SendEmailAsync(user.Email, subject, message);
             }
 
-            // Redirect to the user management page after successful update
             return RedirectToPage("/Admin/ManageUsers");
         }
     }
