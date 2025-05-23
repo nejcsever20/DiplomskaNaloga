@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/diplomska.styles.css" asp-append-version="true" />
 
-    @* Include custom styles only if theme is "custom" *@
     @if (theme == "custom")
     {
         <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
@@ -71,31 +70,43 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/Index" aria-current="page">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/Privacy">Privacy</a>
-                        </li>
+                        @if (!(User.Identity?.IsAuthenticated ?? false))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Index" aria-current="page">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Privacy">Privacy</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <span class="nav-link disabled" aria-disabled="true">Home</span>
+                            </li>
+                            <li class="nav-item">
+                                <span class="nav-link disabled" aria-disabled="true">Privacy</span>
+                            </li>
+                        }
 
                         @if (User.Identity?.IsAuthenticated ?? false)
                         {
                             if (User.IsInRole("Izmenovodja"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-page="/Izmenovodja/Index">Izmenovodja Dashboard</a>
+                                    <a class="nav-link" asp-page="/Izmenovodja/IzmenovodjaPage">Izmenovodja Dashboard</a>
                                 </li>
                             }
-                            else if (User.IsInRole("Skladisnik"))
+                            else if (User.IsInRole("Skladiščnik"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-page="/Skladisnik/Index">Skladiščnik Dashboard</a>
+                                    <a class="nav-link" asp-page="/Skladiščnik/SkladiščnikPage">Skladiščnik Dashboard</a>
                                 </li>
                             }
                             else if (User.IsInRole("Admin"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-page="/Admin/Index">Admin Dashboard</a>
+                                    <a class="nav-link" asp-page="/Admin/AdminPage">Admin Dashboard</a>
                                 </li>
                             }
                         }
@@ -117,14 +128,11 @@
                                             Role:
                                             @(
                                                 User.IsInRole("Izmenovodja") ? "Izmenovodja" :
-                                                User.IsInRole("Skladisnik") ? "Skladiščnik" :
+                                                User.IsInRole("Skladiščnik") ? "Skladiščnik" :
                                                 User.IsInRole("Admin") ? "Admin" :
                                                 "Unknown"
                                             )
                                         </span>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" asp-page="/EditAccountItems">Edit My Profile</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" asp-page="/EditTheme">Change Theme</a>
