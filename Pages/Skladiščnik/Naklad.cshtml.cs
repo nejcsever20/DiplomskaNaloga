@@ -40,6 +40,9 @@ namespace diplomska.Pages.Skladiščnik
 
         public List<string> ChartLabels { get; set; } = new List<string>();
         public List<int> ChartData { get; set; } = new List<int>();
+        public List<string> ChartUrls { get; set; } = new List<string>();
+
+
         public async Task<IActionResult> OnGet()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
