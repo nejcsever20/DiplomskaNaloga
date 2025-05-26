@@ -16,85 +16,142 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f7fc;
+            background-color: #DDDDDD;
+            color: #125D98;
+            margin: 0;
+            padding: 2rem;
         }
 
-        h1 {
-            background-color: #4CAF50;
+        h1, h3, h4 {
+            background-color: #125D98;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 1rem;
         }
 
         label {
             font-weight: bold;
             display: block;
             margin-bottom: 5px;
+            color: #125D98;
         }
 
         input, textarea, select {
-            padding: 6px;
+            padding: 8px;
             border-radius: 4px;
-            border: 1px solid #ccc;
+            border: 1px solid #3C8DAD;
             width: 100%;
             margin-bottom: 10px;
+            background-color: #ffffff;
+            color: #125D98;
+            transition: border-color 0.3s;
         }
 
-        button {
-            background-color: #4CAF50;
-            color: white;
+            input:focus, textarea:focus, select:focus {
+                border-color: #F5A962;
+                outline: none;
+            }
+
+        button, .btn-success {
+            background-color: #F5A962;
+            color: #125D98;
             padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+            button:hover, .btn-success:hover {
+                background-color: #3C8DAD;
+                color: white;
+                transform: scale(1.03);
+            }
+
+        .btn-danger {
+            background-color: #d9534f;
+            color: white;
+            padding: 8px 12px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-            button:hover {
-                background-color: #45a049;
+            .btn-danger:hover {
+                background-color: #c9302c;
             }
 
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         th, td {
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #DDDDDD;
+            text-align: left;
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #3C8DAD;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #F5A96220;
         }
 
         .back-button {
             display: inline-block;
             margin-top: 20px;
-            background-color: #f44336;
+            background-color: #125D98;
             color: white;
             padding: 10px 20px;
             text-align: center;
             border-radius: 5px;
             text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
             .back-button:hover {
-                background-color: #e53935;
+                background-color: #3C8DAD;
+                transform: scale(1.05);
             }
 
         .alert-success {
-            color: green;
+            color: #2e7d32;
+            background-color: #c8e6c9;
+            padding: 10px;
+            border-radius: 5px;
             font-weight: bold;
             margin-top: 15px;
         }
 
         .alert-error {
-            color: red;
+            color: #c62828;
+            background-color: #ffcdd2;
+            padding: 10px;
+            border-radius: 5px;
             font-weight: bold;
             margin-top: 15px;
         }
+
+        canvas {
+            margin-top: 1.5rem;
+            background-color: #ffffff;
+            border: 1px solid #3C8DAD;
+            border-radius: 10px;
+            padding: 1rem;
+        }
     </style>
+
 </head>
 <body>
     <h1>Začetek, konec naklada</h1>
@@ -267,6 +324,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <h3>Količina po skladiščniku</h3>
+
     <canvas id="kolicinaChart" width="600" height="300"></canvas>
 
     <script>
@@ -274,7 +332,7 @@
 
         const labels = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.ChartLabels));
         const data = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.ChartData));
-        const detailUrl = "@Url.Page("/Skladiščnik/DetaildInfo")";
+        const transportIds = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.TransportIds)); // Add this to your model
 
         const kolicinaChart = new Chart(ctx, {
             type: 'bar',
@@ -289,8 +347,13 @@
                 }]
             },
             options: {
-                onClick: () => {
-                    window.location.href = detailUrl;
+                onClick: (evt, elements) => {
+                    if (elements.length > 0) {
+                        const index = elements[0].index;
+                        const transportId = transportIds[index];
+                        const detailUrl = `@Url.Page("DetailedInfo")?transportId=${transportId}`;
+                        window.location.href = detailUrl;
+                    }
                 },
                 scales: {
                     y: {
@@ -309,6 +372,8 @@
             }
         });
     </script>
+
+
 
 </body>
 </html>

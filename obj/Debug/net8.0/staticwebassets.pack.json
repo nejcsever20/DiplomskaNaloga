@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\custom.css"
     },
     {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\detailedinfo.css",
+      "PackagePath": "staticwebassets\\css\\detailedinfo.css"
+    },
+    {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\editaboutuser.css",
       "PackagePath": "staticwebassets\\css\\editaboutuser.css"
     },

@@ -38,6 +38,11 @@ namespace diplomska.Pages.Izmenovodja
         public SelectList SkladiscnikSelectList { get; set; }
         public List<Izkladisceno> IzkladiscenoList { get; set; } = new List<Izkladisceno>();
 
+        public List<string> ChartLabels { get; set; } = new List<string>();
+        public List<int> ChartData { get; set; } = new List<int>();
+        public List<string> ChartUrls { get; set; } = new List<string>();
+        public List<long> TransportIds { get; set; } = new(); // ✅ Updated to List<long>
+
         public async Task<IActionResult> OnGet()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -64,9 +69,9 @@ namespace diplomska.Pages.Izmenovodja
             IzkladiscenoList = await _context.Izkladisceno
                                               .Select(item => new Izkladisceno
                                               {
-                                                  Kolicina = item.Kolicina ?? 0,   // Default to 0 if Kolicina is NULL
-                                                  Palete = item.Palete ?? 0,       // Default to 0 if Palete is NULL
-                                                  Datum = item.Datum, // Default to DateTime.MinValue if Datum is NULL
+                                                  Kolicina = item.Kolicina ?? 0,
+                                                  Palete = item.Palete ?? 0,
+                                                  Datum = item.Datum,
                                                   Skladiscnik = item.Skladiscnik,
                                               })
                                               .ToListAsync();
@@ -75,18 +80,42 @@ namespace diplomska.Pages.Izmenovodja
             var transport = await _context.Transport.OrderByDescending(t => t.Id).FirstOrDefaultAsync();
             if (transport != null)
             {
-                TransportId = transport.Id;  // Set the transport Id
-                StTransporta = transport.StTransporta ?? 0;  // Set StTransporta to 0 if null
+                TransportId = transport.Id;
+                StTransporta = transport.StTransporta ?? 0;
             }
             else
             {
-                TransportId = 0;  // Handle the case where there are no transports
+                TransportId = 0;
                 StTransporta = 0;
             }
 
+            // Group and analyze data
+            var groupedData = await _context.Izkladisceno
+                .GroupBy(i => i.Skladiscnik)
+                .Select(g => new
+                {
+                    Skladiscnik = g.Key,
+                    TotalKolicina = g.Sum(x => x.Kolicina ?? 0),
+                    Transports = g
+                        .Where(x => x.TransportId != null)
+                        .Select(x => x.TransportId)
+                        .Distinct()
+                        .ToList()
+                })
+                .ToListAsync();
+
+            ChartLabels = groupedData.Select(g => g.Skladiscnik).ToList();
+            ChartData = groupedData.Select(g => g.TotalKolicina).ToList();
+
+            // ✅ Flatten and convert nullable longs to long
+            TransportIds = groupedData
+                .SelectMany(g => g.Transports)
+                .Where(id => id.HasValue)
+                .Select(id => id.Value)
+                .ToList();
+
             return Page();
         }
-
 
         // Handler to save the data
         public async Task<IActionResult> OnPostSaveData()
@@ -99,8 +128,7 @@ namespace diplomska.Pages.Izmenovodja
                 return Unauthorized();
             }
 
-            // Example: fetch a valid transport (you should replace this logic with actual selection or input)
-            var transport = await _context.Transport.FirstOrDefaultAsync(); // adjust to your actual table name and logic
+            var transport = await _context.Transport.FirstOrDefaultAsync();
             if (transport == null)
             {
                 ModelState.AddModelError(string.Empty, "No valid transport found. Please create one first.");
@@ -114,7 +142,7 @@ namespace diplomska.Pages.Izmenovodja
                 Skladiscnik = Skladiscnik ?? "Unknown",
                 Datum = DateTime.Now,
                 SkladiscnikId = userId,
-                TransportId = transport.Id // ✅ This is the required line
+                TransportId = transport.Id
             };
 
             _context.Izkladisceno.Add(izkladisceno);
@@ -125,18 +153,18 @@ namespace diplomska.Pages.Izmenovodja
             return RedirectToPage();
         }
 
-
         // Handler for adding notes
         public async Task<IActionResult> OnPostAddNote()
         {
-            // Logic for adding a note goes here if necessary.
             return RedirectToPage();
         }
 
         // Handler for deleting an entry
         public async Task<IActionResult> OnPostDelete(long id)
         {
-            var izkladisceno = await _context.Izkladisceno.FindAsync(id);
+            // Cast the long to int to match the PK type
+            var izkladisceno = await _context.Izkladisceno.FindAsync((int)id);
+
             if (izkladisceno == null)
             {
                 return NotFound();
@@ -148,13 +176,11 @@ namespace diplomska.Pages.Izmenovodja
                 return Unauthorized(); // Only the user who created the record can delete it
             }
 
-            // Delete the entry
             _context.Izkladisceno.Remove(izkladisceno);
             await _context.SaveChangesAsync();
 
-            // Redirect to the same page to show the updated list
             return RedirectToPage();
         }
-    }
 
+    }
 }
