@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 
 namespace diplomska.Pages.Izmenovodja
 {
@@ -86,17 +87,35 @@ namespace diplomska.Pages.Izmenovodja
             var item = IzkladiscenoItems.FirstOrDefault();
             if (item != null)
             {
-                Console.WriteLine($"LoadedQuantity (Kolicina): {item.Kolicina}");
                 LoadedQuantity = item.Kolicina?.ToString() ?? "No data available";
-            }
-            else
-            {
-                Console.WriteLine("No items in IzkladiscenoItems.");
             }
         }
 
         public IActionResult OnPost()
         {
+            var checklist = new LoadingChecklist
+            {
+                StartLoading = this.StartLoading,
+                EndLoading = this.EndLoading,
+                CmrNumber = this.CmrNumber,
+                TransportNumber = this.TransportNumber,
+                RegistrationPlates = this.RegistrationPlates,
+                LoadedQuantity = double.TryParse(this.LoadedQuantity, out var quantity) ? quantity : 0.0,
+                Seal = this.Seal,
+                WarehouseSignature = this.WarehouseSignature,
+                DriverSignature = this.DriverSignature,
+                ChecklistAnswer = ChecklistItems.Select(ci => new ChecklistAnswer
+                {
+                    Question = ci.Question ?? "",
+                    Answer = ci.Answer ?? "NO",
+                    Comment = ci.Comment
+                }).ToList()
+            };
+
+            _context.LoadingChecklists.Add(checklist);
+            _context.SaveChanges();
+
+
             foreach (var item in IzkladiscenoItems)
             {
                 _context.Izkladisceno.Add(new Izkladisceno

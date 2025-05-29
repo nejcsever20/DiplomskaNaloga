@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using diplomska.Data;
 
@@ -11,9 +12,11 @@ using diplomska.Data;
 namespace diplomska.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250528121814_added_save_loading_checkout_to_database")]
+    partial class added_save_loading_checkout_to_database
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -220,35 +223,6 @@ namespace diplomska.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("diplomska.Models.ChecklistAnswer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Answer")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Comment")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("LoadingChecklistId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Question")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("LoadingChecklistId");
-
-                    b.ToTable("ChecklistAnswers");
-                });
-
             modelBuilder.Entity("diplomska.Models.ChecklistItem", b =>
                 {
                     b.Property<int>("Id")
@@ -263,10 +237,15 @@ namespace diplomska.Migrations
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("LoadingChecklistid")
+                        .HasColumnType("int");
+
                     b.Property<string>("Question")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("LoadingChecklistid");
 
                     b.ToTable("checklistItems");
                 });
@@ -449,15 +428,11 @@ namespace diplomska.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("diplomska.Models.ChecklistAnswer", b =>
+            modelBuilder.Entity("diplomska.Models.ChecklistItem", b =>
                 {
-                    b.HasOne("diplomska.Models.LoadingChecklist", "LoadingChecklist")
-                        .WithMany("ChecklistAnswer")
-                        .HasForeignKey("LoadingChecklistId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("LoadingChecklist");
+                    b.HasOne("diplomska.Models.LoadingChecklist", null)
+                        .WithMany("ChecklistItems")
+                        .HasForeignKey("LoadingChecklistid");
                 });
 
             modelBuilder.Entity("diplomska.Models.Izkladisceno", b =>
@@ -480,7 +455,7 @@ namespace diplomska.Migrations
 
             modelBuilder.Entity("diplomska.Models.LoadingChecklist", b =>
                 {
-                    b.Navigation("ChecklistAnswer");
+                    b.Navigation("ChecklistItems");
                 });
 #pragma warning restore 612, 618
         }

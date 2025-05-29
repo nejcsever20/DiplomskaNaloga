@@ -12,5 +12,9 @@ namespace diplomska.Data
 
         public DbSet<Transport> Transport { get; set; }
         public DbSet<Izkladisceno> Izkladisceno { get; set; }
+        public DbSet<LoadingChecklist> LoadingChecklists { get; set; }
+        public DbSet<ChecklistItem> checklistItems { get; set; }
+        public DbSet<ChecklistAnswer> ChecklistAnswers { get; set; }
+
     }
 }

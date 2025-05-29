@@ -115,25 +115,25 @@
             <legend>Basic Information</legend>
 
             <label>Start of Loading:</label>
-            <input type="datetime-local" asp-for="StartLoading" />
+            <span class="form-control-plaintext">@Model.StartLoading.ToString("g")</span>
 
             <label>End of Loading:</label>
-            <input type="datetime-local" asp-for="EndLoading" />
+            <span class="form-control-plaintext">@Model.EndLoading.ToString("g")</span>
 
             <label>CMR Number:</label>
-            <input type="text" asp-for="CmrNumber" />
+            <span class="form-control-plaintext">@Model.CmrNumber</span>
 
             <label>Transport Number:</label>
-            <input type="text" asp-for="TransportNumber" readonly />
+            <span class="form-control-plaintext">@Model.TransportNumber</span>
 
             <label>Loaded Quantity:</label>
             <span class="text-field">@Model.LoadedQuantity</span>
 
             <label>Registration Plates:</label>
-            <input type="text" asp-for="RegistrationPlates" readonly />
+            <span class="form-control-plaintext">@Model.RegistrationPlates</span>
 
             <label>Seal:</label>
-            <input type="text" asp-for="Seal" readonly />
+            <span class="form-control-plaintext">@Model.Seal</span>
         </fieldset>
 
         <fieldset>
