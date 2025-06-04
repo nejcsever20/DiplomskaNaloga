@@ -2,13 +2,15 @@
 @model diplomska.Pages.Izmenovodja.CallbackModel
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
+<head>
+    <link rel="stylesheet" href="~/css/callback.css" />
+</head>
 <h2>All Transports</h2>
 
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Id</th>
+            <th hidden>Id</th>
             <th>StTransporta</th>
             <th>PlaniranPrihod</th>
             <th>Sp</th>
@@ -25,7 +27,7 @@
             var callbackReason = item.CallbackReason ?? "-";
 
             <tr class="@(item.CallbackReason != null ? "table-warning" : "")">
-                <td>@transportId</td>
+                <td hidden>@transportId</td>
                 <td>@transport?.StTransporta</td>
                 <td>@(transport?.PlaniranPrihod?.ToString("yyyy-MM-dd HH:mm") ?? "-")</td>
                 <td>@(transport?.Sp == true ? "Yes" : "No")</td>

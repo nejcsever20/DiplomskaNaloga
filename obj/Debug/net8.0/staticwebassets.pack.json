@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\admin.css"
     },
     {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\callback.css",
+      "PackagePath": "staticwebassets\\css\\callback.css"
+    },
+    {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\css\\confirmaccountadmin.css",
       "PackagePath": "staticwebassets\\css\\confirmaccountadmin.css"
     },

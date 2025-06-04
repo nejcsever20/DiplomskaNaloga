@@ -1,0 +1,120 @@
+﻿/* Global page styles */
+body {
+    background-color: #DDDDDD;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #125D98;
+    margin: 20px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Headings */
+h2 {
+    color: #125D98;
+    border-bottom: 2px solid #3C8DAD;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* Table styles */
+table.table {
+    background-color: white;
+    border: 1px solid #3C8DAD;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    table.table thead {
+        background-color: #125D98;
+        color: white;
+    }
+
+table.table-striped tbody tr:nth-child(odd) {
+    background-color: #F5F5F5;
+}
+
+.table-warning {
+    background-color: #F5A962 !important;
+    color: #000;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #125D98;
+    border-color: #125D98;
+}
+
+    .btn-primary:hover {
+        background-color: #3C8DAD;
+        border-color: #3C8DAD;
+    }
+
+.btn-danger {
+    background-color: #F5A962;
+    border-color: #F5A962;
+    color: #000;
+}
+
+    .btn-danger:hover {
+        background-color: #e48a3a;
+        border-color: #e48a3a;
+        color: #000;
+    }
+
+.btn-secondary {
+    background-color: #DDDDDD;
+    border-color: #CCCCCC;
+    color: #125D98;
+}
+
+    .btn-secondary:hover {
+        background-color: #CCCCCC;
+        color: #125D98;
+    }
+
+/* Modal */
+.modal-content {
+    border: 2px solid #125D98;
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #3C8DAD;
+    color: white;
+    border-bottom: 1px solid #125D98;
+}
+
+.modal-footer {
+    background-color: #DDDDDD;
+}
+
+/* Form Select */
+.form-select:focus {
+    border-color: #3C8DAD;
+    box-shadow: 0 0 0 0.2rem rgba(60, 141, 173, 0.25);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+table.table, .modal-content {
+    animation: slideInUp 0.6s ease-out;
+}
