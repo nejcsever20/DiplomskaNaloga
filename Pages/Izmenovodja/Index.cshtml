@@ -38,8 +38,10 @@
         margin: 5% auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 80%;
-        max-width: 500px;
+        width: 90%;
+        max-width: 600px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
 
     .close-btn {
@@ -69,17 +71,6 @@
     #openImportModalBtn {
         margin-bottom: 15px;
     }
-
-    .modal-content {
-        width: 90%;
-        max-width: 600px;
-        padding: 30px;
-        background-color: #fff;
-        margin: auto;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-
 </style>
 
 <h1>Index</h1>
@@ -101,6 +92,11 @@
 }
 else
 {
+    <!-- ✅ CHANGED: Redirects to a new page instead of opening modal -->
+    <a class="btn btn-warning mb-3" href="/Izmenovodja/Callback">
+        🔁 Callback / Vrnitev
+    </a>
+
     <table class="table">
         <thead>
             <tr>
@@ -175,6 +171,40 @@ else
         <button id="print-btn" class="btn btn-primary print-btn">Print</button>
     </div>
 </div>
+
+<!--  Global Callback Modal -->
+<div id="globalCallbackModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn global-callback-close">&times;</span>
+
+        <h2>Izberi transport za Callback</h2>
+
+        <!-- Select list populated from Model.Transport -->
+        <div class="form-group">
+            <label for="global-callback-select"><strong>Št. Transporta:</strong></label>
+            <select id="global-callback-select" class="form-control" required>
+                <option value="" disabled selected hidden>— izberi —</option>
+                @foreach (var t in Model.Transport.OrderBy(t => t.StTransporta))
+                {
+                    <option value="@t.Id" data-st="@t.StTransporta">
+                        @t.StTransporta (@t.Registracija, @t.Voznik)
+                    </option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="global-callback-reason">Razlog vrnitve / callback:</label>
+            <textarea id="global-callback-reason" class="form-control" rows="3"></textarea>
+        </div>
+
+        <br />
+        <button id="global-callback-confirm" class="btn btn-primary">
+            Potrdi Callback
+        </button>
+    </div>
+</div>
+
 
 <!-- Import File Modal -->
 <div id="importExcelModal" class="modal">
@@ -327,6 +357,45 @@ else
                     }, 400);
                 });
             }
+        });
+
+        // Global callback modal logic
+        const globalCallbackModal = document.getElementById("globalCallbackModal");
+        const openGlobalCallbackBtn = document.getElementById("openGlobalCallbackModalBtn");
+        const globalCallbackClose = document.querySelector(".global-callback-close");
+        const globalCallbackSelect = document.getElementById("global-callback-select");
+        const globalCallbackReason = document.getElementById("global-callback-reason");
+        const globalCallbackConfirm = document.getElementById("global-callback-confirm");
+
+        openGlobalCallbackBtn.addEventListener("click", () => {
+            globalCallbackSelect.value = "";          // reset selection
+            globalCallbackReason.value = "";          // reset reason
+            globalCallbackModal.style.display = "block";
+        });
+
+        globalCallbackClose.addEventListener("click", () => {
+            globalCallbackModal.style.display = "none";
+        });
+
+        window.addEventListener("click", e => {
+            if (e.target === globalCallbackModal) globalCallbackModal.style.display = "none";
+        });
+
+        globalCallbackConfirm.addEventListener("click", () => {
+            const selectedOption = globalCallbackSelect.options[globalCallbackSelect.selectedIndex];
+            const transportId = globalCallbackSelect.value;
+            const stTransporta = selectedOption?.dataset?.st;
+            const reason = globalCallbackReason.value.trim();
+
+            if (!transportId) {
+                alert("Prosimo, izberite transport.");
+                return;
+            }
+
+            // TODO: Replace alert with real POST (fetch/ajax) or form submission
+            alert(`Callback za transport:\n  Id: ${transportId}\n  Št.: ${stTransporta}\n  Razlog: ${reason || "(ni podan)"}`);
+
+            globalCallbackModal.style.display = "none";
         });
     </script>
 }
