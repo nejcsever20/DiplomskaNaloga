@@ -44,7 +44,24 @@ namespace diplomska.Pages.Izmenovodja
                     t.Voznik.Contains(SearchString));
             }
 
-            Transport = await query.ToListAsync();
+            Transport = await query
+                .Select(t => new Transport
+                {
+                    Id = t.Id,
+                    StTransporta = t.StTransporta,
+                    Registracija = t.Registracija,
+                    Voznik = t.Voznik,
+                    Sp = t.Sp,
+                    SK = t.SK,
+                    Skladisce = t.Skladisce,
+                    VrstaTransporta = t.VrstaTransporta,
+                    PlaniranPrihod = t.PlaniranPrihod,
+                    PavzaVoznika = t.PavzaVoznika,
+                    VrstaPrevoznegaSredstva = t.VrstaPrevoznegaSredstva,
+                    NAVISZacetekSklada = t.NAVISZacetekSklada,
+                    NAVISKonecSklada = t.NAVISKonecSklada
+                })
+                .ToListAsync();
         }
 
         public async Task<IActionResult> OnPostImportExcelAsync()

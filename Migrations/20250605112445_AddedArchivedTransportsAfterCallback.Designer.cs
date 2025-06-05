@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using diplomska.Data;
 
@@ -11,9 +12,11 @@ using diplomska.Data;
 namespace diplomska.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250605112445_AddedArchivedTransportsAfterCallback")]
+    partial class AddedArchivedTransportsAfterCallback
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -231,9 +234,6 @@ namespace diplomska.Migrations
                     b.Property<DateTime>("ArchivedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("CallbackReason")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("DolocenSkladiscnikId")
                         .HasColumnType("nvarchar(max)");
 
@@ -415,9 +415,6 @@ namespace diplomska.Migrations
 
                     b.Property<string>("DolocenSkladiscnikId")
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<bool>("IsArchived")
-                        .HasColumnType("bit");
 
                     b.Property<bool>("IsCallback")
                         .HasColumnType("bit");

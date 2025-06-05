@@ -1,0 +1,58 @@
+﻿@page
+@model diplomska.Pages.Izmenovodja.ArchivedTransportsModel
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<head>
+    <link rel="stylesheet" href="~/css/callback.css" />
+</head>
+
+<h2>Archived Transports</h2>
+
+<a asp-page="/Izmenovodja/Callback" class="btn btn-outline-primary mb-3">Back to Active Transports</a>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th hidden>ID</th>
+            <th>StTransporta</th>
+            <th>Planiran Prihod</th>
+            <th>Sp</th>
+            <th>Callback Reason</th>
+            <th>Remove Archive</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transport in Model.ArchivedTransports)
+        {
+            <tr>
+                <td hidden>@transport.Id</td>
+                <td>@transport.StTransporta</td>
+                <td>@(transport.PlaniranPrihod?.ToString("yyyy-MM-dd HH:mm") ?? "-")</td>
+                <td>@(transport.Sp ? "Yes" : "No")</td>
+                <td>@(transport.CallbackReason ?? "-")</td>
+                <td>
+                    <form method="post" asp-page-handler="RemoveArchive" asp-route-id="@transport.Id" data-confirm="remove-archive">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const forms = document.querySelectorAll('form[data-confirm="remove-archive"]');
+        forms.forEach(form => {
+            form.addEventListener('submit', function (e) {
+                const confirmed = confirm('Are you sure you want to remove this archive?');
+                if (!confirmed) {
+                    e.preventDefault();
+                }
+            });
+        });
+    });
+</script>

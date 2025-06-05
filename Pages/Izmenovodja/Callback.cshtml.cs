@@ -38,10 +38,12 @@ namespace diplomska.Pages.Izmenovodja
 
         [BindProperty]
         public string SelectedReason { get; set; } = string.Empty;
+        public string? CallbackReason { get; set; }
 
         public async Task OnGetAsync()
         {
             Transports = await _context.Transport
+                .Where(t => !t.IsArchived) // 👈 Only show active ones
                 .OrderByDescending(t => t.PlaniranPrihod)
                 .Select(t => new TransportViewModel
                 {
@@ -56,28 +58,39 @@ namespace diplomska.Pages.Izmenovodja
             if (SelectedTransportId <= 0 || string.IsNullOrWhiteSpace(SelectedReason))
             {
                 ModelState.AddModelError(string.Empty, "Please select a valid transport and reason.");
-                await OnGetAsync(); // repopulate Transports for redisplay
+                await OnGetAsync();
                 return Page();
             }
 
             var transport = await _context.Transport.FindAsync(SelectedTransportId);
-
             if (transport == null)
             {
                 ModelState.AddModelError(string.Empty, "Selected transport not found.");
-                await OnGetAsync(); // repopulate
+                await OnGetAsync();
                 return Page();
             }
 
+            // Archive logic
+            var archived = new ArchivedTransport
+            {
+                StTransporta = transport.StTransporta,
+                PlaniranPrihod = transport.PlaniranPrihod,
+                Sp = transport.Sp,
+                CallbackReason = SelectedReason
+            };
+
+            await _context.ArchivedTransports.AddAsync(archived);
+
+            // Update original transport
             transport.IsCallback = true;
             transport.SK = SelectedReason;
+            transport.IsArchived = true;
 
             _context.Transport.Update(transport);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage(); // redirect to clear form state and reload data
+            return RedirectToPage();
         }
-
         public async Task<IActionResult> OnPostRemoveCallbackAsync(long transportId)
         {
             var transport = await _context.Transport.FindAsync(transportId);
