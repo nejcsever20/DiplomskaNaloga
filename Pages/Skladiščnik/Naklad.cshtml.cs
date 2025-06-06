@@ -24,7 +24,7 @@ namespace diplomska.Pages.Skladiščnik
         [BindProperty] public int? Kolicina { get; set; }
         [BindProperty] public int? Palete { get; set; }
         [BindProperty] public string Skladiscnik { get; set; }
-        [BindProperty] public long TransportId { get; set; }
+        [BindProperty(SupportsGet = true)] public long TransportId { get; set; }
         [BindProperty] public long? StTransporta { get; set; }
         [BindProperty] public int Rampa1 { get; set; }
         [BindProperty] public int Rampa2 { get; set; }
@@ -40,8 +40,7 @@ namespace diplomska.Pages.Skladiščnik
 
         public List<string> ChartLabels { get; set; } = new List<string>();
         public List<int> ChartData { get; set; } = new List<int>();
-        public List<string> ChartUrls { get; set; } = new List<string>();
-        public List<long> TransportIds { get; set; } = new(); // ✅ Updated to List<long>
+        public List<long> TransportIds { get; set; } = new List<long>();
 
         public async Task<IActionResult> OnGet()
         {
@@ -49,11 +48,10 @@ namespace diplomska.Pages.Skladiščnik
             if (string.IsNullOrWhiteSpace(userId))
                 return Page();
 
-            // Get all users from the database
+            // Get all users in "Skladiščnik" role
             var allUsers = await _userManager.Users.ToListAsync();
-
-            // Filter the users who are in the "Skladiščnik" role
             var skladiscniki = new List<object>();
+
             foreach (var user in allUsers)
             {
                 if (await _userManager.IsInRoleAsync(user, "Skladiščnik"))
@@ -62,34 +60,39 @@ namespace diplomska.Pages.Skladiščnik
                 }
             }
 
-            // Fill the Skladiscnik dropdown
             SkladiscnikSelectList = new SelectList(skladiscniki, "FullName", "FullName");
 
-            // Get the list of already existing Izkladisceno entries
+            // Load Izkladisceno entries for current TransportId
             IzkladiscenoList = await _context.Izkladisceno
-                                              .Select(item => new Izkladisceno
-                                              {
-                                                  Kolicina = item.Kolicina ?? 0,
-                                                  Palete = item.Palete ?? 0,
-                                                  Datum = item.Datum,
-                                                  Skladiscnik = item.Skladiscnik,
-                                              })
-                                              .ToListAsync();
+                .Where(i => i.TransportId == TransportId)
+                .Select(item => new Izkladisceno
+                {
+                    Id = item.Id,
+                    Kolicina = item.Kolicina ?? 0,
+                    Palete = item.Palete ?? 0,
+                    Datum = item.Datum,
+                    Skladiscnik = item.Skladiscnik,
+                    TransportId = item.TransportId
+                })
+                .ToListAsync();
 
-            // Get the latest transport data
-            var transport = await _context.Transport.OrderByDescending(t => t.Id).FirstOrDefaultAsync();
-            if (transport != null)
+            // Get latest transport for default selection if not already provided
+            if (TransportId == 0)
             {
-                TransportId = transport.Id;
-                StTransporta = transport.StTransporta ?? 0;
-            }
-            else
-            {
-                TransportId = 0;
-                StTransporta = 0;
+                var transport = await _context.Transport.OrderByDescending(t => t.Id).FirstOrDefaultAsync();
+                if (transport != null)
+                {
+                    TransportId = transport.Id;
+                    StTransporta = transport.StTransporta ?? 0;
+                }
+                else
+                {
+                    TransportId = 0;
+                    StTransporta = 0;
+                }
             }
 
-            // Group and analyze data
+            // Group Izkladisceno by Skladiscnik for chart
             var groupedData = await _context.Izkladisceno
                 .GroupBy(i => i.Skladiscnik)
                 .Select(g => new
@@ -106,8 +109,6 @@ namespace diplomska.Pages.Skladiščnik
 
             ChartLabels = groupedData.Select(g => g.Skladiscnik).ToList();
             ChartData = groupedData.Select(g => g.TotalKolicina).ToList();
-
-            // ✅ Flatten and convert nullable longs to long
             TransportIds = groupedData
                 .SelectMany(g => g.Transports)
                 .Where(id => id.HasValue)
@@ -117,21 +118,17 @@ namespace diplomska.Pages.Skladiščnik
             return Page();
         }
 
-        // Handler to save the data
+        // Save Izkladisceno entry
         public async Task<IActionResult> OnPostSaveData()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var username = User.Identity?.Name;
-
             if (string.IsNullOrWhiteSpace(userId))
-            {
                 return Unauthorized();
-            }
 
-            var transport = await _context.Transport.FirstOrDefaultAsync();
+            var transport = await _context.Transport.FirstOrDefaultAsync(t => t.Id == TransportId);
             if (transport == null)
             {
-                ModelState.AddModelError(string.Empty, "No valid transport found. Please create one first.");
+                ModelState.AddModelError(string.Empty, "Izbran transport ni veljaven.");
                 return Page();
             }
 
@@ -148,24 +145,34 @@ namespace diplomska.Pages.Skladiščnik
             _context.Izkladisceno.Add(izkladisceno);
             await _context.SaveChangesAsync();
 
-            IzkladiscenoList = await _context.Izkladisceno.ToListAsync();
-
-            return RedirectToPage();
+            return RedirectToPage(new { TransportId = transport.Id });
         }
 
-        // Handler for adding notes
         public async Task<IActionResult> OnPostAddNote()
         {
+            var transport = await _context.Transport.OrderByDescending(t => t.Id).FirstOrDefaultAsync();
+            if (transport == null)
+            {
+                TempData["ErrorMessage"] = "Ni najdenega aktivnega transporta za shranjevanje opombe.";
+                return RedirectToPage();
+            }
+
+            // Uncomment and set Notes property if Transport model has Notes field
+            // transport.Notes = Notes;
+
+            _context.Transport.Update(transport);
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Opomba uspešno shranjena.";
+
             return RedirectToPage();
         }
 
-        // Handler for deleting an entry
         public async Task<IActionResult> OnPostDelete(long id)
         {
-            // Cast the long to int to match the PK type
-            var izkladisceno = await _context.Izkladisceno.FindAsync((int)id);
+            var izkladisceno = await _context.Izkladisceno.FindAsync(id);
 
-            if (izkladisceno == null)
+            if (izkladisceno == null || izkladisceno.TransportId != TransportId)
             {
                 return NotFound();
             }
@@ -173,14 +180,13 @@ namespace diplomska.Pages.Skladiščnik
             var currentUser = User.Identity?.Name;
             if (izkladisceno.Skladiscnik != currentUser)
             {
-                return Unauthorized(); // Only the user who created the record can delete it
+                return Unauthorized();
             }
 
             _context.Izkladisceno.Remove(izkladisceno);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage();
+            return RedirectToPage(new { TransportId = TransportId });
         }
-
     }
 }

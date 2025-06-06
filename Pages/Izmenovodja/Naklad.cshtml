@@ -14,8 +14,8 @@
 <!DOCTYPE html>
 <html lang="sl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/css/skladiscnik.css" />
     <title>@ViewData["Title"]</title>
     <style>
@@ -156,7 +156,6 @@
             padding: 1rem;
         }
     </style>
-
 </head>
 <body>
     <h1>Začetek, konec naklada</h1>
@@ -296,22 +295,21 @@
         </tbody>
     </table>
 
-    <!-- Form for adding Izkladiščeno -->
+    <!-- Form for adding Izkladiščeno with hidden TransportId -->
     <h4>Dodaj izkladiščeno</h4>
     <form method="post" asp-page-handler="SaveData">
-        <div>
-            <label>Količina:</label>
-            <input type="number" asp-for="Kolicina" required />
-        </div>
-        <div>
-            <label>Palete:</label>
-            <input type="number" asp-for="Palete" required />
-        </div>
-        <div>
-            <label>Skladiščnik:</label>
-            <select asp-for="Skladiscnik" asp-items="Model.SkladiscnikSelectList" required></select>
-        </div>
-        <button type="submit">Dodaj</button>
+        <input type="hidden" asp-for="TransportId" />
+
+        <label asp-for="Kolicina"></label>
+        <input asp-for="Kolicina" class="form-control" />
+
+        <label asp-for="Palete"></label>
+        <input asp-for="Palete" class="form-control" />
+
+        <label asp-for="Skladiscnik"></label>
+        <select asp-for="Skladiscnik" asp-items="Model.SkladiscnikSelectList" class="form-control"></select>
+
+        <button type="submit">Shrani</button>
     </form>
 
     <hr />
@@ -359,8 +357,7 @@
                         const detailUrl = `/Izmenovodja/DetailedInfo?transportId=${transportId}`;
                         window.location.href = detailUrl;
                     }
-                }
-                ,
+                },
                 scales: {
                     y: {
                         beginAtZero: true,
@@ -378,8 +375,5 @@
             }
         });
     </script>
-
-
-
 </body>
 </html>

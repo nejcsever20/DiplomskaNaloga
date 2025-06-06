@@ -39,7 +39,7 @@ namespace diplomska.Models
         public DateTime? NAVISZacetekSklada { get; set; }
 
         public DateTime? NAVISKonecSklada { get; set; }
-
+        public string? Notes { get; set; }
         public bool IsCallback { get; set; }
         public bool IsArchived { get; set; } = false;
     }
