@@ -28,22 +28,22 @@ namespace diplomska.Pages.Izmenovodja
                 return NotFound();
             }
 
-            // Load archived transport
+            // Load the archived transport
             OldTransport = await _context.ArchivedTransports
-                .AsNoTracking()
-                .FirstOrDefaultAsync(a => a.Id == ArchivedId);
+    .AsNoTracking()
+    .FirstOrDefaultAsync(a => a.Id == ArchivedId);
 
             if (OldTransport == null)
             {
                 return NotFound();
             }
 
-            // Try to find new transport with same StTransporta and not archived
+            // Load the latest new transport with matching StTransporta
             if (OldTransport.StTransporta != null)
             {
                 NewTransport = await _context.Transport
                     .AsNoTracking()
-                    .Include(t => t.DolocenSkladiscnikNavigation) // Include user details
+                    .Include(t => t.DolocenSkladiscnikNavigation)
                     .Where(t => t.StTransporta == OldTransport.StTransporta && !t.IsArchived)
                     .OrderByDescending(t => t.PlaniranPrihod)
                     .FirstOrDefaultAsync();

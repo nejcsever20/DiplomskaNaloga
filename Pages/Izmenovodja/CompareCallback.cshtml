@@ -1,123 +1,47 @@
-﻿@page "CompareCallback"
+﻿@page
 @model diplomska.Pages.Izmenovodja.CompareCallbackModel
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+@{
+    ViewData["Title"] = "Compare Callback Transport";
+}
 
 <h2>Compare Callback Transport</h2>
 
-@if (Model.OldTransport != null)
-{
-    <table class="table table-bordered table-striped align-middle">
-        <thead class="table-dark">
-            <tr>
-                <th>Field</th>
-                <th>Old Transport (Archived)</th>
-                <th>New Transport</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>StTransporta</td>
-                <td>@Model.OldTransport.StTransporta</td>
-                <td>@Model.NewTransport?.StTransporta</td>
-            </tr>
-            <tr>
-                <td>Planiran Prihod</td>
-                <td>@Model.OldTransport.PlaniranPrihod?.ToString("yyyy-MM-dd HH:mm")</td>
-                <td>@Model.NewTransport?.PlaniranPrihod?.ToString("yyyy-MM-dd HH:mm")</td>
-            </tr>
-            <tr>
-                <td>SP</td>
-                <td>@(Model.OldTransport.Sp ? "Yes" : "No")</td>
-                <td>@(Model.NewTransport?.Sp == true ? "Yes" : "No")</td>
-            </tr>
-            <tr>
-                <td>Skladisce</td>
-                <td>@Model.OldTransport.Skladisce</td>
-                <td>@Model.NewTransport?.Skladisce</td>
-            </tr>
-            <tr>
-                <td>Vrsta Transporta</td>
-                <td>@Model.OldTransport.VrstaTransporta</td>
-                <td>@Model.NewTransport?.VrstaTransporta</td>
-            </tr>
-            <tr>
-                <td>Pavza Voznika</td>
-                <td>@Model.OldTransport.PavzaVoznika</td>
-                <td>@Model.NewTransport?.PavzaVoznika</td>
-            </tr>
-            <tr>
-                <td>Dolocen Skladiščnik</td>
-                <td>
-                    @if (!string.IsNullOrEmpty(Model.OldTransport.DolocenSkladiscnikId))
-                    {
-                        <a href="mailto:@Model.OldTransport.DolocenSkladiscnikId">@Model.OldTransport.DolocenSkladiscnikId</a>
-                    }
-                    else
-                    {
-                        <span>—</span>
-                    }
-                </td>
-                <td>
-                    @if (!string.IsNullOrEmpty(Model.NewTransport?.DolocenSkladiscnikNavigation?.Email))
-                    {
-                        <a href="mailto:@Model.NewTransport.DolocenSkladiscnikNavigation.Email">
-                            @Model.NewTransport.DolocenSkladiscnikNavigation.Email
-                        </a>
-                    }
-                    else
-                    {
-                        <span>—</span>
-                    }
-                </td>
-            </tr>
-
-            <tr>
-                <td>Registracija</td>
-                <td>@Model.OldTransport.Registracija</td>
-                <td>@Model.NewTransport?.Registracija</td>
-            </tr>
-            <tr>
-                <td>Vrsta Prevoznega Sredstva</td>
-                <td>@Model.OldTransport.VrstaPrevoznegaSredstva</td>
-                <td>@Model.NewTransport?.VrstaPrevoznegaSredstva</td>
-            </tr>
-            <tr>
-                <td>Voznik</td>
-                <td>@Model.OldTransport.Voznik</td>
-                <td>@Model.NewTransport?.Voznik</td>
-            </tr>
-            <tr>
-                <td>NAVIS Začetek Sklada</td>
-                <td>@Model.OldTransport.NAVISZacetekSklada?.ToString("yyyy-MM-dd HH:mm")</td>
-                <td>@Model.NewTransport?.NAVISZacetekSklada?.ToString("yyyy-MM-dd HH:mm")</td>
-            </tr>
-            <tr>
-                <td>NAVIS Konec Sklada</td>
-                <td>@Model.OldTransport.NAVISKonecSklada?.ToString("yyyy-MM-dd HH:mm")</td>
-                <td>@Model.NewTransport?.NAVISKonecSklada?.ToString("yyyy-MM-dd HH:mm")</td>
-            </tr>
-            <tr>
-                <td>Notes</td>
-                <td>—</td>
-                <td>@Model.NewTransport?.Notes</td>
-            </tr>
-            <tr>
-                <td>Callback Reason</td>
-                <td>@Model.OldTransport.CallbackReason</td>
-                <td>—</td>
-            </tr>
-            <tr>
-                <td>Is Callback</td>
-                <td>@(Model.OldTransport.IsCallback ? "Yes" : "Yes")</td>
-                <td>@(Model.NewTransport?.IsCallback == true ? "Yes" : "No")</td>
-            </tr>
-        </tbody>
-    </table>
-}
-else
-{
-    <div class="alert alert-warning">
-        No archived transport found with the provided ID.
-    </div>
-}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Old Transport (Archived)</th>
+            <th>New Transport</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>StTransporta</td><td>@Model.OldTransport?.StTransporta</td><td>@Model.NewTransport?.StTransporta</td></tr>
+        <tr><td>Planiran Prihod</td><td>@Model.OldTransport?.PlaniranPrihod</td><td>@Model.NewTransport?.PlaniranPrihod</td></tr>
+        <tr><td>SP</td><td>@(Model.OldTransport?.Sp == true ? "Yes" : "No")</td><td>@(Model.NewTransport?.Sp == true ? "Yes" : "No")</td></tr>
+        <tr><td>Skladisce</td><td>@Model.OldTransport?.Skladisce</td><td>@Model.NewTransport?.Skladisce</td></tr>
+        <tr><td>Vrsta Transporta</td><td>@Model.OldTransport?.VrstaTransporta</td><td>@Model.NewTransport?.VrstaTransporta</td></tr>
+        <tr><td>Pavza Voznika</td><td>@Model.OldTransport?.PavzaVoznika</td><td>@Model.NewTransport?.PavzaVoznika</td></tr>
+        <tr>
+            <td>Dolocen Skladiščnik</td>
+            <td>@Model.NewTransport?.DolocenSkladiscnikNavigation?.Email</td>
+            <td>@Model.NewTransport?.DolocenSkladiscnikNavigation?.Email</td>
+        </tr>
+        <tr>
+            <td>Registracija</td>
+            <td>
+                @Model.OldTransport?.Registracija<br />
+                Type: @Model.OldTransport?.VrstaPrevoznegaSredstva<br />
+                Driver: @Model.OldTransport?.Voznik
+            </td>
+            <td>
+                @Model.NewTransport?.Registracija<br />
+                Type: @Model.NewTransport?.VrstaPrevoznegaSredstva<br />
+                Driver: @Model.NewTransport?.Voznik
+            </td>
+        </tr>
+        <tr><td>NAVIS Začetek Sklada</td><td>@Model.OldTransport?.NAVISZacetekSklada</td><td>@Model.NewTransport?.NAVISZacetekSklada</td></tr>
+        <tr><td>NAVIS Konec Sklada</td><td>@Model.OldTransport?.NAVISKonecSklada</td><td>@Model.NewTransport?.NAVISKonecSklada</td></tr>
+        <tr><td>Callback Reason</td><td>@Model.OldTransport?.CallbackReason</td><td>@Model.NewTransport?.SK</td></tr>
+        <tr><td>Is Callback</td><td>@(Model.OldTransport?.IsCallback == true ? "Yes" : "No")</td><td>@(Model.NewTransport?.IsCallback == true ? "Yes" : "No")</td></tr>
+    </tbody>
+</table>

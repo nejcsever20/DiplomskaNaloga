@@ -70,18 +70,27 @@ namespace diplomska.Pages.Izmenovodja
                 return Page();
             }
 
-            // Archive logic
             var archived = new ArchivedTransport
             {
                 StTransporta = transport.StTransporta,
                 PlaniranPrihod = transport.PlaniranPrihod,
                 Sp = transport.Sp,
-                CallbackReason = SelectedReason
+                Skladisce = transport.Skladisce,
+                VrstaTransporta = transport.VrstaTransporta,
+                PavzaVoznika = transport.PavzaVoznika,
+                DolocenSkladiscnikId = transport.DolocenSkladiscnikId,
+                Registracija = transport.Registracija,
+                VrstaPrevoznegaSredstva = transport.VrstaPrevoznegaSredstva,
+                Voznik = transport.Voznik,
+                NAVISZacetekSklada = transport.NAVISZacetekSklada,
+                NAVISKonecSklada = transport.NAVISKonecSklada,
+                CallbackReason = SelectedReason,
+                IsCallback = true
             };
 
             await _context.ArchivedTransports.AddAsync(archived);
 
-            // Update original transport
+            // Update the original transport
             transport.IsCallback = true;
             transport.SK = SelectedReason;
             transport.IsArchived = true;
@@ -90,6 +99,7 @@ namespace diplomska.Pages.Izmenovodja
             await _context.SaveChangesAsync();
 
             return RedirectToPage();
+
         }
         public async Task<IActionResult> OnPostRemoveCallbackAsync(long transportId)
         {
