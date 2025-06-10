@@ -31,7 +31,9 @@ namespace diplomska.Pages.Admin
             Izkladisceno = _context.Izkladisceno.ToList();
 
             var users = _userManager.Users.ToList();
-            var userMap = users.ToDictionary(u => u.Id, u => $"{u.UserName} ({u.Email})");
+            var userMap = users
+                .Where(u => !string.IsNullOrEmpty(u.Id))
+                .ToDictionary(u => u.Id, u => $"{u.UserName} ({u.Email})");
 
             ViewData["SkladiscnikMap"] = userMap;
             return Page();
@@ -43,7 +45,9 @@ namespace diplomska.Pages.Admin
             var izkList = _context.Izkladisceno.ToList();
 
             var users = _userManager.Users.ToList();
-            var userMap = users.ToDictionary(u => u.Id, u => $"{u.UserName} ({u.Email})");
+            var userMap = users
+                .Where(u => !string.IsNullOrEmpty(u.Id))
+                .ToDictionary(u => u.Id, u => $"{u.UserName} ({u.Email})");
 
             using var workbook = new XLWorkbook();
             var sheet = workbook.Worksheets.Add("Transport + Izkladisceno");
@@ -65,11 +69,12 @@ namespace diplomska.Pages.Admin
 
         private void WriteTransportData(IXLWorksheet sheet, List<Transport> transports, int startCol, Dictionary<string, string> userMap)
         {
-            var headers = new[] {
-        "Id", "Sp", "SK", "Skladisce", "VrstaTransporta", "StTransporta",
-        "PlaniranPrihod", "PavzaVoznika", "DolocenSkladiščnik", "Registracija",
-        "VrstaPrevoznegaSredstva", "Voznik", "NAVISZacetekSklada", "NAVISKonecSklada"
-    };
+            var headers = new[]
+            {
+                "Id", "Sp", "SK", "Skladisce", "VrstaTransporta", "StTransporta",
+                "PlaniranPrihod", "PavzaVoznika", "DolocenSkladiščnik", "Registracija",
+                "VrstaPrevoznegaSredstva", "Voznik", "NAVISZacetekSklada", "NAVISKonecSklada"
+            };
 
             // Header row
             for (int i = 0; i < headers.Length; i++)
@@ -96,16 +101,16 @@ namespace diplomska.Pages.Admin
                 sheet.Cell(row, startCol + 5).Value = t.StTransporta;
                 sheet.Cell(row, startCol + 6).Value = t.PlaniranPrihod;
                 sheet.Cell(row, startCol + 7).Value = t.PavzaVoznika;
-                sheet.Cell(row, startCol + 8).Value = userMap.TryGetValue(t.DolocenSkladiscnikId, out var displayName)
-                    ? displayName
-                    : t.DolocenSkladiscnikId;
+                sheet.Cell(row, startCol + 8).Value =
+                    !string.IsNullOrEmpty(t.DolocenSkladiscnikId) && userMap.TryGetValue(t.DolocenSkladiscnikId, out var displayName)
+                        ? displayName
+                        : t.DolocenSkladiscnikId ?? "Ni dodeljen";
                 sheet.Cell(row, startCol + 9).Value = t.Registracija;
                 sheet.Cell(row, startCol + 10).Value = t.VrstaPrevoznegaSredstva;
                 sheet.Cell(row, startCol + 11).Value = t.Voznik;
                 sheet.Cell(row, startCol + 12).Value = t.NAVISZacetekSklada;
                 sheet.Cell(row, startCol + 13).Value = t.NAVISKonecSklada;
 
-                // Optional: Alternate row background
                 if (i % 2 == 0)
                 {
                     for (int col = 0; col < headers.Length; col++)
@@ -116,12 +121,12 @@ namespace diplomska.Pages.Admin
             sheet.Columns(startCol, startCol + headers.Length - 1).AdjustToContents();
         }
 
-
         private void WriteIzkladiscenoData(IXLWorksheet sheet, List<Izkladisceno> izkList, Dictionary<string, string> userMap, int startCol)
         {
-            var headers = new[] {
-        "Id", "Kolicina", "Palete", "Skladiščnik", "Datum", "SkladiščnikId", "TransportId"
-    };
+            var headers = new[]
+            {
+                "Id", "Kolicina", "Palete", "Skladiščnik", "Datum", "SkladiščnikId", "TransportId"
+            };
 
             // Header row
             for (int i = 0; i < headers.Length; i++)
@@ -145,9 +150,10 @@ namespace diplomska.Pages.Admin
                 sheet.Cell(row, startCol + 2).Value = z.Palete;
                 sheet.Cell(row, startCol + 3).Value = z.Skladiscnik;
                 sheet.Cell(row, startCol + 4).Value = z.Datum;
-                sheet.Cell(row, startCol + 5).Value = userMap.TryGetValue(z.SkladiscnikId, out var displayName)
-                    ? displayName
-                    : z.SkladiscnikId;
+                sheet.Cell(row, startCol + 5).Value =
+                    !string.IsNullOrEmpty(z.SkladiscnikId) && userMap.TryGetValue(z.SkladiscnikId, out var displayName)
+                        ? displayName
+                        : z.SkladiscnikId ?? "Ni dodeljen";
                 sheet.Cell(row, startCol + 6).Value = z.TransportId;
 
                 if (i % 2 == 0)
@@ -159,6 +165,5 @@ namespace diplomska.Pages.Admin
 
             sheet.Columns(startCol, startCol + headers.Length - 1).AdjustToContents();
         }
-
     }
 }

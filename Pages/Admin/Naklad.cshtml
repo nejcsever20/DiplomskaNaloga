@@ -203,10 +203,10 @@
 
         <div>
             <label>Začetek naklada:</label>
-            <input type="datetime-local" asp-for="ZacetekNaklada"
-                   value="@(Model.ZacetekNaklada.HasValue ? Model.ZacetekNaklada.Value.ToString("yyyy-MM-ddTHH:mm") : "")"
+            <input type="datetime-local"
+                   id="ZacetekNakladaInput"
                    class="form-control" />
-            <button type="submit" asp-page-handler="SetTimes" class="btn btn-success">Nastavi</button>
+            <button type="button" class="btn btn-success" onclick="setCurrentTime()">Nastavi</button>
         </div>
 
         <div>
@@ -374,6 +374,19 @@
                 }
             }
         });
+
+
+        function setCurrentTime() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = (now.getMonth() + 1).toString().padStart(2, '0');
+            const day = now.getDate().toString().padStart(2, '0');
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const formatted = `${year}-${month}-${day}T${hours}:${minutes}`;
+
+            document.getElementById('ZacetekNakladaInput').value = formatted;
+        }
     </script>
 </body>
 </html>

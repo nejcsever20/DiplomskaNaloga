@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using diplomska.Services;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
 
 namespace diplomska.Pages.Admin
 {
+    [Authorize(Roles ="Izmenovodja, Admin")]
     public class ConfirmRegisterModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -65,7 +67,7 @@ namespace diplomska.Pages.Admin
 
             var currentUser = await _userManager.GetUserAsync(User);
             var currentRoles = await _userManager.GetRolesAsync(currentUser);
-            if (!currentRoles.Contains("Izmenovodja"))
+            if (!currentRoles.Contains("Izmenovodja") && !currentRoles.Contains("Admin"))
                 return Forbid();
 
             var claims = await _userManager.GetClaimsAsync(user);
@@ -102,7 +104,7 @@ namespace diplomska.Pages.Admin
 
             var currentUser = await _userManager.GetUserAsync(User);
             var currentRoles = await _userManager.GetRolesAsync(currentUser);
-            if (!currentRoles.Contains("Izmenovodja"))
+            if (!currentRoles.Contains("Izmenovodja") && !currentRoles.Contains("Admin"))
                 return Forbid();
 
             await _customEmailSender.SendCustomHtmlEmailAsync(
