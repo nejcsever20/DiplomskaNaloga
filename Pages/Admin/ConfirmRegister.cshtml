@@ -1,23 +1,24 @@
 ﻿@page
-@model diplomska.Pages.Admin.ConfrimRegisterModel
+@model diplomska.Pages.Admin.ConfirmRegisterModel
 @{
-    ViewData["Title"] = "Confirm Registration";
+    ViewData["Title"] = "Approve Registered Users";
 }
-
-<h1>@ViewData["Title"]</h1>
+<h1>Approve Registered Users</h1>
 
 <div class="row">
     <div class="col-md-6">
-        <h2>Pending Registration</h2>
-         
-        @if (!Model.PendingUsers.Any()){
-            <div class="alert alert-info">Trenutno ni nobenih čakajočij registracij za potrditev.</div>
+        <h2>Pending Registrations</h2>
+
+        @if (!Model.PendingUsers.Any())
+        {
+            <div class="alert alert-info">Trenutno ni nobenih čakajočih registracij za potrditev.</div>
         }
 
         <ul class="list-group">
-            @foreach(var user in Model.PendingUsers){
+            @foreach (var user in Model.PendingUsers)
+            {
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span>@user.Email</span>
+                    <span>@user.Email</span>
                     <div class="btn-group" role="group">
                         <form method="post" asp-page-handler="Approve">
                             <input type="hidden" name="userId" value="@user.Id" />
@@ -31,10 +32,11 @@
                 </li>
             }
         </ul>
+
     </div>
 </div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-    <link rel="stylesheet" href="~/css/confirmaccountadmin.css" />
+    <link rel="stylesheet" href="~/css/izmenovodja.css" />
 }
