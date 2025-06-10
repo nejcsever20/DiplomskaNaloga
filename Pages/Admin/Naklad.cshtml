@@ -1,5 +1,5 @@
 ﻿@page
-@model diplomska.Pages.Izmenovodja.NakladModel
+@model diplomska.Pages.Admin.NakladModel
 @using diplomska.Models
 @using Microsoft.AspNetCore.Mvc.Rendering
 @using Microsoft.AspNetCore.Identity
@@ -229,7 +229,7 @@
                 const transportId = "@Model.TransportId"; // Make sure this is set in the model
 
                 // Redirect to the LoadingCheckout page with query parameters
-                window.location.href = `/Izmenovodja/LoadingCheckout?TransportId=${transportId}&KonecNaklada=${encodeURIComponent(datetimeValue)}`;
+                window.location.href = `/Admin/LoadingCheckout?TransportId=${transportId}&KonecNaklada=${encodeURIComponent(datetimeValue)}`;
             });
         </script>
 
