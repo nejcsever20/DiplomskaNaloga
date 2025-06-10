@@ -1,0 +1,401 @@
+﻿@page
+@using diplomska.Models
+@model diplomska.Pages.Admin.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <link rel="stylesheet" href="~/css/izmenovodja.css" />
+</head>
+
+<style>
+    .info-btn, .st-transporta-btn {
+        background-color: transparent;
+        border: none;
+        color: blue;
+        font-size: 1em;
+        cursor: pointer;
+        text-decoration: underline;
+        padding: 0;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding-top: 60px;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 90%;
+        max-width: 600px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .close-btn {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+    .zoom-input {
+        transition: transform 0.3s ease;
+    }
+
+        .zoom-input.typing {
+            transform: scale(1.05);
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            border-color: #007bff;
+        }
+
+    #openImportModalBtn {
+        margin-bottom: 15px;
+    }
+</style>
+
+<h1>Index</h1>
+
+<form method="get" class="mb-3">
+    <input type="text" name="SearchString" value="@Model.SearchString"
+           placeholder="Search Transport, Registration or Driver"
+           class="form-control zoom-input" />
+</form>
+
+<!-- 📂 Import Excel Button -->
+<button id="openImportModalBtn" class="btn btn-secondary">📂 Import Excel</button>
+
+<p><a asp-page="Create">Create New</a></p>
+
+@if (Model.Transport.Count == 0)
+{
+    <p><strong>Ni zadetkov.</strong></p>
+}
+else
+{
+    <!-- ✅ CHANGED: Redirects to a new page instead of opening modal -->
+    <a class="btn btn-warning mb-3" href="/Izmenovodja/Callback">
+        🔁 Callback / Vrnitev
+    </a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].Sp)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].SK)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].Skladisce)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].VrstaTransporta)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].StTransporta)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].PlaniranPrihod)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].PavzaVoznika)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].Registracija)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].VrstaPrevoznegaSredstva)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].Voznik)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].NAVISZacetekSklada)</th>
+                <th>@Html.DisplayNameFor(model => model.Transport[0].NAVISKonecSklada)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Transport)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" class="sp-toggle" data-id="@item.Id" @(item.Sp ? "checked" : "") />
+                        <span class="sp-display" data-id="@item.Id" hidden>
+                            @Html.Raw(item.Sp ? $"<a href='/Naklad/Details?id={item.Id}'>true</a>" : "false")
+                        </span>
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.SK)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Skladisce)</td>
+                    <td>@Html.DisplayFor(modelItem => item.VrstaTransporta)</td>
+                    <td>
+                        <button class="st-transporta-btn open-login-modal" data-id="@item.Id" data-st="@item.StTransporta">
+                            @item.StTransporta
+                        </button>
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.PlaniranPrihod)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PavzaVoznika)</td>
+                    <td>
+                        <button class="info-btn"
+                                data-id="@item.Id"
+                                data-transporta="@item.StTransporta"
+                                data-registracija="@item.Registracija"
+                                data-voznik="@item.Voznik">
+                            <span class="info-icon">i</span>
+                        </button>
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.VrstaPrevoznegaSredstva)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Voznik)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NAVISZacetekSklada)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NAVISKonecSklada)</td>
+                    <td>
+                        @if (item.DolocenSkladiscnikId == User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value)
+                        {
+                            <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<!-- Existing Info Modal -->
+<div id="infoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Registracija</h2>
+        <p>Št. Transporta: <span id="modal-stTransporta"></span></p>
+        <p>Registracija: <span id="modal-registracija"></span></p>
+        <p>Voznik: <span id="modal-voznik"></span></p>
+        <button id="print-btn" class="btn btn-primary print-btn">Print</button>
+    </div>
+</div>
+
+<!--  Global Callback Modal -->
+<div id="globalCallbackModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn global-callback-close">&times;</span>
+
+        <h2>Izberi transport za Callback</h2>
+
+        <!-- Select list populated from Model.Transport -->
+        <div class="form-group">
+            <label for="global-callback-select"><strong>Št. Transporta:</strong></label>
+            <select id="global-callback-select" class="form-control" required>
+                <option value="" disabled selected hidden>— izberi —</option>
+                @foreach (var t in Model.Transport.OrderBy(t => t.StTransporta))
+                {
+                    <option value="@t.Id" data-st="@t.StTransporta">
+                        @t.StTransporta (@t.Registracija, @t.Voznik)
+                    </option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="global-callback-reason">Razlog vrnitve / callback:</label>
+            <textarea id="global-callback-reason" class="form-control" rows="3"></textarea>
+        </div>
+
+        <br />
+        <button id="global-callback-confirm" class="btn btn-primary">
+            Potrdi Callback
+        </button>
+    </div>
+</div>
+
+
+<!-- Import File Modal -->
+<div id="importExcelModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn import-close">&times;</span>
+        <h2>Would you like to import transport files?</h2>
+
+        <form id="importExcelForm" method="post" enctype="multipart/form-data" asp-page-handler="ImportExcel">
+            <label for="excelFiles"><strong>Select files to import:</strong></label>
+            <input type="file"
+                   name="ExcelFiles"
+                   id="excelFiles"
+                   accept=".xlsx,.csv,.txt"
+                   multiple
+                   required />
+            <br />
+            <small>You can upload multiple files. Supported formats: Excel (.xlsx), CSV (.csv), Text (.txt).</small>
+
+            <br /><br />
+            <button type="submit" class="btn btn-success">📥 Import Selected Files</button>
+        </form>
+    </div>
+</div>
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn login-close">&times;</span>
+        <h2>Prijava za transport: <span id="login-st"></span></h2>
+        <input type="hidden" id="login-transport-id" />
+        <form id="login-form">
+            <div>
+                <label for="username">Uporabniško ime:</label>
+                <input type="text" id="username" name="username" required />
+            </div>
+            <div>
+                <label for="password">Geslo:</label>
+                <input type="password" id="password" name="password" required />
+            </div>
+            <div class="checkbox-group">
+                <label for="navis-check" style="white-space: nowrap;">
+                    <input type="checkbox" id="navis-check" />
+                    <span style="margin: 0; padding:0;">NAVIS</span>
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Prijava</button>
+        </form>
+    </div>
+</div>
+
+<!-- Hidden Print Content -->
+<div id="printContent" style="display:none;">
+    <h2>Registracija</h2>
+    <p>Št. Transporta: <span id="print-stTransporta"></span></p>
+    <p>Registracija: <span id="print-registracija"></span></p>
+    <p>Voznik: <span id="print-voznik"></span></p>
+</div>
+
+@section Scripts {
+    <script>
+        const infoBtns = document.querySelectorAll(".info-btn");
+        const modal = document.getElementById("infoModal");
+        const closeModal = document.querySelector(".close-btn");
+        const printBtn = document.getElementById("print-btn");
+
+        infoBtns.forEach(btn => {
+            btn.addEventListener("click", function () {
+                document.getElementById("modal-stTransporta").textContent = this.dataset.transporta;
+                document.getElementById("modal-registracija").textContent = this.dataset.registracija;
+                document.getElementById("modal-voznik").textContent = this.dataset.voznik;
+                modal.style.display = "block";
+            });
+        });
+
+        closeModal.addEventListener("click", () => modal.style.display = "none");
+        window.addEventListener("click", e => { if (e.target === modal) modal.style.display = "none"; });
+
+        printBtn.addEventListener("click", () => {
+            document.getElementById("print-stTransporta").textContent = document.getElementById("modal-stTransporta").textContent;
+            document.getElementById("print-registracija").textContent = document.getElementById("modal-registracija").textContent;
+            document.getElementById("print-voznik").textContent = document.getElementById("modal-voznik").textContent;
+            const original = document.body.innerHTML;
+            document.body.innerHTML = document.getElementById("printContent").innerHTML;
+            window.print();
+            document.body.innerHTML = original;
+            window.location.reload();
+        });
+
+        // Login modal logic
+        const loginModal = document.getElementById("loginModal");
+        const loginCloseBtn = document.querySelector(".login-close");
+        const loginForm = document.getElementById("login-form");
+
+        document.querySelectorAll(".open-login-modal").forEach(btn => {
+            btn.addEventListener("click", function () {
+                document.getElementById("login-st").textContent = this.dataset.st;
+                document.getElementById("login-transport-id").value = this.dataset.id;
+                document.getElementById("navis-check").checked = false;
+                loginModal.style.display = "block";
+            });
+        });
+
+        loginCloseBtn.addEventListener("click", () => loginModal.style.display = "none");
+        window.addEventListener("click", e => { if (e.target === loginModal) loginModal.style.display = "none"; });
+
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const id = document.getElementById("login-transport-id").value;
+            const navis = document.getElementById("navis-check").checked;
+            if (username && password) {
+                loginModal.style.display = "none";
+                const type = navis ? "&type=NAVIS" : "";
+                window.location.href = `/Izmenovodja/Naklad?id=${id}${type}`;
+            } else {
+                alert("Prosimo, izpolnite vsa polja.");
+            }
+        });
+
+        // Excel import modal logic
+        const importModal = document.getElementById("importExcelModal");
+        const openImportModalBtn = document.getElementById("openImportModalBtn");
+        const importCloseBtn = document.querySelector(".import-close");
+
+        openImportModalBtn.addEventListener("click", () => {
+            importModal.style.display = "block";
+        });
+
+        importCloseBtn.addEventListener("click", () => {
+            importModal.style.display = "none";
+        });
+
+        window.addEventListener("click", e => {
+            if (e.target === importModal) {
+                importModal.style.display = "none";
+            }
+        });
+
+        // Zoom typing input
+        document.addEventListener("DOMContentLoaded", function () {
+            const input = document.querySelector(".zoom-input");
+
+            if (input) {
+                input.addEventListener("input", function () {
+                    input.classList.add("typing");
+
+                    clearTimeout(input._zoomTimeout);
+                    input._zoomTimeout = setTimeout(() => {
+                        input.classList.remove("typing");
+                    }, 400);
+                });
+            }
+        });
+
+        // Global callback modal logic
+        const globalCallbackModal = document.getElementById("globalCallbackModal");
+        const openGlobalCallbackBtn = document.getElementById("openGlobalCallbackModalBtn");
+        const globalCallbackClose = document.querySelector(".global-callback-close");
+        const globalCallbackSelect = document.getElementById("global-callback-select");
+        const globalCallbackReason = document.getElementById("global-callback-reason");
+        const globalCallbackConfirm = document.getElementById("global-callback-confirm");
+
+        openGlobalCallbackBtn.addEventListener("click", () => {
+            globalCallbackSelect.value = "";          // reset selection
+            globalCallbackReason.value = "";          // reset reason
+            globalCallbackModal.style.display = "block";
+        });
+
+        globalCallbackClose.addEventListener("click", () => {
+            globalCallbackModal.style.display = "none";
+        });
+
+        window.addEventListener("click", e => {
+            if (e.target === globalCallbackModal) globalCallbackModal.style.display = "none";
+        });
+
+        globalCallbackConfirm.addEventListener("click", () => {
+            const selectedOption = globalCallbackSelect.options[globalCallbackSelect.selectedIndex];
+            const transportId = globalCallbackSelect.value;
+            const stTransporta = selectedOption?.dataset?.st;
+            const reason = globalCallbackReason.value.trim();
+
+            if (!transportId) {
+                alert("Prosimo, izberite transport.");
+                return;
+            }
+
+            // TODO: Replace alert with real POST (fetch/ajax) or form submission
+            alert(`Callback za transport:\n  Id: ${transportId}\n  Št.: ${stTransporta}\n  Razlog: ${reason || "(ni podan)"}`);
+
+            globalCallbackModal.style.display = "none";
+        });
+    </script>
+}
