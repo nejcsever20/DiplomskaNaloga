@@ -1,0 +1,304 @@
+﻿@page
+@model diplomska.Areas.Identity.Pages.Account.ChooseRoleModel
+@{
+    ViewData["Title"] = "Choose Role";
+
+    var roleDescription = new Dictionary<string, string>
+    {
+        { "SBU", "Vpogled v KPI-je, poročila in nadzor nad učinkovitostjo." },
+        { "Izmenovodja", "Upravljavec izmene – spremlja aktivnosti operaterjev, potrjuje naloge." },
+        { "Operater", "Vnese podatke o opravljenem delu, statusih strojev, napakah ipd." },
+        { "Admin", "Administrator – upravlja uporabnike, vloge in sistemske nastavitve." },
+        { "Analitika", "Dostop do podrobnih analiz, poročil in statistike procesov." },
+        { "Skladiščnik", "Sprejema in izdaja materiale, vodi evidenco zalog, prevzemnic." }
+    };
+}
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #e3f2fd, #ffffff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    .container-wrapper {
+        backdrop-filter: blur(18px);
+        background: rgba(255, 255, 255, 0.75);
+        border-radius: 30px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+        padding: 60px 40px;
+        max-width: 1200px;
+        width: 95%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        animation: fadeInUp 0.9s ease;
+        position: relative;
+        z-index: 1;
+    }
+
+    .main-heading {
+        font-size: 36px;
+        color: #1f2937;
+        font-weight: 800;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 35px;
+    }
+
+    h2 {
+        font-size: 22px;
+        text-align: center;
+        color: #2563eb;
+        margin-bottom: 25px;
+        font-weight: 700;
+    }
+
+    .choose-role-container {
+        flex: 1;
+        min-width: 280px;
+    }
+
+    .description-box {
+        flex: 1;
+        min-width: 300px;
+        background: #f9fafb;
+        border: 2px solid #60a5fa;
+        border-radius: 22px;
+        padding: 28px;
+        font-size: 17px;
+        font-weight: 500;
+        color: #334155;
+        box-shadow: inset 0 0 12px rgba(96, 165, 250, 0.12);
+        min-height: 220px;
+        transition: all 0.3s ease;
+        line-height: 1.7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .role-button {
+        background: linear-gradient(135deg, #3b82f6, #2563eb);
+        color: white;
+        font-size: 16.5px;
+        font-weight: 600;
+        padding: 14px 18px;
+        border: none;
+        border-radius: 18px;
+        margin-bottom: 18px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        cursor: pointer;
+        box-shadow: 0 10px 24px rgba(59, 130, 246, 0.3);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        animation: slideFadeIn 0.6s ease forwards;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .role-button:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 12px 28px rgba(59, 130, 246, 0.4);
+    }
+
+    .svg-icon {
+        width: 26px;
+        height: 26px;
+        fill: white;
+        transition: transform 0.3s ease;
+    }
+
+    .role-button:hover .svg-icon {
+        transform: scale(1.2);
+    }
+
+    .text-danger {
+        font-size: 15px;
+        color: #dc2626;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    @@keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@keyframes slideFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .fade {
+        opacity: 0.3 !important;
+    }
+
+    .wave-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 120px;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    .wave {
+        position: absolute;
+        width: 200%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path fill="%23cfe9ff" d="M0,0V27.35c47.42,22.31,103.83,29.08,158.87,23.57,70.64-7.17,136.68-32.77,207.25-38.77C458.86,3.39,527.19,14.53,593,34.8c72.62,23.1,136.3,54.51,207,60.2,65.42,5.2,130.14-14.68,186.9-43.18C1061.19,15.49,1132.6-3.6,1200,0V0Z"/></svg>') repeat-x;
+        animation: animateWave 8s linear infinite;
+        bottom: 0;
+        left: 0;
+    }
+
+    @@keyframes animateWave {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    .tooltip-icon {
+        margin-left: 6px;
+        color: #94a3b8;
+        cursor: help;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 14px;
+        color: #6b7280;
+        margin-top: 40px;
+        z-index: 1;
+    }
+
+    @@media (max-width: 768px) {
+        .container-wrapper {
+            flex-direction: column;
+            padding: 40px 20px;
+        }
+
+        .main-heading {
+            font-size: 26px;
+        }
+
+        .description-box {
+            font-size: 15px;
+            min-height: 160px;
+        }
+
+        .role-button {
+            font-size: 15px;
+        }
+    }
+</style>
+
+<script>
+    function updateDescription(text) {
+        const el = document.getElementById("roleDescriptionText");
+        el.classList.add("fade");
+        setTimeout(() => {
+            el.textContent = text;
+            el.classList.remove("fade");
+        }, 150);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('.role-button');
+        buttons.forEach((btn, index) => {
+            btn.style.animationDelay = `${0.1 * index}s`;
+        });
+    });
+</script>
+
+<h1 class="main-heading">
+    👋 Welcome!<br />
+    Select your role to get started
+    <span class="tooltip-icon" title="You’ll only see data and tools relevant to your selected role.">
+        <i class="fas fa-info-circle"></i>
+    </span>
+</h1>
+
+<div class="container-wrapper">
+    <div class="choose-role-container">
+        <h2>
+            Select Your Role
+            <span class="tooltip-icon" title="Choose the role that best matches your responsibility.">
+                <i class="fas fa-question-circle"></i>
+            </span>
+        </h2>
+        <form method="post">
+            <input type="hidden" asp-for="ReturnUrl" />
+            @foreach (var role in Model.Roles)
+            {
+                var description = roleDescription.ContainsKey(role) ? roleDescription[role] : "Izbrana vloga.";
+
+                string svgIcon = role switch
+                {
+                    "SBU" => "<svg class='svg-icon' viewBox='0 0 24 24'><path d='M3 3h18v2H3V3zm0 7h12v2H3v-2zm0 7h18v2H3v-2z' /></svg>",
+                    "Izmenovodja" => "<svg class='svg-icon' viewBox='0 0 24 24'><path d='M4 4h16v2H4V4zm0 6h16v2H4v-2zm0 6h10v2H4v-2z'/></svg>",
+                    "Operater" => "<svg class='svg-icon' viewBox='0 0 24 24'><path d='M10 2h4v4h-4V2zm1 6h2v14h-2V8z'/></svg>",
+                    "Admin" => "<svg class='svg-icon' viewBox='0 0 24 24'><path d='M12 2a5 5 0 0 1 5 5c0 1.38-.56 2.63-1.46 3.54A6.978 6.978 0 0 1 18 14v6H6v-6c0-2.21 1.79-4 4-4 .73 0 1.41.2 2 .55A5 5 0 0 1 12 2z'/></svg>",
+                    "Analitika" => "<svg class='svg-icon' viewBox='0 0 24 24'><path d='M4 22h2v-7H4v7zm6 0h2V10h-2v12zm6 0h2V3h-2v19zM2 2v2h20V2H2z'/></svg>",
+                    "Skladiščnik" => "<svg class='svg-icon' viewBox='0 0 24 24'><path d='M20 6H4V4h16v2zm0 2H4v12h16V8zm-2 10H6V10h12v8z'/></svg>",
+                    _ => "<svg class='svg-icon' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10'/></svg>"
+                };
+
+                <button type="submit"
+                        name="SelectedRole"
+                        value="@role"
+                        class="role-button"
+                        onmouseover="updateDescription('@description')"
+                        onfocus="updateDescription('@description')"
+                        onmouseout="updateDescription('Hover over a role to see its description.')">
+                    @Html.Raw(svgIcon)
+                    <span>@role</span>
+                </button>
+            }
+
+            <span asp-validation-for="SelectedRole" class="text-danger"></span>
+        </form>
+    </div>
+
+    <div class="description-box" id="roleDescriptionText">
+        Hover over a role to see its description.
+    </div>
+</div>
+
+<!-- Wave Animation -->
+<div class="wave-container">
+    <div class="wave"></div>
+</div>
+
+<!-- Footer -->
+<footer>
+    Need help? Contact IT support • Stay productive ✨
+</footer>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+}

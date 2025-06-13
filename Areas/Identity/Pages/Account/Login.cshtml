@@ -1,6 +1,5 @@
 ﻿@page
-@model LoginModel
-
+@model diplomska.Areas.Identity.Pages.Account.LoginModel
 @{
     ViewData["Title"] = "Log in";
 }
@@ -10,11 +9,10 @@
 <h1 class="mb-4">@ViewData["Title"]</h1>
 
 <div class="row">
-    <!-- LEFT: Email/Password Login -->
-    <div class="col-md-6">
+    <div class="col-md-6" style="background-color: #3C8DAD; padding: 20px; border-radius: 8px; color: white;">
         <section>
-            <form id="account" method="post">
-                <h2>Login</h2>
+            <form method="post">
+                <h2 style="color:#F5A962 ">Login</h2>
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
 
@@ -42,24 +40,24 @@
                 </button>
 
                 <div>
-                    <p><a asp-page="./ForgotPassword">Forgot your password?</a></p>
-                    <p><a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a></p>
-                    <p><a asp-page="./ResendEmailConfirmation">Resend email confirmation</a></p>
+                    <p><a asp-page="./ForgotPassword" style="color: white;">Forgot your password?</a></p>
+                    <p><a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" style="color: white;">Register as a new user</a></p>
+                    <p><a asp-page="./ResendEmailConfirmation" style="color: white;">Resend email confirmation</a></p>
+                    <a href="~/FakeLogin" style="color: white;">Simulate Yahoo Login</a>
                 </div>
             </form>
         </section>
     </div>
 
-    <!-- RIGHT: External Logins -->
-    <div class="col-md-6">
+    <div class="col-md-6" style="background-color: #3C8DAD; padding: 20px; border-radius: 8px; color: white;">
         <section>
-            <h3>Use another service to log in</h3>
-            <hr />
+            <h3 style="color:#F5A962">Use another service to log in</h3>
+            <hr style="border-color: white;" />
             @if ((Model.ExternalLogins?.Count ?? 0) == 0)
             {
                 <div class="alert alert-info">
                     There are no external authentication services configured.
-                    See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article</a> to set them up.
+                    See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715" style="color: white;">article</a> to set them up.
                 </div>
             }
             else
@@ -85,38 +83,9 @@
                     }
                 </form>
             }
-
-            <div class="mt-4">
-                <h5>Like us on Facebook</h5>
-                <div class="fb-like"
-                     data-href="https://www.facebook.com/YOUR_PAGE_URL"
-                     data-width=""
-                     data-layout="standard"
-                     data-action="like"
-                     data-size="small"
-                     data-share="true"
-                     data-show-faces="true">
-                </div>
-            </div>
         </section>
     </div>
 </div>
-<svg viewBox="0 0 2 1"
-     preserveAspectRatio="none">
-    <defs>
-        <path id="w"
-              d="
-      m0 1v-.5
-      q.5.5 1 0
-      t1 0 1 0 1 0
-      v.5z" />
-    </defs>
-    <g>
-        <use href="#w" y=".0" fill="#2d55aa" />
-        <use href="#w" y=".1" fill="#3461c1" />
-        <use href="#w" y=".2" fill="#4579e2" />
-    </g>
-</svg>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
@@ -133,7 +102,7 @@
         };
 
         (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
+            var js, fjs = d.getElementsByTagName(s)[0]; 
             if (d.getElementById(id)) { return; }
             js = d.createElement(s); js.id = id;
             js.src = "https://connect.facebook.net/en_US/sdk.js";
