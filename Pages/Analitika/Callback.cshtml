@@ -1,0 +1,96 @@
+﻿@page
+@model diplomska.Pages.Analitika.CallbackModel
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<head>
+    <link rel="stylesheet" href="~/css/callback.css" />
+</head>
+<h2>All Transports</h2>
+
+<a asp-page="/Admin/ArchivedTransports" class="btn btn-outline-secondary mb-3">
+    View Archived Transports!
+</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th hidden>Id</th>
+            <th>StTransporta</th>
+            <th>PlaniranPrihod</th>
+            <th>Sp</th>
+            <th>Callback Reason</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Transports)
+        {
+            var transport = item.Transport;
+            var transportId = transport?.Id ?? 0;
+            var modalId = $"callbackModal_{transportId}";
+            var callbackReason = item.CallbackReason ?? "-";
+
+            <tr class="@(item.CallbackReason != null ? "table-warning" : "")">
+                <td hidden>@transportId</td>
+                <td>@transport?.StTransporta</td>
+                <td>@(transport?.PlaniranPrihod?.ToString("yyyy-MM-dd HH:mm") ?? "-")</td>
+                <td>@(transport?.Sp == true ? "Yes" : "No")</td>
+                <td>@callbackReason</td>
+                <td class="d-flex gap-2">
+                    <!-- Set Callback Button -->
+                    <button type="button" class="btn btn-primary btn-sm"
+                            data-bs-toggle="modal" data-bs-target="#@modalId">
+                        Set Callback
+                    </button>
+
+                    <!-- Remove Callback Button (if callback set) -->
+                    @if (item.CallbackReason != null)
+                    {
+                        <form method="post" asp-page-handler="RemoveCallback"
+                              asp-route-transportId="@transportId" onsubmit="return confirm('Are you sure you want to remove the callback?');">
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                Remove Callback
+                            </button>
+                        </form>
+                    }
+                </td>
+            </tr>
+
+            <!-- Modal for Setting Callback -->
+            <div class="modal fade" id="@modalId" tabindex="-1" aria-labelledby="@($"{modalId}_label")" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form method="post" asp-page-handler="SubmitCallback">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="@($"{modalId}_label")">Set Callback Reason (ID: @transportId)</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Hidden Transport ID -->
+                                <input type="hidden" name="SelectedTransportId" value="@transportId" />
+
+                                <!-- Reason Dropdown -->
+                                <div class="mb-3">
+                                    <label for="reasonSelect_@transportId" class="form-label">Choose a reason</label>
+                                    <select class="form-select" name="SelectedReason" id="reasonSelect_@transportId" required>
+                                        <option value="" disabled selected>-- Select reason --</option>
+                                        @foreach (var reason in Model.CallbackReasons)
+                                        {
+                                            <option value="@reason">@reason</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success">Submit Callback</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </tbody>
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

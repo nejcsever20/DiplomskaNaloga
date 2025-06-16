@@ -140,6 +140,8 @@ namespace diplomska.Areas.Identity.Pages.Account
                 return RedirectToPage("/Skladiščnik/Index");
             else if (role == "Izmenovodja")
                 return RedirectToPage("/Izmenovodja/IzmenovodjaPage");
+            else if (role == "Analitika")
+                return RedirectToPage("/Analitika/AnalitikaPage");
 
             return LocalRedirect(returnUrl);
         }

@@ -1,0 +1,129 @@
+﻿@page
+@model diplomska.Pages.Analitika.DownloadExcellModel
+@{
+    ViewData["Title"] = "Prenos Excel podatkov";
+    var skladiscnikMap = ViewData["SkladiscnikMap"] as Dictionary<string, string>;
+}
+<head>
+    <link rel="stylesheet" href="~/css/detailedinfo.css" />
+</head>
+<style>
+    .container-flex {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .table-box {
+        width: 90%;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        background-color: #fff;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+    }
+
+    th, td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        color: #222;
+        font-weight: bold;
+    }
+
+    .btn-download {
+        display: block;
+        margin: 30px auto 10px;
+    }
+</style>
+
+<h1 style="text-align:center; font-size:2.2rem; margin-bottom:30px;">Pregled Transportov in Izkladiščenih Podatkov</h1>
+
+<div class="container-flex">
+    <!-- Transports Table -->
+    <div class="table-box">
+        <h2>Transports</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Sp</th>
+                    <th>SK</th>
+                    <th>Skladišče</th>
+                    <th>Vrsta Transporta</th>
+                    <th>St. Transporta</th>
+                    <th>Planiran Prihod</th>
+                    <!-- Add more headers as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var t in Model.Transports)
+                {
+                    <tr>
+                        <td>@t.Id</td>
+                        <td>@t.Sp</td>
+                        <td>@t.SK</td>
+                        <td>@t.Skladisce</td>
+                        <td>@t.VrstaTransporta</td>
+                        <td>@t.StTransporta</td>
+                        <td>@t.PlaniranPrihod</td>
+                        <!-- Add more cells if needed -->
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Izkladisceno Table -->
+    <div class="table-box">
+        <h2>Izkladiščeno</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Količina</th>
+                    <th>Palete</th>
+                    <th>Skladiščnik</th>
+                    <th>Datum</th>
+                    <th>SkladiščnikId</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var z in Model.Izkladisceno)
+                {
+                    <tr>
+                        <td>@z.Id</td>
+                        <td>@z.Kolicina</td>
+                        <td>@z.Palete</td>
+                        <td>@z.Skladiscnik</td>
+                        <td>@z.Datum</td>
+                        <td>@(skladiscnikMap != null && z.SkladiscnikId != null && skladiscnikMap.ContainsKey(z.SkladiscnikId) ? skladiscnikMap[z.SkladiscnikId] : z.SkladiscnikId)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<form method="post" asp-page-handler="DownloadAllData">
+    <button type="submit" class="btn btn-primary btn-download">Prenesi kot Excel</button>
+</form>
+<a class="nav-link" asp-page="/Admin/AdminPage" style="color: #F5A962; text-align: center;">Nazaj</a>

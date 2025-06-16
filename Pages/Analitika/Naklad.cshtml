@@ -1,0 +1,392 @@
+﻿@page
+@model diplomska.Pages.Analitika.NakladModel
+@using diplomska.Models
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Začetek, konec naklada";
+    var currentUser = await UserManager.GetUserAsync(User);
+    var isIzmenovodja = currentUser != null && await UserManager.IsInRoleAsync(currentUser, "Izmenovodja");
+}
+
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/skladiscnik.css" />
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #DDDDDD;
+            color: #125D98;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        h1, h3, h4 {
+            background-color: #125D98;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #125D98;
+        }
+
+        input, textarea, select {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #3C8DAD;
+            width: 100%;
+            margin-bottom: 10px;
+            background-color: #ffffff;
+            color: #125D98;
+            transition: border-color 0.3s;
+        }
+
+            input:focus, textarea:focus, select:focus {
+                border-color: #F5A962;
+                outline: none;
+            }
+
+        button, .btn-success {
+            background-color: #F5A962;
+            color: #125D98;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+            button:hover, .btn-success:hover {
+                background-color: #3C8DAD;
+                color: white;
+                transform: scale(1.03);
+            }
+
+        .btn-danger {
+            background-color: #d9534f;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .btn-danger:hover {
+                background-color: #c9302c;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #DDDDDD;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3C8DAD;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #F5A96220;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #125D98;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+            .back-button:hover {
+                background-color: #3C8DAD;
+                transform: scale(1.05);
+            }
+
+        .alert-success {
+            color: #2e7d32;
+            background-color: #c8e6c9;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .alert-error {
+            color: #c62828;
+            background-color: #ffcdd2;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        canvas {
+            margin-top: 1.5rem;
+            background-color: #ffffff;
+            border: 1px solid #3C8DAD;
+            border-radius: 10px;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Začetek, konec naklada</h1>
+
+    <!-- Display the transport number -->
+    <div>
+        <label>Št. transporta:</label>
+        <span>@Model.StTransporta</span>
+    </div>
+
+    <hr />
+
+    <!-- Form for setting times -->
+    <form method="post">
+        <div>
+            <label>Rampa 1:</label>
+            <input type="number" asp-for="Rampa1" />
+        </div>
+
+        <div>
+            <label>Rampa 2:</label>
+            <input type="number" asp-for="Rampa2" />
+        </div>
+
+        <div>
+            <label>Carinska vrvica:</label>
+            <select asp-for="CarinskaVrvicva">
+                <option value="">-------Izberi-------</option>
+                <option value="Prisotna">Prisotna</option>
+                <option value="Ni Prisotna">Ni Prisotna</option>
+                <option value="CTN">CTN</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Ustreznost vozilca:</label>
+            <select asp-for="CarinskaVrvicva">
+                <option value="">-------Izberi-------</option>
+                <option value="neustrezno">neustrezno</option>
+                <option value="ustrezno">ustrezno</option>
+                <option value="delno neustrezno">delno neustrezno</option>
+                <option value="delno ustrezno">delno ustrezno</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Začetek naklada:</label>
+            <input type="datetime-local"
+                   id="ZacetekNakladaInput"
+                   class="form-control" />
+            <button type="button" class="btn btn-success" onclick="setCurrentTime()">Nastavi</button>
+        </div>
+
+        <div>
+            <label>Konec naklada:</label>
+            <input type="datetime-local" id="konecNakladaInput" />
+            <a id="setTimesLink" href="#" class="btn btn-success">Nastavi</a>
+        </div>
+
+        <script>
+            document.getElementById("setTimesLink").addEventListener("click", function (e) {
+                e.preventDefault();
+                const datetimeValue = document.getElementById("konecNakladaInput").value;
+
+                if (!datetimeValue) {
+                    alert("Prosimo, izberite datum in čas.");
+                    return;
+                }
+
+                // Replace with your actual transport ID source if needed
+                const transportId = "@Model.TransportId"; // Make sure this is set in the model
+
+                // Redirect to the LoadingCheckout page with query parameters
+                window.location.href = `/Admin/LoadingCheckout?TransportId=${transportId}&KonecNaklada=${encodeURIComponent(datetimeValue)}`;
+            });
+        </script>
+
+        <div>
+            <label>Voznik zavrnil začetek zaradi pavze:</label>
+            <input type="datetime-local" asp-for="ZavrnilZacetek" />
+            <button type="submit" asp-page-handler="SetTimes" class="btn btn-success">Nastavi</button>
+        </div>
+    </form>
+
+    <hr />
+
+    <!-- Display success or error messages -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert-error">@TempData["ErrorMessage"]</div>
+    }
+
+    <!-- Display Izkladiščeno table -->
+    <h3>Izkladiščeno</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Količina</th>
+                <th>Palete</th>
+                <th>Skladiščnik</th>
+                <th>Datum</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.IzkladiscenoList != null && Model.IzkladiscenoList.Any())
+            {
+                @foreach (var item in Model.IzkladiscenoList)
+                {
+                    <tr>
+                        <td>@item.Kolicina</td>
+                        <td>@item.Palete</td>
+                        <td>@item.Skladiscnik</td>
+                        <td>@item.Datum.ToString("dd.MM.yyyy HH:mm")</td>
+                        <td>
+                            @if (item.Skladiscnik == User.Identity.Name)
+                            {
+                                <form method="post" asp-page-handler="Delete" asp-route-id="@item.Id">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5">Ni podatkov za izkladiščeno.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Form for adding Izkladiščeno with hidden TransportId -->
+    <h4>Dodaj izkladiščeno</h4>
+    <form method="post" asp-page-handler="SaveData">
+        <input type="hidden" asp-for="TransportId" />
+
+        <label asp-for="Kolicina"></label>
+        <input asp-for="Kolicina" class="form-control" />
+
+        <label asp-for="Palete"></label>
+        <input asp-for="Palete" class="form-control" />
+
+        <label asp-for="Skladiscnik"></label>
+        <select asp-for="Skladiscnik" asp-items="Model.SkladiscnikSelectList" class="form-control"></select>
+
+        <button type="submit">Shrani</button>
+    </form>
+
+    <hr />
+
+    <!-- Form for adding Notes -->
+    <h4>Opombe</h4>
+    <form method="post" asp-page-handler="AddNote">
+        <textarea asp-for="Notes" rows="4" cols="50"></textarea><br />
+        <button type="submit">Dodaj</button>
+    </form>
+
+    <a href="javascript:history.back()" class="back-button">Nazaj</a>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <h3>Količina po skladiščniku</h3>
+
+    <canvas id="kolicinaChart" width="600" height="300"></canvas>
+
+    <script>
+        const ctx = document.getElementById('kolicinaChart').getContext('2d');
+
+        const labels = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.ChartLabels));
+        const data = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.ChartData));
+        const transportIds = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.TransportIds)); // Add this to your model
+
+        const kolicinaChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Skupna količina',
+                    data: data,
+                    backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                onClick: (evt, elements) => {
+                    if (elements.length > 0) {
+                        const index = elements[0].index;
+                        const transportId = transportIds[index];
+                        const detailUrl = `/Izmenovodja/DetailedInfo?transportId=${transportId}`;
+                        window.location.href = detailUrl;
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                },
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true
+                    }
+                }
+            }
+        });
+
+
+        function setCurrentTime() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = (now.getMonth() + 1).toString().padStart(2, '0');
+            const day = now.getDate().toString().padStart(2, '0');
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const formatted = `${year}-${month}-${day}T${hours}:${minutes}`;
+
+            document.getElementById('ZacetekNakladaInput').value = formatted;
+        }
+    </script>
+</body>
+</html>

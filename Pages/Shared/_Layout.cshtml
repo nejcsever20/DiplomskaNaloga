@@ -109,6 +109,12 @@
                                     <a class="nav-link" asp-page="/Admin/AdminPage">Admin Dashboard</a>
                                 </li>
                             }
+                            else if (User.IsInRole("Analitika"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-page="/Analitika/AnalitikaPage">Analitika Dashboard</a>
+                                </li>                                
+                            }
                         }
                     </ul>
 
@@ -129,6 +135,7 @@
                                             @(
                                                 User.IsInRole("Izmenovodja") ? "Izmenovodja" :
                                                 User.IsInRole("Skladiščnik") ? "Skladiščnik" :
+                                                User.IsInRole("Analitika") ? "Analitika" :
                                                 User.IsInRole("Admin") ? "Admin" :
                                                 "Unknown"
                                             )

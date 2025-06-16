@@ -72,6 +72,7 @@ namespace diplomska.Areas.Identity.Pages.Account
                 "Admin" => RedirectToPage("/Admin/AdminPage"),
                 "Skladiščnik" => RedirectToPage("/Skladiščnik/Index"),
                 "Izmenovodja" => RedirectToPage("/Izmenovodja/IzmenovodjaPage"),
+                "Analitika" => RedirectToPage("/Analitika/AnalitikaPage"),
                 _ => LocalRedirect(ReturnUrl)
             };
         }

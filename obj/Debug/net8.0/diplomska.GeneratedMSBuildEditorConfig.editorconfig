@@ -210,6 +210,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2FsbGJhY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Admin/CompareCallback.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ29tcGFyZUNhbGxiYWNrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Admin/ConfirmRegister.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ29uZmlybVJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -252,6 +256,42 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Admin/UserAccessMethods.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlckFjY2Vzc01ldGhvZHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Analitika/AnalitikaPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQW5hbGl0aWthXEFuYWxpdGlrYVBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Analitika/ArchivedTransports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQW5hbGl0aWthXEFyY2hpdmVkVHJhbnNwb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Analitika/Callback.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQW5hbGl0aWthXENhbGxiYWNrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Analitika/CompareCallback.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQW5hbGl0aWthXENvbXBhcmVDYWxsYmFjay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Analitika/ConfirmRegister.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQW5hbGl0aWthXENvbmZpcm1SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Analitika/DownloadExcell.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQW5hbGl0aWthXERvd25sb2FkRXhjZWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Analitika/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQW5hbGl0aWthXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Analitika/LoadingCheckOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQW5hbGl0aWthXExvYWRpbmdDaGVja091dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Analitika/Naklad.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQW5hbGl0aWthXE5ha2xhZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/EditAccountItems.cshtml]
