@@ -311,3 +311,6 @@ C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\Doc
 C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\ExcelNumberFormat.dll
 C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\RBush.dll
 C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\System.IO.Packaging.dll
+C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\obj\Debug\net8.0\diplomska.Properties.diplomska.resources
+C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\obj\Debug\net8.0\diplomska.Properties.diplomska.sl-SI.resources
+C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\obj\Debug\net8.0\diplomska.csproj.GenerateResource.cache
