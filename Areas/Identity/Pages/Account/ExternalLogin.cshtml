@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Properties
 @model ExternalLoginModel
 @{
     ViewData["Title"] = "Register";
@@ -23,7 +24,7 @@
                 <label asp-for="Input.Email" class="form-label"></label>
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
-            <button type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+            <button type="submit" class="w-100 btn btn-lg btn-primary">@Resources.register</button>
         </form>
     </div>
 </div>

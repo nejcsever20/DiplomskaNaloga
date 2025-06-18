@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ResourceAccessModifier" xml:space="preserve">
+    <value>Público</value>
+  </data>
+  <data name="your_developer" xml:space="preserve">
+    <value>Hola, soy tu desarrollador</value>
+  </data>
+  <data name="passion" xml:space="preserve">
+    <value>Soy un desarrollador de software apasionado con un fuerte enfoque en la creación de aplicaciones web modernas, particularmente usando páginas ASP.NET Razor, el marco mismo que utilicé para este proyecto. Este sitio web fue desarrollado como parte de mi tesis de diploma para mostrar no solo mis habilidades técnicas, sino también mi creatividad y atención a la experiencia del usuario. Con los años, he trabajado en varias aplicaciones de pila completa que van desde sitios web de pequeñas empresas hasta herramientas empresariales internas. Disfruto experimentando con diferentes tecnologías web y manteniéndome actualizado con las últimas tendencias en el diseño de UI/UX. Mis herramientas e idiomas favoritos incluyen C#, HTML, CSS y marcos como Tailwindcss para un diseño de interfaz de usuario rápido y elegante. También disfruto sumergirme en JavaScript, TypeScript, y ocasionalmente incursionando en Python y PHP por diversión o secuencias de comandos de servicios públicos.</value>
+  </data>
+  <data name="show_more" xml:space="preserve">
+    <value>Mostrar más</value>
+  </data>
+  <data name="contacts" xml:space="preserve">
+    <value>Información de contacto</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Correo electrónico:</value>
+  </data>
+  <data name="gihub" xml:space="preserve">
+    <value>GitHub:</value>
+  </data>
+  <data name="github_user" xml:space="preserve">
+    <value>github.com/yourusername</value>
+  </data>
+  <data name="linkedin" xml:space="preserve">
+    <value>LinkedIn:</value>
+  </data>
+  <data name="linkedin_profile" xml:space="preserve">
+    <value>linkedin.com/in/yourprofile</value>
+  </data>
+  <data name="more_about" xml:space="preserve">
+    <value>¡Más sobre mi!</value>
+  </data>
+  <data name="about_me" xml:space="preserve">
+    <value>Acerca de mí</value>
+  </data>
+  <data name="resume" xml:space="preserve">
+    <value>Reanudar</value>
+  </data>
+  <data name="view_resume" xml:space="preserve">
+    <value>Ver mi currículum profesional.</value>
+  </data>
+  <data name="open_reusme" xml:space="preserve">
+    <value>Currículum abierto</value>
+  </data>
+  <data name="programming_languages" xml:space="preserve">
+    <value>Lenguajes de programación</value>
+  </data>
+  <data name="languages" xml:space="preserve">
+    <value>Idiomas en los que soy competente.</value>
+  </data>
+  <data name="view_languages" xml:space="preserve">
+    <value>Ver idiomas</value>
+  </data>
+  <data name="hobbies" xml:space="preserve">
+    <value>Pasatiempos</value>
+  </data>
+  <data name="what_I_enjoy" xml:space="preserve">
+    <value>Lo que disfruto haciendo en mi tiempo libre.</value>
+  </data>
+  <data name="view_hobbies" xml:space="preserve">
+    <value>Ver aficiones</value>
+  </data>
+  <data name="contact_info" xml:space="preserve">
+    <value>Información del contacto</value>
+  </data>
+  <data name="how_to_contact" xml:space="preserve">
+    <value>Cómo ponerse en contacto conmigo.</value>
+  </data>
+  <data name="social_media" xml:space="preserve">
+    <value>Redes sociales</value>
+  </data>
+  <data name="follow_socials" xml:space="preserve">
+    <value>Sígueme en plataformas sociales.</value>
+  </data>
+  <data name="social_links" xml:space="preserve">
+    <value>Enlaces sociales</value>
+  </data>
+  <data name="more_about_me" xml:space="preserve">
+    <value>Más sobre mi</value>
+  </data>
+  <data name="if_you_want" xml:space="preserve">
+    <value>Si quieres saber más</value>
+  </data>
+  <data name="about_dev" xml:space="preserve">
+    <value>Sobre el desarrollo</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>Cerca</value>
+  </data>
+  <data name="my_resume" xml:space="preserve">
+    <value>Mi currículum</value>
+  </data>
+  <data name="professional_resume" xml:space="preserve">
+    <value>Resumen profesional:</value>
+  </data>
+  <data name="experiences" xml:space="preserve">
+    <value>Desarrollador de software experimentado y adaptable con un historial demostrado de trabajo tanto en entornos de inicio y corporativo. Desarrollo web experto en pila completa, programación orientada a objetos y diseño de UI receptivo. Fuerte antecedentes en C#, tecnologías .NET y aplicaciones basadas en la base de datos. Comprometido con el aprendizaje continuo y contribuyendo a bases de código mantenibles de alta calidad.</value>
+  </data>
+  <data name="work_experiences" xml:space="preserve">
+    <value>Experiencia laboral:</value>
+  </data>
+  <data name="senior_dev" xml:space="preserve">
+    <value>Desarrollador senior</value>
+  </data>
+  <data name="multi_web_apps" xml:space="preserve">
+    <value>LED múltiples proyectos de aplicaciones web utilizando páginas ASP.NET Core y Razor.</value>
+  </data>
+  <data name="improved_apps" xml:space="preserve">
+    <value>El rendimiento mejorado de la aplicación en un 35% a través de consultas SQL optimizadas y estrategias de almacenamiento en caché.</value>
+  </data>
+  <data name="mentored" xml:space="preserve">
+    <value>Mentó a desarrolladores junior y realizó revisiones y talleres de código interno.</value>
+  </data>
+  <data name="software_dev" xml:space="preserve">
+    <value>Desarrollador de software</value>
+  </data>
+  <data name="internal_tools" xml:space="preserve">
+    <value>Desarrolló herramientas y paneles internos usando C#, WinForms y SQL Server.</value>
+  </data>
+  <data name="corss_funcitonal" xml:space="preserve">
+    <value>Trabajó en estrecha colaboración con equipos multifuncionales para ofrecer un software rico en funciones en plazos ajustados.</value>
+  </data>
+  <data name="education" xml:space="preserve">
+    <value>Educación:</value>
+  </data>
+  <data name="degree" xml:space="preserve">
+    <value>Licenciatura en informática - Universidad de [su ciudad/institución]</value>
+  </data>
+  <data name="specialization" xml:space="preserve">
+    <value>Cursos especializados en ingeniería de software, desarrollo web y diseño de sistemas.</value>
+  </data>
+  <data name="certifications" xml:space="preserve">
+    <value>Certificaciones:</value>
+  </data>
+  <data name="certified_microsoft_fundementials" xml:space="preserve">
+    <value>Certificado por Microsoft: Azure Fundaments</value>
+  </data>
+  <data name="udemy_certificate" xml:space="preserve">
+    <value>Udemy: Páginas avanzadas de ASP.NET Core Razor (2023)</value>
+  </data>
+  <data name="download_resume" xml:space="preserve">
+    <value>Descargar currículum</value>
+  </data>
+  <data name="C#" xml:space="preserve">
+    <value>DO#</value>
+  </data>
+  <data name="JavaScript/TypeScript" xml:space="preserve">
+    <value>JavaScript / TypeScript</value>
+  </data>
+  <data name="php" xml:space="preserve">
+    <value>Php</value>
+  </data>
+  <data name="python" xml:space="preserve">
+    <value>Pitón</value>
+  </data>
+  <data name="sql" xml:space="preserve">
+    <value>Sql</value>
+  </data>
+  <data name="html_css" xml:space="preserve">
+    <value>HTML / CSS</value>
+  </data>
+  <data name="java" xml:space="preserve">
+    <value>Java</value>
+  </data>
+  <data name="ruby_on_rails" xml:space="preserve">
+    <value>Ruby on Rails</value>
+  </data>
+  <data name="cpp" xml:space="preserve">
+    <value>C ++</value>
+  </data>
+  <data name="dart" xml:space="preserve">
+    <value>Dardo</value>
+  </data>
+  <data name="flutter" xml:space="preserve">
+    <value>Aleteo</value>
+  </data>
+  <data name="pl_sql" xml:space="preserve">
+    <value>PL/SQL</value>
+  </data>
+  <data name="tech_blogs" xml:space="preserve">
+    <value>Lectura de blogs tecnológicos</value>
+  </data>
+  <data name="chess" xml:space="preserve">
+    <value>Jugando al ajedrez</value>
+  </data>
+  <data name="hiking_walks" xml:space="preserve">
+    <value>Caminatas de senderismo y naturaleza</value>
+  </data>
+  <data name="music" xml:space="preserve">
+    <value>Música</value>
+  </data>
+  <data name="open_source" xml:space="preserve">
+    <value>Contribución de código abierto</value>
+  </data>
+  <data name="video_games" xml:space="preserve">
+    <value>Videojuegos (raramente)</value>
+  </data>
+  <data name="gym" xml:space="preserve">
+    <value>Gimnasia</value>
+  </data>
+  <data name="github_1" xml:space="preserve">
+    <value>github</value>
+  </data>
+  <data name="github_2" xml:space="preserve">
+    <value>Github #2:</value>
+  </data>
+  <data name="github_3" xml:space="preserve">
+    <value>Github #3:</value>
+  </data>
+  <data name="phone" xml:space="preserve">
+    <value>Teléfono:</value>
+  </data>
+  <data name="social_media_profiles" xml:space="preserve">
+    <value>Perfiles de redes sociales</value>
+  </data>
+  <data name="twitter" xml:space="preserve">
+    <value>Gorjeo</value>
+  </data>
+  <data name="facebook" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="instagrma" xml:space="preserve">
+    <value>Instagram</value>
+  </data>
+  <data name="discord" xml:space="preserve">
+    <value>Discordia</value>
+  </data>
+  <data name="about_the_dev" xml:space="preserve">
+    <value>Sobre el desarrollador</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Nombre:</value>
+  </data>
+  <data name="role" xml:space="preserve">
+    <value>Role:</value>
+  </data>
+  <data name="experience" xml:space="preserve">
+    <value>Experiencia:</value>
+  </data>
+  <data name="20yearold" xml:space="preserve">
+    <value>Desarrollador apasionado de 20 años al que ama la creación de cosas que importan.</value>
+  </data>
+  <data name="specialities" xml:space="preserve">
+    <value>Especialidades:</value>
+  </data>
+  <data name="building_web_apps" xml:space="preserve">
+    <value>Creación de aplicaciones web escalables</value>
+  </data>
+  <data name="api_integration" xml:space="preserve">
+    <value>Integración de API y arquitectura de backend</value>
+  </data>
+  <data name="responisive_designs" xml:space="preserve">
+    <value>Diseño receptivo de UI/UX</value>
+  </data>
+  <data name="database_designs" xml:space="preserve">
+    <value>Diseño y optimización de la base de datos</value>
+  </data>
+  <data name="tools" xml:space="preserve">
+    <value>Herramientas y tecnologías:</value>
+  </data>
+  <data name="git_docket_postman" xml:space="preserve">
+    <value>Git, Docker, Postman</value>
+  </data>
+  <data name="github_actions" xml:space="preserve">
+    <value>CI/CD (acciones de Github)</value>
+  </data>
+  <data name="agile_scrum" xml:space="preserve">
+    <value>Metodologías ágiles / scrum</value>
+  </data>
+  <data name="passion_projects" xml:space="preserve">
+    <value>Proyectos de pasión:</value>
+  </data>
+  <data name="open_source_contributions" xml:space="preserve">
+    <value>Contribuciones de código abierto en Github</value>
+  </data>
+  <data name="building_educational_tools" xml:space="preserve">
+    <value>Creación de herramientas educativas para desarrolladores</value>
+  </data>
+  <data name="tech_blogs_tutorials" xml:space="preserve">
+    <value>Escribir blogs técnicos y tutoriales</value>
+  </data>
+  <data name="technical_interrests" xml:space="preserve">
+    <value>Intereses técnicos:</value>
+  </data>
+  <data name="machine_learning" xml:space="preserve">
+    <value>Aprendizaje automático e integración de IA en aplicaciones web</value>
+  </data>
+  <data name="devops_conatiners" xml:space="preserve">
+    <value>Orquestación DevOps y contenedor</value>
+  </data>
+  <data name="progressive_web_apps" xml:space="preserve">
+    <value>Aplicaciones web progresivas (PWA)</value>
+  </data>
+  <data name="clean_architecture" xml:space="preserve">
+    <value>Patrones de arquitectura limpia y diseño</value>
+  </data>
+  <data name="favourite_projects" xml:space="preserve">
+    <value>Proyectos favoritos:</value>
+  </data>
+  <data name="diploma_web_app" xml:space="preserve">
+    <value>Aplicación web de Diploma: una muestra de habilidades del mundo real en las páginas ASP.NET y Razor.</value>
+  </data>
+  <data name="ecommerce_demo" xml:space="preserve">
+    <value>Demo de comercio electrónico: una tienda simulada que usa MVC e integración de franjas.</value>
+  </data>
+  <data name="personal_cms_app" xml:space="preserve">
+    <value>Sistema CMS personal: construido desde cero para administrar el contenido del blog.</value>
+  </data>
+  <data name="achievements" xml:space="preserve">
+    <value>Logros:</value>
+  </data>
+  <data name="full_stack_projects" xml:space="preserve">
+    <value>Completados de más de 20 proyectos de pila completa</value>
+  </data>
+  <data name="maintenance" xml:space="preserve">
+    <value>Mantuvo múltiples repositorios de Github con más de 50 estrellas</value>
+  </data>
+  <data name="custom_components" xml:space="preserve">
+    <value>Componentes personalizados construidos en Blazor y ASP.NET Core</value>
+  </data>
+  <data name="designed_and_deployed" xml:space="preserve">
+    <value>Soluciones basadas en la nube diseñadas e implementadas a través de Azure</value>
+  </data>
+  <data name="learning_goals" xml:space="preserve">
+    <value>Objetivos de aprendizaje:</value>
+  </data>
+  <data name="type_script_frameworks" xml:space="preserve">
+    <value>TypeScript maestro y marcos modernos frontend</value>
+  </data>
+  <data name="large_ops_initiatives" xml:space="preserve">
+    <value>Contribuir a iniciativas de código abierto más grandes</value>
+  </data>
+  <data name="explore_mobile_development" xml:space="preserve">
+    <value>Explore el desarrollo móvil con Flutter &amp; Dart</value>
+  </data>
+  <data name="towards_azure_certificate" xml:space="preserve">
+    <value>Trabajar hacia la certificación de desarrollador de Azure</value>
+  </data>
+  <data name="fun_facts" xml:space="preserve">
+    <value>Dato curioso:</value>
+  </data>
+  <data name="drink_coffee" xml:space="preserve">
+    <value>Bebo más depuración de café que codificando.</value>
+  </data>
+  <data name="fixed_a_bug" xml:space="preserve">
+    <value>Una vez solucioné un error a las 2 a.m. y olvidé cómo al día siguiente.</value>
+  </data>
+  <data name="back_home" xml:space="preserve">
+    <value>← De vuelta a casa</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Cuenta de edición</value>
+  </data>
+  <data name="save_changes" xml:space="preserve">
+    <value>Guardar cambios</value>
+  </data>
+  <data name="edit_teheme" xml:space="preserve">
+    <value>Editar tema</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Error.</value>
+  </data>
+  <data name="erorr_processing" xml:space="preserve">
+    <value>Se produjo un error al procesar su solicitud.</value>
+  </data>
+  <data name="error_request_id" xml:space="preserve">
+    <value>ID de solicitud:</value>
+  </data>
+  <data name="development_mode" xml:space="preserve">
+    <value>Modo de desarrollo</value>
+  </data>
+  <data name="development" xml:space="preserve">
+    <value>Desarrollo</value>
+  </data>
+  <data name="error_development_environment" xml:space="preserve">
+    <value>El entorno muestra información detallada sobre el error que ocurrió.</value>
+  </data>
+  <data name="apsnetcore_environment" xml:space="preserve">
+    <value>Aspnetcoreenvironment</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Bienvenido</value>
+  </data>
+  <data name="building_with_ASP" xml:space="preserve">
+    <value>Creación de aplicaciones web con ASP.NET Core</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Acceso</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="privacy" xml:space="preserve">
+    <value>Esta política de privacidad explica cómo recopilamos, usamos y divulgamos su información cuando use nuestro servicio. También le informa sobre sus derechos de privacidad y cómo la ley lo protege.</value>
+  </data>
+  <data name="info_we_gather" xml:space="preserve">
+    <value>Información que recopilamos</value>
+  </data>
+  <data name="types_of_info" xml:space="preserve">
+    <value>Recopilamos diferentes tipos de información para proporcionarle y mejorar nuestro servicio. Esto incluye:</value>
+  </data>
+  <data name="personal_data" xml:space="preserve">
+    <value>Datos personales: como su nombre, dirección de correo electrónico y datos de contacto.</value>
+  </data>
+  <data name="usage_data" xml:space="preserve">
+    <value>Datos de uso: información sobre cómo accede y usa el servicio.</value>
+  </data>
+  <data name="cookies_tracking" xml:space="preserve">
+    <value>Cookies y Tecnologías de seguimiento: para rastrear la actividad en nuestro servicio y mantener cierta información.</value>
+  </data>
+  <data name="utilising_info" xml:space="preserve">
+    <value>Cómo usamos su información</value>
+  </data>
+  <data name="info_we_use" xml:space="preserve">
+    <value>Usamos la información que recopilamos:</value>
+  </data>
+  <data name="provide_maintain" xml:space="preserve">
+    <value>Proporcionar y mantener nuestro servicio</value>
+  </data>
+  <data name="notify" xml:space="preserve">
+    <value>Notificarle sobre los cambios en nuestro servicio</value>
+  </data>
+  <data name="customer_support" xml:space="preserve">
+    <value>Proporcionar atención al cliente</value>
+  </data>
+  <data name="monitoring" xml:space="preserve">
+    <value>Monitorear el uso y mejorar nuestro servicio</value>
+  </data>
+  <data name="working_items" xml:space="preserve">
+    <value>Detectar, prevenir y abordar problemas técnicos</value>
+  </data>
+  <data name="disclosure" xml:space="preserve">
+    <value>Divulgación de su información</value>
+  </data>
+  <data name="privacy_information" xml:space="preserve">
+    <value>No vendemos sus datos personales. Sin embargo, podemos divulgar su información para cumplir con las obligaciones legales, proteger los derechos o hacer cumplir nuestras políticas.</value>
+  </data>
+  <data name="privacy_rights" xml:space="preserve">
+    <value>Tus derechos de privacidad</value>
+  </data>
+  <data name="your_rights" xml:space="preserve">
+    <value>Tiene derecho a acceder, corregir o eliminar sus datos personales. También puede tener derecho a objetar o restringir cierto procesamiento de sus datos.</value>
+  </data>
+  <data name="security_of_user_info" xml:space="preserve">
+    <value>Seguridad de su información</value>
+  </data>
+  <data name="strive" xml:space="preserve">
+    <value>Nos esforzamos por usar medios comercialmente aceptables para proteger sus datos personales, pero no podemos garantizar la seguridad absoluta.</value>
+  </data>
+  <data name="changes" xml:space="preserve">
+    <value>Cambios a esta Política de privacidad</value>
+  </data>
+  <data name="policy_updates" xml:space="preserve">
+    <value>Podemos actualizar nuestra Política de privacidad de vez en cuando. Le notificaremos cualquier cambio publicando la nueva Política de privacidad en esta página.</value>
+  </data>
+  <data name="contact" xml:space="preserve">
+    <value>Contáctenos. Si tiene alguna pregunta sobre esta Política de privacidad, contáctenos en</value>
+  </data>
+  <data name="welcome_admin" xml:space="preserve">
+    <value>Saludos, administrador!</value>
+  </data>
+  <data name="admin_dashboard" xml:space="preserve">
+    <value>Tablero de administración</value>
+  </data>
+  <data name="manage_users" xml:space="preserve">
+    <value>Administrar usuarios</value>
+  </data>
+  <data name="manage_roles" xml:space="preserve">
+    <value>Gestionar roles</value>
+  </data>
+  <data name="add_remove_roles" xml:space="preserve">
+    <value>Agregar o eliminar roles</value>
+  </data>
+  <data name="to_index" xml:space="preserve">
+    <value>Ir al índice</value>
+  </data>
+  <data name="loading_checkout" xml:space="preserve">
+    <value>Carga de pago</value>
+  </data>
+  <data name="naklad" xml:space="preserve">
+    <value>Circulación</value>
+  </data>
+  <data name="approve" xml:space="preserve">
+    <value>Aprobar a los usuarios</value>
+  </data>
+  <data name="download_excel" xml:space="preserve">
+    <value>Descargar excelente</value>
+  </data>
+  <data name="archived_transports" xml:space="preserve">
+    <value>Transportes archivados</value>
+  </data>
+  <data name="back_to_archived" xml:space="preserve">
+    <value>Volver a los transportes activos</value>
+  </data>
+  <data name="transport_id" xml:space="preserve">
+    <value>IDENTIFICACIÓN</value>
+  </data>
+  <data name="transpot_st" xml:space="preserve">
+    <value>Stratansport</value>
+  </data>
+  <data name="transport_planirna" xml:space="preserve">
+    <value>Llegada planificada</value>
+  </data>
+  <data name="transport_sp" xml:space="preserve">
+    <value>Sp</value>
+  </data>
+  <data name="transport_callback_reason" xml:space="preserve">
+    <value>Razón de devolución de llamada</value>
+  </data>
+  <data name="transport_compare" xml:space="preserve">
+    <value>Comparar</value>
+  </data>
+  <data name="transport_remove_archive" xml:space="preserve">
+    <value>Eliminar el archivo</value>
+  </data>
+  <data name="transport_delete" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="callback_transports" xml:space="preserve">
+    <value>Todos los transportes</value>
+  </data>
+  <data name="view_archived" xml:space="preserve">
+    <value>¡Ver transportes archivados!</value>
+  </data>
+  <data name="cb_planiran" xml:space="preserve">
+    <value>Planificado</value>
+  </data>
+  <data name="cb_acitons" xml:space="preserve">
+    <value>Comportamiento</value>
+  </data>
+  <data name="cb_set_callback" xml:space="preserve">
+    <value>Establecer devolución de llamada</value>
+  </data>
+  <data name="cb_remove_callback" xml:space="preserve">
+    <value>Eliminar la devolución de llamada</value>
+  </data>
+  <data name="cb_choose_reason" xml:space="preserve">
+    <value>Elige una razón</value>
+  </data>
+  <data name="cb_select_reason" xml:space="preserve">
+    <value>-Seleccionar motivo-</value>
+  </data>
+  <data name="cb_submit" xml:space="preserve">
+    <value>Enviar devolución de llamada</value>
+  </data>
+  <data name="cb_cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="cb_compare" xml:space="preserve">
+    <value>Compare el transporte de devolución de llamada</value>
+  </data>
+  <data name="cb_field" xml:space="preserve">
+    <value>Campo</value>
+  </data>
+  <data name="cb_old_transport" xml:space="preserve">
+    <value>Transporte antiguo (archivado)</value>
+  </data>
+  <data name="cb_new_trnasport" xml:space="preserve">
+    <value>Nuevo transporte</value>
+  </data>
+  <data name="cb_skaldisce" xml:space="preserve">
+    <value>Depósito</value>
+  </data>
+  <data name="cb_vrsta" xml:space="preserve">
+    <value>Tipo de transporte</value>
+  </data>
+  <data name="cb_pavza" xml:space="preserve">
+    <value>El conductor del conductor</value>
+  </data>
+  <data name="cb_dolocen_skaldiscnik" xml:space="preserve">
+    <value>Tienda diseñada</value>
+  </data>
+  <data name="cb_registracija" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="cb_navis_zacetek" xml:space="preserve">
+    <value>Navis začetek sklada</value>
+  </data>
+  <data name="cb_navis_konec" xml:space="preserve">
+    <value>Navis Konec Sklada</value>
+  </data>
+  <data name="cb_is_callback" xml:space="preserve">
+    <value>Es devolución de llamada</value>
+  </data>
+  <data name="cb_approve" xml:space="preserve">
+    <value>Aprobar usuarios registrados</value>
+  </data>
+  <data name="cb_pending" xml:space="preserve">
+    <value>Registros pendientes</value>
+  </data>
+  <data name="cr_approve" xml:space="preserve">
+    <value>Aprobar</value>
+  </data>
+  <data name="cr_decline" xml:space="preserve">
+    <value>Rechazar</value>
+  </data>
+  <data name="cr_pregled" xml:space="preserve">
+    <value>Revisión de los datos de transporte y apagado</value>
+  </data>
+  <data name="de_transpord" xml:space="preserve">
+    <value>Transportes</value>
+  </data>
+  <data name="de_sk" xml:space="preserve">
+    <value>Sk</value>
+  </data>
+  <data name="de_warehouse" xml:space="preserve">
+    <value>Depósito</value>
+  </data>
+  <data name="de_st" xml:space="preserve">
+    <value>St. Transporte</value>
+  </data>
+  <data name="de_izkladisceno" xml:space="preserve">
+    <value>Apagado</value>
+  </data>
+  <data name="de_kolicina" xml:space="preserve">
+    <value>Cantidad</value>
+  </data>
+  <data name="de_palete" xml:space="preserve">
+    <value>Paleta</value>
+  </data>
+  <data name="de_skadliscnik" xml:space="preserve">
+    <value>Depósito</value>
+  </data>
+  <data name="de_datum" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="de_skaldiscnik_id" xml:space="preserve">
+    <value>Hombre del almacén</value>
+  </data>
+  <data name="de_download" xml:space="preserve">
+    <value>Descargar como Excel</value>
+  </data>
+  <data name="de_back" xml:space="preserve">
+    <value>Hacia atrás</value>
+  </data>
+  <data name="de_edit_user" xml:space="preserve">
+    <value>Editar usuario</value>
+  </data>
+  <data name="eu_select_role" xml:space="preserve">
+    <value>Seleccione un rol</value>
+  </data>
+  <data name="index" xml:space="preserve">
+    <value>Índice</value>
+  </data>
+  <data name="index_import" xml:space="preserve">
+    <value>Importar Excel</value>
+  </data>
+  <data name="index_create" xml:space="preserve">
+    <value>Crear nuevo</value>
+  </data>
+  <data name="index_no_info" xml:space="preserve">
+    <value>No hay éxitos.</value>
+  </data>
+  <data name="index_callback" xml:space="preserve">
+    <value>Llamar de vuelta</value>
+  </data>
+  <data name="index_true" xml:space="preserve">
+    <value>verdadero</value>
+  </data>
+  <data name="index_info" xml:space="preserve">
+    <value>i</value>
+  </data>
+  <data name="Index_details_221" xml:space="preserve">
+    <value>Detalles</value>
+  </data>
+  <data name="index_x" xml:space="preserve">
+    <value>×</value>
+  </data>
+  <data name="print" xml:space="preserve">
+    <value>Imprimir</value>
+  </data>
+  <data name="choose_transport" xml:space="preserve">
+    <value>Seleccione el transporte para la devolución de llamada</value>
+  </data>
+  <data name="st_transport" xml:space="preserve">
+    <value>No. Transporte:</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>- Elegir -</value>
+  </data>
+  <data name="reason_callback" xml:space="preserve">
+    <value>llamar de vuelta:</value>
+  </data>
+  <data name="confirm_callback" xml:space="preserve">
+    <value>Confirmar la devolución de llamada</value>
+  </data>
+  <data name="import" xml:space="preserve">
+    <value>¿Le gustaría importar archivos de transporte?</value>
+  </data>
+  <data name="select_files" xml:space="preserve">
+    <value>Seleccione archivos para importar:</value>
+  </data>
+  <data name="import_selected" xml:space="preserve">
+    <value>Importar archivos seleccionados</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>Nombre de usuario:</value>
+  </data>
+  <data name="geslo" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="navis" xml:space="preserve">
+    <value>Navis</value>
+  </data>
+  <data name="prijava" xml:space="preserve">
+    <value>Acceso</value>
+  </data>
+  <data name="start_of_loading" xml:space="preserve">
+    <value>Inicio de la carga:</value>
+  </data>
+  <data name="end_of_loading" xml:space="preserve">
+    <value>Fin de la carga:</value>
+  </data>
+  <data name="cmr_number" xml:space="preserve">
+    <value>Número de CMR:</value>
+  </data>
+  <data name="transport_number" xml:space="preserve">
+    <value>Número de transporte:</value>
+  </data>
+  <data name="loaded_quantity" xml:space="preserve">
+    <value>Cantidad cargada:</value>
+  </data>
+  <data name="registration_plates" xml:space="preserve">
+    <value>Placas de registro:</value>
+  </data>
+  <data name="seal" xml:space="preserve">
+    <value>Sello:</value>
+  </data>
+  <data name="signature_warehouse_worker" xml:space="preserve">
+    <value>Nombre y firma de Warehouse Worker:</value>
+  </data>
+  <data name="signature_driver" xml:space="preserve">
+    <value>Nombre y firma del controlador:</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>Entregar</value>
+  </data>
+  <data name="mr_email" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="mr_roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="mr_nousers" xml:space="preserve">
+    <value>No se encontraron usuarios.</value>
+  </data>
+  <data name="mr_select" xml:space="preserve">
+    <value>Seleccionar roles</value>
+  </data>
+  <data name="mr_remove_roles" xml:space="preserve">
+    <value>Eliminar roles</value>
+  </data>
+  <data name="mr_external" xml:space="preserve">
+    <value>Inicios de sesión externos</value>
+  </data>
+  <data name="mr_full_name" xml:space="preserve">
+    <value>Nombre completo</value>
+  </data>
+  <data name="mr_user_roles" xml:space="preserve">
+    <value>Rol (s)</value>
+  </data>
+  <data name="mr_edit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="mr_confirm_delete" xml:space="preserve">
+    <value>Confirmar la eliminación</value>
+  </data>
+  <data name="mr_yes_delete" xml:space="preserve">
+    <value>Si, eliminar</value>
+  </data>
+  <data name="end_start_load" xml:space="preserve">
+    <value>Inicio, final de la circulación</value>
+  </data>
+  <data name="ramp1" xml:space="preserve">
+    <value>Rampa 1:</value>
+  </data>
+  <data name="ramp2" xml:space="preserve">
+    <value>Rampa 2:</value>
+  </data>
+  <data name="carina" xml:space="preserve">
+    <value>Cordón aduanero:</value>
+  </data>
+  <data name="izberi" xml:space="preserve">
+    <value>----- Seleccionar ---------</value>
+  </data>
+  <data name="prisotna" xml:space="preserve">
+    <value>Presente</value>
+  </data>
+  <data name="ni_prisotna" xml:space="preserve">
+    <value>No esta presente</value>
+  </data>
+  <data name="ctn" xml:space="preserve">
+    <value>CTN</value>
+  </data>
+  <data name="ustreznost" xml:space="preserve">
+    <value>Realización del vehículo:</value>
+  </data>
+  <data name="neustrezno" xml:space="preserve">
+    <value>inadecuado</value>
+  </data>
+  <data name="ustrezno" xml:space="preserve">
+    <value>adecuadamente</value>
+  </data>
+  <data name="delno_neustrezno" xml:space="preserve">
+    <value>parcialmente inadecuado</value>
+  </data>
+  <data name="delno ustrezno" xml:space="preserve">
+    <value>parcialmente apropiado</value>
+  </data>
+  <data name="start_date" xml:space="preserve">
+    <value>Comienzo de la circulación:</value>
+  </data>
+  <data name="set" xml:space="preserve">
+    <value>Sets</value>
+  </data>
+  <data name="end_date" xml:space="preserve">
+    <value>Fin de la circulación:</value>
+  </data>
+  <data name="rejected_by_driver" xml:space="preserve">
+    <value>El conductor rechazó el inicio debido a la pausa:</value>
+  </data>
+  <data name="aciton" xml:space="preserve">
+    <value>Acción</value>
+  </data>
+  <data name="no_data" xml:space="preserve">
+    <value>No hay datos para el apagado.</value>
+  </data>
+  <data name="add_warehouse" xml:space="preserve">
+    <value>Agregue el apagado</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Ahorrar</value>
+  </data>
+  <data name="notes" xml:space="preserve">
+    <value>Notas</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
+  <data name="quantity" xml:space="preserve">
+    <value>Cantidad después de un almacén</value>
+  </data>
+  <data name="manage" xml:space="preserve">
+    <value>Gestión de roles</value>
+  </data>
+  <data name="remove_roles" xml:space="preserve">
+    <value>Un nuevo papel:</value>
+  </data>
+  <data name="create_roles" xml:space="preserve">
+    <value>Crea un papel</value>
+  </data>
+  <data name="remove_existing_roles" xml:space="preserve">
+    <value>Aplicaciones existentes:</value>
+  </data>
+  <data name="choose_for_delete" xml:space="preserve">
+    <value>Elija una aplicación para la eliminación:</value>
+  </data>
+  <data name="choose_role_for_delete" xml:space="preserve">
+    <value>Elija una aplicación para la eliminación</value>
+  </data>
+  <data name="delete_role" xml:space="preserve">
+    <value>Eliminar la aplicación</value>
+  </data>
+  <data name="set_smtp_password" xml:space="preserve">
+    <value>Establecer contraseña SMTP</value>
+  </data>
+  <data name="smtp_password_" xml:space="preserve">
+    <value>Contraseña SMTP</value>
+  </data>
+  <data name="save_smtp" xml:space="preserve">
+    <value>Ahorrar</value>
+  </data>
+  <data name="uae_methods" xml:space="preserve">
+    <value>Métodos de acceso de usuario</value>
+  </data>
+  <data name="uae_google" xml:space="preserve">
+    <value>Usuarios de Google</value>
+  </data>
+  <data name="uae_username" xml:space="preserve">
+    <value>Nombre de usuario</value>
+  </data>
+  <data name="uae_login_provider" xml:space="preserve">
+    <value>Proveedor de inicio de sesión</value>
+  </data>
+  <data name="uae_facebook" xml:space="preserve">
+    <value>Usuarios de Facebook</value>
+  </data>
+  <data name="uae_microsoft" xml:space="preserve">
+    <value>Usuarios de Microsoft</value>
+  </data>
+  <data name="uae_github" xml:space="preserve">
+    <value>Usuarios de Github</value>
+  </data>
+  <data name="uae_yahoo" xml:space="preserve">
+    <value>Usuarios de Yahoo</value>
+  </data>
+  <data name="uae_demo_user" xml:space="preserve">
+    <value>yahoodemouser</value>
+  </data>
+  <data name="uae_yahoo_" xml:space="preserve">
+    <value>Yahoo</value>
+  </data>
+  <data name="uae_gitlab" xml:space="preserve">
+    <value>Usuarios de gitlab</value>
+  </data>
+  <data name="uae_local" xml:space="preserve">
+    <value>Usuarios locales</value>
+  </data>
+  <data name="hello_analyst" xml:space="preserve">
+    <value>¡Hola, analista!</value>
+  </data>
+  <data name="analyst_page" xml:space="preserve">
+    <value>Este es el tablero de analitik. A continuación se presentan sus tareas y herramientas disponibles.</value>
+  </data>
+  <data name="analyst_download_excel" xml:space="preserve">
+    <value>Descargar Excel</value>
+  </data>
+  <data name="create" xml:space="preserve">
+    <value>Crear</value>
+  </data>
+  <data name="transport" xml:space="preserve">
+    <value>Transporte</value>
+  </data>
+  <data name="back_to_list" xml:space="preserve">
+    <value>Volver a la lista</value>
+  </data>
+  <data name="planned_arrival" xml:space="preserve">
+    <value>Llegada planificada:</value>
+  </data>
+  <data name="registration" xml:space="preserve">
+    <value>Registro:</value>
+  </data>
+  <data name="driver" xml:space="preserve">
+    <value>Conductor:</value>
+  </data>
+  <data name="type_of_transport" xml:space="preserve">
+    <value>Tipo de transporte:</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>Tipo de transporte:</value>
+  </data>
+  <data name="warehouse" xml:space="preserve">
+    <value>Depósito:</value>
+  </data>
+  <data name="stop_driver" xml:space="preserve">
+    <value>Pausa del conductor:</value>
+  </data>
+  <data name="navis_start" xml:space="preserve">
+    <value>Navis Začetek Sklada:</value>
+  </data>
+  <data name="navis_end" xml:space="preserve">
+    <value>Navis Konec Sklada:</value>
+  </data>
+  <data name="no_transports" xml:space="preserve">
+    <value>No hay transportes para esta identificación</value>
+  </data>
+  <data name="all_warehouses" xml:space="preserve">
+    <value>Todas las tiendas</value>
+  </data>
+  <data name="transport_details" xml:space="preserve">
+    <value>Detalles de transporte</value>
+  </data>
+  <data name="tnrasport_info" xml:space="preserve">
+    <value>Información de transporte</value>
+  </data>
+  <data name="transport_type" xml:space="preserve">
+    <value>Tipo de instrucciones</value>
+  </data>
+  <data name="pasue" xml:space="preserve">
+    <value>Pausa</value>
+  </data>
+  <data name="trnasport_type" xml:space="preserve">
+    <value>Tipo de transporte</value>
+  </data>
+  <data name="details_driver" xml:space="preserve">
+    <value>Conductor</value>
+  </data>
+  <data name="details_navisstart" xml:space="preserve">
+    <value>Naviszaceteksklada</value>
+  </data>
+  <data name="details_navisend" xml:space="preserve">
+    <value>Naviskonecsklada</value>
+  </data>
+  <data name="detailed_assigned" xml:space="preserve">
+    <value>Skladiscnik asignado</value>
+  </data>
+  <data name="greeting_shiftmanager" xml:space="preserve">
+    <value>¡Saludos, turno!</value>
+  </data>
+  <data name="shit_manager" xml:space="preserve">
+    <value>Esta es la página para el papel de Izmenovodja. Use los enlaces a continuación para administrar registros y realizar tareas relacionadas con su rol.</value>
+  </data>
+  <data name="confirm_account" xml:space="preserve">
+    <value>Cuenta de confirmación</value>
+  </data>
+  <data name="app_diplomska" xml:space="preserve">
+    <value>diploma</value>
+  </data>
+  <data name="_layout_home" xml:space="preserve">
+    <value>Hogar</value>
+  </data>
+  <data name="_layout_privacy" xml:space="preserve">
+    <value>Privacidad</value>
+  </data>
+  <data name="_layout_izmenovodja" xml:space="preserve">
+    <value>Panel de Izmenovodja</value>
+  </data>
+  <data name="_layout_skaldiscnik" xml:space="preserve">
+    <value>Skladiščnik tablero</value>
+  </data>
+  <data name="_Layout_admin" xml:space="preserve">
+    <value>Tablero de administración</value>
+  </data>
+  <data name="_Layout_analitika" xml:space="preserve">
+    <value>Tablero de analitika</value>
+  </data>
+  <data name="_layout_ct" xml:space="preserve">
+    <value>Cambiar tema</value>
+  </data>
+  <data name="_layout_light" xml:space="preserve">
+    <value>Luz</value>
+  </data>
+  <data name="_layout_dark" xml:space="preserve">
+    <value>Oscuro</value>
+  </data>
+  <data name="_layout_custom" xml:space="preserve">
+    <value>Costumbre</value>
+  </data>
+  <data name="_layout_logout" xml:space="preserve">
+    <value>Cierre de sesión</value>
+  </data>
+  <data name="you_sure" xml:space="preserve">
+    <value>¿Estás seguro de que quieres eliminar esto?</value>
+  </data>
+  <data name="quantity_" xml:space="preserve">
+    <value>Cantidad:</value>
+  </data>
+  <data name="paletes_" xml:space="preserve">
+    <value>Pallets:</value>
+  </data>
+  <data name="warehouse_storage" xml:space="preserve">
+    <value>Almacenamiento:</value>
+  </data>
+  <data name="page_for" xml:space="preserve">
+    <value>Esta es la página del papel de Skladiščnik.</value>
+  </data>
+  <data name="warehouse_worker_index" xml:space="preserve">
+    <value>Índice de almacenamiento</value>
+  </data>
+</root>

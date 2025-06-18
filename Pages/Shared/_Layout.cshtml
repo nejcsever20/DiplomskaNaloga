@@ -1,14 +1,26 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@using System.Security.Claims
+@using System.Globalization
+@using diplomska.Properties
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
 @{
     var theme = Context.Request.Cookies["theme"] ?? "light";
+    var currentCulture = CultureInfo.CurrentCulture.Name; // e.g. "en" or "sl"
+    string flagCode = currentCulture.ToLowerInvariant() switch
+    {
+        "en" or "en-us" => "us",
+        "en-gb" => "gb",
+        "sl" => "si",
+        "de" => "de",
+        "es" => "es",
+        "fr" => "fr",
+        _ => "us"
+    };
 }
 
 <!DOCTYPE html>
-<html lang="en" data-theme="@theme">
+<html lang="@currentCulture" data-theme="@theme">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,15 +38,10 @@
     @RenderSection("Styles", required: false)
 
     <style>
-        @if (theme != "custom")
-        {
-            <text>
-                :root {
-                    --bg: @(theme == "dark" ? "#1e1e1e" : "#ffffff");
-                    --text: @(theme == "dark" ? "#dddddd" : "#000000");
-                    --card-bg: @(theme == "dark" ? "#2e2e2e" : "#f8f9fa");
-                }
-            </text>
+        :root {
+            --bg: @(theme == "dark" ? "#1e1e1e" : "#ffffff");
+            --text: @(theme == "dark" ? "#dddddd" : "#000000");
+            --card-bg: @(theme == "dark" ? "#2e2e2e" : "#f8f9fa");
         }
 
         body {
@@ -60,11 +67,8 @@
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top py-1">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">diplomska</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -73,19 +77,19 @@
                         @if (!(User.Identity?.IsAuthenticated ?? false))
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-page="/Index" aria-current="page">Home</a>
+                                <a class="nav-link" asp-page="/Index">@Resources._layout_home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-page="/Privacy">Privacy</a>
+                                <a class="nav-link" asp-page="/Privacy">@Resources._layout_privacy</a>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <span class="nav-link disabled" aria-disabled="true">Home</span>
+                                <span class="nav-link disabled">@Resources._layout_home</span>
                             </li>
                             <li class="nav-item">
-                                <span class="nav-link disabled" aria-disabled="true">Privacy</span>
+                                <span class="nav-link disabled">@Resources._layout_privacy</span>
                             </li>
                         }
 
@@ -94,38 +98,36 @@
                             if (User.IsInRole("Izmenovodja"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-page="/Izmenovodja/IzmenovodjaPage">Izmenovodja Dashboard</a>
+                                    <a class="nav-link" asp-page="/Izmenovodja/IzmenovodjaPage">@Resources._layout_izmenovodja</a>
                                 </li>
                             }
                             else if (User.IsInRole("Skladiščnik"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-page="/Skladiščnik/SkladiščnikPage">Skladiščnik Dashboard</a>
+                                    <a class="nav-link" asp-page="/Skladiščnik/SkladiščnikPage">@Resources._layout_skaldiscnik</a>
                                 </li>
                             }
                             else if (User.IsInRole("Admin"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-page="/Admin/AdminPage">Admin Dashboard</a>
+                                    <a class="nav-link" asp-page="/Admin/AdminPage">@Resources._Layout_admin</a>
                                 </li>
                             }
                             else if (User.IsInRole("Analitika"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-page="/Analitika/AnalitikaPage">Analitika Dashboard</a>
-                                </li>                                
+                                    <a class="nav-link" asp-page="/Analitika/AnalitikaPage">@Resources._Layout_analitika</a>
+                                </li>
                             }
                         }
                     </ul>
 
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto align-items-center">
                         @if (User.Identity?.IsAuthenticated ?? false)
                         {
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="me-2">
-                                        <img src="~/images/profile-icon.png" alt="Profile" width="30" height="30" class="rounded-circle" />
-                                    </span>
+                                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                                    <img src="~/images/profile-icon.png" alt="Profile" width="30" height="30" class="rounded-circle me-2" />
                                     <span>@User.Identity.Name</span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
@@ -138,58 +140,68 @@
                                                 User.IsInRole("Analitika") ? "Analitika" :
                                                 User.IsInRole("Admin") ? "Admin" :
                                                 "Unknown"
-                                            )
+                                                )
                                         </span>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" asp-page="/EditTheme">Change Theme</a>
+                                        <a class="dropdown-item" asp-page="/EditTheme">@Resources._layout_ct</a>
                                     </li>
                                     <li class="px-3">
                                         <form method="post" asp-page="/SetTheme">
                                             <select name="theme" class="theme-select form-select form-select-sm" onchange="this.form.submit()">
-                                                @if (theme == "light")
-                                                {
-                                                    <text>
-                                                        <option value="light" selected="selected">Light</option>
-                                                        <option value="dark">Dark</option>
-                                                        <option value="custom">Custom</option>
-                                                    </text>
-                                                }
-                                                else if (theme == "dark")
-                                                {
-                                                    <text>
-                                                        <option value="light">Light</option>
-                                                        <option value="dark" selected="selected">Dark</option>
-                                                        <option value="custom">Custom</option>
-                                                    </text>
-                                                }
-                                                else
-                                                {
-                                                    <text>
-                                                        <option value="light">Light</option>
-                                                        <option value="dark">Dark</option>
-                                                        <option value="custom" selected="selected">Custom</option>
-                                                    </text>
-                                                }
+                                                <option value="light" selected="@(theme == "light" ? "selected" : null)">@Resources._layout_light</option>
+                                                <option value="dark" selected="@(theme == "dark" ? "selected" : null)">@Resources._layout_dark</option>
+                                                <option value="custom" selected="@(theme == "custom" ? "selected" : null)">@Resources._layout_custom</option>
                                             </select>
                                         </form>
                                     </li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li>
                                         <form method="post" asp-area="Identity" asp-page="/Account/Logout" id="logoutForm">
-                                            <button type="submit" class="dropdown-item">Logout</button>
+                                            <button type="submit" class="dropdown-item">@Resources._layout_logout</button>
                                         </form>
                                     </li>
+                                </ul>
+                            </li>
+
+                            <!-- Language selector dropdown -->
+                            <li class="nav-item dropdown ms-3">
+                                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown">
+                                    <img src="~/images/flags/@(flagCode).png" alt="@currentCulture" class="me-2" width="20" />
+                                    @currentCulture.ToUpperInvariant()
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+                                    @foreach (var lang in new[] { ("en", "English"), ("sl", "Slovenščina"), ("de", "German"), ("es", "Spanish"), ("fr", "French") })
+                                    {
+                                        var lc = lang.Item1 switch
+                                        {
+                                            "en" => "us",
+                                            "sl" => "si",
+                                            "de" => "de",
+                                            "es" => "es",
+                                            "fr" => "fr",
+                                            _ => "us"
+                                        };
+                                        <li>
+                                            <form method="post" asp-page="/SetLanguage" class="d-inline w-100">
+                                                <input type="hidden" name="culture" value="@lang.Item1" />
+                                                <button type="submit" class="dropdown-item d-flex align-items-center">
+                                                    <img src="~/images/flags/@(lc).png" alt="@lang.Item2" width="20" class="me-2" />
+                                                    @lang.Item2
+                                                </button>
+                                            </form>
+                                        </li>
+                                    }
                                 </ul>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                                <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">@Resources.prijava</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                                <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">@Resources.register</a>
                             </li>
                         }
                     </ul>
@@ -204,15 +216,8 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; @DateTime.Now.Year - diplomska
-        </div>
-    </footer>
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

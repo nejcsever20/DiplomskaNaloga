@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Properties
 @model diplomska.Pages.Analitika.DownloadExcellModel
 @{
     ViewData["Title"] = "Prenos Excel podatkov";
@@ -60,13 +61,13 @@
 <div class="container-flex">
     <!-- Transports Table -->
     <div class="table-box">
-        <h2>Transports</h2>
+        <h2>@Resources.de_transpord</h2>
         <table>
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Sp</th>
-                    <th>SK</th>
+                    <th>@Resources.transport_sp</th>
+                    <th>@Resources.de_sk</th>
                     <th>Skladišče</th>
                     <th>Vrsta Transporta</th>
                     <th>St. Transporta</th>

@@ -1,67 +1,68 @@
 ﻿@page
+@using diplomska.Properties
 @model diplomska.Pages.Izmenovodja.DetailsModel
 
 @{
     ViewData["Title"] = "Transport Details";
 }
 
-<h1>Transport Details</h1>
+<h1>@Resources.transport_details</h1>
 
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h4>Transport Information</h4>
+            <h4>@Resources.tnrasport_info</h4>
             <table class="table">
                 <tr>
-                    <th>Sp</th>
+                    <th>@Resources.transport_sp</th>
                     <td>@Model.Transport.Sp</td>
                 </tr>
                 <tr>
-                    <th>SK</th>
+                    <th>@Resources.de_sk</th>
                     <td>@Model.Transport.SK</td>
                 </tr>
                 <tr>
-                    <th>Skladisce</th>
+                    <th>@Resources.cb_skaldisce</th>
                     <td>@Model.Transport.Skladisce</td>
                 </tr>
                 <tr>
-                    <th>VrstaTransporta</th>
+                    <th>@Resources.transport_type</th>
                     <td>@Model.Transport.VrstaTransporta</td>
                 </tr>
                 <tr>
-                    <th>StTransporta</th>
+                    <th>@Resources.st_transport</th>
                     <td>@Model.Transport.StTransporta</td>
                 </tr>
                 <tr>
-                    <th>PlaniranPrihod</th>
+                    <th>@Resources.cb_planiran</th>
                     <td>@Model.Transport.PlaniranPrihod</td>
                 </tr>
                 <tr>
-                    <th>PavzaVoznika</th>
+                    <th>@Resources.cb_pavza</th>
                     <td>@Model.Transport.PavzaVoznika</td>
                 </tr>
                 <tr>
-                    <th>Registracija</th>
+                    <th>@Resources.cb_registracija</th>
                     <td>@Model.Transport.Registracija</td>
                 </tr>
                 <tr>
-                    <th>VrstaPrevoznegaSredstva</th>
+                    <th>@Resources.type_of_transport</th>
                     <td>@Model.Transport.VrstaPrevoznegaSredstva</td>
                 </tr>
                 <tr>
-                    <th>Voznik</th>
+                    <th>@Resources.driver</th>
                     <td>@Model.Transport.Voznik</td>
                 </tr>
                 <tr>
-                    <th>NAVISZacetekSklada</th>
+                    <th>@Resources.details_navisstart</th>
                     <td>@Model.Transport.NAVISZacetekSklada</td>
                 </tr>
                 <tr>
-                    <th>NAVISKonecSklada</th>
+                    <th>@Resources.details_navisend</th>
                     <td>@Model.Transport.NAVISKonecSklada</td>
                 </tr>
                 <tr>
-                    <th>Assigned Skladiscnik</th>
+                    <th>@Resources.detailed_assigned</th>
                     <td>@Model.Transport.DolocenSkladiscnikId</td>
                 </tr>
             </table>
@@ -70,14 +71,14 @@
 
     <div class="row">
         <div class="col-md-6">
-            <a class="btn btn-primary" href="/Izmenovodja/Index">Back to List</a>
+            <a class="btn btn-primary" href="/Izmenovodja/Index">@Resources.back_to_list</a>
             
             <!-- Edit Button -->
             <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@Model.Transport.Id">Edit</a>
             
             <!-- Delete Button -->
             <form method="post" asp-page-handler="Delete" asp-route-id="@Model.Transport.Id" onsubmit="return confirm('Are you sure you want to delete this transport?');">
-                <button type="submit" class="btn btn-danger">Delete</button>
+                <button type="submit" class="btn btn-danger">@Resources.transport_delete</button>
             </form>
         </div>
     </div>

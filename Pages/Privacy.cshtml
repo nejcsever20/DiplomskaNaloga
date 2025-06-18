@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Properties
 @model PrivacyModel
 @{
     ViewData["Title"] = "Privacy Policy";
@@ -15,8 +16,8 @@
 
 <div class="cards-container">
     <section class="card">
-        <h2>Information We Collect</h2>
-        <p>We collect different types of information to provide and improve our Service to you. This includes:</p>
+        <h2>@Resources.info_we_gather</h2>
+        <p>@Resources.types_of_info</p>
         <ul>
             <li><strong>Personal Data:</strong> such as your name, email address, and contact details.</li>
             <li><strong>Usage Data:</strong> information on how you access and use the Service.</li>
@@ -25,35 +26,35 @@
     </section>
 
     <section class="card">
-        <h2>How We Use Your Information</h2>
-        <p>We use the information we collect to:</p>
+        <h2>@Resources.utilising_info</h2>
+        <p>@Resources.info_we_use</p>
         <ul>
-            <li>Provide and maintain our Service</li>
-            <li>Notify you about changes to our Service</li>
-            <li>Provide customer support</li>
-            <li>Monitor usage and improve our Service</li>
-            <li>Detect, prevent, and address technical issues</li>
+            <li>@Resources.provide_maintain</li>
+            <li>@Resources.notify</li>
+            <li>@Resources.customer_support</li>
+            <li>@Resources.monitoring</li>
+            <li>@Resources.working_items</li>
         </ul>
     </section>
 
     <section class="card">
-        <h2>Disclosure of Your Information</h2>
-        <p>We do not sell your personal data. However, we may disclose your information to comply with legal obligations, protect rights, or enforce our policies.</p>
+        <h2>@Resources.disclosure</h2>
+        <p>@Resources.privacy_information</p>
     </section>
 
     <section class="card">
-        <h2>Your Privacy Rights</h2>
-        <p>You have the right to access, correct, or delete your personal data. You may also have the right to object to or restrict certain processing of your data.</p>
+        <h2>@Resources.privacy_rights</h2>
+        <p>@Resources.your_rights</p>
     </section>
 
     <section class="card">
-        <h2>Security of Your Information</h2>
-        <p>We strive to use commercially acceptable means to protect your personal data but cannot guarantee absolute security.</p>
+        <h2>@Resources.security_of_user_info</h2>
+        <p>@Resources.strive</p>
     </section>
 
     <section class="card">
-        <h2>Changes to This Privacy Policy</h2>
-        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+        <h2>@Resources.changes</h2>
+        <p>@Resources.policy_updates</p>
     </section>
 
     <section class="card">

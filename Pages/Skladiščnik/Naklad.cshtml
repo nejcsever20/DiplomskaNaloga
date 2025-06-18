@@ -1,6 +1,7 @@
 ﻿@page
 @model diplomska.Pages.Skladiščnik.NakladModel
 @using diplomska.Models
+@using diplomska.Properties
 @using Microsoft.AspNetCore.Mvc.Rendering
 @{
     ViewData["Title"] = "Začetek, konec naklada";
@@ -167,12 +168,12 @@
     <!-- Form for setting times -->
     <form method="post">
         <div>
-            <label>Rampa 1:</label>
+            <label>@Resources.ramp1</label>
             <input type="number" asp-for="Rampa1" />
         </div>
 
         <div>
-            <label>Rampa 2:</label>
+            <label>@Resources.ramp2</label>
             <input type="number" asp-for="Rampa2" />
         </div>
 
@@ -182,7 +183,7 @@
                 <option value="">-------Izberi-------</option>
                 <option value="Prisotna">Prisotna</option>
                 <option value="Ni Prisotna">Ni Prisotna</option>
-                <option value="CTN">CTN</option>
+                <option value="CTN">@Resources.ctn</option>
             </select>
         </div>
 
@@ -257,7 +258,7 @@
                 <th>Palete</th>
                 <th>Skladiščnik</th>
                 <th>Datum</th>
-                <th>Action</th>
+                <th>@Resources.aciton</th>
             </tr>
         </thead>
         <tbody>
@@ -274,7 +275,7 @@
                             @if (item.Skladiscnik == User.Identity.Name)
                             {
                                 <form method="post" asp-page-handler="Delete" asp-route-id="@item.Id">
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-danger">@Resources.transport_delete</button>
                                 </form>
                             }
                         </td>

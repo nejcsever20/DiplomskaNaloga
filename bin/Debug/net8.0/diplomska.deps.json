@@ -26,6 +26,17 @@
         },
         "runtime": {
           "diplomska.dll": {}
+        },
+        "resources": {
+          "de/diplomska.resources.dll": {
+            "locale": "de"
+          },
+          "es/diplomska.resources.dll": {
+            "locale": "es"
+          },
+          "fr/diplomska.resources.dll": {
+            "locale": "fr"
+          }
         }
       },
       "AspNet.Security.OAuth.GitHub/8.0.0": {

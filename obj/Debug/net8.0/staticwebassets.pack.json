@@ -105,6 +105,26 @@
       "PackagePath": "staticwebassets\\images\\developer.jpg"
     },
     {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\de.png",
+      "PackagePath": "staticwebassets\\images\\flags\\de.png"
+    },
+    {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\es.png",
+      "PackagePath": "staticwebassets\\images\\flags\\es.png"
+    },
+    {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\fr.png",
+      "PackagePath": "staticwebassets\\images\\flags\\fr.png"
+    },
+    {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\sl.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sl.png"
+    },
+    {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\us.png",
+      "PackagePath": "staticwebassets\\images\\flags\\us.png"
+    },
+    {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\profile-icon.png",
       "PackagePath": "staticwebassets\\images\\profile-icon.png"
     },

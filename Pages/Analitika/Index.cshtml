@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Properties
 @model diplomska.Pages.Analitika.IndexModel
 
 @{
@@ -97,7 +98,7 @@
         }
 </style>
 
-<h1>Index</h1>
+<h1>@Resources.index</h1>
 
 <form method="get" class="mb-3">
     <input type="text" name="SearchString" value="@Model.SearchString"
@@ -164,7 +165,7 @@ else
                                 data-transporta="@item.StTransporta"
                                 data-registracija="@item.Registracija"
                                 data-voznik="@item.Voznik">
-                            <span class="info-icon">i</span>
+                            <span class="info-icon">@Resources.index_info</span>
                         </button>
                     </td>
                     <td>@Html.DisplayFor(modelItem => item.VrstaPrevoznegaSredstva)</td>
@@ -191,7 +192,7 @@ else
         <p>Št. Transporta: <span id="modal-stTransporta"></span></p>
         <p>Registracija: <span id="modal-registracija"></span></p>
         <p>Voznik: <span id="modal-voznik"></span></p>
-        <button id="print-btn" class="btn btn-primary print-btn">Print</button>
+        <button id="print-btn" class="btn btn-primary print-btn">@Resources.print</button>
     </div>
 </div>
 
@@ -233,10 +234,10 @@ else
 <div id="importExcelModal" class="modal">
     <div class="modal-content">
         <span class="close-btn import-close">&times;</span>
-        <h2>Would you like to import transport files?</h2>
+        <h2>@Resources.import</h2>
 
         <form id="importExcelForm" method="post" enctype="multipart/form-data" asp-page-handler="ImportExcel">
-            <label for="excelFiles"><strong>Select files to import:</strong></label>
+            <label for="excelFiles"><strong>@Resources.select_files</strong></label>
             <input type="file"
                    name="ExcelFiles"
                    id="excelFiles"
@@ -269,7 +270,7 @@ else
             <div class="checkbox-group">
                 <label for="navis-check" style="white-space: nowrap;">
                     <input type="checkbox" id="navis-check" style="vertical-align: middle;" />
-                    <span style="margin: 0; padding:0;">NAVIS</span>
+                    <span style="margin: 0; padding:0;">@Resources.navis</span>
                 </label>
             </div>
 

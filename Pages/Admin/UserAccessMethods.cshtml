@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Properties
 @model diplomska.Pages.Admin.UserAccessMethodsModel
 @{
     ViewData["Title"] = "User Access Methods";
@@ -53,18 +54,18 @@
     </script>
 </head>
 
-<h2>User Access Methods</h2>
+<h2>@Resources.uae_methods</h2>
 
 <!-- Google Login Users -->
 <div class="dropdown-section provider-group">
-    <button class="dropdown-button" onclick="toggleDropdown('google-users')">Google Users</button>
+    <button class="dropdown-button" onclick="toggleDropdown('google-users')">@Resources.uae_google</button>
     <div id="google-users" class="dropdown-content">
         <table class="table">
             <thead>
                 <tr>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Login Provider</th>
+                    <th>@Resources.uae_username</th>
+                    <th>@Resources.mr_email</th>
+                    <th>@Resources.uae_login_provider</th>
                 </tr>
             </thead>
             <tbody>
@@ -84,14 +85,14 @@
 
 <!-- Repeat for Facebook -->
 <div class="dropdown-section provider-group">
-    <button class="dropdown-button" onclick="toggleDropdown('facebook-users')">Facebook Users</button>
+    <button class="dropdown-button" onclick="toggleDropdown('facebook-users')">@Resources.uae_facebook</button>
     <div id="facebook-users" class="dropdown-content">
         <table class="table">
             <thead>
                 <tr>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Login Provider</th>
+                    <th>@Resources.uae_username</th>
+                    <th>@Resources.mr_email</th>
+                    <th>@Resources.uae_login_provider</th>
                 </tr>
             </thead>
             <tbody>
@@ -110,14 +111,14 @@
 
 <!-- Microsoft -->
 <div class="dropdown-section provider-group">
-    <button class="dropdown-button" onclick="toggleDropdown('microsoft-users')">Microsoft Users</button>
+    <button class="dropdown-button" onclick="toggleDropdown('microsoft-users')">@Resources.uae_microsoft</button>
     <div id="microsoft-users" class="dropdown-content">
         <table class="table">
             <thead>
                 <tr>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Login Provider</th>
+                    <th>@Resources.uae_username</th>
+                    <th>@Resources.mr_email</th>
+                    <th>@Resources.uae_login_provider</th>
                 </tr>
             </thead>
             <tbody>
@@ -136,14 +137,14 @@
 
 <!-- GitHub -->
 <div class="dropdown-section provider-group">
-    <button class="dropdown-button" onclick="toggleDropdown('github-users')">GitHub Users</button>
+    <button class="dropdown-button" onclick="toggleDropdown('github-users')">@Resources.uae_github</button>
     <div id="github-users" class="dropdown-content">
         <table class="table">
             <thead>
                 <tr>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Login Provider</th>
+                    <th>@Resources.uae_username</th>
+                    <th>@Resources.mr_email</th>
+                    <th>@Resources.uae_login_provider</th>
                 </tr>
             </thead>
             <tbody>
@@ -161,21 +162,21 @@
 </div>
 <!-- Yahoo Users -->
 <div class="dropdown-section provider-group">
-    <button class="dropdown-button" onclick="toggleDropdown('yahoo-users')">Yahoo Users</button>
+    <button class="dropdown-button" onclick="toggleDropdown('yahoo-users')">@Resources.uae_yahoo</button>
     <div id="yahoo-users" class="dropdown-content">
         <table class="table">
             <thead>
                 <tr>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Login Provider</th>
+                    <th>@Resources.uae_username</th>
+                    <th>@Resources.mr_email</th>
+                    <th>@Resources.uae_login_provider</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>yahoo_demo_user</td>
+                    <td>@Resources.uae_demo_user</td>
                     <td>demo_user@yahoo.com</td>
-                    <td>Yahoo</td>
+                    <td>@Resources.uae_yahoo_</td>
                 </tr>
                 @foreach (var user in Model.UsersWithLoginMethods.Where(u => u.LoginProvider == "Yahoo"))
                 {
@@ -192,14 +193,14 @@
 
 <!-- GitLab Users -->
 <div class="dropdown-section provider-group">
-    <button class="dropdown-button" onclick="toggleDropdown('gitlab-users')">GitLab Users</button>
+    <button class="dropdown-button" onclick="toggleDropdown('gitlab-users')">@Resources.uae_gitlab</button>
     <div id="gitlab-users" class="dropdown-content">
         <table class="table">
             <thead>
                 <tr>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Login Provider</th>
+                    <th>@Resources.uae_username</th>
+                    <th>@Resources.mr_email</th>
+                    <th>@Resources.uae_login_provider</th>
                 </tr>
             </thead>
             <tbody>
@@ -218,14 +219,14 @@
 
 <!-- Local Users -->
 <div class="dropdown-section provider-group">
-    <button class="dropdown-button" onclick="toggleDropdown('local-users')">Local Users</button>
+    <button class="dropdown-button" onclick="toggleDropdown('local-users')">@Resources.uae_local</button>
     <div id="local-users" class="dropdown-content">
         <table class="table">
             <thead>
                 <tr>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Login Provider</th>
+                    <th>@Resources.uae_username</th>
+                    <th>@Resources.mr_email</th>
+                    <th>@Resources.uae_login_provider</th>
                 </tr>
             </thead>
             <tbody>

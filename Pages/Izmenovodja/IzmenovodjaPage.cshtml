@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Properties
 @model diplomska.Pages.Izmenovodja.IzmenovodjaPageModel
 @{
     ViewData["Title"] = "Izmenovodja!";
@@ -8,14 +9,14 @@
 </head>
 
 <h1 class="page-header text-center">Lep pozdrav, Izmenovodja!</h1>
-<p class="text-center lead">This is the page for the Izmenovodja role. Use the links below to manage registrations and perform tasks related to your role.</p>
+<p class="text-center lead">@Resources.shit_manager</p>
 
 <div class="card">
     <div class="card-header">
         Quick Actions
     </div>
     <div class="card-body">
-        <a asp-area="" asp-page="/Izmenovodja/ConfirmRegister" class="btn btn-dark">Confirm Account</a>
-        <a asp-area="" asp-page="/Izmenovodja/Index" class="btn btn-dark">Go to Index</a>
+        <a asp-area="" asp-page="/Izmenovodja/ConfirmRegister" class="btn btn-dark">@Resources.confirm_account</a>
+        <a asp-area="" asp-page="/Izmenovodja/Index" class="btn btn-dark">@Resources.to_index</a>
     </div>
 </div>

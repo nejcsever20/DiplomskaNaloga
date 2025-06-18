@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Properties
 @model diplomska.Pages.AboutDeveloperModel
 @{
     ViewData["Title"] = "About the Developer";
@@ -57,13 +58,13 @@
                 JavaScript, TypeScript, and occasionally dabbling in Python and PHP for fun or utility scripting.
             </p>
         </div>
-        <span class="show-more-btn" onclick="toggleCollapse()">Show more</span>
+        <span class="show-more-btn" onclick="toggleCollapse()">@Resources.show_more</span>
 
-        <h3>Contact Info</h3>
+        <h3>@Resources.contacts</h3>
         <ul>
             <li><strong>Email:</strong> developer@example.com</li>
-            <li><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a></li>
-            <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a></li>
+            <li><strong>@Resources.gihub</strong> <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">@Resources.github_user</a></li>
+            <li><strong>@Resources.linkedin</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">@Resources.linkedin_profile</a></li>
         </ul>
 
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bigModal">
@@ -74,51 +75,51 @@
             <div class="modal-dialog modal-xl modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="bigModalLabel">About Me</h5>
+                        <h5 class="modal-title" id="bigModalLabel">@Resources.about_me</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="modal-grid-container">
 
                             <div class="modal-card">
-                                <h5>Resume</h5>
-                                <p>View my professional resume.</p>
-                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#resumeModal" data-bs-dismiss="modal">Open Resume</button>
+                                <h5>@Resources.resume</h5>
+                                <p>@Resources.view_resume</p>
+                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#resumeModal" data-bs-dismiss="modal">@Resources.open_reusme</button>
                             </div>
 
                             <div class="modal-card">
-                                <h5>Programming Languages</h5>
-                                <p>Languages I’m proficient in.</p>
-                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#languagesModal" data-bs-dismiss="modal">View Languages</button>
+                                <h5>@Resources.programming_languages</h5>
+                                <p>@Resources.languages</p>
+                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#languagesModal" data-bs-dismiss="modal">@Resources.view_languages</button>
                             </div>
 
                             <div class="modal-card">
-                                <h5>Hobbies</h5>
-                                <p>What I enjoy doing in my free time.</p>
-                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#hobbiesModal" data-bs-dismiss="modal">View Hobbies</button>
+                                <h5>@Resources.hobbies</h5>
+                                <p>@Resources.what_I_enjoy</p>
+                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#hobbiesModal" data-bs-dismiss="modal">@Resources.view_hobbies</button>
                             </div>
 
                             <div class="modal-card">
-                                <h5>Contact Information</h5>
-                                <p>How to get in touch with me.</p>
-                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal" data-bs-dismiss="modal">Contact Info</button>
+                                <h5>@Resources.contact_info</h5>
+                                <p>@Resources.how_to_contact</p>
+                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal" data-bs-dismiss="modal">@Resources.contacts</button>
                             </div>
 
                             <div class="modal-card">
-                                <h5>Social Media</h5>
-                                <p>Follow me on social platforms.</p>
-                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#socialModal" data-bs-dismiss="modal">Social Links</button>
+                                <h5>@Resources.social_media</h5>
+                                <p>@Resources.follow_socials</p>
+                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#socialModal" data-bs-dismiss="modal">@Resources.social_links</button>
                             </div>
 
                             <div class="modal-card">
-                                <h5>More about me</h5>
-                                <p>If you want to know more</p>
-                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#moreAboutDeveloperModal" data-bs-dismiss="modal">About the DEV</button>
+                                <h5>@Resources.more_about_me</h5>
+                                <p>@Resources.if_you_want</p>
+                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#moreAboutDeveloperModal" data-bs-dismiss="modal">@Resources.about_dev</button>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Resources.close</button>
                     </div>
                 </div>
             </div>
@@ -128,46 +129,46 @@
             <div class="modal-dialog modal-lg modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="resumeModalLabel">My Resume</h5>
+                        <h5 class="modal-title" id="resumeModalLabel">@Resources.my_resume</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p><strong>Professional Summary:</strong></p>
+                        <p><strong>@Resources.professional_resume</strong></p>
                         <p>
                             Experienced and adaptable software developer with a demonstrated history of working in both startup and corporate environments.
                             Skilled in full-stack web development, object-oriented programming, and responsive UI design. Strong background in C#, .NET technologies,
                             and database-driven applications. Committed to continuous learning and contributing to high-quality, maintainable codebases.
                         </p>
 
-                        <p><strong>Work Experience:</strong></p>
+                        <p><strong>@Resources.work_experiences</strong></p>
                         <ul>
                             <li>
-                                <strong>Senior Developer</strong> — Gorenje d.o.o. (2019 – Present)
+                                <strong>@Resources.senior_dev</strong> — Gorenje d.o.o. (2019 – Present)
                                 <ul>
-                                    <li>Led multiple web application projects using ASP.NET Core and Razor Pages.</li>
-                                    <li>Improved application performance by 35% through optimized SQL queries and caching strategies.</li>
-                                    <li>Mentored junior developers and conducted internal code reviews and workshops.</li>
+                                    <li>@Resources.multi_web_apps</li>
+                                    <li>@Resources.improved_apps</li>
+                                    <li>@Resources.mentored</li>
                                 </ul>
                             </li>
                             <li>
-                                <strong>Software Developer</strong> — HRC d.o.o. B (2015 – 2019)
+                                <strong>@Resources.software_dev</strong> — HRC d.o.o. B (2015 – 2019)
                                 <ul>
-                                    <li>Developed internal tools and dashboards using C#, WinForms, and SQL Server.</li>
-                                    <li>Worked closely with cross-functional teams to deliver feature-rich software on tight deadlines.</li>
+                                    <li>@Resources.internal_tools</li>
+                                    <li>@Resources.corss_funcitonal</li>
                                 </ul>
                             </li>
                         </ul>
 
-                        <p><strong>Education:</strong></p>
+                        <p><strong>@Resources.education</strong></p>
                         <ul>
-                            <li>Bachelor's Degree in Computer Science – University of [Your City/Institution]</li>
-                            <li>Specialized coursework in software engineering, web development, and system design.</li>
+                            <li>@Resources.degree</li>
+                            <li>@Resources.specialization</li>
                         </ul>
 
-                        <p><strong>Certifications:</strong></p>
+                        <p><strong>@Resources.certifications</strong></p>
                         <ul>
-                            <li>Microsoft Certified: Azure Fundamentals</li>
-                            <li>Udemy: Advanced ASP.NET Core Razor Pages (2023)</li>
+                            <li>@Resources.certified_microsoft_fundementials</li>
+                            <li>@Resources.udemy_certificate</li>
                         </ul>
 
                         <a href="~/files/Resume.pdf" download="My_Resume.pdf" class="btn btn-blue">
@@ -176,7 +177,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Resources.close</button>
                     </div>
                 </div>
             </div>
@@ -186,27 +187,27 @@
             <div class="modal-dialog modal-md modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="languagesModalLabel">Programming Languages</h5>
+                        <h5 class="modal-title" id="languagesModalLabel">@Resources.programming_languages</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <ul>
-                            <li>C#</li>
-                            <li>JavaScript / TypeScript</li>
-                            <li>PHP</li>
-                            <li>Python</li>
-                            <li>SQL</li>
-                            <li>HTML / CSS</li>
-                            <li>Java</li>
-                            <li>Ruby on Rails</li>
-                            <li>C++</li>
-                            <li>Dart</li>
-                            <li>Flutter</li>
-                            <li>PL/SQL</li>
+                            <li>@Resources.C_</li>
+                            <li>@Resources.JavaScript_TypeScript</li>
+                            <li>@Resources.php</li>
+                            <li>@Resources.python</li>
+                            <li>@Resources.sql</li>
+                            <li>@Resources.html_css</li>
+                            <li>@Resources.java</li>
+                            <li>@Resources.ruby_on_rails</li>
+                            <li>@Resources.cpp</li>
+                            <li>@Resources.dart</li>
+                            <li>@Resources.flutter</li>
+                            <li>@Resources.pl_sql</li>
                         </ul>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Resources.close</button>
                     </div>
                 </div>
             </div>
@@ -216,22 +217,22 @@
             <div class="modal-dialog modal-md modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="hobbiesModalLabel">Hobbies</h5>
+                        <h5 class="modal-title" id="hobbiesModalLabel">@Resources.hobbies</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <ul>
-                            <li>Reading Tech Blogs</li>
-                            <li>Playing Chess</li>
-                            <li>Hiking and Nature Walks</li>
-                            <li>Music</li>
-                            <li>Open Source Contribution</li>
-                            <li>Video Games (rarely)</li>
-                            <li>Gym</li>
+                            <li>@Resources.tech_blogs</li>
+                            <li>@Resources.chess</li>
+                            <li>@Resources.hiking_walks</li>
+                            <li>@Resources.music</li>
+                            <li>@Resources.open_source</li>
+                            <li>@Resources.video_games</li>
+                            <li>@Resources.gym</li>
                         </ul>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Resources.close</button>
                     </div>
                 </div>
             </div>
@@ -241,20 +242,20 @@
             <div class="modal-dialog modal-md modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="contactModalLabel">Contact Information</h5>
+                        <h5 class="modal-title" id="contactModalLabel">@Resources.contact_info</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <ul>
                             <li><strong>Email:</strong> nejc.severmihelic@business.com</li>
-                            <li><strong>GitHub:</strong> <a href="https://github.com/nejcsever20/DiplomskaNaloga" target="_blank" rel="noopener noreferrer">github</a></li>
-                            <li><strong>GitHub #2:</strong> <a href="https://github.com/nejcsever2004" target="_blank" rel="noopener noreferrer">github</a></li>
-                            <li><strong>GitHub #3:</strong> <a href="https://github.com/anonymousvssv20" target="_blank" rel="noopener noreferrer">github</a></li>
-                            <li><strong>Phone:</strong> +386 41-233-545</li>
+                            <li><strong>@Resources.gihub</strong> <a href="https://github.com/nejcsever20/DiplomskaNaloga" target="_blank" rel="noopener noreferrer">@Resources.github_1</a></li>
+                            <li><strong>@Resources.github_2</strong> <a href="https://github.com/nejcsever2004" target="_blank" rel="noopener noreferrer">@Resources.github_1</a></li>
+                            <li><strong>@Resources.github_3</strong> <a href="https://github.com/anonymousvssv20" target="_blank" rel="noopener noreferrer">@Resources.github_1</a></li>
+                            <li><strong>@Resources.phone</strong> +386 41-233-545</li>
                         </ul>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Resources.close</button>
                     </div>
                 </div>
             </div>
@@ -264,19 +265,19 @@
             <div class="modal-dialog modal-md modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="socialModalLabel">Social Media Profiles</h5>
+                        <h5 class="modal-title" id="socialModalLabel">@Resources.social_media_profiles</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <ul>
-                            <li><a href="https://twitter.com/realkirito18" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-                            <li><a href="https://www.facebook.com/nejc.severmihelic.5?locale=sl_SI" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                            <li><a href="https://instagram.com/nsm_2004_20" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                            <li><a href="https://discord.com/nsm19_" target="_blank" rel="noopener noreferrer">Discord</a></li>
+                            <li><a href="https://twitter.com/realkirito18" target="_blank" rel="noopener noreferrer">@Resources.twitter</a></li>
+                            <li><a href="https://www.facebook.com/nejc.severmihelic.5?locale=sl_SI" target="_blank" rel="noopener noreferrer">@Resources.facebook</a></li>
+                            <li><a href="https://instagram.com/nsm_2004_20" target="_blank" rel="noopener noreferrer">@Resources.instagrma</a></li>
+                            <li><a href="https://discord.com/nsm19_" target="_blank" rel="noopener noreferrer">@Resources.discord</a></li>
                         </ul>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Resources.close</button>
                     </div>
                 </div>
             </div>
@@ -285,83 +286,83 @@
             <div class="modal-dialog modal-md modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="aboutDevModalLabel">About the Developer</h5>
+                        <h5 class="modal-title" id="aboutDevModalLabel">@Resources.about_the_dev</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p><strong>Name:</strong> Nejc Sever Mihelič</p>
-                        <p><strong>Role:</strong> Full-Stack Developer</p>
-                        <p><strong>Experience:</strong> 4+ years in web development</p>
-                        <p>20-year-old passionate developer who loves creating things that matter.</p>
+                        <p><strong>@Resources.name</strong> Nejc Sever Mihelič</p>
+                        <p><strong>@Resources.role</strong> Full-Stack Developer</p>
+                        <p><strong>@Resources.experience</strong> 4+ years in web development</p>
+                        <p>@Resources._20yearold</p>
 
-                        <p><strong>Specialties:</strong></p>
+                        <p><strong>@Resources.specialities</strong></p>
                         <ul>
-                            <li>Building scalable web applications</li>
-                            <li>API integration and backend architecture</li>
-                            <li>Responsive UI/UX design</li>
-                            <li>Database design and optimization</li>
+                            <li>@Resources.building_web_apps</li>
+                            <li>@Resources.api_integration</li>
+                            <li>@Resources.responisive_designs</li>
+                            <li>@Resources.database_designs</li>
                         </ul>
 
-                        <p><strong>Tools & Technologies:</strong></p>
+                        <p><strong>@Resources.tools</strong></p>
                         <ul>
-                            <li>Git, Docker, Postman</li>
-                            <li>CI/CD (GitHub Actions)</li>
-                            <li>Agile / Scrum methodologies</li>
+                            <li>@Resources.git_docket_postman</li>
+                            <li>@Resources.github_actions</li>
+                            <li>@Resources.agile_scrum</li>
                         </ul>
 
-                        <p><strong>Passion Projects:</strong></p>
+                        <p><strong>@Resources.passion_projects</strong></p>
                         <ul>
-                            <li>Open-source contributions on GitHub</li>
-                            <li>Building educational tools for developers</li>
-                            <li>Writing technical blogs and tutorials</li>
+                            <li>@Resources.open_source_contributions</li>
+                            <li>@Resources.building_educational_tools</li>
+                            <li>@Resources.tech_blogs_tutorials</li>
                         </ul>
 
-                        <p><strong>Technical Interests:</strong></p>
+                        <p><strong>@Resources.technical_interrests</strong></p>
                         <ul>
-                            <li>Machine Learning and AI integration in web apps</li>
-                            <li>DevOps and container orchestration</li>
-                            <li>Progressive Web Apps (PWAs)</li>
-                            <li>Clean Architecture & Design Patterns</li>
+                            <li>@Resources.machine_learning</li>
+                            <li>@Resources.devops_conatiners</li>
+                            <li>@Resources.progressive_web_apps</li>
+                            <li>@Resources.clean_architecture</li>
                         </ul>
 
-                        <p><strong>Favorite Projects:</strong></p>
+                        <p><strong>@Resources.favourite_projects</strong></p>
                         <ul>
                             <li><a href="https://github.com/nejcsever20/DiplomskaNaloga" target="_blank">Diploma Web App</a> – A showcase of real-world skills in ASP.NET and Razor Pages.</li>
                             <li><a href="https://github.com/nejcsever2004" target="_blank">E-Commerce Demo</a> – A mock storefront using MVC and Stripe integration.</li>
-                            <li>Personal CMS System – Built from scratch to manage blog content.</li>
+                            <li>@Resources.personal_cms_app</li>
                         </ul>
 
-                        <p><strong>Achievements:</strong></p>
+                        <p><strong>@Resources.achievements</strong></p>
                         <ul>
-                            <li>Completed 20+ full-stack projects</li>
-                            <li>Maintained multiple GitHub repositories with 50+ stars</li>
-                            <li>Built custom components in Blazor and ASP.NET Core</li>
-                            <li>Designed and deployed cloud-based solutions via Azure</li>
+                            <li>@Resources.full_stack_projects</li>
+                            <li>@Resources.maintenance</li>
+                            <li>@Resources.custom_components</li>
+                            <li>@Resources.designed_and_deployed</li>
                         </ul>
 
-                        <p><strong>Learning Goals:</strong></p>
+                        <p><strong>@Resources.learning_goals</strong></p>
                         <ul>
-                            <li>Master TypeScript and modern frontend frameworks</li>
-                            <li>Contribute to larger open-source initiatives</li>
-                            <li>Explore mobile development with Flutter & Dart</li>
-                            <li>Work toward Azure Developer certification</li>
+                            <li>@Resources.type_script_frameworks</li>
+                            <li>@Resources.large_ops_initiatives</li>
+                            <li>@Resources.explore_mobile_development</li>
+                            <li>@Resources.towards_azure_certificate</li>
                         </ul>
 
-                        <p><strong>Fun Fact:</strong></p>
+                        <p><strong>@Resources.fun_facts</strong></p>
                         <ul>
-                            <li>I drink more coffee debugging than coding.</li>
-                            <li>I once fixed a bug at 2AM — and forgot how the next day.</li>
+                            <li>@Resources.drink_coffee</li>
+                            <li>@Resources.fixed_a_bug</li>
                         </ul>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Resources.close</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="back-button">
-            <a asp-page="/Index">← Back to Home</a>
+            <a asp-page="/Index">@Resources.back_home</a>
         </div>
     </div>
 </div>

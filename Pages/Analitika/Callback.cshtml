@@ -1,11 +1,12 @@
 ﻿@page
+@using diplomska.Properties
 @model diplomska.Pages.Analitika.CallbackModel
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 <head>
     <link rel="stylesheet" href="~/css/callback.css" />
 </head>
-<h2>All Transports</h2>
+<h2>@Resources.callback_transports</h2>
 
 <a asp-page="/Admin/ArchivedTransports" class="btn btn-outline-secondary mb-3">
     View Archived Transports!
@@ -17,9 +18,9 @@
             <th hidden>Id</th>
             <th>StTransporta</th>
             <th>PlaniranPrihod</th>
-            <th>Sp</th>
-            <th>Callback Reason</th>
-            <th>Actions</th>
+            <th>@Resources.transport_sp</th>
+            <th>@Resources.transport_callback_reason</th>
+            <th>@Resources.cb_acitons</th>
         </tr>
     </thead>
     <tbody>
@@ -73,7 +74,7 @@
                                 <div class="mb-3">
                                     <label for="reasonSelect_@transportId" class="form-label">Choose a reason</label>
                                     <select class="form-select" name="SelectedReason" id="reasonSelect_@transportId" required>
-                                        <option value="" disabled selected>-- Select reason --</option>
+                                        <option value="" disabled selected>@Resources.cb_select_reason</option>
                                         @foreach (var reason in Model.CallbackReasons)
                                         {
                                             <option value="@reason">@reason</option>
@@ -82,8 +83,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success">Submit Callback</button>
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-success">@Resources.cb_submit</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Resources.cb_cancel</button>
                             </div>
                         </form>
                     </div>

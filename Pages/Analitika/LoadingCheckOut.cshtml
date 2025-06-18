@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Properties
 @model diplomska.Pages.Analitika.LoadingCheckOutModel
 
 @{
@@ -100,27 +101,27 @@
         <fieldset>
             <legend>Basic Information</legend>
 
-            <label>Start of Loading:</label>
+            <label>@Resources.start_of_loading</label>
             <input type="datetime-local" asp-for="StartLoading" />
 
-            <label>End of Loading:</label>
+            <label>@Resources.end_of_loading</label>
             <input type="datetime-local" asp-for="EndLoading" />
 
-            <label>CMR Number:</label>
+            <label>@Resources.cmr_number</label>
             <input type="text" asp-for="CmrNumber" />
 
-            <label>Transport Number:</label>
+            <label>@Resources.transport_number</label>
             <input type="text" asp-for="TransportNumber" readonly />
 
             <!-- Change Loaded Quantity to non-editable text -->
-            <label>Loaded Quantity:</label>
+            <label>@Resources.loaded_quantity</label>
             <span class="text-field">@Model.LoadedQuantity</span>
 
 
-            <label>Registration Plates:</label>
+            <label>@Resources.registration_plates</label>
             <input type="text" asp-for="RegistrationPlates" readonly />
 
-            <label>Seal:</label>
+            <label>@Resources.seal</label>
             <input type="text" asp-for="Seal" readonly />
         </fieldset>
 
@@ -141,14 +142,14 @@
 
         <fieldset>
             <legend>Signatures</legend>
-            <label>Name and signature of warehouse worker:</label>
+            <label>@Resources.signature_warehouse_worker</label>
             <input type="text" asp-for="WarehouseSignature" required />
 
-            <label>Name and signature of driver:</label>
+            <label>@Resources.signature_driver</label>
             <input type="text" asp-for="DriverSignature" required />
         </fieldset>
 
-        <button type="submit">Submit</button>
+        <button type="submit">@Resources.submit</button>
     </form>
 
     @if (ViewData["SuccessMessage"] != null)

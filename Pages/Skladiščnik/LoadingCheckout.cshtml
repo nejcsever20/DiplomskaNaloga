@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Properties
 @model diplomska.Pages.Skladiščnik.LoadingCheckOutModel
 
 @{
@@ -114,25 +115,25 @@
         <fieldset>
             <legend>Basic Information</legend>
 
-            <label>Start of Loading:</label>
+            <label>@Resources.start_of_loading</label>
             <span class="form-control-plaintext">@Model.StartLoading.ToString("g")</span>
 
-            <label>End of Loading:</label>
+            <label>@Resources.end_of_loading</label>
             <span class="form-control-plaintext">@Model.EndLoading.ToString("g")</span>
 
-            <label>CMR Number:</label>
+            <label>@Resources.cmr_number</label>
             <span class="form-control-plaintext">@Model.CmrNumber</span>
 
-            <label>Transport Number:</label>
+            <label>@Resources.transport_number</label>
             <span class="form-control-plaintext">@Model.TransportNumber</span>
 
-            <label>Loaded Quantity:</label>
+            <label>@Resources.loaded_quantity</label>
             <span class="text-field">@Model.LoadedQuantity</span>
 
-            <label>Registration Plates:</label>
+            <label>@Resources.registration_plates</label>
             <span class="form-control-plaintext">@Model.RegistrationPlates</span>
 
-            <label>Seal:</label>
+            <label>@Resources.seal</label>
             <span class="form-control-plaintext">@Model.Seal</span>
         </fieldset>
 
@@ -153,14 +154,14 @@
 
         <fieldset>
             <legend>Signatures</legend>
-            <label>Name and signature of warehouse worker:</label>
+            <label>@Resources.signature_warehouse_worker</label>
             <input type="text" asp-for="WarehouseSignature" required />
 
-            <label>Name and signature of driver:</label>
+            <label>@Resources.signature_driver</label>
             <input type="text" asp-for="DriverSignature" required />
         </fieldset>
 
-        <button type="submit">Submit</button>
+        <button type="submit">@Resources.submit</button>
     </form>
 
     @if (ViewData["SuccessMessage"] != null)

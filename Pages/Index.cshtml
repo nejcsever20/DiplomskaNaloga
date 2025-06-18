@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Properties
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -81,15 +82,15 @@
 
 <!-- Page Content -->
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core" target="_blank">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">@Resources.welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core" target="_blank">@Resources.building_with_ASP</a>.</p>
 
     <div class="auth-buttons">
-        <a asp-area="Identity" asp-page="/Account/Login">Login</a>
-        <a asp-area="Identity" asp-page="/Account/Register">Register</a>
+        <a asp-area="Identity" asp-page="/Account/Login">@Resources.prijava</a>
+        <a asp-area="Identity" asp-page="/Account/Register">@Resources.register</a>
     </div>
     <div class="auth-dev-buttons">
-        <a href="./AboutDeveloper">About the Developer</a>
+        <a href="./AboutDeveloper">@Resources.about_the_dev</a>
     </div>
 </div>
 

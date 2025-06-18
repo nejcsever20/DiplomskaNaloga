@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Properties
 @model diplomska.Pages.Admin.ManageUsersModel
 @{
     ViewData["Title"] = "Manage Users";
@@ -9,18 +10,18 @@
 <style>
     h2{color: black;}
 </style>
-<h2>Manage Users</h2>
-<a asp-page="/Admin/UserAccessMethods" class="btn btn-sm btn-secondary">External Logins</a>
+<h2>@Resources.manage_users</h2>
+<a asp-page="/Admin/UserAccessMethods" class="btn btn-sm btn-secondary">@Resources.mr_external</a>
 
 @if (Model.Users != null && Model.Users.Count > 0)
 {
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Email</th>
-                <th>Full Name</th>
-                <th>Role(s)</th>
-                <th>Actions</th>
+                <th>@Resources.mr_email</th>
+                <th>@Resources.mr_full_name</th>
+                <th>@Resources.mr_user_roles</th>
+                <th>@Resources.cb_acitons</th>
             </tr>
         </thead>
         <tbody>
@@ -53,7 +54,7 @@
 }
 else
 {
-    <p>No users found.</p>
+    <p>@Resources.mr_nousers</p>
 }
 
 <!-- Delete Confirmation Modal -->
@@ -62,7 +63,7 @@ else
         <div class="modal-content">
             <form method="post" asp-page-handler="Delete">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                    <h5 class="modal-title" id="deleteModalLabel">@Resources.mr_confirm_delete</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -70,8 +71,8 @@ else
                     <input type="hidden" name="UserId" id="userIdInput" />
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger">Yes, Delete</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">@Resources.mr_yes_delete</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Resources.cb_cancel</button>
                 </div>
             </form>
         </div>

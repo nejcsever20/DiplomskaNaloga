@@ -1,17 +1,18 @@
 ﻿@page
+@using diplomska.Properties
 @model diplomska.Pages.Izmenovodja.CompareCallbackModel
 @{
     ViewData["Title"] = "Compare Callback Transport";
 }
 
-<h2>Compare Callback Transport</h2>
+<h2>@Resources.cb_compare</h2>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Field</th>
-            <th>Old Transport (Archived)</th>
-            <th>New Transport</th>
+            <th>@Resources.cb_field</th>
+            <th>@Resources.cb_old_transport</th>
+            <th>@Resources.cb_new_trnasport</th>
         </tr>
     </thead>
     <tbody>

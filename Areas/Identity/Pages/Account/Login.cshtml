@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Properties
 @model diplomska.Areas.Identity.Pages.Account.LoginModel
 @{
     ViewData["Title"] = "Log in";
@@ -12,13 +13,13 @@
     <div class="col-md-6" style="background-color: #3C8DAD; padding: 20px; border-radius: 8px; color: white;">
         <section>
             <form method="post">
-                <h2 style="color:#F5A962 ">Login</h2>
+                <h2 style="color:#F5A962 ">@Resources.prijava</h2>
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
 
                 <div class="form-floating mb-3">
                     <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                    <label asp-for="Input.Email">Email</label>
+                    <label asp-for="Input.Email">@Resources.mr_email</label>
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
 

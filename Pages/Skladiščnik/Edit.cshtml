@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Properties
 @model diplomska.Pages.Skladiščnik.EditModel
 
 @{
@@ -7,9 +8,9 @@
 <head>
     <link rel="stylesheet" href="~/css/skladiscnik.css" />
 </head>
-<h1>Edit</h1>
+<h1>@Resources.mr_edit</h1>
 
-<h4>Transport</h4>
+<h4>@Resources.transport</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -89,7 +90,7 @@
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Index">@Resources.back_to_list</a>
 </div>
 
 @section Scripts {

@@ -9,6 +9,9 @@ using AspNet.Security.OAuth.GitHub;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.AspNetCore.HttpLogging;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,6 +50,19 @@ builder.Services.AddScoped<UserApprovalService>();
 builder.Services.AddScoped<CustomEmailSender>();
 builder.Services.AddScoped<ISystemLogs, SystemLogs>();
 builder.Services.AddSingleton<IEmailSender, DummyEmailSender>();
+
+// Localization configuration
+var supportedCultures = new[] { "en", "sl", "de", "es", "fr" };
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    var cultures = supportedCultures.Select(c => new CultureInfo(c)).ToList();
+
+    options.DefaultRequestCulture = new RequestCulture("en");
+    options.SupportedCultures = cultures;
+    options.SupportedUICultures = cultures;
+
+    options.RequestCultureProviders.Insert(0, new CookieRequestCultureProvider());
+});
 
 // CORS policy
 builder.Services.AddCors(options =>
@@ -118,7 +134,8 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-
+var locOptions = app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value;
+app.UseRequestLocalization(locOptions);
 // Role and admin setup
 using (var scope = app.Services.CreateScope())
 {

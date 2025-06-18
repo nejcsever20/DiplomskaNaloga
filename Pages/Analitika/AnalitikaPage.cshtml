@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Properties
 @model diplomska.Pages.Analitik.AnalitikPageModel
 @{
     ViewData["Title"] = "Analitik Dashboard";
@@ -101,20 +102,20 @@
 
     <div class="container">
         <h1 class="page-header text-center">Pozdravljeni, Analitik!</h1>
-        <p class="text-center lead">This is the Analitik dashboard. Below are your available tasks and tools.</p>
+        <p class="text-center lead">@Resources.analyst_page</p>
 
         <div class="card">
             <div class="card-header">Analitik Tasks</div>
             <div class="card-body button-group">
-                <a asp-page="/Analitika/Index" class="btn btn-dark">Go to Index</a>
+                <a asp-page="/Analitika/Index" class="btn btn-dark">@Resources.to_index</a>
             </div>
         </div>
 
         <div class="card">
             <div class="card-header">System Overview</div>
             <div class="card-body button-group">
-                <a asp-page="/Analitika/ConfirmRegister" class="btn btn-dark">Approve Users</a>
-                <a asp-page="/Analitika/DownloadExcel" class="btn btn-dark">Download Excel</a>
+                <a asp-page="/Analitika/ConfirmRegister" class="btn btn-dark">@Resources.approve</a>
+                <a asp-page="/Analitika/DownloadExcel" class="btn btn-dark">@Resources.analyst_download_excel</a>
             </div>
         </div>
     </div>

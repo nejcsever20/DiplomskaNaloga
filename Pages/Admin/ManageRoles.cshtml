@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Properties
 @model diplomska.Pages.Admin.ManageRolesModel
 @{
     ViewData["Title"] = "Manage Roles";
@@ -101,16 +102,16 @@
     </style>
 </head>
 
-<h2 class="fadeIn delay-1">Manage Roles</h2>
+<h2 class="fadeIn delay-1">@Resources.manage_roles</h2>
 
 @if (Model.Users != null && Model.Users.Count > 0)
 {
     <table class="table table-striped fadeIn delay-2">
         <thead>
             <tr>
-                <th>Email</th>
-                <th>Roles</th>
-                <th>Actions</th>
+                <th>@Resources.mr_email</th>
+                <th>@Resources.mr_roles</th>
+                <th>@Resources.cb_acitons</th>
             </tr>
         </thead>
         <tbody>
@@ -140,7 +141,7 @@
 }
 else
 {
-    <p class="fadeIn delay-2">No users found.</p>
+    <p class="fadeIn delay-2">@Resources.mr_nousers</p>
 }
 
 <!-- Modal for Managing Roles -->
@@ -155,7 +156,7 @@ else
                 <div class="modal-body fadeIn delay-1">
                     <input type="hidden" name="UserId" id="userIdInput" />
                     <div class="mb-3 fadeIn delay-2">
-                        <label class="form-label">Select Roles</label>
+                        <label class="form-label">@Resources.mr_select</label>
                         <select name="Roles" class="form-select" multiple id="roleSelect">
                             @foreach (var role in Model.AllRoles)
                             {
@@ -164,7 +165,7 @@ else
                         </select>
                     </div>
                     <div class="mb-3 fadeIn delay-3 bright-box">
-                        <h6>Remove Roles</h6>
+                        <h6>@Resources.mr_remove_roles</h6>
                         @foreach (var role in Model.AllRoles)
                         {
                             <div class="form-check fadeIn delay-3">
@@ -175,8 +176,8 @@ else
                     </div>
                 </div>
                 <div class="modal-footer fadeIn delay-2">
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">@Resources.save_changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Resources.cb_cancel</button>
                 </div>
             </form>
         </div>
