@@ -97,4 +97,1402 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutDeveloper_hi_im_your_developer_001" xml:space="preserve">
+    <value>Hi, I'm Your Developer </value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_im_a_passionate_software_devel_002" xml:space="preserve">
+    <value>I'm a passionate software developer with a strong focus on building modern web applications, particularly using ASP.NET Razor Pages— the very framework I used for this project. This website was developed as part of my diploma thesis to showcase not just my technical abilities, but also my creativity and attention to user experience. Over the years, I've worked on several full-stack applications ranging from small business websites to internal enterprise tools. I enjoy experimenting with different web technologies and staying up-to-date with the latest trends in UI/UX design. My favorite tools and languages include C#, HTML, CSS, and frameworks like TailwindCSS for rapid and elegant UI design. I also enjoy diving into JavaScript, TypeScript, and occasionally dabbling in Python and PHP for fun or utility scripting.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_show_more_003" xml:space="preserve">
+    <value>Show more</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_contact_info_004" xml:space="preserve">
+    <value>Contact Info</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_email_005" xml:space="preserve">
+    <value>Email:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_github_006" xml:space="preserve">
+    <value>GitHub:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_githubcomyourusername_007" xml:space="preserve">
+    <value>github.com/yourusername</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_linkedin_008" xml:space="preserve">
+    <value>LinkedIn:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_linkedincominyourprofile_009" xml:space="preserve">
+    <value>linkedin.com/in/yourprofile</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_more_about_me_010" xml:space="preserve">
+    <value>More about me!</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_about_me_011" xml:space="preserve">
+    <value>About Me</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_resume_012" xml:space="preserve">
+    <value>Resume</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_view_my_professional_resume_013" xml:space="preserve">
+    <value>View my professional resume.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_open_resume_014" xml:space="preserve">
+    <value>Open Resume</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_programming_languages_015" xml:space="preserve">
+    <value>Programming Languages</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_languages_im_proficient_in_016" xml:space="preserve">
+    <value>Languages I’m proficient in.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_view_languages_017" xml:space="preserve">
+    <value>View Languages</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_hobbies_018" xml:space="preserve">
+    <value>Hobbies</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_what_i_enjoy_doing_in_019" xml:space="preserve">
+    <value>What I enjoy doing in my free time.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_view_hobbies_020" xml:space="preserve">
+    <value>View Hobbies</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_contact_information_021" xml:space="preserve">
+    <value>Contact Information</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_how_to_get_in_touch_022" xml:space="preserve">
+    <value>How to get in touch with me.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_social_media_023" xml:space="preserve">
+    <value>Social Media</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_follow_me_on_social_platforms_024" xml:space="preserve">
+    <value>Follow me on social platforms.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_social_links_025" xml:space="preserve">
+    <value>Social Links</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_more_about_me_026" xml:space="preserve">
+    <value>More about me</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_if_you_want_to_know_027" xml:space="preserve">
+    <value>If you want to know more</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_about_the_dev_028" xml:space="preserve">
+    <value>About the DEV</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_close_029" xml:space="preserve">
+    <value>Close</value>
+    <comment>Used in: 7 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_my_resume_030" xml:space="preserve">
+    <value>My Resume</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_professional_summary_031" xml:space="preserve">
+    <value>Professional Summary:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_experienced_and_adaptable_soft_032" xml:space="preserve">
+    <value>Experienced and adaptable software developer with a demonstrated history of working in both startup and corporate environments. Skilled in full-stack web development, object-oriented programming, and responsive UI design. Strong background in C#, .NET technologies, and database-driven applications. Committed to continuous learning and contributing to high-quality, maintainable codebases.
+
+</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_work_experience_033" xml:space="preserve">
+    <value>Work Experience:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_senior_developer_034" xml:space="preserve">
+    <value>Senior Developer</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_led_multiple_web_application_p_035" xml:space="preserve">
+    <value>Led multiple web application projects using ASP.NET Core and Razor Pages.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_improved_application_performan_036" xml:space="preserve">
+    <value>Improved application performance by 35% through optimized SQL queries and caching strategies.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_mentored_junior_developers_and_037" xml:space="preserve">
+    <value>Mentored junior developers and conducted internal code reviews and workshops.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_software_developer_038" xml:space="preserve">
+    <value>Software Developer</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_developed_internal_tools_and_d_039" xml:space="preserve">
+    <value>Developed internal tools and dashboards using C#, WinForms, and SQL Server.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_worked_closely_with_crossfunct_040" xml:space="preserve">
+    <value>Worked closely with cross-functional teams to deliver feature-rich software on tight deadlines.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_education_041" xml:space="preserve">
+    <value>Education:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_bachelors_degree_in_computer_s_042" xml:space="preserve">
+    <value>Bachelor's Degree in Computer Science – University of [Your City/Institution]</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_specialized_coursework_in_soft_043" xml:space="preserve">
+    <value>Specialized coursework in software engineering, web development, and system design.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_certifications_044" xml:space="preserve">
+    <value>Certifications:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_microsoft_certified_azure_fund_045" xml:space="preserve">
+    <value>Microsoft Certified: Azure Fundamentals</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_udemy_advanced_aspnet_core_raz_046" xml:space="preserve">
+    <value>Udemy: Advanced ASP.NET Core Razor Pages (2023)</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_download_resume_047" xml:space="preserve">
+    <value>Download Resume</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_c_048" xml:space="preserve">
+    <value>C#</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_javascript_typescript_049" xml:space="preserve">
+    <value>JavaScript / TypeScript</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_php_050" xml:space="preserve">
+    <value>PHP</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_python_051" xml:space="preserve">
+    <value>Python</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_sql_052" xml:space="preserve">
+    <value>SQL</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_html_css_053" xml:space="preserve">
+    <value>HTML / CSS</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_java_054" xml:space="preserve">
+    <value>Java</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_ruby_on_rails_055" xml:space="preserve">
+    <value>Ruby on Rails</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_c_056" xml:space="preserve">
+    <value>C++</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_dart_057" xml:space="preserve">
+    <value>Dart</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_flutter_058" xml:space="preserve">
+    <value>Flutter</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_plsql_059" xml:space="preserve">
+    <value>PL/SQL</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_reading_tech_blogs_060" xml:space="preserve">
+    <value>Reading Tech Blogs</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_playing_chess_061" xml:space="preserve">
+    <value>Playing Chess</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_hiking_and_nature_walks_062" xml:space="preserve">
+    <value>Hiking and Nature Walks</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_music_063" xml:space="preserve">
+    <value>Music</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_open_source_contribution_064" xml:space="preserve">
+    <value>Open Source Contribution</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_video_games_rarely_065" xml:space="preserve">
+    <value>Video Games (rarely)</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_gym_066" xml:space="preserve">
+    <value>Gym</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_github_067" xml:space="preserve">
+    <value>github</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_github_2_068" xml:space="preserve">
+    <value>GitHub #2:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_github_3_069" xml:space="preserve">
+    <value>GitHub #3:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_phone_070" xml:space="preserve">
+    <value>Phone:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_social_media_profiles_071" xml:space="preserve">
+    <value>Social Media Profiles</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_twitter_072" xml:space="preserve">
+    <value>Twitter</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_facebook_073" xml:space="preserve">
+    <value>Facebook</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_instagram_074" xml:space="preserve">
+    <value>Instagram</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_discord_075" xml:space="preserve">
+    <value>Discord</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_about_the_developer_076" xml:space="preserve">
+    <value>About the Developer</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_name_077" xml:space="preserve">
+    <value>Name:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_role_078" xml:space="preserve">
+    <value>Role:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_experience_079" xml:space="preserve">
+    <value>Experience:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_20yearold_passionate_developer_080" xml:space="preserve">
+    <value>20-year-old passionate developer who loves creating things that matter.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_specialties_081" xml:space="preserve">
+    <value>Specialties:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_building_scalable_web_applicat_082" xml:space="preserve">
+    <value>Building scalable web applications</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_api_integration_and_backend_ar_083" xml:space="preserve">
+    <value>API integration and backend architecture</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_responsive_uiux_design_084" xml:space="preserve">
+    <value>Responsive UI/UX design</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_database_design_and_optimizati_085" xml:space="preserve">
+    <value>Database design and optimization</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_tools_technologies_086" xml:space="preserve">
+    <value>Tools &amp; Technologies:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_git_docker_postman_087" xml:space="preserve">
+    <value>Git, Docker, Postman</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_cicd_github_actions_088" xml:space="preserve">
+    <value>CI/CD (GitHub Actions)</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_agile_scrum_methodologies_089" xml:space="preserve">
+    <value>Agile / Scrum methodologies</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_passion_projects_090" xml:space="preserve">
+    <value>Passion Projects:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_opensource_contributions_on_gi_091" xml:space="preserve">
+    <value>Open-source contributions on GitHub</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_building_educational_tools_for_092" xml:space="preserve">
+    <value>Building educational tools for developers</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_writing_technical_blogs_and_tu_093" xml:space="preserve">
+    <value>Writing technical blogs and tutorials</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_technical_interests_094" xml:space="preserve">
+    <value>Technical Interests:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_machine_learning_and_ai_integr_095" xml:space="preserve">
+    <value>Machine Learning and AI integration in web apps</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_devops_and_container_orchestra_096" xml:space="preserve">
+    <value>DevOps and container orchestration</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_progressive_web_apps_pwas_097" xml:space="preserve">
+    <value>Progressive Web Apps (PWAs)</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_clean_architecture_design_patt_098" xml:space="preserve">
+    <value>Clean Architecture &amp; Design Patterns</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_favorite_projects_099" xml:space="preserve">
+    <value>Favorite Projects:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_diploma_web_app_100" xml:space="preserve">
+    <value>Diploma Web App – A showcase of real-world skills in ASP.NET and Razor Pages.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_ecommerce_demo_101" xml:space="preserve">
+    <value>E-Commerce Demo – A mock storefront using MVC and Stripe integration.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_personal_cms_system_built_from_102" xml:space="preserve">
+    <value>Personal CMS System – Built from scratch to manage blog content.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_achievements_103" xml:space="preserve">
+    <value>Achievements:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_completed_20_fullstack_project_104" xml:space="preserve">
+    <value>Completed 20+ full-stack projects</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_maintained_multiple_github_rep_105" xml:space="preserve">
+    <value>Maintained multiple GitHub repositories with 50+ stars</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_built_custom_components_in_bla_106" xml:space="preserve">
+    <value>Built custom components in Blazor and ASP.NET Core</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_designed_and_deployed_cloudbas_107" xml:space="preserve">
+    <value>Designed and deployed cloud-based solutions via Azure</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_learning_goals_108" xml:space="preserve">
+    <value>Learning Goals:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_master_typescript_and_modern_f_109" xml:space="preserve">
+    <value>Master TypeScript and modern frontend frameworks</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_contribute_to_larger_opensourc_110" xml:space="preserve">
+    <value>Contribute to larger open-source initiatives</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_explore_mobile_development_wit_111" xml:space="preserve">
+    <value>Explore mobile development with Flutter &amp; Dart</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_work_toward_azure_developer_ce_112" xml:space="preserve">
+    <value>Work toward Azure Developer certification</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_fun_fact_113" xml:space="preserve">
+    <value>Fun Fact:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_i_drink_more_coffee_debugging_114" xml:space="preserve">
+    <value>I drink more coffee debugging than coding.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_i_once_fixed_a_bug_115" xml:space="preserve">
+    <value>I once fixed a bug at 2AM — and forgot how the next day.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AboutDeveloper_back_to_home_116" xml:space="preserve">
+    <value>← Back to Home</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="EditAccountItems_edit_account_117" xml:space="preserve">
+    <value>Edit Account</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="EditAccountItems_save_changes_118" xml:space="preserve">
+    <value>Save Changes</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="EditTheme_edit_theme_119" xml:space="preserve">
+    <value>Edit Theme</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Error_error_120" xml:space="preserve">
+    <value>Error.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Error_an_error_occurred_while_proces_121" xml:space="preserve">
+    <value>An error occurred while processing your request.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Error_request_id_122" xml:space="preserve">
+    <value>Request ID:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Error_development_mode_123" xml:space="preserve">
+    <value>Development Mode</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Error_development_124" xml:space="preserve">
+    <value>Development</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Error_the_development_environment_sh_125" xml:space="preserve">
+    <value>environment displays detailed information about the error that occurred.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Error_aspnetcore_environment_126" xml:space="preserve">
+    <value>ASPNETCORE_ENVIRONMENT</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Index_welcome_127" xml:space="preserve">
+    <value>Welcome</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Index_building_web_apps_with_aspnet_128" xml:space="preserve">
+    <value>building Web apps with ASP.NET Core</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Index_login_129" xml:space="preserve">
+    <value>Login</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Index_register_130" xml:space="preserve">
+    <value>Register</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Privacy_this_privacy_policy_explains_h_131" xml:space="preserve">
+    <value>This Privacy Policy explains how we collect, use, and disclose your information when you use our Service. It also informs you about your privacy rights and how the law protects you.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_information_we_collect_132" xml:space="preserve">
+    <value>Information We Collect</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_we_collect_different_types_of_133" xml:space="preserve">
+    <value>We collect different types of information to provide and improve our Service to you. This includes:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_personal_data_134" xml:space="preserve">
+    <value>Personal Data: such as your name, email address, and contact details.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_usage_data_135" xml:space="preserve">
+    <value>Usage Data: information on how you access and use the Service.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_cookies_and_tracking_technolog_136" xml:space="preserve">
+    <value>Cookies and Tracking Technologies: to track activity on our Service and hold certain information.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_how_we_use_your_information_137" xml:space="preserve">
+    <value>How We Use Your Information</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_we_use_the_information_we_138" xml:space="preserve">
+    <value>We use the information we collect to:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_provide_and_maintain_our_servi_139" xml:space="preserve">
+    <value>Provide and maintain our Service</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_notify_you_about_changes_to_140" xml:space="preserve">
+    <value>Notify you about changes to our Service</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_provide_customer_support_141" xml:space="preserve">
+    <value>Provide customer support</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_monitor_usage_and_improve_our_142" xml:space="preserve">
+    <value>Monitor usage and improve our Service</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_detect_prevent_and_address_tec_143" xml:space="preserve">
+    <value>Detect, prevent, and address technical issues</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_disclosure_of_your_information_144" xml:space="preserve">
+    <value>Disclosure of Your Information</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_we_do_not_sell_your_145" xml:space="preserve">
+    <value>We do not sell your personal data. However, we may disclose your information to comply with legal obligations, protect rights, or enforce our policies.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_your_privacy_rights_146" xml:space="preserve">
+    <value>Your Privacy Rights</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_you_have_the_right_to_147" xml:space="preserve">
+    <value>You have the right to access, correct, or delete your personal data. You may also have the right to object to or restrict certain processing of your data.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_security_of_your_information_148" xml:space="preserve">
+    <value>Security of Your Information</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_we_strive_to_use_commercially_149" xml:space="preserve">
+    <value>We strive to use commercially acceptable means to protect your personal data but cannot guarantee absolute security.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_changes_to_this_privacy_policy_150" xml:space="preserve">
+    <value>Changes to This Privacy Policy</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_we_may_update_our_privacy_151" xml:space="preserve">
+    <value>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Privacy_contact_us_152" xml:space="preserve">
+    <value>Contact Us. If you have any questions about this Privacy Policy, please contact us at</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AdminPage_lep_pozdrav_admin_153" xml:space="preserve">
+    <value>Greetings, admin!</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AdminPage_this_is_the_admin_dashboard_154" xml:space="preserve">
+    <value>Admin Dashboard</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AdminPage_manage_users_155" xml:space="preserve">
+    <value>Manage Users</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AdminPage_manage_roles_156" xml:space="preserve">
+    <value>Manage Roles</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="AdminPage_add_or_remove_roles_157" xml:space="preserve">
+    <value>Add or Remove Roles</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AdminPage_go_to_index_158" xml:space="preserve">
+    <value>Go to Index</value>
+    <comment>Used in: 5 file(s)</comment>
+  </data>
+  <data name="AdminPage_loading_checkout_159" xml:space="preserve">
+    <value>Loading Checkout</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="AdminPage_naklad_160" xml:space="preserve">
+    <value>Circulation</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="AdminPage_approve_users_161" xml:space="preserve">
+    <value>Approve Users</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="AdminPage_download_excell_162" xml:space="preserve">
+    <value>Download Excell</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="ArchivedTransports_archived_transports_163" xml:space="preserve">
+    <value>Archived Transports</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="ArchivedTransports_back_to_active_transports_164" xml:space="preserve">
+    <value>Back to Active Transports</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="ArchivedTransports_id_165" xml:space="preserve">
+    <value>ID</value>
+    <comment>Used in: 10 file(s)</comment>
+  </data>
+  <data name="ArchivedTransports_sttransporta_166" xml:space="preserve">
+    <value>Stratansport</value>
+    <comment>Used in: 10 file(s)</comment>
+  </data>
+  <data name="ArchivedTransports_planiran_prihod_167" xml:space="preserve">
+    <value>Planned arrival</value>
+    <comment>Used in: 8 file(s)</comment>
+  </data>
+  <data name="ArchivedTransports_sp_168" xml:space="preserve">
+    <value>Sp</value>
+    <comment>Used in: 12 file(s)</comment>
+  </data>
+  <data name="ArchivedTransports_callback_reason_169" xml:space="preserve">
+    <value>Callback Reason</value>
+    <comment>Used in: 9 file(s)</comment>
+  </data>
+  <data name="ArchivedTransports_compare_170" xml:space="preserve">
+    <value>Compare</value>
+    <comment>Used in: 6 file(s)</comment>
+  </data>
+  <data name="ArchivedTransports_remove_archive_171" xml:space="preserve">
+    <value>Remove Archive</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="ArchivedTransports_delete_172" xml:space="preserve">
+    <value>Delete</value>
+    <comment>Used in: 10 file(s)</comment>
+  </data>
+  <data name="Callback_all_transports_173" xml:space="preserve">
+    <value>All Transports</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Callback_view_archived_transports_174" xml:space="preserve">
+    <value>View Archived Transports!</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Callback_planiranprihod_175" xml:space="preserve">
+    <value>Planned</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Callback_actions_176" xml:space="preserve">
+    <value>Actions</value>
+    <comment>Used in: 5 file(s)</comment>
+  </data>
+  <data name="Callback_set_callback_177" xml:space="preserve">
+    <value>Set Callback</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Callback_remove_callback_178" xml:space="preserve">
+    <value>Remove Callback</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Callback_choose_a_reason_179" xml:space="preserve">
+    <value>Choose a reason</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Callback_select_reason_180" xml:space="preserve">
+    <value>-- Select reason --</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Callback_submit_callback_181" xml:space="preserve">
+    <value>Submit Callback</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Callback_cancel_182" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Used in: 6 file(s)</comment>
+  </data>
+  <data name="CompareCallback_compare_callback_transport_183" xml:space="preserve">
+    <value>Compare Callback Transport</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="CompareCallback_field_184" xml:space="preserve">
+    <value>Field</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="CompareCallback_old_transport_archived_185" xml:space="preserve">
+    <value>Old Transport (Archived)</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="CompareCallback_new_transport_186" xml:space="preserve">
+    <value>New Transport</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="CompareCallback_skladisce_187" xml:space="preserve">
+    <value>Warehouse</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="CompareCallback_vrsta_transporta_188" xml:space="preserve">
+    <value>Type of transport</value>
+    <comment>Used in: 5 file(s)</comment>
+  </data>
+  <data name="CompareCallback_pavza_voznika_189" xml:space="preserve">
+    <value>The driver of the driver</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="CompareCallback_dolocen_skladiščnik_190" xml:space="preserve">
+    <value>Designed Store</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="CompareCallback_registracija_191" xml:space="preserve">
+    <value>Registration</value>
+    <comment>Used in: 12 file(s)</comment>
+  </data>
+  <data name="CompareCallback_navis_začetek_sklada_192" xml:space="preserve">
+    <value>NAVIS Začetek Sklada</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="CompareCallback_navis_konec_sklada_193" xml:space="preserve">
+    <value>NAVIS Konec Sklada</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="CompareCallback_is_callback_194" xml:space="preserve">
+    <value>Is Callback</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="ConfirmRegister_approve_registered_users_195" xml:space="preserve">
+    <value>Approve Registered Users</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="ConfirmRegister_pending_registrations_196" xml:space="preserve">
+    <value>Pending Registrations</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="ConfirmRegister_approve_197" xml:space="preserve">
+    <value>Approve</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="ConfirmRegister_decline_198" xml:space="preserve">
+    <value>Decline</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="DownloadExcell_pregled_transportov_in_izkladi_199" xml:space="preserve">
+    <value></value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="DownloadExcell_transports_200" xml:space="preserve">
+    <value>Transports</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="DownloadExcell_sk_201" xml:space="preserve">
+    <value>SK</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="DownloadExcell_skladišče_202" xml:space="preserve">
+    <value>Warehouse</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="DownloadExcell_st_transporta_203" xml:space="preserve">
+    <value>St. Transport</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="DownloadExcell_izkladiščeno_204" xml:space="preserve">
+    <value>Off</value>
+    <comment>Used in: 8 file(s)</comment>
+  </data>
+  <data name="DownloadExcell_količina_205" xml:space="preserve">
+    <value>Quantity</value>
+    <comment>Used in: 8 file(s)</comment>
+  </data>
+  <data name="DownloadExcell_palete_206" xml:space="preserve">
+    <value>Palette</value>
+    <comment>Used in: 8 file(s)</comment>
+  </data>
+  <data name="DownloadExcell_skladiščnik_207" xml:space="preserve">
+    <value>Warehouse</value>
+    <comment>Used in: 8 file(s)</comment>
+  </data>
+  <data name="DownloadExcell_datum_208" xml:space="preserve">
+    <value>Date</value>
+    <comment>Used in: 8 file(s)</comment>
+  </data>
+  <data name="DownloadExcell_skladiščnikid_209" xml:space="preserve">
+    <value>Warehouse man</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="DownloadExcell_prenesi_kot_excel_210" xml:space="preserve">
+    <value>Download like Excel</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="DownloadExcell_nazaj_211" xml:space="preserve">
+    <value>Backwards</value>
+    <comment>Used in: 9 file(s)</comment>
+  </data>
+  <data name="EditUser_edit_user_212" xml:space="preserve">
+    <value>Edit User</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="EditUser_select_a_role_213" xml:space="preserve">
+    <value>Select a role</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Index_index_214" xml:space="preserve">
+    <value>Index</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Index_import_excel_215" xml:space="preserve">
+    <value>Import Excel</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Index_create_new_216" xml:space="preserve">
+    <value>Create New</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Index_ni_zadetkov_217" xml:space="preserve">
+    <value>There are no hits.</value>
+    <comment>Used in: 8 file(s)</comment>
+  </data>
+  <data name="Index_callback_vrnitev_218" xml:space="preserve">
+    <value>Callback</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Index_true_219" xml:space="preserve">
+    <value>true</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Index_i_220" xml:space="preserve">
+    <value>i</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Index_details_221" xml:space="preserve">
+    <value>Details</value>
+    <comment>Used in: 5 file(s)</comment>
+  </data>
+  <data name="Index__222" xml:space="preserve">
+    <value>×</value>
+    <comment>Used in: 14 file(s)</comment>
+  </data>
+  <data name="Index_print_223" xml:space="preserve">
+    <value>Print</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Index_izberi_transport_za_callback_224" xml:space="preserve">
+    <value>Select Transport for Callback</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Index_št_transporta_225" xml:space="preserve">
+    <value>No. Transportation:</value>
+    <comment>Used in: 10 file(s)</comment>
+  </data>
+  <data name="Index_izberi_226" xml:space="preserve">
+    <value>- Choose -</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Index_razlog_vrnitve_callback_227" xml:space="preserve">
+    <value>callback:</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Index_potrdi_callback_228" xml:space="preserve">
+    <value>Confirm Callback</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Index_would_you_like_to_import_229" xml:space="preserve">
+    <value>Would you like to import transport files?</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Index_select_files_to_import_230" xml:space="preserve">
+    <value>Select files to import:</value>
+    <comment>Used in: 6 file(s)</comment>
+  </data>
+  <data name="Index_import_selected_files_231" xml:space="preserve">
+    <value>Import Selected Files</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Index_uporabniško_ime_232" xml:space="preserve">
+    <value>Username:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Index_geslo_233" xml:space="preserve">
+    <value>Password:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Index_navis_234" xml:space="preserve">
+    <value>NAVIS</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Index_prijava_235" xml:space="preserve">
+    <value>Login</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="LoadingCheckOut_start_of_loading_236" xml:space="preserve">
+    <value>Start of Loading:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="LoadingCheckOut_end_of_loading_237" xml:space="preserve">
+    <value>End of Loading:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="LoadingCheckOut_cmr_number_238" xml:space="preserve">
+    <value>CMR Number:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="LoadingCheckOut_transport_number_239" xml:space="preserve">
+    <value>Transport Number:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="LoadingCheckOut_loaded_quantity_240" xml:space="preserve">
+    <value>Loaded Quantity:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="LoadingCheckOut_registration_plates_241" xml:space="preserve">
+    <value>Registration Plates:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="LoadingCheckOut_seal_242" xml:space="preserve">
+    <value>Seal:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="LoadingCheckOut_name_and_signature_of_warehous_243" xml:space="preserve">
+    <value>Name and signature of warehouse worker:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="LoadingCheckOut_name_and_signature_of_driver_244" xml:space="preserve">
+    <value>Name and signature of driver:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="LoadingCheckOut_submit_245" xml:space="preserve">
+    <value>Submit</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="ManageRoles_email_246" xml:space="preserve">
+    <value>Email</value>
+    <comment>Used in: 9 file(s)</comment>
+  </data>
+  <data name="ManageRoles_roles_247" xml:space="preserve">
+    <value>Roles</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="ManageRoles_no_users_found_248" xml:space="preserve">
+    <value>No users found.</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="ManageRoles_select_roles_249" xml:space="preserve">
+    <value>Select Roles</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="ManageRoles_remove_roles_250" xml:space="preserve">
+    <value>Remove Roles</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="ManageUsers_external_logins_251" xml:space="preserve">
+    <value>External Logins</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="ManageUsers_full_name_252" xml:space="preserve">
+    <value>Full Name</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="ManageUsers_roles_253" xml:space="preserve">
+    <value>Role(s)</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="ManageUsers_edit_254" xml:space="preserve">
+    <value>Edit</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="ManageUsers_confirm_deletion_255" xml:space="preserve">
+    <value>Confirm Deletion</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="ManageUsers_yes_delete_256" xml:space="preserve">
+    <value>Yes, Delete</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Naklad_začetek_konec_naklada_257" xml:space="preserve">
+    <value>Start, end of circulation</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_rampa_1_258" xml:space="preserve">
+    <value>Rampa 1:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_rampa_2_259" xml:space="preserve">
+    <value>Rampa 2:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_carinska_vrvica_260" xml:space="preserve">
+    <value>Customs cord:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_izberi_261" xml:space="preserve">
+    <value>----- Select ---------</value>
+    <comment>Used in: 8 file(s)</comment>
+  </data>
+  <data name="Naklad_prisotna_262" xml:space="preserve">
+    <value>Present</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_ni_prisotna_263" xml:space="preserve">
+    <value>Is not present</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_ctn_264" xml:space="preserve">
+    <value>CTN</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_ustreznost_vozilca_265" xml:space="preserve">
+    <value>Conducting the vehicle:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_neustrezno_266" xml:space="preserve">
+    <value>inadeely</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_ustrezno_267" xml:space="preserve">
+    <value>appropriately</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_delno_neustrezno_268" xml:space="preserve">
+    <value>partially inadequate</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_delno_ustrezno_269" xml:space="preserve">
+    <value>partly appropriate</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_začetek_naklada_270" xml:space="preserve">
+    <value>Beginning of circulation:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_nastavi_271" xml:space="preserve">
+    <value>Sets</value>
+    <comment>Used in: 11 file(s)</comment>
+  </data>
+  <data name="Naklad_konec_naklada_272" xml:space="preserve">
+    <value>End of circulation:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_voznik_zavrnil_začetek_zaradi__273" xml:space="preserve">
+    <value>The driver rejected the start due to the pause:</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_action_274" xml:space="preserve">
+    <value>Action</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_ni_podatkov_za_izkladiščeno_275" xml:space="preserve">
+    <value>No data for the off.</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_dodaj_izkladiščeno_276" xml:space="preserve">
+    <value>Add off the off</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_shrani_277" xml:space="preserve">
+    <value>Save</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="Naklad_opombe_278" xml:space="preserve">
+    <value>Notes</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="Naklad_dodaj_279" xml:space="preserve">
+    <value>Add</value>
+    <comment>Used in: 5 file(s)</comment>
+  </data>
+  <data name="Naklad_količina_po_skladiščniku_280" xml:space="preserve">
+    <value>Quantity after a warehousekeeper</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="RemoveRoles_upravljanje_vlogami_281" xml:space="preserve">
+    <value>Managing roles</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="RemoveRoles_nova_vloga_282" xml:space="preserve">
+    <value>A new role:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="RemoveRoles_ustvari_vlogo_283" xml:space="preserve">
+    <value>Creates a role</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="RemoveRoles_obstoječe_vloge_284" xml:space="preserve">
+    <value>Existing applications:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="RemoveRoles_izberite_vlogo_za_izbris_285" xml:space="preserve">
+    <value>Choose an application for deletion:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="RemoveRoles_izberi_vlogo_za_izbris_286" xml:space="preserve">
+    <value>Choose an application for deletion</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="RemoveRoles_izbriši_vlogo_287" xml:space="preserve">
+    <value>Delete the application</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="SetSmtpPassword_set_smtp_password_288" xml:space="preserve">
+    <value>Set SMTP Password</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="SetSmtpPassword_smtp_password_289" xml:space="preserve">
+    <value>SMTP Password</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="SetSmtpPassword_save_290" xml:space="preserve">
+    <value>Save</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="UserAccessMethods_user_access_methods_291" xml:space="preserve">
+    <value>User Access Methods</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="UserAccessMethods_google_users_292" xml:space="preserve">
+    <value>Google Users</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="UserAccessMethods_username_293" xml:space="preserve">
+    <value>Username</value>
+    <comment>Used in: 7 file(s)</comment>
+  </data>
+  <data name="UserAccessMethods_login_provider_294" xml:space="preserve">
+    <value>Login Provider</value>
+    <comment>Used in: 7 file(s)</comment>
+  </data>
+  <data name="UserAccessMethods_facebook_users_295" xml:space="preserve">
+    <value>Facebook Users</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="UserAccessMethods_microsoft_users_296" xml:space="preserve">
+    <value>Microsoft Users</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="UserAccessMethods_github_users_297" xml:space="preserve">
+    <value>GitHub Users</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="UserAccessMethods_yahoo_users_298" xml:space="preserve">
+    <value>Yahoo Users</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="UserAccessMethods_yahoo_demo_user_299" xml:space="preserve">
+    <value>yahoo_demo_user</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="UserAccessMethods_yahoo_300" xml:space="preserve">
+    <value>Yahoo</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="UserAccessMethods_gitlab_users_301" xml:space="preserve">
+    <value>GitLab Users</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="UserAccessMethods_local_users_302" xml:space="preserve">
+    <value>Local Users</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AnalitikaPage_pozdravljeni_analitik_303" xml:space="preserve">
+    <value>Hello, analyst!</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AnalitikaPage_this_is_the_analitik_dashboard_304" xml:space="preserve">
+    <value>This is the Analitik dashboard. Below are your available tasks and tools.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="AnalitikaPage_download_excel_305" xml:space="preserve">
+    <value>Download Excel</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Create_create_306" xml:space="preserve">
+    <value>Create</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="Create_transport_307" xml:space="preserve">
+    <value>Transport</value>
+    <comment>Used in: 6 file(s)</comment>
+  </data>
+  <data name="Create_back_to_list_308" xml:space="preserve">
+    <value>Back to List</value>
+    <comment>Used in: 7 file(s)</comment>
+  </data>
+  <data name="DetailedInfo_planiran_prihod_309" xml:space="preserve">
+    <value>Planned arrival:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="DetailedInfo_registracija_310" xml:space="preserve">
+    <value>Registration:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="DetailedInfo_voznik_311" xml:space="preserve">
+    <value>Driver:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="DetailedInfo_vrsta_prevoznega_sredstva_312" xml:space="preserve">
+    <value>Type of transportation:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="DetailedInfo_vrsta_transporta_313" xml:space="preserve">
+    <value>Type of transport:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="DetailedInfo_skladišče_314" xml:space="preserve">
+    <value>Warehouse:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="DetailedInfo_pavza_voznika_315" xml:space="preserve">
+    <value>Driver's pause:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="DetailedInfo_navis_začetek_sklada_316" xml:space="preserve">
+    <value>NAVIS začetek sklada:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="DetailedInfo_navis_konec_sklada_317" xml:space="preserve">
+    <value>NAVIS konec sklada:</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="DetailedInfo_ni_izkladiščenih_zapisov_za_ta_318" xml:space="preserve">
+    <value>There are no transports for this id</value>
+    <comment>Used in: 4 file(s)</comment>
+  </data>
+  <data name="DetailedInfo_vsi_skladiščniki_319" xml:space="preserve">
+    <value>All stores</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="Details_transport_details_320" xml:space="preserve">
+    <value>Transport Details</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Details_transport_information_321" xml:space="preserve">
+    <value>Transport Information</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Details_vrstatransporta_322" xml:space="preserve">
+    <value>Type oftransport</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Details_pavzavoznika_323" xml:space="preserve">
+    <value>Pause</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Details_vrstaprevoznegasredstva_324" xml:space="preserve">
+    <value>Type of transportation</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Details_voznik_325" xml:space="preserve">
+    <value>Driver</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Details_naviszaceteksklada_326" xml:space="preserve">
+    <value>NAVISZacetekSklada</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Details_naviskonecsklada_327" xml:space="preserve">
+    <value>NAVISKonecSklada</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Details_assigned_skladiscnik_328" xml:space="preserve">
+    <value>Assigned Skladiscnik</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="IzmenovodjaPage_lep_pozdrav_izmenovodja_329" xml:space="preserve">
+    <value>Greetings, shift!</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="IzmenovodjaPage_this_is_the_page_for_330" xml:space="preserve">
+    <value>This is the page for the Izmenovodja role. Use the links below to manage registrations and perform tasks related to your role.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="IzmenovodjaPage_confirm_account_331" xml:space="preserve">
+    <value>Confirm Account</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="_Layout_diplomska_332" xml:space="preserve">
+    <value>diploma</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="_Layout_home_333" xml:space="preserve">
+    <value>Home</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="_Layout_privacy_334" xml:space="preserve">
+    <value>Privacy</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="_Layout_izmenovodja_dashboard_335" xml:space="preserve">
+    <value>Izmenovodja Dashboard</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="_Layout_skladiščnik_dashboard_336" xml:space="preserve">
+    <value>Skladiščnik Dashboard</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="_Layout_admin_dashboard_337" xml:space="preserve">
+    <value>Admin Dashboard</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="_Layout_analitika_dashboard_338" xml:space="preserve">
+    <value>Analitika Dashboard</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="_Layout_change_theme_339" xml:space="preserve">
+    <value>Change Theme</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="_Layout_light_340" xml:space="preserve">
+    <value>Light</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="_Layout_dark_341" xml:space="preserve">
+    <value>Dark</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="_Layout_custom_342" xml:space="preserve">
+    <value>Custom</value>
+    <comment>Used in: 3 file(s)</comment>
+  </data>
+  <data name="_Layout_logout_343" xml:space="preserve">
+    <value>Logout</value>
+    <comment>Used in: 2 file(s)</comment>
+  </data>
+  <data name="Delete_are_you_sure_you_want_344" xml:space="preserve">
+    <value>Are you sure you want to delete this?</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Naklad_količina_345" xml:space="preserve">
+    <value>Quantity:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Naklad_palete_346" xml:space="preserve">
+    <value>Pallets:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="Naklad_skladiščnik_347" xml:space="preserve">
+    <value>Storage:</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="SkladiščnikPage_this_is_the_page_for_348" xml:space="preserve">
+    <value>This is the page for the Skladiščnik role.</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
+  <data name="SkladiščnikPage_skladiščnik_index_349" xml:space="preserve">
+    <value>Store index</value>
+    <comment>Used in: 1 file(s)</comment>
+  </data>
 </root>

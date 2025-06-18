@@ -117,4 +117,925 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="SkladiščnikPage_skladiščnik_index_349" xml:space="preserve">
+    <value>Skladiščnik indeks</value>
+  </data>
+  <data name="RemoveRoles_ustvari_vlogo_283" xml:space="preserve">
+    <value>Ustvari vlogo</value>
+  </data>
+  <data name="RemoveRoles_upravljanje_vlogami_281" xml:space="preserve">
+    <value>Upravljanje vlogami</value>
+  </data>
+  <data name="RemoveRoles_obstoječe_vloge_284" xml:space="preserve">
+    <value>Obstoječe vloge:</value>
+  </data>
+  <data name="RemoveRoles_nova_vloga_282" xml:space="preserve">
+    <value>Nova vloga:</value>
+  </data>
+  <data name="RemoveRoles_izbriši_vlogo_287" xml:space="preserve">
+    <value>Izbriši vlogo</value>
+  </data>
+  <data name="RemoveRoles_izberite_vlogo_za_izbris_285" xml:space="preserve">
+    <value>Izberite vlogo za izbris:</value>
+  </data>
+  <data name="RemoveRoles_izberi_vlogo_za_izbris_286" xml:space="preserve">
+    <value>Izberi vlogo za izbris</value>
+  </data>
+  <data name="Naklad_začetek_naklada_270" xml:space="preserve">
+    <value>Začetek naklada:</value>
+  </data>
+  <data name="Naklad_začetek_konec_naklada_257" xml:space="preserve">
+    <value>Začetek, konec naklada</value>
+  </data>
+  <data name="Naklad_voznik_zavrnil_začetek_zaradi__273" xml:space="preserve">
+    <value>Voznik zavrnil začetek zaradi pavze:</value>
+  </data>
+  <data name="Naklad_ustreznost_vozilca_265" xml:space="preserve">
+    <value>Ustreznost vozilca:</value>
+  </data>
+  <data name="Naklad_ustrezno_267" xml:space="preserve">
+    <value>ustrezno</value>
+  </data>
+  <data name="Naklad_skladiščnik_347" xml:space="preserve">
+    <value>Skladiščnik:</value>
+  </data>
+  <data name="Naklad_shrani_277" xml:space="preserve">
+    <value>Shrani</value>
+  </data>
+  <data name="Naklad_rampa_2_259" xml:space="preserve">
+    <value>Rampa 2:</value>
+  </data>
+  <data name="Naklad_rampa_1_258" xml:space="preserve">
+    <value>Rampa 1:</value>
+  </data>
+  <data name="Naklad_prisotna_262" xml:space="preserve">
+    <value>Prisotna</value>
+  </data>
+  <data name="Naklad_palete_346" xml:space="preserve">
+    <value>Palete:</value>
+  </data>
+  <data name="Naklad_opombe_278" xml:space="preserve">
+    <value>Opombe</value>
+  </data>
+  <data name="Naklad_ni_prisotna_263" xml:space="preserve">
+    <value>Ni Prisotna</value>
+  </data>
+  <data name="Naklad_ni_podatkov_za_izkladiščeno_275" xml:space="preserve">
+    <value>Ni podatkov za izkladiščeno.</value>
+  </data>
+  <data name="Naklad_neustrezno_266" xml:space="preserve">
+    <value>neustrezno</value>
+  </data>
+  <data name="Naklad_nastavi_271" xml:space="preserve">
+    <value>Nastavi</value>
+  </data>
+  <data name="Naklad_konec_naklada_272" xml:space="preserve">
+    <value>Konec naklada:</value>
+  </data>
+  <data name="Naklad_količina_po_skladiščniku_280" xml:space="preserve">
+    <value>Količina po skladiščniku</value>
+  </data>
+  <data name="Naklad_količina_345" xml:space="preserve">
+    <value>Količina:</value>
+  </data>
+  <data name="Naklad_izberi_261" xml:space="preserve">
+    <value>-------Izberi-------</value>
+  </data>
+  <data name="Naklad_dodaj_izkladiščeno_276" xml:space="preserve">
+    <value>Dodaj izkladiščeno</value>
+  </data>
+  <data name="Naklad_dodaj_279" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="Naklad_delno_ustrezno_269" xml:space="preserve">
+    <value>delno ustrezno</value>
+  </data>
+  <data name="Naklad_delno_neustrezno_268" xml:space="preserve">
+    <value>delno neustrezno</value>
+  </data>
+  <data name="Naklad_ctn_264" xml:space="preserve">
+    <value>CTN</value>
+  </data>
+  <data name="Naklad_carinska_vrvica_260" xml:space="preserve">
+    <value>Carinska vrvica:</value>
+  </data>
+  <data name="IzmenovodjaPage_lep_pozdrav_izmenovodja_329" xml:space="preserve">
+    <value>Lep pozdrav, Izmenovodja!</value>
+  </data>
+  <data name="Index_uporabniško_ime_232" xml:space="preserve">
+    <value>Uporabniško ime:</value>
+  </data>
+  <data name="Index_št_transporta_225" xml:space="preserve">
+    <value>Št. Transporta:</value>
+  </data>
+  <data name="Index_razlog_vrnitve_callback_227" xml:space="preserve">
+    <value>Razlog vrnitve</value>
+  </data>
+  <data name="Index_prijava_235" xml:space="preserve">
+    <value>Prijava</value>
+  </data>
+  <data name="Index_potrdi_callback_228" xml:space="preserve">
+    <value>Potrdi Callback</value>
+  </data>
+  <data name="Index_ni_zadetkov_217" xml:space="preserve">
+    <value>Ni zadetkov.</value>
+  </data>
+  <data name="Index_navis_234" xml:space="preserve">
+    <value>NAVIS</value>
+  </data>
+  <data name="Index_izberi_transport_za_callback_224" xml:space="preserve">
+    <value>Izberi transport za Callback</value>
+  </data>
+  <data name="Index_izberi_226" xml:space="preserve">
+    <value>— izberi —</value>
+  </data>
+  <data name="Index_geslo_233" xml:space="preserve">
+    <value>Geslo:</value>
+  </data>
+  <data name="Index_callback_vrnitev_218" xml:space="preserve">
+    <value>Vrnitev</value>
+  </data>
+  <data name="DownloadExcell_st_transporta_203" xml:space="preserve">
+    <value>St. Transporta</value>
+  </data>
+  <data name="DownloadExcell_skladiščnikid_209" xml:space="preserve">
+    <value>SkladiščnikId</value>
+  </data>
+  <data name="DownloadExcell_skladiščnik_207" xml:space="preserve">
+    <value>Skladiščnik</value>
+  </data>
+  <data name="DownloadExcell_skladišče_202" xml:space="preserve">
+    <value>Skladišče</value>
+  </data>
+  <data name="DownloadExcell_sk_201" xml:space="preserve">
+    <value>SK</value>
+  </data>
+  <data name="DownloadExcell_prenesi_kot_excel_210" xml:space="preserve">
+    <value>Prenesi kot Excel</value>
+  </data>
+  <data name="DownloadExcell_palete_206" xml:space="preserve">
+    <value>Palete</value>
+  </data>
+  <data name="DownloadExcell_nazaj_211" xml:space="preserve">
+    <value>Nazaj</value>
+  </data>
+  <data name="DownloadExcell_količina_205" xml:space="preserve">
+    <value>Količina</value>
+  </data>
+  <data name="DownloadExcell_izkladiščeno_204" xml:space="preserve">
+    <value>Izkladiščeno</value>
+  </data>
+  <data name="DownloadExcell_datum_208" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="Details_vrstatransporta_322" xml:space="preserve">
+    <value>VrstaTransporta</value>
+  </data>
+  <data name="Details_vrstaprevoznegasredstva_324" xml:space="preserve">
+    <value>VrstaPrevoznegaSredstva</value>
+  </data>
+  <data name="Details_voznik_325" xml:space="preserve">
+    <value>Voznik</value>
+  </data>
+  <data name="Details_pavzavoznika_323" xml:space="preserve">
+    <value>PavzaVoznika</value>
+  </data>
+  <data name="Details_naviszaceteksklada_326" xml:space="preserve">
+    <value>NAVISZacetekSklada</value>
+  </data>
+  <data name="Details_naviskonecsklada_327" xml:space="preserve">
+    <value>NAVISKonecSklada</value>
+  </data>
+  <data name="DetailedInfo_vsi_skladiščniki_319" xml:space="preserve">
+    <value>Vsi Skladiščniki</value>
+  </data>
+  <data name="DetailedInfo_vrsta_transporta_313" xml:space="preserve">
+    <value>Vrsta transporta:</value>
+  </data>
+  <data name="DetailedInfo_vrsta_prevoznega_sredstva_312" xml:space="preserve">
+    <value>Vrsta prevoznega sredstva:</value>
+  </data>
+  <data name="DetailedInfo_voznik_311" xml:space="preserve">
+    <value>Voznik:</value>
+  </data>
+  <data name="DetailedInfo_skladišče_314" xml:space="preserve">
+    <value>Skladišče:</value>
+  </data>
+  <data name="DetailedInfo_registracija_310" xml:space="preserve">
+    <value>Registracija:</value>
+  </data>
+  <data name="DetailedInfo_planiran_prihod_309" xml:space="preserve">
+    <value>Planiran prihod:</value>
+  </data>
+  <data name="DetailedInfo_pavza_voznika_315" xml:space="preserve">
+    <value>Pavza voznika:</value>
+  </data>
+  <data name="DetailedInfo_navis_začetek_sklada_316" xml:space="preserve">
+    <value>NAVIS začetek sklada:</value>
+  </data>
+  <data name="DetailedInfo_navis_konec_sklada_317" xml:space="preserve">
+    <value>NAVIS konec sklada:</value>
+  </data>
+  <data name="CompareCallback_skladisce_187" xml:space="preserve">
+    <value>Skladisce</value>
+  </data>
+  <data name="CompareCallback_vrsta_transporta_188" xml:space="preserve">
+    <value>Vrsta Transporta</value>
+  </data>
+  <data name="CompareCallback_registracija_191" xml:space="preserve">
+    <value>Registracija</value>
+  </data>
+  <data name="CompareCallback_pavza_voznika_189" xml:space="preserve">
+    <value>Pavza Voznika</value>
+  </data>
+  <data name="CompareCallback_navis_začetek_sklada_192" xml:space="preserve">
+    <value>NAVIS Začetek Sklada</value>
+  </data>
+  <data name="CompareCallback_navis_konec_sklada_193" xml:space="preserve">
+    <value>NAVIS Konec Sklada</value>
+  </data>
+  <data name="CompareCallback_dolocen_skladiščnik_190" xml:space="preserve">
+    <value>Dolocen Skladiščnik</value>
+  </data>
+  <data name="Callback_planiranprihod_175" xml:space="preserve">
+    <value>PlaniranPrihod</value>
+  </data>
+  <data name="ArchivedTransports_sttransporta_166" xml:space="preserve">
+    <value>StTransporta</value>
+  </data>
+  <data name="ArchivedTransports_sp_168" xml:space="preserve">
+    <value>Sp</value>
+  </data>
+  <data name="ArchivedTransports_planiran_prihod_167" xml:space="preserve">
+    <value>Planiran Prihod</value>
+  </data>
+  <data name="AnalitikaPage_pozdravljeni_analitik_303" xml:space="preserve">
+    <value>Pozdravljeni, Analitik!</value>
+  </data>
+  <data name="AdminPage_naklad_160" xml:space="preserve">
+    <value>Naklad</value>
+  </data>
+  <data name="AdminPage_lep_pozdrav_admin_153" xml:space="preserve">
+    <value>Lep pozdrav, Admin!</value>
+  </data>
+  <data name="ArchivedTransports_id_165" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="_Layout_diplomska_332" xml:space="preserve">
+    <value>diplomska</value>
+  </data>
+  <data name="AboutDeveloper_hi_im_your_developer_001" xml:space="preserve">
+    <value>Živjo, jaz sem tvoj razvijalec</value>
+  </data>
+  <data name="AboutDeveloper_show_more_003" xml:space="preserve">
+    <value>Pokaži več</value>
+  </data>
+  <data name="AboutDeveloper_contact_info_004" xml:space="preserve">
+    <value>Kontaktni podatki</value>
+  </data>
+  <data name="AboutDeveloper_email_005" xml:space="preserve">
+    <value>E -poštni:</value>
+  </data>
+  <data name="AboutDeveloper_github_006" xml:space="preserve">
+    <value>GitHub:</value>
+  </data>
+  <data name="AboutDeveloper_githubcomyourusername_007" xml:space="preserve">
+    <value>github.com/youruseRname</value>
+  </data>
+  <data name="AboutDeveloper_linkedin_008" xml:space="preserve">
+    <value>LinkedIn:</value>
+  </data>
+  <data name="AboutDeveloper_linkedincominyourprofile_009" xml:space="preserve">
+    <value>LinkedIn.com/in/yourprofile</value>
+  </data>
+  <data name="AboutDeveloper_more_about_me_010" xml:space="preserve">
+    <value>Več o meni!</value>
+  </data>
+  <data name="AboutDeveloper_about_me_011" xml:space="preserve">
+    <value>O meni</value>
+  </data>
+  <data name="AboutDeveloper_resume_012" xml:space="preserve">
+    <value>Življenjepis</value>
+  </data>
+  <data name="AboutDeveloper_view_my_professional_resume_013" xml:space="preserve">
+    <value>Oglejte si moj profesionalni življenjepis.</value>
+  </data>
+  <data name="AboutDeveloper_open_resume_014" xml:space="preserve">
+    <value>Odprt življenjepis</value>
+  </data>
+  <data name="AboutDeveloper_programming_languages_015" xml:space="preserve">
+    <value>Programski jeziki</value>
+  </data>
+  <data name="AboutDeveloper_languages_im_proficient_in_016" xml:space="preserve">
+    <value>Jeziki, v katerih sem strokovnjak.</value>
+  </data>
+  <data name="AboutDeveloper_view_languages_017" xml:space="preserve">
+    <value>Pogled na jezike</value>
+  </data>
+  <data name="AboutDeveloper_hobbies_018" xml:space="preserve">
+    <value>Hobiji</value>
+  </data>
+  <data name="AboutDeveloper_what_i_enjoy_doing_in_019" xml:space="preserve">
+    <value>V čem uživam v prostem času.</value>
+  </data>
+  <data name="AboutDeveloper_view_hobbies_020" xml:space="preserve">
+    <value>Oglejte si hobije</value>
+  </data>
+  <data name="AboutDeveloper_contact_information_021" xml:space="preserve">
+    <value>Kontaktni podatki</value>
+  </data>
+  <data name="AboutDeveloper_how_to_get_in_touch_022" xml:space="preserve">
+    <value>Kako stopiti v stik z mano.</value>
+  </data>
+  <data name="AboutDeveloper_social_media_023" xml:space="preserve">
+    <value>Socialni mediji</value>
+  </data>
+  <data name="AboutDeveloper_follow_me_on_social_platforms_024" xml:space="preserve">
+    <value>Sledite mi na družbenih platformah.</value>
+  </data>
+  <data name="AboutDeveloper_social_links_025" xml:space="preserve">
+    <value>Družbene povezave</value>
+  </data>
+  <data name="AboutDeveloper_more_about_me_026" xml:space="preserve">
+    <value>Več o meni</value>
+  </data>
+  <data name="AboutDeveloper_if_you_want_to_know_027" xml:space="preserve">
+    <value>Če želite izvedeti več</value>
+  </data>
+  <data name="AboutDeveloper_about_the_dev_028" xml:space="preserve">
+    <value>O dev</value>
+  </data>
+  <data name="AboutDeveloper_close_029" xml:space="preserve">
+    <value>Blizu</value>
+  </data>
+  <data name="AboutDeveloper_my_resume_030" xml:space="preserve">
+    <value>Moj življenjepis</value>
+  </data>
+  <data name="AboutDeveloper_professional_summary_031" xml:space="preserve">
+    <value>Poklicni povzetek:</value>
+  </data>
+  <data name="AboutDeveloper_work_experience_033" xml:space="preserve">
+    <value>Delovne izkušnje:</value>
+  </data>
+  <data name="AboutDeveloper_senior_developer_034" xml:space="preserve">
+    <value>Starejši razvijalec</value>
+  </data>
+  <data name="AboutDeveloper_software_developer_038" xml:space="preserve">
+    <value>Razvijalec programske opreme</value>
+  </data>
+  <data name="AboutDeveloper_education_041" xml:space="preserve">
+    <value>Izobrazba:</value>
+  </data>
+  <data name="AboutDeveloper_certifications_044" xml:space="preserve">
+    <value>Potrdila:</value>
+  </data>
+  <data name="AboutDeveloper_download_resume_047" xml:space="preserve">
+    <value>Prenesite življenjepis</value>
+  </data>
+  <data name="AboutDeveloper_c_048" xml:space="preserve">
+    <value>C#</value>
+  </data>
+  <data name="AboutDeveloper_javascript_typescript_049" xml:space="preserve">
+    <value>JavaScript / TypeScript</value>
+  </data>
+  <data name="AboutDeveloper_php_050" xml:space="preserve">
+    <value>Php</value>
+  </data>
+  <data name="AboutDeveloper_python_051" xml:space="preserve">
+    <value>Python</value>
+  </data>
+  <data name="AboutDeveloper_sql_052" xml:space="preserve">
+    <value>SQL</value>
+  </data>
+  <data name="AboutDeveloper_html_css_053" xml:space="preserve">
+    <value>HTML / CSS</value>
+  </data>
+  <data name="AboutDeveloper_java_054" xml:space="preserve">
+    <value>Java</value>
+  </data>
+  <data name="AboutDeveloper_ruby_on_rails_055" xml:space="preserve">
+    <value>Ruby na tirnicah</value>
+  </data>
+  <data name="AboutDeveloper_c_056" xml:space="preserve">
+    <value>C ++</value>
+  </data>
+  <data name="AboutDeveloper_dart_057" xml:space="preserve">
+    <value>Dart</value>
+  </data>
+  <data name="AboutDeveloper_flutter_058" xml:space="preserve">
+    <value>Flutter</value>
+  </data>
+  <data name="AboutDeveloper_plsql_059" xml:space="preserve">
+    <value>Pl/sql</value>
+  </data>
+  <data name="AboutDeveloper_reading_tech_blogs_060" xml:space="preserve">
+    <value>Branje tehnoloških blogov</value>
+  </data>
+  <data name="AboutDeveloper_playing_chess_061" xml:space="preserve">
+    <value>Igranje šaha</value>
+  </data>
+  <data name="AboutDeveloper_hiking_and_nature_walks_062" xml:space="preserve">
+    <value>Pohodništvo in narave</value>
+  </data>
+  <data name="AboutDeveloper_music_063" xml:space="preserve">
+    <value>Glasba</value>
+  </data>
+  <data name="AboutDeveloper_open_source_contribution_064" xml:space="preserve">
+    <value>Odprtokodni prispevek</value>
+  </data>
+  <data name="AboutDeveloper_video_games_rarely_065" xml:space="preserve">
+    <value>Video igre (redko)</value>
+  </data>
+  <data name="AboutDeveloper_gym_066" xml:space="preserve">
+    <value>Telovadnica</value>
+  </data>
+  <data name="AboutDeveloper_github_067" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="AboutDeveloper_github_2_068" xml:space="preserve">
+    <value>GitHub #2:</value>
+  </data>
+  <data name="AboutDeveloper_github_3_069" xml:space="preserve">
+    <value>GitHub #3:</value>
+  </data>
+  <data name="AboutDeveloper_phone_070" xml:space="preserve">
+    <value>Telefon:</value>
+  </data>
+  <data name="AboutDeveloper_social_media_profiles_071" xml:space="preserve">
+    <value>Profili družbenih medijev</value>
+  </data>
+  <data name="AboutDeveloper_twitter_072" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="AboutDeveloper_facebook_073" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="AboutDeveloper_instagram_074" xml:space="preserve">
+    <value>Instagram</value>
+  </data>
+  <data name="AboutDeveloper_discord_075" xml:space="preserve">
+    <value>Neskladje</value>
+  </data>
+  <data name="AboutDeveloper_about_the_developer_076" xml:space="preserve">
+    <value>O razvijalcu</value>
+  </data>
+  <data name="AboutDeveloper_name_077" xml:space="preserve">
+    <value>Ime:</value>
+  </data>
+  <data name="AboutDeveloper_role_078" xml:space="preserve">
+    <value>Vloga:</value>
+  </data>
+  <data name="AboutDeveloper_experience_079" xml:space="preserve">
+    <value>Izkušnja:</value>
+  </data>
+  <data name="AboutDeveloper_specialties_081" xml:space="preserve">
+    <value>Posebnosti:</value>
+  </data>
+  <data name="AboutDeveloper_building_scalable_web_applicat_082" xml:space="preserve">
+    <value>Gradnja razširljivih spletnih aplikacij</value>
+  </data>
+  <data name="AboutDeveloper_responsive_uiux_design_084" xml:space="preserve">
+    <value>Odziven UI/UX Design</value>
+  </data>
+  <data name="AboutDeveloper_database_design_and_optimizati_085" xml:space="preserve">
+    <value>Oblikovanje in optimizacija baze podatkov</value>
+  </data>
+  <data name="AboutDeveloper_tools_technologies_086" xml:space="preserve">
+    <value>Orodja in tehnologije:</value>
+  </data>
+  <data name="AboutDeveloper_git_docker_postman_087" xml:space="preserve">
+    <value>Git, Docker, poštar</value>
+  </data>
+  <data name="AboutDeveloper_cicd_github_actions_088" xml:space="preserve">
+    <value>CI/CD (GitHub Actions)</value>
+  </data>
+  <data name="AboutDeveloper_agile_scrum_methodologies_089" xml:space="preserve">
+    <value>Metodologije Agile / Scrum</value>
+  </data>
+  <data name="AboutDeveloper_passion_projects_090" xml:space="preserve">
+    <value>Strastni projekti:</value>
+  </data>
+  <data name="AboutDeveloper_opensource_contributions_on_gi_091" xml:space="preserve">
+    <value>Odprtokodni prispevki na GitHubu</value>
+  </data>
+  <data name="AboutDeveloper_writing_technical_blogs_and_tu_093" xml:space="preserve">
+    <value>Pisanje tehničnih blogov in vaj</value>
+  </data>
+  <data name="AboutDeveloper_technical_interests_094" xml:space="preserve">
+    <value>Tehnični interesi:</value>
+  </data>
+  <data name="AboutDeveloper_devops_and_container_orchestra_096" xml:space="preserve">
+    <value>DevOps and Container Orkestracija</value>
+  </data>
+  <data name="AboutDeveloper_progressive_web_apps_pwas_097" xml:space="preserve">
+    <value>Progresivne spletne aplikacije (PWA)</value>
+  </data>
+  <data name="AboutDeveloper_clean_architecture_design_patt_098" xml:space="preserve">
+    <value>Čisti vzorci arhitekture in oblikovanja</value>
+  </data>
+  <data name="AboutDeveloper_favorite_projects_099" xml:space="preserve">
+    <value>Najljubši projekti:</value>
+  </data>
+  <data name="AboutDeveloper_diploma_web_app_100" xml:space="preserve">
+    <value>Spletna aplikacija Diploma</value>
+  </data>
+  <data name="AboutDeveloper_ecommerce_demo_101" xml:space="preserve">
+    <value>Predstavitev e-trgovine</value>
+  </data>
+  <data name="AboutDeveloper_achievements_103" xml:space="preserve">
+    <value>Dosežki:</value>
+  </data>
+  <data name="AboutDeveloper_completed_20_fullstack_project_104" xml:space="preserve">
+    <value>Dokončanih 20+ projektov s polnimi scenami</value>
+  </data>
+  <data name="AboutDeveloper_learning_goals_108" xml:space="preserve">
+    <value>Učni cilji:</value>
+  </data>
+  <data name="AboutDeveloper_fun_fact_113" xml:space="preserve">
+    <value>Zabavno dejstvo:</value>
+  </data>
+  <data name="AboutDeveloper_back_to_home_116" xml:space="preserve">
+    <value>← Nazaj domov</value>
+  </data>
+  <data name="EditAccountItems_edit_account_117" xml:space="preserve">
+    <value>Uredi račun</value>
+  </data>
+  <data name="EditAccountItems_save_changes_118" xml:space="preserve">
+    <value>Shrani spremembe</value>
+  </data>
+  <data name="EditTheme_edit_theme_119" xml:space="preserve">
+    <value>Uredi temo</value>
+  </data>
+  <data name="Error_error_120" xml:space="preserve">
+    <value>Napaka.</value>
+  </data>
+  <data name="Error_request_id_122" xml:space="preserve">
+    <value>ID zahteve:</value>
+  </data>
+  <data name="Error_development_mode_123" xml:space="preserve">
+    <value>Razvojni način</value>
+  </data>
+  <data name="Error_development_124" xml:space="preserve">
+    <value>Razvoj</value>
+  </data>
+  <data name="Error_aspnetcore_environment_126" xml:space="preserve">
+    <value>AspnetCoreEnvironment</value>
+  </data>
+  <data name="Index_welcome_127" xml:space="preserve">
+    <value>Dobrodošli</value>
+  </data>
+  <data name="Index_building_web_apps_with_aspnet_128" xml:space="preserve">
+    <value>Gradnja spletnih aplikacij z jedrom ASP.NET</value>
+  </data>
+  <data name="Index_login_129" xml:space="preserve">
+    <value>Prijava</value>
+  </data>
+  <data name="Index_register_130" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Privacy_information_we_collect_132" xml:space="preserve">
+    <value>Informacije, ki jih zbiramo</value>
+  </data>
+  <data name="Privacy_personal_data_134" xml:space="preserve">
+    <value>Osebni podatki:</value>
+  </data>
+  <data name="Privacy_usage_data_135" xml:space="preserve">
+    <value>Podatki o uporabi:</value>
+  </data>
+  <data name="Privacy_cookies_and_tracking_technolog_136" xml:space="preserve">
+    <value>Piškotki in tehnologije sledenja:</value>
+  </data>
+  <data name="Privacy_how_we_use_your_information_137" xml:space="preserve">
+    <value>Kako uporabljamo vaše podatke</value>
+  </data>
+  <data name="Privacy_we_use_the_information_we_138" xml:space="preserve">
+    <value>Podatke, ki jih zbiramo, uporabljamo za:</value>
+  </data>
+  <data name="Privacy_provide_and_maintain_our_servi_139" xml:space="preserve">
+    <value>Zagotoviti in vzdrževati našo storitev</value>
+  </data>
+  <data name="Privacy_provide_customer_support_141" xml:space="preserve">
+    <value>Zagotoviti podporo strankam</value>
+  </data>
+  <data name="Privacy_disclosure_of_your_information_144" xml:space="preserve">
+    <value>Razkritje vaših podatkov</value>
+  </data>
+  <data name="Privacy_your_privacy_rights_146" xml:space="preserve">
+    <value>Vaše pravice do zasebnosti</value>
+  </data>
+  <data name="Privacy_security_of_your_information_148" xml:space="preserve">
+    <value>Varnost vaših podatkov</value>
+  </data>
+  <data name="Privacy_changes_to_this_privacy_policy_150" xml:space="preserve">
+    <value>Spremembe tega pravilnika o zasebnosti</value>
+  </data>
+  <data name="Privacy_contact_us_152" xml:space="preserve">
+    <value>Kontaktirajte nas</value>
+  </data>
+  <data name="AdminPage_manage_users_155" xml:space="preserve">
+    <value>Upravljanje uporabnikov</value>
+  </data>
+  <data name="AdminPage_manage_roles_156" xml:space="preserve">
+    <value>Upravljanje vlog</value>
+  </data>
+  <data name="AdminPage_add_or_remove_roles_157" xml:space="preserve">
+    <value>Dodajte ali odstranite vloge</value>
+  </data>
+  <data name="AdminPage_go_to_index_158" xml:space="preserve">
+    <value>Pojdite na indeks</value>
+  </data>
+  <data name="AdminPage_loading_checkout_159" xml:space="preserve">
+    <value>Nalaganje blagajne</value>
+  </data>
+  <data name="AdminPage_approve_users_161" xml:space="preserve">
+    <value>Odobri uporabnike</value>
+  </data>
+  <data name="AdminPage_download_excell_162" xml:space="preserve">
+    <value>Prenesite Excell</value>
+  </data>
+  <data name="ArchivedTransports_archived_transports_163" xml:space="preserve">
+    <value>Arhivirani prevozi</value>
+  </data>
+  <data name="ArchivedTransports_back_to_active_transports_164" xml:space="preserve">
+    <value>Nazaj na aktivne prevoze</value>
+  </data>
+  <data name="ArchivedTransports_callback_reason_169" xml:space="preserve">
+    <value>Razlog za povratni klic</value>
+  </data>
+  <data name="ArchivedTransports_compare_170" xml:space="preserve">
+    <value>Primerjaj</value>
+  </data>
+  <data name="ArchivedTransports_remove_archive_171" xml:space="preserve">
+    <value>Odstrani arhiv</value>
+  </data>
+  <data name="ArchivedTransports_delete_172" xml:space="preserve">
+    <value>Izbrisati</value>
+  </data>
+  <data name="Callback_all_transports_173" xml:space="preserve">
+    <value>Vsi prevozi</value>
+  </data>
+  <data name="Callback_view_archived_transports_174" xml:space="preserve">
+    <value>Ogled arhiviranih prevozov!</value>
+  </data>
+  <data name="Callback_actions_176" xml:space="preserve">
+    <value>Dejanja</value>
+  </data>
+  <data name="Callback_set_callback_177" xml:space="preserve">
+    <value>Nastavi povratni klic</value>
+  </data>
+  <data name="Callback_remove_callback_178" xml:space="preserve">
+    <value>Odstranite povratni klic</value>
+  </data>
+  <data name="Callback_choose_a_reason_179" xml:space="preserve">
+    <value>Izberite razlog</value>
+  </data>
+  <data name="Callback_select_reason_180" xml:space="preserve">
+    <value>-Izberite Razlog-</value>
+  </data>
+  <data name="Callback_submit_callback_181" xml:space="preserve">
+    <value>Oddajte povratni klic</value>
+  </data>
+  <data name="Callback_cancel_182" xml:space="preserve">
+    <value>Odpovedati</value>
+  </data>
+  <data name="CompareCallback_compare_callback_transport_183" xml:space="preserve">
+    <value>Primerjajte povratni prevoz</value>
+  </data>
+  <data name="CompareCallback_field_184" xml:space="preserve">
+    <value>Polje</value>
+  </data>
+  <data name="CompareCallback_old_transport_archived_185" xml:space="preserve">
+    <value>Stari prevoz (arhiviran)</value>
+  </data>
+  <data name="CompareCallback_new_transport_186" xml:space="preserve">
+    <value>Nov prevoz</value>
+  </data>
+  <data name="CompareCallback_is_callback_194" xml:space="preserve">
+    <value>Je povratni klic</value>
+  </data>
+  <data name="ConfirmRegister_approve_registered_users_195" xml:space="preserve">
+    <value>Odobri registrirane uporabnike</value>
+  </data>
+  <data name="ConfirmRegister_pending_registrations_196" xml:space="preserve">
+    <value>Čakajoča registracije</value>
+  </data>
+  <data name="ConfirmRegister_approve_197" xml:space="preserve">
+    <value>Odobriti</value>
+  </data>
+  <data name="ConfirmRegister_decline_198" xml:space="preserve">
+    <value>Upad</value>
+  </data>
+  <data name="DownloadExcell_transports_200" xml:space="preserve">
+    <value>Prevoze</value>
+  </data>
+  <data name="EditUser_edit_user_212" xml:space="preserve">
+    <value>Uredi uporabnika</value>
+  </data>
+  <data name="EditUser_select_a_role_213" xml:space="preserve">
+    <value>Izberite vlogo</value>
+  </data>
+  <data name="Index_index_214" xml:space="preserve">
+    <value>Indeks</value>
+  </data>
+  <data name="Index_import_excel_215" xml:space="preserve">
+    <value>Uvoz excel</value>
+  </data>
+  <data name="Index_create_new_216" xml:space="preserve">
+    <value>Ustvari novo</value>
+  </data>
+  <data name="Index_true_219" xml:space="preserve">
+    <value>res</value>
+  </data>
+  <data name="Index_i_220" xml:space="preserve">
+    <value>i</value>
+  </data>
+  <data name="Index_details_221" xml:space="preserve">
+    <value>Podrobnosti</value>
+  </data>
+  <data name="Index__222" xml:space="preserve">
+    <value>×</value>
+  </data>
+  <data name="Index_print_223" xml:space="preserve">
+    <value>Tisk</value>
+  </data>
+  <data name="Index_select_files_to_import_230" xml:space="preserve">
+    <value>Izberite datoteke za uvoz:</value>
+  </data>
+  <data name="Index_import_selected_files_231" xml:space="preserve">
+    <value>Uvoz izbranih datotek</value>
+  </data>
+  <data name="LoadingCheckOut_start_of_loading_236" xml:space="preserve">
+    <value>Začetek nalaganja:</value>
+  </data>
+  <data name="LoadingCheckOut_end_of_loading_237" xml:space="preserve">
+    <value>Konec nalaganja:</value>
+  </data>
+  <data name="LoadingCheckOut_cmr_number_238" xml:space="preserve">
+    <value>Številka CMR:</value>
+  </data>
+  <data name="LoadingCheckOut_transport_number_239" xml:space="preserve">
+    <value>Prevozna številka:</value>
+  </data>
+  <data name="LoadingCheckOut_loaded_quantity_240" xml:space="preserve">
+    <value>Naložena količina:</value>
+  </data>
+  <data name="LoadingCheckOut_registration_plates_241" xml:space="preserve">
+    <value>Registracijske tablice:</value>
+  </data>
+  <data name="LoadingCheckOut_seal_242" xml:space="preserve">
+    <value>Tet:</value>
+  </data>
+  <data name="LoadingCheckOut_name_and_signature_of_driver_244" xml:space="preserve">
+    <value>Ime in podpis voznika:</value>
+  </data>
+  <data name="LoadingCheckOut_submit_245" xml:space="preserve">
+    <value>Oddaj</value>
+  </data>
+  <data name="ManageRoles_email_246" xml:space="preserve">
+    <value>E -pošta</value>
+  </data>
+  <data name="ManageRoles_roles_247" xml:space="preserve">
+    <value>Vloge</value>
+  </data>
+  <data name="ManageRoles_no_users_found_248" xml:space="preserve">
+    <value>Ni uporabnika.</value>
+  </data>
+  <data name="ManageRoles_select_roles_249" xml:space="preserve">
+    <value>Izberite vloge</value>
+  </data>
+  <data name="ManageRoles_remove_roles_250" xml:space="preserve">
+    <value>Odstranite vloge</value>
+  </data>
+  <data name="ManageUsers_external_logins_251" xml:space="preserve">
+    <value>Zunanje prijave</value>
+  </data>
+  <data name="ManageUsers_full_name_252" xml:space="preserve">
+    <value>Polno ime</value>
+  </data>
+  <data name="ManageUsers_roles_253" xml:space="preserve">
+    <value>Vloga</value>
+  </data>
+  <data name="ManageUsers_edit_254" xml:space="preserve">
+    <value>Uredi</value>
+  </data>
+  <data name="ManageUsers_confirm_deletion_255" xml:space="preserve">
+    <value>Potrdite brisanje</value>
+  </data>
+  <data name="ManageUsers_yes_delete_256" xml:space="preserve">
+    <value>Da, izbriši</value>
+  </data>
+  <data name="Naklad_action_274" xml:space="preserve">
+    <value>Dejanje</value>
+  </data>
+  <data name="SetSmtpPassword_set_smtp_password_288" xml:space="preserve">
+    <value>Nastavite geslo SMTP</value>
+  </data>
+  <data name="SetSmtpPassword_smtp_password_289" xml:space="preserve">
+    <value>Geslo SMTP</value>
+  </data>
+  <data name="SetSmtpPassword_save_290" xml:space="preserve">
+    <value>Shrani</value>
+  </data>
+  <data name="UserAccessMethods_user_access_methods_291" xml:space="preserve">
+    <value>Načini dostopa do uporabnika</value>
+  </data>
+  <data name="UserAccessMethods_google_users_292" xml:space="preserve">
+    <value>Google uporabniki</value>
+  </data>
+  <data name="UserAccessMethods_username_293" xml:space="preserve">
+    <value>Uporabniško ime</value>
+  </data>
+  <data name="UserAccessMethods_login_provider_294" xml:space="preserve">
+    <value>Ponudnik za prijavo</value>
+  </data>
+  <data name="UserAccessMethods_facebook_users_295" xml:space="preserve">
+    <value>Facebook uporabniki</value>
+  </data>
+  <data name="UserAccessMethods_microsoft_users_296" xml:space="preserve">
+    <value>Microsoftovi uporabniki</value>
+  </data>
+  <data name="UserAccessMethods_github_users_297" xml:space="preserve">
+    <value>Uporabniki GitHub</value>
+  </data>
+  <data name="UserAccessMethods_yahoo_users_298" xml:space="preserve">
+    <value>Uporabniki Yahoo</value>
+  </data>
+  <data name="UserAccessMethods_yahoo_demo_user_299" xml:space="preserve">
+    <value>Yahoodemeser</value>
+  </data>
+  <data name="UserAccessMethods_yahoo_300" xml:space="preserve">
+    <value>Yahoo</value>
+  </data>
+  <data name="UserAccessMethods_gitlab_users_301" xml:space="preserve">
+    <value>Uporabniki gitlaba</value>
+  </data>
+  <data name="UserAccessMethods_local_users_302" xml:space="preserve">
+    <value>Lokalni uporabniki</value>
+  </data>
+  <data name="AnalitikaPage_download_excel_305" xml:space="preserve">
+    <value>Prenesite Excel</value>
+  </data>
+  <data name="Create_create_306" xml:space="preserve">
+    <value>Ustvari</value>
+  </data>
+  <data name="Create_transport_307" xml:space="preserve">
+    <value>Prevoz</value>
+  </data>
+  <data name="Create_back_to_list_308" xml:space="preserve">
+    <value>Nazaj na seznam</value>
+  </data>
+  <data name="Details_transport_details_320" xml:space="preserve">
+    <value>Podrobnosti o prevozu</value>
+  </data>
+  <data name="Details_transport_information_321" xml:space="preserve">
+    <value>Informacije o prevozu</value>
+  </data>
+  <data name="Details_assigned_skladiscnik_328" xml:space="preserve">
+    <value>Dodeljen Skladiscnik</value>
+  </data>
+  <data name="IzmenovodjaPage_confirm_account_331" xml:space="preserve">
+    <value>Potrdite račun</value>
+  </data>
+  <data name="_Layout_home_333" xml:space="preserve">
+    <value>Doma</value>
+  </data>
+  <data name="_Layout_privacy_334" xml:space="preserve">
+    <value>Zasebnost</value>
+  </data>
+  <data name="_Layout_izmenovodja_dashboard_335" xml:space="preserve">
+    <value>Izmenovodja nadzorna plošča</value>
+  </data>
+  <data name="_Layout_skladiščnik_dashboard_336" xml:space="preserve">
+    <value>Nadzorna plošča Skladishčik</value>
+  </data>
+  <data name="_Layout_admin_dashboard_337" xml:space="preserve">
+    <value>Administracijska nadzorna plošča</value>
+  </data>
+  <data name="_Layout_analitika_dashboard_338" xml:space="preserve">
+    <value>Nadzorna plošča Anitetika</value>
+  </data>
+  <data name="_Layout_change_theme_339" xml:space="preserve">
+    <value>Spremeni temo</value>
+  </data>
+  <data name="_Layout_light_340" xml:space="preserve">
+    <value>Svetloba</value>
+  </data>
+  <data name="_Layout_dark_341" xml:space="preserve">
+    <value>Temno</value>
+  </data>
+  <data name="_Layout_custom_342" xml:space="preserve">
+    <value>Navada</value>
+  </data>
+  <data name="_Layout_logout_343" xml:space="preserve">
+    <value>Odjava</value>
+  </data>
+  <data name="Delete_are_you_sure_you_want_344" xml:space="preserve">
+    <value>Ste prepričani, da želite to izbrisati?</value>
+  </data>
+  <data name="AboutDeveloper_im_a_passionate_software_devel_002" xml:space="preserve">
+    <value>Sem strasten razvijalec programske opreme z močnim poudarkom na gradnji sodobnih spletnih aplikacij, zlasti z uporabo strani za britvice ASP.NET - samega okvira, ki sem ga uporabil za ta projekt. Ta spletna stran je bila razvita kot del moje diplomske naloge, da bi prikazala ne le moje tehnične sposobnosti, ampak tudi mojo ustvarjalnost in pozornost do uporabniške izkušnje. Skozi leta sem delal na več aplikacijah s polnimi skladbami, od spletnih mest za mala podjetja do notranjih podjetniških orodij. Uživam v eksperimentiranju z različnimi spletnimi tehnologijami in sem na tekočem z najnovejšimi trendi v oblikovanju UI/UX. Moja najljubša orodja in jeziki vključujejo C#, HTML, CSS in okvire, kot so TailwindCSS za hiter in eleganten dizajn uporabniškega vmesnika. Uživam tudi v potapljanju v JavaScript, TypeScript in občasno zapiranje v Pythonu in PHP za zabavo ali uporabno skript.</value>
+  </data>
+  <data name="DownloadExcell_pregled_transportov_in_izkladi_199" xml:space="preserve">
+    <value>Pregled Transportov in Izkladiščenih Podatkov</value>
+  </data>
 </root>

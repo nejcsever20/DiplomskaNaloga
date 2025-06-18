@@ -314,3 +314,5 @@ C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\Sys
 C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\obj\Debug\net8.0\diplomska.Properties.diplomska.resources
 C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\obj\Debug\net8.0\diplomska.Properties.diplomska.sl-SI.resources
 C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\obj\Debug\net8.0\diplomska.csproj.GenerateResource.cache
+C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\bin\Debug\net8.0\sl-SI\diplomska.resources.dll
+C:\Users\nejc.severmihelic\source\repos\diplomska\diplomska\obj\Debug\net8.0\sl-SI\diplomska.resources.dll
