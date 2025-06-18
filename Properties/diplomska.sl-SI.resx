@@ -384,100 +384,100 @@
   <data name="_Layout_diplomska_332" xml:space="preserve">
     <value>diplomska</value>
   </data>
-  <data name="AboutDeveloper_hi_im_your_developer_001" xml:space="preserve">
+  <data name="your_developer" xml:space="preserve">
     <value>Živjo, jaz sem tvoj razvijalec</value>
   </data>
-  <data name="AboutDeveloper_show_more_003" xml:space="preserve">
+  <data name="show_more" xml:space="preserve">
     <value>Pokaži več</value>
   </data>
-  <data name="AboutDeveloper_contact_info_004" xml:space="preserve">
+  <data name="contacts" xml:space="preserve">
     <value>Kontaktni podatki</value>
   </data>
-  <data name="AboutDeveloper_email_005" xml:space="preserve">
+  <data name="dev_email" xml:space="preserve">
     <value>E -poštni:</value>
   </data>
-  <data name="AboutDeveloper_github_006" xml:space="preserve">
+  <data name="dev_github" xml:space="preserve">
     <value>GitHub:</value>
   </data>
-  <data name="AboutDeveloper_githubcomyourusername_007" xml:space="preserve">
+  <data name="dev_githubuser" xml:space="preserve">
     <value>github.com/youruseRname</value>
   </data>
-  <data name="AboutDeveloper_linkedin_008" xml:space="preserve">
+  <data name="dev_linkedin" xml:space="preserve">
     <value>LinkedIn:</value>
   </data>
-  <data name="AboutDeveloper_linkedincominyourprofile_009" xml:space="preserve">
+  <data name="dev_linkedinprofile" xml:space="preserve">
     <value>LinkedIn.com/in/yourprofile</value>
   </data>
-  <data name="AboutDeveloper_more_about_me_010" xml:space="preserve">
+  <data name="dev_more_about" xml:space="preserve">
     <value>Več o meni!</value>
   </data>
-  <data name="AboutDeveloper_about_me_011" xml:space="preserve">
+  <data name="dev_aboutme" xml:space="preserve">
     <value>O meni</value>
   </data>
-  <data name="AboutDeveloper_resume_012" xml:space="preserve">
+  <data name="dev_resume" xml:space="preserve">
     <value>Življenjepis</value>
   </data>
-  <data name="AboutDeveloper_view_my_professional_resume_013" xml:space="preserve">
+  <data name="dev_view_proresume" xml:space="preserve">
     <value>Oglejte si moj profesionalni življenjepis.</value>
   </data>
-  <data name="AboutDeveloper_open_resume_014" xml:space="preserve">
+  <data name="dev_open_resume" xml:space="preserve">
     <value>Odprt življenjepis</value>
   </data>
-  <data name="AboutDeveloper_programming_languages_015" xml:space="preserve">
+  <data name="dev_programming_lang" xml:space="preserve">
     <value>Programski jeziki</value>
   </data>
-  <data name="AboutDeveloper_languages_im_proficient_in_016" xml:space="preserve">
+  <data name="dev_lang" xml:space="preserve">
     <value>Jeziki, v katerih sem strokovnjak.</value>
   </data>
-  <data name="AboutDeveloper_view_languages_017" xml:space="preserve">
+  <data name="dev_view_lang" xml:space="preserve">
     <value>Pogled na jezike</value>
   </data>
-  <data name="AboutDeveloper_hobbies_018" xml:space="preserve">
+  <data name="dev_hobbies" xml:space="preserve">
     <value>Hobiji</value>
   </data>
-  <data name="AboutDeveloper_what_i_enjoy_doing_in_019" xml:space="preserve">
+  <data name="dev_what_I_enjoy" xml:space="preserve">
     <value>V čem uživam v prostem času.</value>
   </data>
-  <data name="AboutDeveloper_view_hobbies_020" xml:space="preserve">
+  <data name="dev_view_hobbies" xml:space="preserve">
     <value>Oglejte si hobije</value>
   </data>
-  <data name="AboutDeveloper_contact_information_021" xml:space="preserve">
+  <data name="dev_contanct_info" xml:space="preserve">
     <value>Kontaktni podatki</value>
   </data>
-  <data name="AboutDeveloper_how_to_get_in_touch_022" xml:space="preserve">
+  <data name="dev_how_to_contact" xml:space="preserve">
     <value>Kako stopiti v stik z mano.</value>
   </data>
-  <data name="AboutDeveloper_social_media_023" xml:space="preserve">
+  <data name="dev_social_media" xml:space="preserve">
     <value>Socialni mediji</value>
   </data>
-  <data name="AboutDeveloper_follow_me_on_social_platforms_024" xml:space="preserve">
+  <data name="dev_follow_socials" xml:space="preserve">
     <value>Sledite mi na družbenih platformah.</value>
   </data>
-  <data name="AboutDeveloper_social_links_025" xml:space="preserve">
+  <data name="dev_social_links" xml:space="preserve">
     <value>Družbene povezave</value>
   </data>
-  <data name="AboutDeveloper_more_about_me_026" xml:space="preserve">
+  <data name="dev_more_about_me" xml:space="preserve">
     <value>Več o meni</value>
   </data>
-  <data name="AboutDeveloper_if_you_want_to_know_027" xml:space="preserve">
+  <data name="dev_ifyouwant" xml:space="preserve">
     <value>Če želite izvedeti več</value>
   </data>
-  <data name="AboutDeveloper_about_the_dev_028" xml:space="preserve">
+  <data name="dev_about_dev" xml:space="preserve">
     <value>O dev</value>
   </data>
-  <data name="AboutDeveloper_close_029" xml:space="preserve">
+  <data name="dev_close" xml:space="preserve">
     <value>Blizu</value>
   </data>
-  <data name="AboutDeveloper_my_resume_030" xml:space="preserve">
+  <data name="dev_,my_resume" xml:space="preserve">
     <value>Moj življenjepis</value>
   </data>
-  <data name="AboutDeveloper_professional_summary_031" xml:space="preserve">
+  <data name="dev_pro_resume" xml:space="preserve">
     <value>Poklicni povzetek:</value>
   </data>
-  <data name="AboutDeveloper_work_experience_033" xml:space="preserve">
+  <data name="dev_work_exp" xml:space="preserve">
     <value>Delovne izkušnje:</value>
   </data>
-  <data name="AboutDeveloper_senior_developer_034" xml:space="preserve">
+  <data name="dev_sen_dev" xml:space="preserve">
     <value>Starejši razvijalec</value>
   </data>
   <data name="AboutDeveloper_software_developer_038" xml:space="preserve">
@@ -1032,10 +1032,136 @@
   <data name="Delete_are_you_sure_you_want_344" xml:space="preserve">
     <value>Ste prepričani, da želite to izbrisati?</value>
   </data>
-  <data name="AboutDeveloper_im_a_passionate_software_devel_002" xml:space="preserve">
+  <data name="passion" xml:space="preserve">
     <value>Sem strasten razvijalec programske opreme z močnim poudarkom na gradnji sodobnih spletnih aplikacij, zlasti z uporabo strani za britvice ASP.NET - samega okvira, ki sem ga uporabil za ta projekt. Ta spletna stran je bila razvita kot del moje diplomske naloge, da bi prikazala ne le moje tehnične sposobnosti, ampak tudi mojo ustvarjalnost in pozornost do uporabniške izkušnje. Skozi leta sem delal na več aplikacijah s polnimi skladbami, od spletnih mest za mala podjetja do notranjih podjetniških orodij. Uživam v eksperimentiranju z različnimi spletnimi tehnologijami in sem na tekočem z najnovejšimi trendi v oblikovanju UI/UX. Moja najljubša orodja in jeziki vključujejo C#, HTML, CSS in okvire, kot so TailwindCSS za hiter in eleganten dizajn uporabniškega vmesnika. Uživam tudi v potapljanju v JavaScript, TypeScript in občasno zapiranje v Pythonu in PHP za zabavo ali uporabno skript.</value>
   </data>
   <data name="DownloadExcell_pregled_transportov_in_izkladi_199" xml:space="preserve">
     <value>Pregled Transportov in Izkladiščenih Podatkov</value>
+  </data>
+  <data name="dev_experiences" xml:space="preserve">
+    <value>Izkušeni in prilagodljiv razvijalec programske opreme z dokazano zgodovino dela v zagonskih in korporativnih okoljih. Spreten v spletnem razvoju v celotnem skladu, objektno usmerjenem programiranju in odzivnem dizajnu uporabniškega vmesnika. Močno ozadje v C#, .NET tehnologiji in aplikacijah, ki temeljijo na bazi podatkov. Zavezan neprekinjenemu učenju in prispevanju k visokokakovostnim, vzdržljivim bazam kode.</value>
+  </data>
+  <data name="dev_multi" xml:space="preserve">
+    <value>LED več projektov spletnih aplikacij z uporabo strani ASP.NET Core in Razor.</value>
+  </data>
+  <data name="AboutDeveloper_improved_application_performan_036" xml:space="preserve">
+    <value>Izboljšana uspešnost aplikacije za 35% z optimiziranimi poizvedbami SQL in predpomnilniki.</value>
+  </data>
+  <data name="AboutDeveloper_mentored_junior_developers_and_037" xml:space="preserve">
+    <value>Mentorirani mlajši razvijalci in izvajali preglede in delavnice v notranjosti.</value>
+  </data>
+  <data name="AboutDeveloper_developed_internal_tools_and_d_039" xml:space="preserve">
+    <value>Razviti notranji orodja in nadzorne plošče z uporabo C#, Winforms in SQL Server.</value>
+  </data>
+  <data name="AboutDeveloper_worked_closely_with_crossfunct_040" xml:space="preserve">
+    <value>Tesno sodeloval z medfunkcionalnimi skupinami, da bi v tesnih rokih dostavil programsko opremo, bogato s funkcijo.</value>
+  </data>
+  <data name="AboutDeveloper_bachelors_degree_in_computer_s_042" xml:space="preserve">
+    <value>Diploma iz računalništva - Univerza v [vaše mesto/ustanova]</value>
+  </data>
+  <data name="AboutDeveloper_specialized_coursework_in_soft_043" xml:space="preserve">
+    <value>Specializirana tečaja na področju programskega inženiringa, spletnega razvoja in oblikovanja sistema.</value>
+  </data>
+  <data name="AboutDeveloper_microsoft_certified_azure_fund_045" xml:space="preserve">
+    <value>Microsoft Certified: Azure Fundamentals</value>
+  </data>
+  <data name="AboutDeveloper_udemy_advanced_aspnet_core_raz_046" xml:space="preserve">
+    <value>Udemy: Advanced ASP.NET Core Razor Strage (2023)</value>
+  </data>
+  <data name="AboutDeveloper_20yearold_passionate_developer_080" xml:space="preserve">
+    <value>20-letni strastni razvijalec, ki rad ustvarja stvari, ki so pomembne.</value>
+  </data>
+  <data name="AboutDeveloper_api_integration_and_backend_ar_083" xml:space="preserve">
+    <value>Integracija API -ja in zaledna arhitektura</value>
+  </data>
+  <data name="AboutDeveloper_building_educational_tools_for_092" xml:space="preserve">
+    <value>Gradnja izobraževalnih orodij za razvijalce</value>
+  </data>
+  <data name="AboutDeveloper_machine_learning_and_ai_integr_095" xml:space="preserve">
+    <value>Strojno učenje in integracija AI v spletnih aplikacijah</value>
+  </data>
+  <data name="AboutDeveloper_personal_cms_system_built_from_102" xml:space="preserve">
+    <value>Osebni sistem CMS - zgrajen iz nič za upravljanje vsebine bloga.</value>
+  </data>
+  <data name="AboutDeveloper_maintained_multiple_github_rep_105" xml:space="preserve">
+    <value>Vzdržal več repozitorijev GitHub s 50+ zvezdicami</value>
+  </data>
+  <data name="AboutDeveloper_built_custom_components_in_bla_106" xml:space="preserve">
+    <value>Vgrajene komponente po meri v jedru Blazorja in ASP.NET</value>
+  </data>
+  <data name="AboutDeveloper_designed_and_deployed_cloudbas_107" xml:space="preserve">
+    <value>Zasnovane in nameščene rešitve v oblaku prek Azure</value>
+  </data>
+  <data name="AboutDeveloper_master_typescript_and_modern_f_109" xml:space="preserve">
+    <value>Master TypeScript in Modern Frondent Frameworks</value>
+  </data>
+  <data name="AboutDeveloper_contribute_to_larger_opensourc_110" xml:space="preserve">
+    <value>Prispevajo k večjim pobudam odprtokod</value>
+  </data>
+  <data name="AboutDeveloper_explore_mobile_development_wit_111" xml:space="preserve">
+    <value>Raziščite mobilni razvoj z Flutter &amp; Dart</value>
+  </data>
+  <data name="AboutDeveloper_work_toward_azure_developer_ce_112" xml:space="preserve">
+    <value>Prizadevajte si za certificiranje razvijalcev Azure</value>
+  </data>
+  <data name="AboutDeveloper_i_drink_more_coffee_debugging_114" xml:space="preserve">
+    <value>Pijem več odpravljanja napak v kavi kot kodiranje.</value>
+  </data>
+  <data name="AboutDeveloper_i_once_fixed_a_bug_115" xml:space="preserve">
+    <value>Nekoč sem popravil napako ob 2. uri - in pozabil, kako naslednji dan.</value>
+  </data>
+  <data name="Error_an_error_occurred_while_proces_121" xml:space="preserve">
+    <value>Med obdelavo zahteve je prišlo do napake.</value>
+  </data>
+  <data name="Error_the_development_environment_sh_125" xml:space="preserve">
+    <value>Okolje prikazuje podrobne informacije o napaki, ki se je zgodila.</value>
+  </data>
+  <data name="Privacy_this_privacy_policy_explains_h_131" xml:space="preserve">
+    <value>Ta pravilnik o zasebnosti pojasnjuje, kako zbiramo, uporabljamo in razkrijemo vaše podatke, ko uporabljate našo storitev. Prav tako vas obvešča o vaših pravicah za zasebnost in o tem, kako vas zakon varuje.</value>
+  </data>
+  <data name="Privacy_we_collect_different_types_of_133" xml:space="preserve">
+    <value>Zbiramo različne vrste informacij za zagotavljanje in izboljšanje naše storitve za vas. To vključuje:</value>
+  </data>
+  <data name="Privacy_notify_you_about_changes_to_140" xml:space="preserve">
+    <value>Vas obvesti o spremembah naše storitve</value>
+  </data>
+  <data name="Privacy_monitor_usage_and_improve_our_142" xml:space="preserve">
+    <value>Spremljajte uporabo in izboljšajte našo storitev</value>
+  </data>
+  <data name="Privacy_detect_prevent_and_address_tec_143" xml:space="preserve">
+    <value>Odkrivanje, preprečevanje in reševanje tehničnih vprašanj</value>
+  </data>
+  <data name="Privacy_we_do_not_sell_your_145" xml:space="preserve">
+    <value>Vaših osebnih podatkov ne prodajamo. Vendar lahko vaše podatke razkrijemo, da upoštevajo pravne obveznosti, zaščitijo pravice ali uveljavijo naše politike.</value>
+  </data>
+  <data name="Privacy_you_have_the_right_to_147" xml:space="preserve">
+    <value>Imate pravico do dostopa, popravljanja ali brisanja osebnih podatkov. Lahko imate tudi pravico, da nasprotujete ali omejite določeno obdelavo svojih podatkov.</value>
+  </data>
+  <data name="Privacy_we_strive_to_use_commercially_149" xml:space="preserve">
+    <value>Prizadevamo si, da bi za zaščito vaših osebnih podatkov uporabili komercialno sprejemljiva sredstva, vendar ne moremo zagotoviti absolutne varnosti.</value>
+  </data>
+  <data name="Privacy_we_may_update_our_privacy_151" xml:space="preserve">
+    <value>Občasno lahko posodobimo svojo politiko zasebnosti. O vseh spremembah vas bomo obvestili z objavo novega pravilnika o zasebnosti na tej strani.</value>
+  </data>
+  <data name="AdminPage_this_is_the_admin_dashboard_154" xml:space="preserve">
+    <value>Administracijska nadzorna plošča</value>
+  </data>
+  <data name="Index_would_you_like_to_import_229" xml:space="preserve">
+    <value>Bi radi uvozili transportne datoteke?</value>
+  </data>
+  <data name="LoadingCheckOut_name_and_signature_of_warehous_243" xml:space="preserve">
+    <value>Ime in podpis skladiščnega delavca:</value>
+  </data>
+  <data name="AnalitikaPage_this_is_the_analitik_dashboard_304" xml:space="preserve">
+    <value>To je nadzorna plošča Alatitik. Spodaj so vaše razpoložljive naloge in orodja.</value>
+  </data>
+  <data name="DetailedInfo_ni_izkladiščenih_zapisov_za_ta_318" xml:space="preserve">
+    <value>Za to osebno številko ni prevozov</value>
+  </data>
+  <data name="IzmenovodjaPage_this_is_the_page_for_330" xml:space="preserve">
+    <value>To je stran za vlogo Izmenovodja. Uporabite spodnje povezave za upravljanje registracij in opravljanje nalog, povezanih z vašo vlogo.</value>
+  </data>
+  <data name="SkladiščnikPage_this_is_the_page_for_348" xml:space="preserve">
+    <value>To je stran za vlogo Skladishčik.</value>
   </data>
 </root>

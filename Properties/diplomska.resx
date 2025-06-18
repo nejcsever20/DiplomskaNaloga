@@ -97,145 +97,145 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutDeveloper_hi_im_your_developer_001" xml:space="preserve">
+  <data name="your_developer" xml:space="preserve">
     <value>Hi, I'm Your Developer </value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_im_a_passionate_software_devel_002" xml:space="preserve">
+  <data name="passion" xml:space="preserve">
     <value>I'm a passionate software developer with a strong focus on building modern web applications, particularly using ASP.NET Razor Pages— the very framework I used for this project. This website was developed as part of my diploma thesis to showcase not just my technical abilities, but also my creativity and attention to user experience. Over the years, I've worked on several full-stack applications ranging from small business websites to internal enterprise tools. I enjoy experimenting with different web technologies and staying up-to-date with the latest trends in UI/UX design. My favorite tools and languages include C#, HTML, CSS, and frameworks like TailwindCSS for rapid and elegant UI design. I also enjoy diving into JavaScript, TypeScript, and occasionally dabbling in Python and PHP for fun or utility scripting.</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_show_more_003" xml:space="preserve">
+  <data name="show_more" xml:space="preserve">
     <value>Show more</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_contact_info_004" xml:space="preserve">
+  <data name="contacts" xml:space="preserve">
     <value>Contact Info</value>
     <comment>Used in: 2 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_email_005" xml:space="preserve">
+  <data name="dev_email" xml:space="preserve">
     <value>Email:</value>
     <comment>Used in: 2 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_github_006" xml:space="preserve">
+  <data name="dev_github" xml:space="preserve">
     <value>GitHub:</value>
     <comment>Used in: 2 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_githubcomyourusername_007" xml:space="preserve">
+  <data name="dev_githubuser" xml:space="preserve">
     <value>github.com/yourusername</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_linkedin_008" xml:space="preserve">
+  <data name="dev_linkedin" xml:space="preserve">
     <value>LinkedIn:</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_linkedincominyourprofile_009" xml:space="preserve">
+  <data name="dev_linkedinprofile" xml:space="preserve">
     <value>linkedin.com/in/yourprofile</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_more_about_me_010" xml:space="preserve">
+  <data name="dev_more_about" xml:space="preserve">
     <value>More about me!</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_about_me_011" xml:space="preserve">
+  <data name="dev_aboutme" xml:space="preserve">
     <value>About Me</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_resume_012" xml:space="preserve">
+  <data name="dev_resume" xml:space="preserve">
     <value>Resume</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_view_my_professional_resume_013" xml:space="preserve">
+  <data name="dev_view_proresume" xml:space="preserve">
     <value>View my professional resume.</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_open_resume_014" xml:space="preserve">
+  <data name="dev_open_resume" xml:space="preserve">
     <value>Open Resume</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_programming_languages_015" xml:space="preserve">
+  <data name="dev_programming_lang" xml:space="preserve">
     <value>Programming Languages</value>
     <comment>Used in: 2 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_languages_im_proficient_in_016" xml:space="preserve">
+  <data name="dev_lang" xml:space="preserve">
     <value>Languages I’m proficient in.</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_view_languages_017" xml:space="preserve">
+  <data name="dev_view_lang" xml:space="preserve">
     <value>View Languages</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_hobbies_018" xml:space="preserve">
+  <data name="dev_hobbies" xml:space="preserve">
     <value>Hobbies</value>
     <comment>Used in: 2 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_what_i_enjoy_doing_in_019" xml:space="preserve">
+  <data name="dev_what_I_enjoy" xml:space="preserve">
     <value>What I enjoy doing in my free time.</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_view_hobbies_020" xml:space="preserve">
+  <data name="dev_view_hobbies" xml:space="preserve">
     <value>View Hobbies</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_contact_information_021" xml:space="preserve">
+  <data name="dev_contanct_info" xml:space="preserve">
     <value>Contact Information</value>
     <comment>Used in: 2 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_how_to_get_in_touch_022" xml:space="preserve">
+  <data name="dev_how_to_contact" xml:space="preserve">
     <value>How to get in touch with me.</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_social_media_023" xml:space="preserve">
+  <data name="dev_social_media" xml:space="preserve">
     <value>Social Media</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_follow_me_on_social_platforms_024" xml:space="preserve">
+  <data name="dev_follow_socials" xml:space="preserve">
     <value>Follow me on social platforms.</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_social_links_025" xml:space="preserve">
+  <data name="dev_social_links" xml:space="preserve">
     <value>Social Links</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_more_about_me_026" xml:space="preserve">
+  <data name="dev_more_about_me" xml:space="preserve">
     <value>More about me</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_if_you_want_to_know_027" xml:space="preserve">
+  <data name="dev_ifyouwant" xml:space="preserve">
     <value>If you want to know more</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_about_the_dev_028" xml:space="preserve">
+  <data name="dev_about_dev" xml:space="preserve">
     <value>About the DEV</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_close_029" xml:space="preserve">
+  <data name="dev_close" xml:space="preserve">
     <value>Close</value>
     <comment>Used in: 7 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_my_resume_030" xml:space="preserve">
+  <data name="dev_,my_resume" xml:space="preserve">
     <value>My Resume</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_professional_summary_031" xml:space="preserve">
+  <data name="dev_pro_resume" xml:space="preserve">
     <value>Professional Summary:</value>
     <comment>Used in: 2 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_experienced_and_adaptable_soft_032" xml:space="preserve">
+  <data name="dev_experiences" xml:space="preserve">
     <value>Experienced and adaptable software developer with a demonstrated history of working in both startup and corporate environments. Skilled in full-stack web development, object-oriented programming, and responsive UI design. Strong background in C#, .NET technologies, and database-driven applications. Committed to continuous learning and contributing to high-quality, maintainable codebases.
 
 </value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_work_experience_033" xml:space="preserve">
+  <data name="dev_work_exp" xml:space="preserve">
     <value>Work Experience:</value>
     <comment>Used in: 2 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_senior_developer_034" xml:space="preserve">
+  <data name="dev_sen_dev" xml:space="preserve">
     <value>Senior Developer</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
-  <data name="AboutDeveloper_led_multiple_web_application_p_035" xml:space="preserve">
+  <data name="dev_multi" xml:space="preserve">
     <value>Led multiple web application projects using ASP.NET Core and Razor Pages.</value>
     <comment>Used in: 1 file(s)</comment>
   </data>
@@ -892,7 +892,7 @@
     <comment>Used in: 3 file(s)</comment>
   </data>
   <data name="DownloadExcell_pregled_transportov_in_izkladi_199" xml:space="preserve">
-    <value></value>
+    <value>Review of transportation and off data</value>
     <comment>Used in: 2 file(s)</comment>
   </data>
   <data name="DownloadExcell_transports_200" xml:space="preserve">
