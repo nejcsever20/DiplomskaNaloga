@@ -1,0 +1,1173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ResourceAccessModifier" xml:space="preserve">
+    <value>Public</value>
+  </data>
+  <data name="your_developer" xml:space="preserve">
+    <value>Salut, sunt dezvoltatorul tău</value>
+  </data>
+  <data name="passion" xml:space="preserve">
+    <value>Sunt un dezvoltator de software pasionat, cu un accent puternic pe construcția de aplicații web moderne, în special prin utilizarea paginilor de ras ASP.NET - cadrul în sine pe care l -am folosit pentru acest proiect. Acest site web a fost dezvoltat ca parte a tezei mele de diplomă pentru a arăta nu numai abilitățile mele tehnice, ci și creativitatea și atenția mea asupra experienței utilizatorului. De -a lungul anilor, am lucrat la mai multe aplicații complete, de la site -uri web pentru întreprinderi mici până la instrumente antreprenoriale interne. Îmi place să experimentez cu diferite tehnologii online și sunt în sus cu cele mai recente tendințe de design UI/UX. Instrumentele și limbile mele preferate includ C#, HTML, CSS și cadre, cum ar fi Tailwindcss pentru un design rapid și elegant de interfață de utilizator. De asemenea, îmi place să scufund în JavaScript, TypeScript și, ocazional, să mă închid în Python și PHP pentru un script distractiv sau util.</value>
+  </data>
+  <data name="show_more" xml:space="preserve">
+    <value>Arată mai mult</value>
+  </data>
+  <data name="contacts" xml:space="preserve">
+    <value>Date de contact</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>E -The:</value>
+  </data>
+  <data name="gihub" xml:space="preserve">
+    <value>Github:</value>
+  </data>
+  <data name="github_user" xml:space="preserve">
+    <value>github.com/yourusername</value>
+  </data>
+  <data name="linkedin" xml:space="preserve">
+    <value>LinkedIn:</value>
+  </data>
+  <data name="linkedin_profile" xml:space="preserve">
+    <value>LinkedIn.com/in/yourprofile</value>
+  </data>
+  <data name="more_about" xml:space="preserve">
+    <value>Mai multe despre mine!</value>
+  </data>
+  <data name="about_me" xml:space="preserve">
+    <value>Despre mine</value>
+  </data>
+  <data name="resume" xml:space="preserve">
+    <value>Biografie</value>
+  </data>
+  <data name="view_resume" xml:space="preserve">
+    <value>Aruncați o privire la CV -ul meu profesional.</value>
+  </data>
+  <data name="open_reusme" xml:space="preserve">
+    <value>CV deschis</value>
+  </data>
+  <data name="programming_languages" xml:space="preserve">
+    <value>Limbaj de programare</value>
+  </data>
+  <data name="languages" xml:space="preserve">
+    <value>Limbi în care sunt expert.</value>
+  </data>
+  <data name="view_languages" xml:space="preserve">
+    <value>Uită -te la limbi</value>
+  </data>
+  <data name="hobbies" xml:space="preserve">
+    <value>Hobby</value>
+  </data>
+  <data name="what_I_enjoy" xml:space="preserve">
+    <value>Ce îmi place în timpul liber.</value>
+  </data>
+  <data name="view_hobbies" xml:space="preserve">
+    <value>Vizualizați hobby -urile</value>
+  </data>
+  <data name="contact_info" xml:space="preserve">
+    <value>Date de contact</value>
+  </data>
+  <data name="how_to_contact" xml:space="preserve">
+    <value>Cum să mă contactezi.</value>
+  </data>
+  <data name="social_media" xml:space="preserve">
+    <value>Social media</value>
+  </data>
+  <data name="follow_socials" xml:space="preserve">
+    <value>Urmați -mă pe platformele sociale.</value>
+  </data>
+  <data name="social_links" xml:space="preserve">
+    <value>Legături sociale</value>
+  </data>
+  <data name="more_about_me" xml:space="preserve">
+    <value>Mai multe despre mine</value>
+  </data>
+  <data name="if_you_want" xml:space="preserve">
+    <value>Pentru a afla mai multe</value>
+  </data>
+  <data name="about_dev" xml:space="preserve">
+    <value>O Dev</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>Aproape</value>
+  </data>
+  <data name="my_resume" xml:space="preserve">
+    <value>CV -ul meu</value>
+  </data>
+  <data name="professional_resume" xml:space="preserve">
+    <value>Rezumat profesional:</value>
+  </data>
+  <data name="experiences" xml:space="preserve">
+    <value>Un dezvoltator de software experimentat și flexibil, cu un istoric dovedit de muncă în medii de pornire și corporative. Abilități în dezvoltarea online în întregul fond, programarea și proiectarea de răspuns a obiectelor și răspunsul interfeței de utilizator. Un fundal puternic în aplicațiile bazate pe tehnologie C#, .NET și bazate pe baza de date. A testat învățarea continuă și contribuind la coduri de înaltă calitate, durabile.</value>
+  </data>
+  <data name="work_experiences" xml:space="preserve">
+    <value>Experiență de muncă:</value>
+  </data>
+  <data name="senior_dev" xml:space="preserve">
+    <value>În vârstă</value>
+  </data>
+  <data name="multi_web_apps" xml:space="preserve">
+    <value>LED -uri ale mai multor proiecte de aplicații web folosind ASP.NET Core și Razor.</value>
+  </data>
+  <data name="improved_apps" xml:space="preserve">
+    <value>Performanța îmbunătățită a aplicației cu 35% cu interogări SQL optimizate și cache.</value>
+  </data>
+  <data name="mentored" xml:space="preserve">
+    <value>A îndrumat dezvoltatorii mai tineri și au efectuat recenzii și ateliere în interior.</value>
+  </data>
+  <data name="software_dev" xml:space="preserve">
+    <value>Dezvoltator de software</value>
+  </data>
+  <data name="internal_tools" xml:space="preserve">
+    <value>Dezvoltați instrumente interioare și tablou de bord folosind C#, WinForms și SQL Server.</value>
+  </data>
+  <data name="corss_funcitonal" xml:space="preserve">
+    <value>A lucrat îndeaproape cu grupuri inter -funcționale pentru a livra funcția bogată în funcțiile funcției în termene strânse.</value>
+  </data>
+  <data name="education" xml:space="preserve">
+    <value>Educaţie:</value>
+  </data>
+  <data name="degree" xml:space="preserve">
+    <value>Diplomă de la informatică - Universitatea din [Orașul/Instituția dvs.]</value>
+  </data>
+  <data name="specialization" xml:space="preserve">
+    <value>Cursuri specializate în inginerie de programe, dezvoltare online și proiectare a sistemului.</value>
+  </data>
+  <data name="certifications" xml:space="preserve">
+    <value>Certificate:</value>
+  </data>
+  <data name="certified_microsoft_fundementials" xml:space="preserve">
+    <value>Certificat Microsoft: Azure Fundamentals</value>
+  </data>
+  <data name="udemy_certificate" xml:space="preserve">
+    <value>Udemy: Advanced ASP.NET Core Razor Strage (2023)</value>
+  </data>
+  <data name="download_resume" xml:space="preserve">
+    <value>Descărcați CV -ul dvs.</value>
+  </data>
+  <data name="C#" xml:space="preserve">
+    <value>C#</value>
+  </data>
+  <data name="JavaScript/TypeScript" xml:space="preserve">
+    <value>JavaScript / TypeScript</value>
+  </data>
+  <data name="php" xml:space="preserve">
+    <value>PHP</value>
+  </data>
+  <data name="python" xml:space="preserve">
+    <value>Piton</value>
+  </data>
+  <data name="sql" xml:space="preserve">
+    <value>SQL</value>
+  </data>
+  <data name="html_css" xml:space="preserve">
+    <value>HTML / CSS</value>
+  </data>
+  <data name="java" xml:space="preserve">
+    <value>Porumb</value>
+  </data>
+  <data name="ruby_on_rails" xml:space="preserve">
+    <value>Ruby pe șine</value>
+  </data>
+  <data name="cpp" xml:space="preserve">
+    <value>C ++</value>
+  </data>
+  <data name="dart" xml:space="preserve">
+    <value>Lance</value>
+  </data>
+  <data name="flutter" xml:space="preserve">
+    <value>Flutter</value>
+  </data>
+  <data name="pl_sql" xml:space="preserve">
+    <value>PL/SQL</value>
+  </data>
+  <data name="tech_blogs" xml:space="preserve">
+    <value>Citirea blogurilor tehnologice</value>
+  </data>
+  <data name="chess" xml:space="preserve">
+    <value>Jucând șah</value>
+  </data>
+  <data name="hiking_walks" xml:space="preserve">
+    <value>Drumeții și natura</value>
+  </data>
+  <data name="music" xml:space="preserve">
+    <value>Muzică</value>
+  </data>
+  <data name="open_source" xml:space="preserve">
+    <value>Contribuție la sursă deschisă</value>
+  </data>
+  <data name="video_games" xml:space="preserve">
+    <value>Jocuri video (rar)</value>
+  </data>
+  <data name="gym" xml:space="preserve">
+    <value>Gimnazial</value>
+  </data>
+  <data name="github_1" xml:space="preserve">
+    <value>Github</value>
+  </data>
+  <data name="github_2" xml:space="preserve">
+    <value>Github #2:</value>
+  </data>
+  <data name="github_3" xml:space="preserve">
+    <value>Github #3:</value>
+  </data>
+  <data name="phone" xml:space="preserve">
+    <value>Telefon:</value>
+  </data>
+  <data name="social_media_profiles" xml:space="preserve">
+    <value>Profiluri de social media</value>
+  </data>
+  <data name="twitter" xml:space="preserve">
+    <value>Stare de nervozitate</value>
+  </data>
+  <data name="facebook" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="instagrma" xml:space="preserve">
+    <value>Instagram</value>
+  </data>
+  <data name="discord" xml:space="preserve">
+    <value>Discrepanţă</value>
+  </data>
+  <data name="about_the_dev" xml:space="preserve">
+    <value>Despre dezvoltator</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Nume:</value>
+  </data>
+  <data name="role" xml:space="preserve">
+    <value>Aplicație:</value>
+  </data>
+  <data name="experience" xml:space="preserve">
+    <value>Experienţă:</value>
+  </data>
+  <data name="20yearold" xml:space="preserve">
+    <value>Un dezvoltator pasionat de 20 de ani căruia îi place să creeze lucruri care sunt importante.</value>
+  </data>
+  <data name="specialities" xml:space="preserve">
+    <value>Specialități:</value>
+  </data>
+  <data name="building_web_apps" xml:space="preserve">
+    <value>Construirea aplicațiilor web extinse</value>
+  </data>
+  <data name="api_integration" xml:space="preserve">
+    <value>Integrare API și arhitectură Zaled</value>
+  </data>
+  <data name="responisive_designs" xml:space="preserve">
+    <value>Design UI/UX de răspuns</value>
+  </data>
+  <data name="database_designs" xml:space="preserve">
+    <value>Proiectarea și optimizarea bazei de date</value>
+  </data>
+  <data name="tools" xml:space="preserve">
+    <value>Instrumente și tehnologii:</value>
+  </data>
+  <data name="git_docket_postman" xml:space="preserve">
+    <value>Git, Docker, poștaș</value>
+  </data>
+  <data name="github_actions" xml:space="preserve">
+    <value>CI/CD (acțiuni Github)</value>
+  </data>
+  <data name="agile_scrum" xml:space="preserve">
+    <value>Metodologie Agile / Scrum</value>
+  </data>
+  <data name="passion_projects" xml:space="preserve">
+    <value>Proiecte pasionate:</value>
+  </data>
+  <data name="open_source_contributions" xml:space="preserve">
+    <value>Contribuții open source la Github</value>
+  </data>
+  <data name="building_educational_tools" xml:space="preserve">
+    <value>Construcția de instrumente educaționale pentru dezvoltatori</value>
+  </data>
+  <data name="tech_blogs_tutorials" xml:space="preserve">
+    <value>Scrierea blogurilor și exercițiilor tehnice</value>
+  </data>
+  <data name="technical_interrests" xml:space="preserve">
+    <value>Interese tehnice:</value>
+  </data>
+  <data name="machine_learning" xml:space="preserve">
+    <value>Învățare automată și integrare AI în aplicații web</value>
+  </data>
+  <data name="devops_conatiners" xml:space="preserve">
+    <value>DevOps și orchestrarea containerului</value>
+  </data>
+  <data name="progressive_web_apps" xml:space="preserve">
+    <value>Aplicații web progresive (PWA)</value>
+  </data>
+  <data name="clean_architecture" xml:space="preserve">
+    <value>Modele pure de arhitectură și design</value>
+  </data>
+  <data name="favourite_projects" xml:space="preserve">
+    <value>Proiecte preferate:</value>
+  </data>
+  <data name="diploma_web_app" xml:space="preserve">
+    <value>Aplicație de absolvire web</value>
+  </data>
+  <data name="ecommerce_demo" xml:space="preserve">
+    <value>Prezentarea comerțului electronic</value>
+  </data>
+  <data name="personal_cms_app" xml:space="preserve">
+    <value>Sistem personal CMS - construit de la zero pentru a gestiona conținutul blogului.</value>
+  </data>
+  <data name="achievements" xml:space="preserve">
+    <value>Realizări:</value>
+  </data>
+  <data name="full_stack_projects" xml:space="preserve">
+    <value>Completat 20+ proiecte de scene complete</value>
+  </data>
+  <data name="maintenance" xml:space="preserve">
+    <value>Abonat de la mai multe depozite Github cu peste 50 de stele</value>
+  </data>
+  <data name="custom_components" xml:space="preserve">
+    <value>Componente personalizate la baza Blazor și ASP.NET</value>
+  </data>
+  <data name="designed_and_deployed" xml:space="preserve">
+    <value>Soluții cloud proiectate și instalate prin Azure</value>
+  </data>
+  <data name="learning_goals" xml:space="preserve">
+    <value>Obiective de învățare:</value>
+  </data>
+  <data name="type_script_frameworks" xml:space="preserve">
+    <value>Master Typescript și cadre moderne frondente</value>
+  </data>
+  <data name="large_ops_initiatives" xml:space="preserve">
+    <value>Contribuie la inițiative majore de deschidere</value>
+  </data>
+  <data name="explore_mobile_development" xml:space="preserve">
+    <value>Explorați dezvoltarea mobilă cu Flutter &amp; Dart</value>
+  </data>
+  <data name="towards_azure_certificate" xml:space="preserve">
+    <value>Străduiți -vă să certificați dezvoltatorii Azure</value>
+  </data>
+  <data name="fun_facts" xml:space="preserve">
+    <value>Fapt amuzant:</value>
+  </data>
+  <data name="drink_coffee" xml:space="preserve">
+    <value>Eu beau mai multe erori de cafea decât codificarea.</value>
+  </data>
+  <data name="fixed_a_bug" xml:space="preserve">
+    <value>Am remediat o dată greșeala la ora 2 - și am uitat cum a doua zi.</value>
+  </data>
+  <data name="back_home" xml:space="preserve">
+    <value>← înapoi acasă</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Editați factura</value>
+  </data>
+  <data name="save_changes" xml:space="preserve">
+    <value>Salvați modificări</value>
+  </data>
+  <data name="edit_teheme" xml:space="preserve">
+    <value>Editați tema</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>O eroare.</value>
+  </data>
+  <data name="erorr_processing" xml:space="preserve">
+    <value>A apărut o eroare la procesarea cererii.</value>
+  </data>
+  <data name="error_request_id" xml:space="preserve">
+    <value>ID de solicitare:</value>
+  </data>
+  <data name="development_mode" xml:space="preserve">
+    <value>Mod de dezvoltare</value>
+  </data>
+  <data name="development" xml:space="preserve">
+    <value>Evoluţie</value>
+  </data>
+  <data name="error_development_environment" xml:space="preserve">
+    <value>Mediul arată informații detaliate despre eroarea care s -a întâmplat.</value>
+  </data>
+  <data name="apsnetcore_environment" xml:space="preserve">
+    <value>Aspnetcoreenvironment</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Bun venit</value>
+  </data>
+  <data name="building_with_ASP" xml:space="preserve">
+    <value>Construcția de aplicații online cu ASP.NET Core</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Check-in</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>Registru</value>
+  </data>
+  <data name="privacy" xml:space="preserve">
+    <value>Această politică de confidențialitate explică modul în care colectăm, folosim și dezvăluim informațiile dvs. atunci când utilizați serviciul nostru. De asemenea, vă informează despre drepturile dvs. de confidențialitate și despre modul în care legea vă protejează.</value>
+  </data>
+  <data name="info_we_gather" xml:space="preserve">
+    <value>Informații pe care le colectăm</value>
+  </data>
+  <data name="types_of_info" xml:space="preserve">
+    <value>Colectăm diferite tipuri de informații pentru a oferi și îmbunătăți serviciul nostru pentru dvs. Aceasta include:</value>
+  </data>
+  <data name="personal_data" xml:space="preserve">
+    <value>Informații personale:</value>
+  </data>
+  <data name="usage_data" xml:space="preserve">
+    <value>Utilizați date:</value>
+  </data>
+  <data name="cookies_tracking" xml:space="preserve">
+    <value>Urmărirea cookie -urilor și tehnologiilor:</value>
+  </data>
+  <data name="utilising_info" xml:space="preserve">
+    <value>Cum folosim informațiile dvs.</value>
+  </data>
+  <data name="info_we_use" xml:space="preserve">
+    <value>Folosim informațiile pe care le colectăm:</value>
+  </data>
+  <data name="provide_maintain" xml:space="preserve">
+    <value>Pentru a furniza și a ne menține serviciul</value>
+  </data>
+  <data name="notify" xml:space="preserve">
+    <value>Vă informează despre schimbările serviciului nostru</value>
+  </data>
+  <data name="customer_support" xml:space="preserve">
+    <value>Pentru a oferi asistență pentru clienți</value>
+  </data>
+  <data name="monitoring" xml:space="preserve">
+    <value>Monitorizați utilizarea și îmbunătățiți serviciul nostru</value>
+  </data>
+  <data name="working_items" xml:space="preserve">
+    <value>Detectarea, prevenirea și rezolvarea problemelor tehnice</value>
+  </data>
+  <data name="disclosure" xml:space="preserve">
+    <value>Dezvăluirea datelor dvs.</value>
+  </data>
+  <data name="privacy_information" xml:space="preserve">
+    <value>Nu vindem informațiile dvs. personale. Cu toate acestea, putem dezvălui informațiile dvs. pentru a respecta obligațiile legale, pentru a proteja drepturile sau pentru a ne pune în aplicare politicile noastre.</value>
+  </data>
+  <data name="privacy_rights" xml:space="preserve">
+    <value>Drepturile dvs. la confidențialitate</value>
+  </data>
+  <data name="your_rights" xml:space="preserve">
+    <value>Aveți dreptul de a accesa, corecta sau șterge datele cu caracter personal. De asemenea, puteți avea dreptul să vă opuneți sau să limitați procesarea datelor dvs.</value>
+  </data>
+  <data name="security_of_user_info" xml:space="preserve">
+    <value>Securitatea datelor dvs.</value>
+  </data>
+  <data name="strive" xml:space="preserve">
+    <value>Ne străduim să folosim resurse acceptabile din punct de vedere comercial pentru a vă proteja datele personale, dar nu putem oferi securitate absolută.</value>
+  </data>
+  <data name="changes" xml:space="preserve">
+    <value>Modificări la această politică de confidențialitate</value>
+  </data>
+  <data name="policy_updates" xml:space="preserve">
+    <value>Ocazional ne putem actualiza politica de confidențialitate. Vă vom informa despre toate modificările publicând o nouă politică de confidențialitate pe această pagină.</value>
+  </data>
+  <data name="contact" xml:space="preserve">
+    <value>Contactaţi-ne</value>
+  </data>
+  <data name="welcome_admin" xml:space="preserve">
+    <value>Salutări, administrator!</value>
+  </data>
+  <data name="admin_dashboard" xml:space="preserve">
+    <value>Panoul de control al administrării</value>
+  </data>
+  <data name="manage_users" xml:space="preserve">
+    <value>Gestionarea utilizatorilor</value>
+  </data>
+  <data name="manage_roles" xml:space="preserve">
+    <value>Managementul rolurilor</value>
+  </data>
+  <data name="add_remove_roles" xml:space="preserve">
+    <value>Adăugați sau eliminați aplicațiile</value>
+  </data>
+  <data name="to_index" xml:space="preserve">
+    <value>Mergeți la index</value>
+  </data>
+  <data name="loading_checkout" xml:space="preserve">
+    <value>Încărcarea unui casier</value>
+  </data>
+  <data name="naklad" xml:space="preserve">
+    <value>Circulaţie</value>
+  </data>
+  <data name="approve" xml:space="preserve">
+    <value>Aprobă utilizatorii</value>
+  </data>
+  <data name="download_excel" xml:space="preserve">
+    <value>Descărcați excelent</value>
+  </data>
+  <data name="archived_transports" xml:space="preserve">
+    <value>Transport arhivat</value>
+  </data>
+  <data name="back_to_archived" xml:space="preserve">
+    <value>Înapoi la transportul activ</value>
+  </data>
+  <data name="transport_id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="transpot_st" xml:space="preserve">
+    <value>Stransport</value>
+  </data>
+  <data name="transport_planirna" xml:space="preserve">
+    <value>Sosire planificată</value>
+  </data>
+  <data name="transport_sp" xml:space="preserve">
+    <value>Cupa Mondială</value>
+  </data>
+  <data name="transport_callback_reason" xml:space="preserve">
+    <value>Motiv pentru un apel de retur</value>
+  </data>
+  <data name="transport_compare" xml:space="preserve">
+    <value>Comparaţie</value>
+  </data>
+  <data name="transport_remove_archive" xml:space="preserve">
+    <value>Îndepărtează arhiva</value>
+  </data>
+  <data name="transport_delete" xml:space="preserve">
+    <value>Șters</value>
+  </data>
+  <data name="callback_transports" xml:space="preserve">
+    <value>Toate transportul</value>
+  </data>
+  <data name="view_archived" xml:space="preserve">
+    <value>Vizualizați transportul arhivat!</value>
+  </data>
+  <data name="cb_planiran" xml:space="preserve">
+    <value>Planificat</value>
+  </data>
+  <data name="cb_acitons" xml:space="preserve">
+    <value>Act</value>
+  </data>
+  <data name="cb_set_callback" xml:space="preserve">
+    <value>Stabilește un apel de retur</value>
+  </data>
+  <data name="cb_remove_callback" xml:space="preserve">
+    <value>Eliminați apelul de retur</value>
+  </data>
+  <data name="cb_choose_reason" xml:space="preserve">
+    <value>Alege un motiv</value>
+  </data>
+  <data name="cb_select_reason" xml:space="preserve">
+    <value>-ROW Motivul-</value>
+  </data>
+  <data name="cb_submit" xml:space="preserve">
+    <value>Trimiteți un apel de retur</value>
+  </data>
+  <data name="cb_cancel" xml:space="preserve">
+    <value>Anula</value>
+  </data>
+  <data name="cb_compare" xml:space="preserve">
+    <value>Comparați transportul de întoarcere</value>
+  </data>
+  <data name="cb_field" xml:space="preserve">
+    <value>Domeniu</value>
+  </data>
+  <data name="cb_old_transport" xml:space="preserve">
+    <value>Transport vechi (arhivat)</value>
+  </data>
+  <data name="cb_new_trnasport" xml:space="preserve">
+    <value>Nou transport</value>
+  </data>
+  <data name="cb_skaldisce" xml:space="preserve">
+    <value>Depozit</value>
+  </data>
+  <data name="cb_vrsta" xml:space="preserve">
+    <value>Tipul de transport</value>
+  </data>
+  <data name="cb_pavza" xml:space="preserve">
+    <value>Șoferul șoferului</value>
+  </data>
+  <data name="cb_dolocen_skaldiscnik" xml:space="preserve">
+    <value>Magazin proiectat</value>
+  </data>
+  <data name="cb_registracija" xml:space="preserve">
+    <value>Înregistrare</value>
+  </data>
+  <data name="cb_navis_zacetek" xml:space="preserve">
+    <value>Fondul Navis Start</value>
+  </data>
+  <data name="cb_navis_konec" xml:space="preserve">
+    <value>Navis End of the Fund</value>
+  </data>
+  <data name="cb_is_callback" xml:space="preserve">
+    <value>Este un apel de retur</value>
+  </data>
+  <data name="cb_approve" xml:space="preserve">
+    <value>Aproba utilizatorii înregistrați</value>
+  </data>
+  <data name="cb_pending" xml:space="preserve">
+    <value>Înregistrare în așteptare</value>
+  </data>
+  <data name="cr_approve" xml:space="preserve">
+    <value>Aproba</value>
+  </data>
+  <data name="cr_decline" xml:space="preserve">
+    <value>Declin</value>
+  </data>
+  <data name="cr_pregled" xml:space="preserve">
+    <value>Revizuirea transporturilor și a datelor</value>
+  </data>
+  <data name="de_transpord" xml:space="preserve">
+    <value>Transport</value>
+  </data>
+  <data name="de_sk" xml:space="preserve">
+    <value>SK</value>
+  </data>
+  <data name="de_warehouse" xml:space="preserve">
+    <value>Depozit</value>
+  </data>
+  <data name="de_st" xml:space="preserve">
+    <value>Sf. Transport</value>
+  </data>
+  <data name="de_izkladisceno" xml:space="preserve">
+    <value>OFF</value>
+  </data>
+  <data name="de_kolicina" xml:space="preserve">
+    <value>Cantitate</value>
+  </data>
+  <data name="de_palete" xml:space="preserve">
+    <value>Paletă</value>
+  </data>
+  <data name="de_skadliscnik" xml:space="preserve">
+    <value>Depozit</value>
+  </data>
+  <data name="de_datum" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="de_skaldiscnik_id" xml:space="preserve">
+    <value>Om depozit</value>
+  </data>
+  <data name="de_download" xml:space="preserve">
+    <value>Descărcați ca Excel</value>
+  </data>
+  <data name="de_back" xml:space="preserve">
+    <value>Înapoi</value>
+  </data>
+  <data name="de_edit_user" xml:space="preserve">
+    <value>Editați utilizatorul</value>
+  </data>
+  <data name="eu_select_role" xml:space="preserve">
+    <value>Alegeți un rol</value>
+  </data>
+  <data name="index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="index_import" xml:space="preserve">
+    <value>Import Excel</value>
+  </data>
+  <data name="index_create" xml:space="preserve">
+    <value>Creați un nou</value>
+  </data>
+  <data name="index_no_info" xml:space="preserve">
+    <value>Nu există lovituri.</value>
+  </data>
+  <data name="index_callback" xml:space="preserve">
+    <value>Reveni</value>
+  </data>
+  <data name="index_true" xml:space="preserve">
+    <value>Într -adevăr</value>
+  </data>
+  <data name="index_info" xml:space="preserve">
+    <value>i</value>
+  </data>
+  <data name="Index_details_221" xml:space="preserve">
+    <value>Detalii</value>
+  </data>
+  <data name="index_x" xml:space="preserve">
+    <value>×</value>
+  </data>
+  <data name="print" xml:space="preserve">
+    <value>Imprimare</value>
+  </data>
+  <data name="choose_transport" xml:space="preserve">
+    <value>Selectați Transport pentru apeluri de apel</value>
+  </data>
+  <data name="st_transport" xml:space="preserve">
+    <value>Nu. Transport:</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>- alege -</value>
+  </data>
+  <data name="reason_callback" xml:space="preserve">
+    <value>Motivul întoarcerii</value>
+  </data>
+  <data name="confirm_callback" xml:space="preserve">
+    <value>Confirmați callback -ul</value>
+  </data>
+  <data name="import" xml:space="preserve">
+    <value>Doriți să importați fișiere de transport?</value>
+  </data>
+  <data name="select_files" xml:space="preserve">
+    <value>Selectați fișiere pentru a importa:</value>
+  </data>
+  <data name="import_selected" xml:space="preserve">
+    <value>Importarea fișierelor selectate</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>Nume utilizator:</value>
+  </data>
+  <data name="geslo" xml:space="preserve">
+    <value>Parolă:</value>
+  </data>
+  <data name="navis" xml:space="preserve">
+    <value>Navis</value>
+  </data>
+  <data name="prijava" xml:space="preserve">
+    <value>Check-in</value>
+  </data>
+  <data name="start_of_loading" xml:space="preserve">
+    <value>Start de încărcare:</value>
+  </data>
+  <data name="end_of_loading" xml:space="preserve">
+    <value>Sfârșitul încărcării:</value>
+  </data>
+  <data name="cmr_number" xml:space="preserve">
+    <value>Număr CMR:</value>
+  </data>
+  <data name="transport_number" xml:space="preserve">
+    <value>Numărul de transport:</value>
+  </data>
+  <data name="loaded_quantity" xml:space="preserve">
+    <value>Cantitate putând:</value>
+  </data>
+  <data name="registration_plates" xml:space="preserve">
+    <value>Plăci de înregistrare:</value>
+  </data>
+  <data name="seal" xml:space="preserve">
+    <value>Tet:</value>
+  </data>
+  <data name="signature_warehouse_worker" xml:space="preserve">
+    <value>Numele și semnătura unui lucrător de depozit:</value>
+  </data>
+  <data name="signature_driver" xml:space="preserve">
+    <value>Numele șoferului și semnătura:</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>Spectacole</value>
+  </data>
+  <data name="mr_email" xml:space="preserve">
+    <value>E -the</value>
+  </data>
+  <data name="mr_roles" xml:space="preserve">
+    <value>Rol</value>
+  </data>
+  <data name="mr_nousers" xml:space="preserve">
+    <value>Nu există niciun utilizator.</value>
+  </data>
+  <data name="mr_select" xml:space="preserve">
+    <value>Alegeți aplicații</value>
+  </data>
+  <data name="mr_remove_roles" xml:space="preserve">
+    <value>Eliminați aplicațiile</value>
+  </data>
+  <data name="mr_external" xml:space="preserve">
+    <value>Aplicație externă</value>
+  </data>
+  <data name="mr_full_name" xml:space="preserve">
+    <value>Numele complet</value>
+  </data>
+  <data name="mr_user_roles" xml:space="preserve">
+    <value>Rol</value>
+  </data>
+  <data name="mr_edit" xml:space="preserve">
+    <value>Edita</value>
+  </data>
+  <data name="mr_confirm_delete" xml:space="preserve">
+    <value>Confirmați ștergerea</value>
+  </data>
+  <data name="mr_yes_delete" xml:space="preserve">
+    <value>Da, ștergeți</value>
+  </data>
+  <data name="end_start_load" xml:space="preserve">
+    <value>Începeți, sfârșitul circulației</value>
+  </data>
+  <data name="ramp1" xml:space="preserve">
+    <value>Rampa 1:</value>
+  </data>
+  <data name="ramp2" xml:space="preserve">
+    <value>Rampa 2:</value>
+  </data>
+  <data name="carina" xml:space="preserve">
+    <value>Cord vamal:</value>
+  </data>
+  <data name="izberi" xml:space="preserve">
+    <value>----- SELECT ---------</value>
+  </data>
+  <data name="prisotna" xml:space="preserve">
+    <value>Prezent</value>
+  </data>
+  <data name="ni_prisotna" xml:space="preserve">
+    <value>Nu este prezent</value>
+  </data>
+  <data name="ctn" xml:space="preserve">
+    <value>CTN</value>
+  </data>
+  <data name="ustreznost" xml:space="preserve">
+    <value>Conducerea vehiculului:</value>
+  </data>
+  <data name="neustrezno" xml:space="preserve">
+    <value>inadecial</value>
+  </data>
+  <data name="ustrezno" xml:space="preserve">
+    <value>în mod corespunzător</value>
+  </data>
+  <data name="delno_neustrezno" xml:space="preserve">
+    <value>parțial inadecvat</value>
+  </data>
+  <data name="delno ustrezno" xml:space="preserve">
+    <value>parțial adecvat</value>
+  </data>
+  <data name="start_date" xml:space="preserve">
+    <value>Începutul circulației:</value>
+  </data>
+  <data name="set" xml:space="preserve">
+    <value>Seturi</value>
+  </data>
+  <data name="end_date" xml:space="preserve">
+    <value>Sfârșitul circulației:</value>
+  </data>
+  <data name="rejected_by_driver" xml:space="preserve">
+    <value>Șoferul a respins începutul din cauza pauzei:</value>
+  </data>
+  <data name="aciton" xml:space="preserve">
+    <value>Acţiune</value>
+  </data>
+  <data name="no_data" xml:space="preserve">
+    <value>Fără date pentru oprire.</value>
+  </data>
+  <data name="add_warehouse" xml:space="preserve">
+    <value>Adăugați off off</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Salvări</value>
+  </data>
+  <data name="notes" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>Adăuga</value>
+  </data>
+  <data name="quantity" xml:space="preserve">
+    <value>Cantitate după un depozit</value>
+  </data>
+  <data name="manage" xml:space="preserve">
+    <value>Gestionarea rolurilor</value>
+  </data>
+  <data name="remove_roles" xml:space="preserve">
+    <value>Un nou rol:</value>
+  </data>
+  <data name="create_roles" xml:space="preserve">
+    <value>Creează un rol</value>
+  </data>
+  <data name="remove_existing_roles" xml:space="preserve">
+    <value>Aplicații existente:</value>
+  </data>
+  <data name="choose_for_delete" xml:space="preserve">
+    <value>Alegeți o aplicație pentru ștergere:</value>
+  </data>
+  <data name="choose_role_for_delete" xml:space="preserve">
+    <value>Alegeți o aplicație pentru ștergere</value>
+  </data>
+  <data name="delete_role" xml:space="preserve">
+    <value>Ștergeți aplicația</value>
+  </data>
+  <data name="set_smtp_password" xml:space="preserve">
+    <value>Setați parola SMTP</value>
+  </data>
+  <data name="smtp_password_" xml:space="preserve">
+    <value>Parolă SMTP</value>
+  </data>
+  <data name="save_smtp" xml:space="preserve">
+    <value>Salvări</value>
+  </data>
+  <data name="uae_methods" xml:space="preserve">
+    <value>Modalități de accesare a utilizatorului</value>
+  </data>
+  <data name="uae_google" xml:space="preserve">
+    <value>Utilizatori Google</value>
+  </data>
+  <data name="uae_username" xml:space="preserve">
+    <value>Nume de utilizator</value>
+  </data>
+  <data name="uae_login_provider" xml:space="preserve">
+    <value>Solicitant pentru cerere</value>
+  </data>
+  <data name="uae_facebook" xml:space="preserve">
+    <value>Utilizatori Facebook</value>
+  </data>
+  <data name="uae_microsoft" xml:space="preserve">
+    <value>Utilizatori Microsoft</value>
+  </data>
+  <data name="uae_github" xml:space="preserve">
+    <value>Utilizatori ai Github</value>
+  </data>
+  <data name="uae_yahoo" xml:space="preserve">
+    <value>Utilizatori Yahoo</value>
+  </data>
+  <data name="uae_demo_user" xml:space="preserve">
+    <value>Yahoodemeser</value>
+  </data>
+  <data name="uae_yahoo_" xml:space="preserve">
+    <value>Yahoo</value>
+  </data>
+  <data name="uae_gitlab" xml:space="preserve">
+    <value>Utilizatori Gitlab</value>
+  </data>
+  <data name="uae_local" xml:space="preserve">
+    <value>Utilizatori locali</value>
+  </data>
+  <data name="hello_analyst" xml:space="preserve">
+    <value>Bună ziua, analist!</value>
+  </data>
+  <data name="analyst_page" xml:space="preserve">
+    <value>Acesta este un panou de control alatic. Mai jos sunt sarcinile și instrumentele disponibile.</value>
+  </data>
+  <data name="analyst_download_excel" xml:space="preserve">
+    <value>Descărcați Excel</value>
+  </data>
+  <data name="create" xml:space="preserve">
+    <value>Crea</value>
+  </data>
+  <data name="transport" xml:space="preserve">
+    <value>Transport</value>
+  </data>
+  <data name="back_to_list" xml:space="preserve">
+    <value>Înapoi la listă</value>
+  </data>
+  <data name="planned_arrival" xml:space="preserve">
+    <value>Sosire planificată:</value>
+  </data>
+  <data name="registration" xml:space="preserve">
+    <value>Înregistrare:</value>
+  </data>
+  <data name="driver" xml:space="preserve">
+    <value>Șofer:</value>
+  </data>
+  <data name="type_of_transport" xml:space="preserve">
+    <value>Tipul de transport:</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>Tipul de transport:</value>
+  </data>
+  <data name="warehouse" xml:space="preserve">
+    <value>Depozit:</value>
+  </data>
+  <data name="stop_driver" xml:space="preserve">
+    <value>Pauza șoferului:</value>
+  </data>
+  <data name="navis_start" xml:space="preserve">
+    <value>Fondul Navis Start:</value>
+  </data>
+  <data name="navis_end" xml:space="preserve">
+    <value>Navis End of the Fund:</value>
+  </data>
+  <data name="no_transports" xml:space="preserve">
+    <value>Nu există transport pentru acest număr personal</value>
+  </data>
+  <data name="all_warehouses" xml:space="preserve">
+    <value>Toate magazinele</value>
+  </data>
+  <data name="transport_details" xml:space="preserve">
+    <value>Detalii despre transport</value>
+  </data>
+  <data name="tnrasport_info" xml:space="preserve">
+    <value>Informații de transport</value>
+  </data>
+  <data name="transport_type" xml:space="preserve">
+    <value>Tip de transport</value>
+  </data>
+  <data name="pasue" xml:space="preserve">
+    <value>Pauză</value>
+  </data>
+  <data name="trnasport_type" xml:space="preserve">
+    <value>Tipul de transport</value>
+  </data>
+  <data name="details_driver" xml:space="preserve">
+    <value>Șofer</value>
+  </data>
+  <data name="details_navisstart" xml:space="preserve">
+    <value>Un Playfultekteklad</value>
+  </data>
+  <data name="details_navisend" xml:space="preserve">
+    <value>Vad</value>
+  </data>
+  <data name="detailed_assigned" xml:space="preserve">
+    <value>A atribuit un depozit</value>
+  </data>
+  <data name="greeting_shiftmanager" xml:space="preserve">
+    <value>Salutări, schimb!</value>
+  </data>
+  <data name="shit_manager" xml:space="preserve">
+    <value>Aceasta este pagina pentru rolul schimbării. Utilizați linkurile de mai jos pentru a gestiona înregistrările și pentru a îndeplini sarcini legate de rolul dvs.</value>
+  </data>
+  <data name="confirm_account" xml:space="preserve">
+    <value>Confirmați contul</value>
+  </data>
+  <data name="app_diplomska" xml:space="preserve">
+    <value>diplomă</value>
+  </data>
+  <data name="_layout_home" xml:space="preserve">
+    <value>Acasă</value>
+  </data>
+  <data name="_layout_privacy" xml:space="preserve">
+    <value>Confidențialitate</value>
+  </data>
+  <data name="_layout_izmenovodja" xml:space="preserve">
+    <value>Panou de control al managerului de schimb</value>
+  </data>
+  <data name="_layout_skaldiscnik" xml:space="preserve">
+    <value>Bord Wareščik</value>
+  </data>
+  <data name="_Layout_admin" xml:space="preserve">
+    <value>Panoul de control al administrării</value>
+  </data>
+  <data name="_Layout_analitika" xml:space="preserve">
+    <value>Animanta panoului de control</value>
+  </data>
+  <data name="_layout_ct" xml:space="preserve">
+    <value>Schimbați tema</value>
+  </data>
+  <data name="_layout_light" xml:space="preserve">
+    <value>Aprinde</value>
+  </data>
+  <data name="_layout_dark" xml:space="preserve">
+    <value>Întuneric</value>
+  </data>
+  <data name="_layout_custom" xml:space="preserve">
+    <value>Obicei</value>
+  </data>
+  <data name="_layout_logout" xml:space="preserve">
+    <value>Dezabnare</value>
+  </data>
+  <data name="you_sure" xml:space="preserve">
+    <value>Ești sigur că vrei să ștergi asta?</value>
+  </data>
+  <data name="quantity_" xml:space="preserve">
+    <value>Cantitate:</value>
+  </data>
+  <data name="paletes_" xml:space="preserve">
+    <value>Palete:</value>
+  </data>
+  <data name="warehouse_storage" xml:space="preserve">
+    <value>Depozitare:</value>
+  </data>
+  <data name="page_for" xml:space="preserve">
+    <value>Aceasta este o pagină pentru rolul depozitelor.</value>
+  </data>
+  <data name="warehouse_worker_index" xml:space="preserve">
+    <value>Indicele depozită</value>
+  </data>
+  <data name="diplomska" xml:space="preserve">
+    <value>diplomă</value>
+  </data>
+</root>

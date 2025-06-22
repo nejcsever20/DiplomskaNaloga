@@ -15,11 +15,17 @@
     .info-btn {
         background-color: transparent;
         border: none;
-        color: blue;
+        color: #2EA69B; /* Hisense jade */
         font-size: 20px;
         cursor: pointer;
         text-decoration: underline;
+        transition: color 0.3s ease;
     }
+
+        .info-btn:hover,
+        .info-btn:focus {
+            color: #125D98; /* Hisense blue accent */
+        }
 
     .modal {
         display: none;
@@ -30,47 +36,67 @@
         width: 100%;
         height: 100%;
         overflow: auto;
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(18, 93, 152, 0.7); /* Semi-transparent Hisense blue */
         padding-top: 60px;
     }
 
     .modal-content {
-        background-color: #fefefe;
+        background-color: #F5F5F5; /* Light Arctic silver */
         margin: 5% auto;
         padding: 20px;
-        border: 1px solid #888;
+        border: 1px solid #2EA69B; /* Jade border */
+        border-radius: 10px;
         width: 80%;
+        box-shadow: 0 4px 15px rgba(18, 93, 152, 0.25);
     }
 
     .close-btn {
-        color: #aaa;
+        color: #888;
         float: right;
         font-size: 28px;
         font-weight: bold;
         cursor: pointer;
+        transition: color 0.3s ease;
     }
 
         .close-btn:hover,
         .close-btn:focus {
-            color: black;
+            color: #125D98; /* Hisense blue */
             text-decoration: none;
         }
 
     .st-transporta-btn {
         background: none;
         border: none;
-        color: blue;
+        color: #2EA69B; /* Hisense jade */
         text-decoration: underline;
         cursor: pointer;
         font-size: 1em;
         padding: 0;
+        transition: color 0.3s ease;
     }
+
+        .st-transporta-btn:hover,
+        .st-transporta-btn:focus {
+            color: #125D98; /* Hisense blue */
+        }
 
     #loginModal input {
         width: 100%;
         padding: 8px;
         margin-bottom: 10px;
+        border: 1px solid #2EA69B;
+        border-radius: 6px;
+        color: #125D98;
+        background-color: #F5F5F5;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
+
+        #loginModal input:focus {
+            border-color: #125D98;
+            box-shadow: 0 0 5px rgba(18, 93, 152, 0.5);
+            outline: none;
+        }
 
     #loginModal form div {
         margin-bottom: 15px;
@@ -82,6 +108,7 @@
 
         .checkbox-group label {
             margin-right: 15px;
+            color: #125D98;
         }
 
     #navis-check {
@@ -95,8 +122,11 @@
 
         .zoom-input.typing {
             transform: scale(1.05);
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(46, 166, 155, 0.7); /* Jade glow */
+            border-color: #2EA69B;
+        }
+
+    border-color: #007bff;
         }
 </style>
 

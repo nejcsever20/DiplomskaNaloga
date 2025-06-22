@@ -1,36 +1,36 @@
 ﻿/* General styles */
 body {
-    background-color: #DDDDDD;
-    color: #125D98;
+    background-color: #A6A6A6; /* Arctic silver */
+    color: #40474F; /* Hisense grey */
 }
 
 .page-header {
     font-size: 2.5em;
     margin-top: 20px;
-    color: #125D98;
+    color: #40474F; /* Hisense grey */
 }
 
 .lead {
     font-size: 1.5em;
     margin-bottom: 20px;
-    color: #3C8DAD;
+    color: #00AAA6; /* Hisense Jade */
 }
 
 /* Card styles */
 .card {
-    background-color: #F5A962;
-    border: 1px solid #125D98;
+    background-color: #00AAA6; /* Hisense Jade */
+    border: 1px solid #40474F; /* Hisense grey */
     border-radius: 10px;
     margin: 20px auto;
     width: 80%;
 }
 
 .card-header {
-    background-color: #125D98;
-    color: #DDDDDD;
+    background-color: #40474F; /* Hisense grey */
+    color: #A6A6A6; /* Arctic silver */
     font-size: 1.5em;
     padding: 10px;
-    border-bottom: 1px solid #125D98;
+    border-bottom: 1px solid #40474F;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -40,8 +40,8 @@ body {
 }
 
 .btn-dark {
-    background-color: #125D98;
-    color: #DDDDDD;
+    background-color: #40474F; /* Hisense grey */
+    color: #A6A6A6; /* Arctic silver */
     border: none;
     padding: 10px 20px;
     margin: 10px;
@@ -50,6 +50,6 @@ body {
 }
 
     .btn-dark:hover {
-        background-color: #3C8DAD;
-        color: #DDDDDD;
+        background-color: #00AAA6; /* Hisense Jade */
+        color: #A6A6A6; /* Arctic silver */
     }

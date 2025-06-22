@@ -25,7 +25,7 @@ use {
 body {
     margin: 0;
     overflow: hidden;
-    background-color: #123;
+    background-color: #40474F; /* Hisense grey */
 }
 
 svg {
@@ -35,6 +35,19 @@ svg {
     bottom: 0;
     left: 0;
     z-index: 0;
+}
+
+/* Applying fills to the wave paths or elements inside the SVG */
+use:nth-child(1) {
+    fill: #000000; /* Hisense black */
+}
+
+use:nth-child(2) {
+    fill: #2EA69B; /* Hisense jade */
+}
+
+use:nth-child(3) {
+    fill: #A6A6A6; /* Arctic silver */
 }
 
 g {

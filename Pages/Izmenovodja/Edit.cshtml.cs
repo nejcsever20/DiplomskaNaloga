@@ -8,10 +8,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using diplomska.Data;
 using diplomska.Models;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace diplomska.Pages.Izmenovodja
 {
+    [Authorize(Roles = "Admin, Izmenovodja")]
+
     public class EditModel : PageModel
     {
         private readonly diplomska.Data.ApplicationDbContext _context;

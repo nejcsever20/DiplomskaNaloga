@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace diplomska.Pages.Admin
 {
+    [Authorize(Roles = "Admin")]
     public class ManageRolesModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;

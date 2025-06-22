@@ -8,9 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using diplomska.Services;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
 
 namespace diplomska.Pages.Izmenovodja
 {
+    [Authorize(Roles = "Admin, Izmenovodja")]
+
     public class ConfirmRegisterModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;

@@ -5,7 +5,7 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #DDDDDD;
+    background-color: #A6A6A6; /* API MetaFOIL Arctic silver */
     overflow-x: hidden;
 }
 
@@ -19,10 +19,10 @@ body, html {
 }
 
 .logout-container {
-    background-color: #ffffff;
+    background-color: #FFFFFF; /* keep white */
     padding: 3rem;
     border-radius: 16px;
-    border: 3px solid #3C8DAD;
+    border: 3px solid #00AAA6; /* Hisense Jade */
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
     text-align: center;
     z-index: 2;
@@ -30,7 +30,7 @@ body, html {
 }
 
     .logout-container h1 {
-        color: #125D98;
+        color: #40474F; /* Hisense grey */
         margin-bottom: 2rem;
         font-size: 2.5rem;
         animation: pulse 2s infinite;
@@ -38,12 +38,12 @@ body, html {
 
     .logout-container p {
         font-size: 1.2rem;
-        color: #3C8DAD;
+        color: #00AAA6; /* Hisense Jade */
     }
 
     .logout-container button {
-        background-color: #125D98;
-        color: #fff;
+        background-color: #000000; /* Hisense Black */
+        color: #FFFFFF;
         padding: 0.75rem 2rem;
         border: none;
         border-radius: 8px;
@@ -55,8 +55,8 @@ body, html {
     }
 
         .logout-container button:hover {
-            background-color: #F5A962;
-            color: #125D98;
+            background-color: #00AAA6; /* Hisense Jade */
+            color: #000000; /* Hisense Black */
             transform: scale(1.05);
         }
 
@@ -66,7 +66,7 @@ body, html {
     bottom: 0;
     width: 200%;
     height: 200px;
-    background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'><path fill='%23125D98' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,149.3C384,139,480,85,576,101.3C672,117,768,203,864,213.3C960,224,1056,160,1152,122.7C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'></path></svg>");
+    background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'><path fill='%23000000' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,149.3C384,139,480,85,576,101.3C672,117,768,203,864,213.3C960,224,1056,160,1152,122.7C1248,85,1344,75,1392,69.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'></path></svg>");
     background-size: cover;
     animation: waveMove 6s infinite linear;
     z-index: 1;

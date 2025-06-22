@@ -5,9 +5,12 @@ using diplomska.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace diplomska.Pages.Analitika
 {
+    [Authorize(Roles = "Admin, Analitika")]
+
     public class ArchivedTransportsModel : PageModel
     {
         private readonly ApplicationDbContext _context;

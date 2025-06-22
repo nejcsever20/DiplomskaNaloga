@@ -3,9 +3,43 @@
 @model diplomska.Pages.Admin.CallbackModel
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-<head>
-    <link rel="stylesheet" href="~/css/callback.css" />
-</head>
+<link href="~/css/callback.css" rel="stylesheet" />
+
+<style>
+    /* Modal fixes to ensure full visibility and proper scroll */
+    .modal-dialog {
+        max-width: 600px; /* Adjust max width as needed */
+        margin: 1.75rem auto; /* Vertical centering margin */
+        pointer-events: auto;
+    }
+
+    .modal-content {
+        max-height: 80vh; /* Limit max height to 80% of viewport */
+        overflow-y: auto; /* Scroll vertically if content overflows */
+        border: 2px solid #000000; /* Your existing style */
+        border-radius: 10px;
+    }
+
+    /* Modal header/footer styling to match your theme */
+    .modal-header {
+        background-color: #40474F; /* Hisense Grey */
+        color: #00AAA6; /* Hisense Jade */
+        border-bottom: 1px solid #000000;
+        font-weight: 600;
+    }
+
+    .modal-footer {
+        background-color: #A6A6A6; /* Arctic silver */
+    }
+
+    /* Optional: improve focus outline for select */
+    .form-select:focus {
+        border-color: #00AAA6; /* Hisense Jade */
+        box-shadow: 0 0 0 0.2rem rgba(0, 170, 166, 0.25);
+        outline: none;
+    }
+</style>
+
 <h2>@Resources.callback_transports</h2>
 
 <a asp-page="/Admin/ArchivedTransports" class="btn btn-outline-secondary mb-3">
@@ -15,7 +49,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th hidden>Id</th>
+            <th style="display:none;">Id</th>
             <th>StTransporta</th>
             <th>PlaniranPrihod</th>
             <th>@Resources.transport_sp</th>
@@ -28,27 +62,32 @@
         {
             var transport = item.Transport;
             var transportId = transport?.Id ?? 0;
-            var modalId = $"callbackModal_{transportId}";
             var callbackReason = item.CallbackReason ?? "-";
 
             <tr class="@(item.CallbackReason != null ? "table-warning" : "")">
-                <td hidden>@transportId</td>
+                <td style="display:none;">@transportId</td>
                 <td>@transport?.StTransporta</td>
                 <td>@(transport?.PlaniranPrihod?.ToString("yyyy-MM-dd HH:mm") ?? "-")</td>
                 <td>@(transport?.Sp == true ? "Yes" : "No")</td>
                 <td>@callbackReason</td>
                 <td class="d-flex gap-2">
                     <!-- Set Callback Button -->
-                    <button type="button" class="btn btn-primary btn-sm"
-                            data-bs-toggle="modal" data-bs-target="#@modalId">
+                    <button type="button"
+                            class="btn btn-primary btn-sm callback-btn"
+                            data-transport-id="@transportId"
+                            data-transport-display="@transport?.StTransporta"
+                            data-callback-reason="@callbackReason"
+                            data-bs-toggle="modal" data-bs-target="#callbackModal">
                         Set Callback
                     </button>
 
-                    <!-- Remove Callback Button (if callback set) -->
+                    <!-- Remove Callback Button -->
                     @if (item.CallbackReason != null)
                     {
                         <form method="post" asp-page-handler="RemoveCallback"
-                              asp-route-transportId="@transportId" onsubmit="return confirm('Are you sure you want to remove the callback?');">
+                              asp-route-transportId="@transportId"
+                              onsubmit="return confirm('Are you sure you want to remove the callback?');"
+                              class="m-0">
                             <button type="submit" class="btn btn-danger btn-sm">
                                 Remove Callback
                             </button>
@@ -56,42 +95,74 @@
                     }
                 </td>
             </tr>
-
-            <!-- Modal for Setting Callback -->
-            <div class="modal fade" id="@modalId" tabindex="-1" aria-labelledby="@($"{modalId}_label")" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <form method="post" asp-page-handler="SubmitCallback">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="@($"{modalId}_label")">Set Callback Reason (ID: @transportId)</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <!-- Hidden Transport ID -->
-                                <input type="hidden" name="SelectedTransportId" value="@transportId" />
-
-                                <!-- Reason Dropdown -->
-                                <div class="mb-3">
-                                    <label for="reasonSelect_@transportId" class="form-label">Choose a reason</label>
-                                    <select class="form-select" name="SelectedReason" id="reasonSelect_@transportId" required>
-                                        <option value="" disabled selected>@Resources.cb_select_reason</option>
-                                        @foreach (var reason in Model.CallbackReasons)
-                                        {
-                                            <option value="@reason">@reason</option>
-                                        }
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success">@Resources.cb_submit</button>
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Resources.cb_cancel</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
         }
     </tbody>
 </table>
 
+<!-- Single reusable modal -->
+<div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="callbackModalLabel" aria-hidden="true" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="SubmitCallback" id="callbackForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="callbackModalLabel">
+                        Set Callback Reason
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <input type="hidden" name="SelectedTransportId" id="SelectedTransportId" value="" />
+
+                    <div class="mb-3">
+                        <label for="reasonSelect" class="form-label">@Resources.cb_select_reason</label>
+                        <select class="form-select" name="SelectedReason" id="reasonSelect" required>
+                            <option value="" disabled selected>@Resources.cb_select_reason</option>
+                            @foreach (var reason in Model.CallbackReasons)
+                            {
+                                <option value="@reason">@reason</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">@Resources.cb_submit</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Resources.cb_cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.querySelectorAll('.callback-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const transportId = this.getAttribute('data-transport-id');
+            const transportDisplay = this.getAttribute('data-transport-display');
+            const callbackReason = this.getAttribute('data-callback-reason');
+
+            // Set hidden input value
+            document.getElementById('SelectedTransportId').value = transportId;
+
+            // Update modal title to include transport display or id
+            const modalTitle = document.getElementById('callbackModalLabel');
+            modalTitle.textContent = `Set Callback Reason (Transport: ${transportDisplay || transportId})`;
+
+            // Reset select box
+            const reasonSelect = document.getElementById('reasonSelect');
+            reasonSelect.value = "";
+
+            // Optionally pre-select callback reason if exists (remove if undesired)
+            if (callbackReason && callbackReason !== "-") {
+                for (let option of reasonSelect.options) {
+                    if (option.value === callbackReason) {
+                        reasonSelect.value = callbackReason;
+                        break;
+                    }
+                }
+            }
+        });
+    });
+</script>

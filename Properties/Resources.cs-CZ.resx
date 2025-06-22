@@ -1,0 +1,1173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ResourceAccessModifier" xml:space="preserve">
+    <value>Veřejnost</value>
+  </data>
+  <data name="your_developer" xml:space="preserve">
+    <value>Ahoj, jsem tvůj vývojář</value>
+  </data>
+  <data name="passion" xml:space="preserve">
+    <value>Jsem vášnivý vývojář softwaru se silným zaměřením na konstrukci moderních webových aplikací, zejména pomocí stránek Asp.net Razor - samotný rámec, který jsem pro tento projekt použil. Tento web byl vyvinut jako součást mé diplomové práce, aby ukázal nejen mé technické dovednosti, ale také svou kreativitu a pozornost na uživatelský zážitek. V průběhu let jsem pracoval na několika úplných angongu, od webových stránek pro malé podniky až po interní podnikatelské nástroje. Baví mě experimentování s různými online technologiemi a jsem nahoře -datuji nejnovější trendy v oblasti designu UI/UX. Mezi mé oblíbené nástroje a jazyky patří C#, HTML, CSS a rámy, jako jsou TailwindCSS pro rychlý a elegantní design uživatelského rozhraní. Také si užívám potápění v JavaScriptu, strojopisu a občasném uzavření v Pythonu a PHP pro zábavný nebo užitečný skript.</value>
+  </data>
+  <data name="show_more" xml:space="preserve">
+    <value>Ukázat více</value>
+  </data>
+  <data name="contacts" xml:space="preserve">
+    <value>Kontaktní data</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>E -The:</value>
+  </data>
+  <data name="gihub" xml:space="preserve">
+    <value>GitHub:</value>
+  </data>
+  <data name="github_user" xml:space="preserve">
+    <value>github.com/yourusername</value>
+  </data>
+  <data name="linkedin" xml:space="preserve">
+    <value>LinkedIn:</value>
+  </data>
+  <data name="linkedin_profile" xml:space="preserve">
+    <value>LinkedIn.com/in/yourprofile</value>
+  </data>
+  <data name="more_about" xml:space="preserve">
+    <value>Více o mně!</value>
+  </data>
+  <data name="about_me" xml:space="preserve">
+    <value>O mně</value>
+  </data>
+  <data name="resume" xml:space="preserve">
+    <value>Životopis</value>
+  </data>
+  <data name="view_resume" xml:space="preserve">
+    <value>Podívejte se na můj profesionální životopis.</value>
+  </data>
+  <data name="open_reusme" xml:space="preserve">
+    <value>Otevřený životopis</value>
+  </data>
+  <data name="programming_languages" xml:space="preserve">
+    <value>Programovací jazyky</value>
+  </data>
+  <data name="languages" xml:space="preserve">
+    <value>Jazyky, ve kterých jsem odborník.</value>
+  </data>
+  <data name="view_languages" xml:space="preserve">
+    <value>Podívejte se na jazyky</value>
+  </data>
+  <data name="hobbies" xml:space="preserve">
+    <value>Hobby</value>
+  </data>
+  <data name="what_I_enjoy" xml:space="preserve">
+    <value>Co mě baví ve svém volném čase.</value>
+  </data>
+  <data name="view_hobbies" xml:space="preserve">
+    <value>Zobrazit koníčky</value>
+  </data>
+  <data name="contact_info" xml:space="preserve">
+    <value>Kontaktní data</value>
+  </data>
+  <data name="how_to_contact" xml:space="preserve">
+    <value>Jak mě kontaktovat.</value>
+  </data>
+  <data name="social_media" xml:space="preserve">
+    <value>Sociální média</value>
+  </data>
+  <data name="follow_socials" xml:space="preserve">
+    <value>Sledujte mě na sociálních platformách.</value>
+  </data>
+  <data name="social_links" xml:space="preserve">
+    <value>Sociální odkazy</value>
+  </data>
+  <data name="more_about_me" xml:space="preserve">
+    <value>Více o mně</value>
+  </data>
+  <data name="if_you_want" xml:space="preserve">
+    <value>Chcete -li zjistit více</value>
+  </data>
+  <data name="about_dev" xml:space="preserve">
+    <value>O Dev</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>Blízko</value>
+  </data>
+  <data name="my_resume" xml:space="preserve">
+    <value>Můj životopis</value>
+  </data>
+  <data name="professional_resume" xml:space="preserve">
+    <value>Profesionální shrnutí:</value>
+  </data>
+  <data name="experiences" xml:space="preserve">
+    <value>Zkušený a flexibilní vývojář softwaru s osvědčenou historií práce v začínajícím a firemním prostředích. Dovednost v online vývoji v celém fondu, objektově orientované programování a návrh odpovědi uživatelského rozhraní. Silné pozadí v aplikacích založené na technologii C#, .NET a databáze. Testoval nepřetržité učení a přispíval k vysoce kvalitním a odolným kódům.</value>
+  </data>
+  <data name="work_experiences" xml:space="preserve">
+    <value>Pracovní zkušenosti:</value>
+  </data>
+  <data name="senior_dev" xml:space="preserve">
+    <value>Starší</value>
+  </data>
+  <data name="multi_web_apps" xml:space="preserve">
+    <value>LED diody několika projektů webových aplikací využívajících ASP.NET Core and Razor.</value>
+  </data>
+  <data name="improved_apps" xml:space="preserve">
+    <value>Vylepšený výkon aplikace o 35% s optimalizovanými dotazy a mezipaměti SQL.</value>
+  </data>
+  <data name="mentored" xml:space="preserve">
+    <value>Mentoroval mladší vývojáře a provedl recenze a workshopy uvnitř.</value>
+  </data>
+  <data name="software_dev" xml:space="preserve">
+    <value>Softwarový vývojář</value>
+  </data>
+  <data name="internal_tools" xml:space="preserve">
+    <value>Vyvíjejte interiérové ​​nástroje a řídicí panel pomocí C#, WinForms a SQL Server.</value>
+  </data>
+  <data name="corss_funcitonal" xml:space="preserve">
+    <value>Úzce spolupracoval s inter -funkčními skupinami, aby poskytl funkci bohaté na funkce funkce v blízkých termínech.</value>
+  </data>
+  <data name="education" xml:space="preserve">
+    <value>Školství:</value>
+  </data>
+  <data name="degree" xml:space="preserve">
+    <value>Diplom z informatiky - univerzita v [vaší městě/instituci]</value>
+  </data>
+  <data name="specialization" xml:space="preserve">
+    <value>Specializované kurzy v programovém inženýrství, online vývoji a návrhu systému.</value>
+  </data>
+  <data name="certifications" xml:space="preserve">
+    <value>Certifikáty:</value>
+  </data>
+  <data name="certified_microsoft_fundementials" xml:space="preserve">
+    <value>Microsoft Certified: Azure Fundamentals</value>
+  </data>
+  <data name="udemy_certificate" xml:space="preserve">
+    <value>Udemy: Advanced ASP.NET Core Razor Strage (2023)</value>
+  </data>
+  <data name="download_resume" xml:space="preserve">
+    <value>Stáhněte si svůj životopis</value>
+  </data>
+  <data name="C#" xml:space="preserve">
+    <value>C#</value>
+  </data>
+  <data name="JavaScript/TypeScript" xml:space="preserve">
+    <value>JavaScript / TypeScript</value>
+  </data>
+  <data name="php" xml:space="preserve">
+    <value>PHP</value>
+  </data>
+  <data name="python" xml:space="preserve">
+    <value>Krajta</value>
+  </data>
+  <data name="sql" xml:space="preserve">
+    <value>SQL</value>
+  </data>
+  <data name="html_css" xml:space="preserve">
+    <value>HTML / CSS</value>
+  </data>
+  <data name="java" xml:space="preserve">
+    <value>Kukuřice</value>
+  </data>
+  <data name="ruby_on_rails" xml:space="preserve">
+    <value>Ruby na kolejích</value>
+  </data>
+  <data name="cpp" xml:space="preserve">
+    <value>C ++</value>
+  </data>
+  <data name="dart" xml:space="preserve">
+    <value>Šipka</value>
+  </data>
+  <data name="flutter" xml:space="preserve">
+    <value>Třepetání</value>
+  </data>
+  <data name="pl_sql" xml:space="preserve">
+    <value>PL/SQL</value>
+  </data>
+  <data name="tech_blogs" xml:space="preserve">
+    <value>Čtení technologických blogů</value>
+  </data>
+  <data name="chess" xml:space="preserve">
+    <value>Hraní šachů</value>
+  </data>
+  <data name="hiking_walks" xml:space="preserve">
+    <value>Turistika a příroda</value>
+  </data>
+  <data name="music" xml:space="preserve">
+    <value>Hudba</value>
+  </data>
+  <data name="open_source" xml:space="preserve">
+    <value>Příspěvek s otevřeným zdrojovým kódem</value>
+  </data>
+  <data name="video_games" xml:space="preserve">
+    <value>Videohry (zřídka)</value>
+  </data>
+  <data name="gym" xml:space="preserve">
+    <value>Tělocvična</value>
+  </data>
+  <data name="github_1" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="github_2" xml:space="preserve">
+    <value>GitHub #2:</value>
+  </data>
+  <data name="github_3" xml:space="preserve">
+    <value>GitHub #3:</value>
+  </data>
+  <data name="phone" xml:space="preserve">
+    <value>Telefon:</value>
+  </data>
+  <data name="social_media_profiles" xml:space="preserve">
+    <value>Profily sociálních médií</value>
+  </data>
+  <data name="twitter" xml:space="preserve">
+    <value>Cvrlikání</value>
+  </data>
+  <data name="facebook" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="instagrma" xml:space="preserve">
+    <value>Instagram</value>
+  </data>
+  <data name="discord" xml:space="preserve">
+    <value>Rozpor</value>
+  </data>
+  <data name="about_the_dev" xml:space="preserve">
+    <value>O vývojáři</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Jméno:</value>
+  </data>
+  <data name="role" xml:space="preserve">
+    <value>Aplikace:</value>
+  </data>
+  <data name="experience" xml:space="preserve">
+    <value>Zažít:</value>
+  </data>
+  <data name="20yearold" xml:space="preserve">
+    <value>20letý vášnivý vývojář, který rád vytváří věci, které jsou důležité.</value>
+  </data>
+  <data name="specialities" xml:space="preserve">
+    <value>Speciality:</value>
+  </data>
+  <data name="building_web_apps" xml:space="preserve">
+    <value>Budování rozsáhlých webových aplikací</value>
+  </data>
+  <data name="api_integration" xml:space="preserve">
+    <value>Integrace API a Zaled Architecture</value>
+  </data>
+  <data name="responisive_designs" xml:space="preserve">
+    <value>Návrh odezvy UI/UX</value>
+  </data>
+  <data name="database_designs" xml:space="preserve">
+    <value>Návrh a optimalizace databáze</value>
+  </data>
+  <data name="tools" xml:space="preserve">
+    <value>Nástroje a technologie:</value>
+  </data>
+  <data name="git_docket_postman" xml:space="preserve">
+    <value>Git, Docker, Postman</value>
+  </data>
+  <data name="github_actions" xml:space="preserve">
+    <value>CI/CD (akce GitHub)</value>
+  </data>
+  <data name="agile_scrum" xml:space="preserve">
+    <value>Metodika Agile / Scrum</value>
+  </data>
+  <data name="passion_projects" xml:space="preserve">
+    <value>Vášnivé projekty:</value>
+  </data>
+  <data name="open_source_contributions" xml:space="preserve">
+    <value>Příspěvky otevřeného zdroje do GitHubu</value>
+  </data>
+  <data name="building_educational_tools" xml:space="preserve">
+    <value>Konstrukce vzdělávacích nástrojů pro vývojáře</value>
+  </data>
+  <data name="tech_blogs_tutorials" xml:space="preserve">
+    <value>Psaní technických blogů a cvičení</value>
+  </data>
+  <data name="technical_interrests" xml:space="preserve">
+    <value>Technické zájmy:</value>
+  </data>
+  <data name="machine_learning" xml:space="preserve">
+    <value>Strojové učení a integrace AI ve webových aplikacích</value>
+  </data>
+  <data name="devops_conatiners" xml:space="preserve">
+    <value>Orchestrace DevOps a kontejnerů</value>
+  </data>
+  <data name="progressive_web_apps" xml:space="preserve">
+    <value>Progresivní webové aplikace (PWA)</value>
+  </data>
+  <data name="clean_architecture" xml:space="preserve">
+    <value>Čisté vzory architektury a designu</value>
+  </data>
+  <data name="favourite_projects" xml:space="preserve">
+    <value>Oblíbené projekty:</value>
+  </data>
+  <data name="diploma_web_app" xml:space="preserve">
+    <value>Aplikace pro webové absolventy</value>
+  </data>
+  <data name="ecommerce_demo" xml:space="preserve">
+    <value>Prezentace elektronického obchodování</value>
+  </data>
+  <data name="personal_cms_app" xml:space="preserve">
+    <value>Osobní systém CMS - postaven od nuly pro správu obsahu blogu.</value>
+  </data>
+  <data name="achievements" xml:space="preserve">
+    <value>Úspěchy:</value>
+  </data>
+  <data name="full_stack_projects" xml:space="preserve">
+    <value>Dokončené 20+ projektů s plnými scénami</value>
+  </data>
+  <data name="maintenance" xml:space="preserve">
+    <value>Zdržen se z více repozitářů GitHub s 50+ hvězdami</value>
+  </data>
+  <data name="custom_components" xml:space="preserve">
+    <value>Vlastní komponenty v jádru Blazuru a Asp.net</value>
+  </data>
+  <data name="designed_and_deployed" xml:space="preserve">
+    <value>Navržena a nainstalovaná cloudová řešení prostřednictvím Azure</value>
+  </data>
+  <data name="learning_goals" xml:space="preserve">
+    <value>Cíle učení:</value>
+  </data>
+  <data name="type_script_frameworks" xml:space="preserve">
+    <value>Master TypeScript a Modern Fondent Frameworks</value>
+  </data>
+  <data name="large_ops_initiatives" xml:space="preserve">
+    <value>Přispívají k iniciativám v hlavních otvorech</value>
+  </data>
+  <data name="explore_mobile_development" xml:space="preserve">
+    <value>Prozkoumejte mobilní vývoj s Flutter &amp; Dart</value>
+  </data>
+  <data name="towards_azure_certificate" xml:space="preserve">
+    <value>Snažte se potvrdit vývojáře Azure</value>
+  </data>
+  <data name="fun_facts" xml:space="preserve">
+    <value>Zábavný fakt:</value>
+  </data>
+  <data name="drink_coffee" xml:space="preserve">
+    <value>Piju více chyb v kávě než kódování.</value>
+  </data>
+  <data name="fixed_a_bug" xml:space="preserve">
+    <value>Jednou jsem omyl omyl ve 2 hodiny - a zapomněl jsem, jak další den.</value>
+  </data>
+  <data name="back_home" xml:space="preserve">
+    <value>← Zpět domů</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Upravit fakturu</value>
+  </data>
+  <data name="save_changes" xml:space="preserve">
+    <value>Ušetřete změny</value>
+  </data>
+  <data name="edit_teheme" xml:space="preserve">
+    <value>Upravit téma</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Chyba.</value>
+  </data>
+  <data name="erorr_processing" xml:space="preserve">
+    <value>Při zpracování požadavku došlo k chybě.</value>
+  </data>
+  <data name="error_request_id" xml:space="preserve">
+    <value>ID žádosti:</value>
+  </data>
+  <data name="development_mode" xml:space="preserve">
+    <value>Režim vývoje</value>
+  </data>
+  <data name="development" xml:space="preserve">
+    <value>Vývoj</value>
+  </data>
+  <data name="error_development_environment" xml:space="preserve">
+    <value>Prostředí ukazuje podrobné informace o chybě, ke které došlo.</value>
+  </data>
+  <data name="apsnetcore_environment" xml:space="preserve">
+    <value>Aspnetcoreenvironment</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Vítejte</value>
+  </data>
+  <data name="building_with_ASP" xml:space="preserve">
+    <value>Konstrukce online aplikací s ASP.net Core</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Zkontrolujte -in</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>Rejstřík</value>
+  </data>
+  <data name="privacy" xml:space="preserve">
+    <value>Tyto zásady ochrany osobních údajů vysvětlují, jak shromažďujeme, používáme a zveřejňujeme vaše informace při používání naší služby. Informuje vás také o vašich právech na ochranu osobních údajů a o tom, jak vás zákon chrání.</value>
+  </data>
+  <data name="info_we_gather" xml:space="preserve">
+    <value>Informace, které shromažďujeme</value>
+  </data>
+  <data name="types_of_info" xml:space="preserve">
+    <value>Shromažďujeme různé typy informací, abychom vám poskytli a zlepšili naše služby. To zahrnuje:</value>
+  </data>
+  <data name="personal_data" xml:space="preserve">
+    <value>Osobní údaje:</value>
+  </data>
+  <data name="usage_data" xml:space="preserve">
+    <value>Používejte data:</value>
+  </data>
+  <data name="cookies_tracking" xml:space="preserve">
+    <value>Sledování cookies a technologií:</value>
+  </data>
+  <data name="utilising_info" xml:space="preserve">
+    <value>Jak použijeme vaše informace</value>
+  </data>
+  <data name="info_we_use" xml:space="preserve">
+    <value>Používáme informace, které shromažďujeme:</value>
+  </data>
+  <data name="provide_maintain" xml:space="preserve">
+    <value>Poskytovat a udržovat naši službu</value>
+  </data>
+  <data name="notify" xml:space="preserve">
+    <value>Informujte vás o změnách naší služby</value>
+  </data>
+  <data name="customer_support" xml:space="preserve">
+    <value>Poskytovat zákaznickou podporu</value>
+  </data>
+  <data name="monitoring" xml:space="preserve">
+    <value>Monitorujte použití a vylepšujte naši službu</value>
+  </data>
+  <data name="working_items" xml:space="preserve">
+    <value>Detekce, prevence a řešení technických problémů</value>
+  </data>
+  <data name="disclosure" xml:space="preserve">
+    <value>Zveřejnění vašich dat</value>
+  </data>
+  <data name="privacy_information" xml:space="preserve">
+    <value>Neprodáváme vaše osobní údaje. Můžeme však zveřejnit vaše informace, abychom splnili zákonné povinnosti, chránili práva nebo prosadili naše zásady.</value>
+  </data>
+  <data name="privacy_rights" xml:space="preserve">
+    <value>Vaše práva na soukromí</value>
+  </data>
+  <data name="your_rights" xml:space="preserve">
+    <value>Máte právo na přístup, opravu nebo odstranění osobních údajů. Můžete také mít právo oponovat nebo omezit zpracování vašich dat.</value>
+  </data>
+  <data name="security_of_user_info" xml:space="preserve">
+    <value>Zabezpečení vašich dat</value>
+  </data>
+  <data name="strive" xml:space="preserve">
+    <value>Snažíme se používat komerčně přijatelné zdroje k ochraně vašich osobních údajů, ale nemůžeme poskytnout absolutní bezpečnost.</value>
+  </data>
+  <data name="changes" xml:space="preserve">
+    <value>Změny těchto zásad ochrany osobních údajů</value>
+  </data>
+  <data name="policy_updates" xml:space="preserve">
+    <value>Občas můžeme aktualizovat naše zásady ochrany osobních údajů. Budeme vás informovat o všech změnách zveřejněním nových zásad ochrany osobních údajů na této stránce.</value>
+  </data>
+  <data name="contact" xml:space="preserve">
+    <value>Kontaktujte nás</value>
+  </data>
+  <data name="welcome_admin" xml:space="preserve">
+    <value>Zdravím, admini!</value>
+  </data>
+  <data name="admin_dashboard" xml:space="preserve">
+    <value>Ovládací panel správy</value>
+  </data>
+  <data name="manage_users" xml:space="preserve">
+    <value>Správa uživatelů</value>
+  </data>
+  <data name="manage_roles" xml:space="preserve">
+    <value>Řízení rolí</value>
+  </data>
+  <data name="add_remove_roles" xml:space="preserve">
+    <value>Přidat nebo odebrat aplikace</value>
+  </data>
+  <data name="to_index" xml:space="preserve">
+    <value>Přejděte na index</value>
+  </data>
+  <data name="loading_checkout" xml:space="preserve">
+    <value>Načítání pokladníka</value>
+  </data>
+  <data name="naklad" xml:space="preserve">
+    <value>Oběh</value>
+  </data>
+  <data name="approve" xml:space="preserve">
+    <value>Schválit uživatele</value>
+  </data>
+  <data name="download_excel" xml:space="preserve">
+    <value>Stáhněte si vynikající</value>
+  </data>
+  <data name="archived_transports" xml:space="preserve">
+    <value>Archivovaná doprava</value>
+  </data>
+  <data name="back_to_archived" xml:space="preserve">
+    <value>Zpět na aktivní přepravu</value>
+  </data>
+  <data name="transport_id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="transpot_st" xml:space="preserve">
+    <value>Stratansport</value>
+  </data>
+  <data name="transport_planirna" xml:space="preserve">
+    <value>Plánovaný příjezd</value>
+  </data>
+  <data name="transport_sp" xml:space="preserve">
+    <value>Světový pohár</value>
+  </data>
+  <data name="transport_callback_reason" xml:space="preserve">
+    <value>Důvod zpětného hovoru</value>
+  </data>
+  <data name="transport_compare" xml:space="preserve">
+    <value>Porovnat</value>
+  </data>
+  <data name="transport_remove_archive" xml:space="preserve">
+    <value>Odstraňuje archiv</value>
+  </data>
+  <data name="transport_delete" xml:space="preserve">
+    <value>Smazáno</value>
+  </data>
+  <data name="callback_transports" xml:space="preserve">
+    <value>Veškerá doprava</value>
+  </data>
+  <data name="view_archived" xml:space="preserve">
+    <value>Zobrazit archivovanou dopravu!</value>
+  </data>
+  <data name="cb_planiran" xml:space="preserve">
+    <value>Plánované</value>
+  </data>
+  <data name="cb_acitons" xml:space="preserve">
+    <value>Akt</value>
+  </data>
+  <data name="cb_set_callback" xml:space="preserve">
+    <value>Nastaví zpětný hovor</value>
+  </data>
+  <data name="cb_remove_callback" xml:space="preserve">
+    <value>Odstraňte zpětný hovor</value>
+  </data>
+  <data name="cb_choose_reason" xml:space="preserve">
+    <value>Vyberte důvod</value>
+  </data>
+  <data name="cb_select_reason" xml:space="preserve">
+    <value>-Row Reason-</value>
+  </data>
+  <data name="cb_submit" xml:space="preserve">
+    <value>Zašlete zpětný hovor</value>
+  </data>
+  <data name="cb_cancel" xml:space="preserve">
+    <value>Zrušit</value>
+  </data>
+  <data name="cb_compare" xml:space="preserve">
+    <value>Porovnejte návratovou dopravu</value>
+  </data>
+  <data name="cb_field" xml:space="preserve">
+    <value>Pole</value>
+  </data>
+  <data name="cb_old_transport" xml:space="preserve">
+    <value>Stará doprava (archivovaná)</value>
+  </data>
+  <data name="cb_new_trnasport" xml:space="preserve">
+    <value>Nová doprava</value>
+  </data>
+  <data name="cb_skaldisce" xml:space="preserve">
+    <value>Sklad</value>
+  </data>
+  <data name="cb_vrsta" xml:space="preserve">
+    <value>Typ dopravy</value>
+  </data>
+  <data name="cb_pavza" xml:space="preserve">
+    <value>Řidič řidiče</value>
+  </data>
+  <data name="cb_dolocen_skaldiscnik" xml:space="preserve">
+    <value>Navržený obchod</value>
+  </data>
+  <data name="cb_registracija" xml:space="preserve">
+    <value>Registrace</value>
+  </data>
+  <data name="cb_navis_zacetek" xml:space="preserve">
+    <value>Navis Start fond</value>
+  </data>
+  <data name="cb_navis_konec" xml:space="preserve">
+    <value>Navis konec fondu</value>
+  </data>
+  <data name="cb_is_callback" xml:space="preserve">
+    <value>Je návratový hovor</value>
+  </data>
+  <data name="cb_approve" xml:space="preserve">
+    <value>Schválit registrované uživatele</value>
+  </data>
+  <data name="cb_pending" xml:space="preserve">
+    <value>Čekání registrace</value>
+  </data>
+  <data name="cr_approve" xml:space="preserve">
+    <value>Schvalovat</value>
+  </data>
+  <data name="cr_decline" xml:space="preserve">
+    <value>Pokles</value>
+  </data>
+  <data name="cr_pregled" xml:space="preserve">
+    <value>Přezkum přepravy a vypnutí dat</value>
+  </data>
+  <data name="de_transpord" xml:space="preserve">
+    <value>Doprava</value>
+  </data>
+  <data name="de_sk" xml:space="preserve">
+    <value>SK</value>
+  </data>
+  <data name="de_warehouse" xml:space="preserve">
+    <value>Sklad</value>
+  </data>
+  <data name="de_st" xml:space="preserve">
+    <value>St. Transport</value>
+  </data>
+  <data name="de_izkladisceno" xml:space="preserve">
+    <value>Vypnuto</value>
+  </data>
+  <data name="de_kolicina" xml:space="preserve">
+    <value>Množství</value>
+  </data>
+  <data name="de_palete" xml:space="preserve">
+    <value>Paleta</value>
+  </data>
+  <data name="de_skadliscnik" xml:space="preserve">
+    <value>Sklad</value>
+  </data>
+  <data name="de_datum" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="de_skaldiscnik_id" xml:space="preserve">
+    <value>Skladový muž</value>
+  </data>
+  <data name="de_download" xml:space="preserve">
+    <value>Stáhněte si jako Excel</value>
+  </data>
+  <data name="de_back" xml:space="preserve">
+    <value>Zpět</value>
+  </data>
+  <data name="de_edit_user" xml:space="preserve">
+    <value>Upravit uživatele</value>
+  </data>
+  <data name="eu_select_role" xml:space="preserve">
+    <value>Vyberte roli</value>
+  </data>
+  <data name="index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="index_import" xml:space="preserve">
+    <value>Import Excel</value>
+  </data>
+  <data name="index_create" xml:space="preserve">
+    <value>Vytvořte nový</value>
+  </data>
+  <data name="index_no_info" xml:space="preserve">
+    <value>Neexistují žádné hity.</value>
+  </data>
+  <data name="index_callback" xml:space="preserve">
+    <value>Návrat</value>
+  </data>
+  <data name="index_true" xml:space="preserve">
+    <value>opravdu</value>
+  </data>
+  <data name="index_info" xml:space="preserve">
+    <value>i</value>
+  </data>
+  <data name="Index_details_221" xml:space="preserve">
+    <value>Podrobnosti</value>
+  </data>
+  <data name="index_x" xml:space="preserve">
+    <value>×</value>
+  </data>
+  <data name="print" xml:space="preserve">
+    <value>Vytisknout</value>
+  </data>
+  <data name="choose_transport" xml:space="preserve">
+    <value>Vyberte transport pro zpětné volání</value>
+  </data>
+  <data name="st_transport" xml:space="preserve">
+    <value>Ne. Doprava:</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>- Vyberte -</value>
+  </data>
+  <data name="reason_callback" xml:space="preserve">
+    <value>Důvod návratu</value>
+  </data>
+  <data name="confirm_callback" xml:space="preserve">
+    <value>Potvrďte zpětné volání</value>
+  </data>
+  <data name="import" xml:space="preserve">
+    <value>Chcete importovat přepravní soubory?</value>
+  </data>
+  <data name="select_files" xml:space="preserve">
+    <value>Vyberte soubory pro import:</value>
+  </data>
+  <data name="import_selected" xml:space="preserve">
+    <value>Import vybraných souborů</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>Uživatelské jméno:</value>
+  </data>
+  <data name="geslo" xml:space="preserve">
+    <value>Heslo:</value>
+  </data>
+  <data name="navis" xml:space="preserve">
+    <value>Navis</value>
+  </data>
+  <data name="prijava" xml:space="preserve">
+    <value>Zkontrolujte -in</value>
+  </data>
+  <data name="start_of_loading" xml:space="preserve">
+    <value>Načítání startu:</value>
+  </data>
+  <data name="end_of_loading" xml:space="preserve">
+    <value>Konec načítání:</value>
+  </data>
+  <data name="cmr_number" xml:space="preserve">
+    <value>Číslo CMR:</value>
+  </data>
+  <data name="transport_number" xml:space="preserve">
+    <value>Přepravní číslo:</value>
+  </data>
+  <data name="loaded_quantity" xml:space="preserve">
+    <value>Vložené množství:</value>
+  </data>
+  <data name="registration_plates" xml:space="preserve">
+    <value>Registrační desky:</value>
+  </data>
+  <data name="seal" xml:space="preserve">
+    <value>Tet:</value>
+  </data>
+  <data name="signature_warehouse_worker" xml:space="preserve">
+    <value>Jméno a podpis pracovníka skladu:</value>
+  </data>
+  <data name="signature_driver" xml:space="preserve">
+    <value>Jméno a podpis řidiče:</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="mr_email" xml:space="preserve">
+    <value>E -THE</value>
+  </data>
+  <data name="mr_roles" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="mr_nousers" xml:space="preserve">
+    <value>Neexistuje žádný uživatel.</value>
+  </data>
+  <data name="mr_select" xml:space="preserve">
+    <value>Vyberte aplikace</value>
+  </data>
+  <data name="mr_remove_roles" xml:space="preserve">
+    <value>Odebrat aplikace</value>
+  </data>
+  <data name="mr_external" xml:space="preserve">
+    <value>Externí aplikace</value>
+  </data>
+  <data name="mr_full_name" xml:space="preserve">
+    <value>Celé jméno</value>
+  </data>
+  <data name="mr_user_roles" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="mr_edit" xml:space="preserve">
+    <value>Upravit</value>
+  </data>
+  <data name="mr_confirm_delete" xml:space="preserve">
+    <value>Potvrďte stírání</value>
+  </data>
+  <data name="mr_yes_delete" xml:space="preserve">
+    <value>Ano Odstranit</value>
+  </data>
+  <data name="end_start_load" xml:space="preserve">
+    <value>Začněte, konec oběhu</value>
+  </data>
+  <data name="ramp1" xml:space="preserve">
+    <value>Rampa 1:</value>
+  </data>
+  <data name="ramp2" xml:space="preserve">
+    <value>Rampa 2:</value>
+  </data>
+  <data name="carina" xml:space="preserve">
+    <value>Celní šňůra:</value>
+  </data>
+  <data name="izberi" xml:space="preserve">
+    <value>----- Vyberte ---------</value>
+  </data>
+  <data name="prisotna" xml:space="preserve">
+    <value>Současnost</value>
+  </data>
+  <data name="ni_prisotna" xml:space="preserve">
+    <value>Není přítomen</value>
+  </data>
+  <data name="ctn" xml:space="preserve">
+    <value>CTN</value>
+  </data>
+  <data name="ustreznost" xml:space="preserve">
+    <value>Provádění vozidla:</value>
+  </data>
+  <data name="neustrezno" xml:space="preserve">
+    <value>nedostatečně</value>
+  </data>
+  <data name="ustrezno" xml:space="preserve">
+    <value>vhodně</value>
+  </data>
+  <data name="delno_neustrezno" xml:space="preserve">
+    <value>Částečně neadekvátní</value>
+  </data>
+  <data name="delno ustrezno" xml:space="preserve">
+    <value>částečně vhodné</value>
+  </data>
+  <data name="start_date" xml:space="preserve">
+    <value>Začátek oběhu:</value>
+  </data>
+  <data name="set" xml:space="preserve">
+    <value>Sady</value>
+  </data>
+  <data name="end_date" xml:space="preserve">
+    <value>Konec oběhu:</value>
+  </data>
+  <data name="rejected_by_driver" xml:space="preserve">
+    <value>Řidič odmítl začátek kvůli pauze:</value>
+  </data>
+  <data name="aciton" xml:space="preserve">
+    <value>Akce</value>
+  </data>
+  <data name="no_data" xml:space="preserve">
+    <value>Žádná data za vypnutí.</value>
+  </data>
+  <data name="add_warehouse" xml:space="preserve">
+    <value>Přidejte vypnuto</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Šetří</value>
+  </data>
+  <data name="notes" xml:space="preserve">
+    <value>Poznámky</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>Přidat</value>
+  </data>
+  <data name="quantity" xml:space="preserve">
+    <value>Množství po skladu</value>
+  </data>
+  <data name="manage" xml:space="preserve">
+    <value>Správa rolí</value>
+  </data>
+  <data name="remove_roles" xml:space="preserve">
+    <value>Nová role:</value>
+  </data>
+  <data name="create_roles" xml:space="preserve">
+    <value>Vytváří roli</value>
+  </data>
+  <data name="remove_existing_roles" xml:space="preserve">
+    <value>Stávající aplikace:</value>
+  </data>
+  <data name="choose_for_delete" xml:space="preserve">
+    <value>Vyberte aplikaci pro vymazání:</value>
+  </data>
+  <data name="choose_role_for_delete" xml:space="preserve">
+    <value>Vyberte aplikaci pro vymazání</value>
+  </data>
+  <data name="delete_role" xml:space="preserve">
+    <value>Odstranit aplikaci</value>
+  </data>
+  <data name="set_smtp_password" xml:space="preserve">
+    <value>Nastavte heslo SMTP</value>
+  </data>
+  <data name="smtp_password_" xml:space="preserve">
+    <value>Heslo SMTP</value>
+  </data>
+  <data name="save_smtp" xml:space="preserve">
+    <value>Šetří</value>
+  </data>
+  <data name="uae_methods" xml:space="preserve">
+    <value>Způsoby, jak získat přístup k uživateli</value>
+  </data>
+  <data name="uae_google" xml:space="preserve">
+    <value>Uživatelé Google</value>
+  </data>
+  <data name="uae_username" xml:space="preserve">
+    <value>Uživatelské jméno</value>
+  </data>
+  <data name="uae_login_provider" xml:space="preserve">
+    <value>Žadatel o žádost</value>
+  </data>
+  <data name="uae_facebook" xml:space="preserve">
+    <value>Uživatelé Facebooku</value>
+  </data>
+  <data name="uae_microsoft" xml:space="preserve">
+    <value>Uživatelé společnosti Microsoft</value>
+  </data>
+  <data name="uae_github" xml:space="preserve">
+    <value>Uživatelé GitHubu</value>
+  </data>
+  <data name="uae_yahoo" xml:space="preserve">
+    <value>Uživatelé yahoo</value>
+  </data>
+  <data name="uae_demo_user" xml:space="preserve">
+    <value>Yahoodemeser</value>
+  </data>
+  <data name="uae_yahoo_" xml:space="preserve">
+    <value>Yahoo</value>
+  </data>
+  <data name="uae_gitlab" xml:space="preserve">
+    <value>Uživatelé Gitlab</value>
+  </data>
+  <data name="uae_local" xml:space="preserve">
+    <value>Místní uživatelé</value>
+  </data>
+  <data name="hello_analyst" xml:space="preserve">
+    <value>Dobrý den, analytik!</value>
+  </data>
+  <data name="analyst_page" xml:space="preserve">
+    <value>Toto je ovládací panel alatatics. Níže jsou uvedeny vaše dostupné úkoly a nástroje.</value>
+  </data>
+  <data name="analyst_download_excel" xml:space="preserve">
+    <value>Stáhnout Excel</value>
+  </data>
+  <data name="create" xml:space="preserve">
+    <value>Vytvořit</value>
+  </data>
+  <data name="transport" xml:space="preserve">
+    <value>Přeprava</value>
+  </data>
+  <data name="back_to_list" xml:space="preserve">
+    <value>Zpět na seznam</value>
+  </data>
+  <data name="planned_arrival" xml:space="preserve">
+    <value>Plánovaný příjezd:</value>
+  </data>
+  <data name="registration" xml:space="preserve">
+    <value>Registrace:</value>
+  </data>
+  <data name="driver" xml:space="preserve">
+    <value>Řidič:</value>
+  </data>
+  <data name="type_of_transport" xml:space="preserve">
+    <value>Typ dopravy:</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>Typ dopravy:</value>
+  </data>
+  <data name="warehouse" xml:space="preserve">
+    <value>Sklad:</value>
+  </data>
+  <data name="stop_driver" xml:space="preserve">
+    <value>Pauza řidiče:</value>
+  </data>
+  <data name="navis_start" xml:space="preserve">
+    <value>Navis Start fond:</value>
+  </data>
+  <data name="navis_end" xml:space="preserve">
+    <value>Konec fondu Navis:</value>
+  </data>
+  <data name="no_transports" xml:space="preserve">
+    <value>Pro toto osobní číslo neexistuje žádná doprava</value>
+  </data>
+  <data name="all_warehouses" xml:space="preserve">
+    <value>Všechny obchody</value>
+  </data>
+  <data name="transport_details" xml:space="preserve">
+    <value>Dopravní údaje</value>
+  </data>
+  <data name="tnrasport_info" xml:space="preserve">
+    <value>Přepravní informace</value>
+  </data>
+  <data name="transport_type" xml:space="preserve">
+    <value>Typ ofTransportu</value>
+  </data>
+  <data name="pasue" xml:space="preserve">
+    <value>Pauza</value>
+  </data>
+  <data name="trnasport_type" xml:space="preserve">
+    <value>Typ dopravy</value>
+  </data>
+  <data name="details_driver" xml:space="preserve">
+    <value>Řidič</value>
+  </data>
+  <data name="details_navisstart" xml:space="preserve">
+    <value>PlayfulteKteklad</value>
+  </data>
+  <data name="details_navisend" xml:space="preserve">
+    <value>Vaition</value>
+  </data>
+  <data name="detailed_assigned" xml:space="preserve">
+    <value>Přiřadil sklad</value>
+  </data>
+  <data name="greeting_shiftmanager" xml:space="preserve">
+    <value>Zdravím, posun!</value>
+  </data>
+  <data name="shit_manager" xml:space="preserve">
+    <value>Toto je stránka pro roli posunu. Pomocí níže uvedených odkazů spravujte registrace a provádějte úkoly související s vaší rolí.</value>
+  </data>
+  <data name="confirm_account" xml:space="preserve">
+    <value>Potvrďte účet</value>
+  </data>
+  <data name="app_diplomska" xml:space="preserve">
+    <value>diplom</value>
+  </data>
+  <data name="_layout_home" xml:space="preserve">
+    <value>Doma</value>
+  </data>
+  <data name="_layout_privacy" xml:space="preserve">
+    <value>Soukromí</value>
+  </data>
+  <data name="_layout_izmenovodja" xml:space="preserve">
+    <value>Ovládací panel správce Shift</value>
+  </data>
+  <data name="_layout_skaldiscnik" xml:space="preserve">
+    <value>Dashboard Warešchik</value>
+  </data>
+  <data name="_Layout_admin" xml:space="preserve">
+    <value>Ovládací panel správy</value>
+  </data>
+  <data name="_Layout_analitika" xml:space="preserve">
+    <value>Animettika ovládacího panelu</value>
+  </data>
+  <data name="_layout_ct" xml:space="preserve">
+    <value>Změňte téma</value>
+  </data>
+  <data name="_layout_light" xml:space="preserve">
+    <value>Světlo</value>
+  </data>
+  <data name="_layout_dark" xml:space="preserve">
+    <value>Tma</value>
+  </data>
+  <data name="_layout_custom" xml:space="preserve">
+    <value>Zvyk</value>
+  </data>
+  <data name="_layout_logout" xml:space="preserve">
+    <value>Odhlášení</value>
+  </data>
+  <data name="you_sure" xml:space="preserve">
+    <value>Jste si jisti, že to chcete smazat?</value>
+  </data>
+  <data name="quantity_" xml:space="preserve">
+    <value>Množství:</value>
+  </data>
+  <data name="paletes_" xml:space="preserve">
+    <value>Palety:</value>
+  </data>
+  <data name="warehouse_storage" xml:space="preserve">
+    <value>Skladování:</value>
+  </data>
+  <data name="page_for" xml:space="preserve">
+    <value>Toto je stránka pro roli skladů.</value>
+  </data>
+  <data name="warehouse_worker_index" xml:space="preserve">
+    <value>Index skladu</value>
+  </data>
+  <data name="diplomska" xml:space="preserve">
+    <value>diplom</value>
+  </data>
+</root>

@@ -8,7 +8,7 @@ using diplomska.Data;
 
 namespace diplomska.Pages.Skladiščnik
 {
-    [Authorize(Roles = "Skladiščnik")]
+    [Authorize(Roles = "Skladiščnik, Admin")]
     public class DetailedInfoModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;

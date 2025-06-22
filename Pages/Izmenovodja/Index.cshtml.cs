@@ -14,7 +14,8 @@ using Microsoft.AspNetCore.Http;
 
 namespace diplomska.Pages.Izmenovodja
 {
-    [Authorize]
+    [Authorize(Roles = "Admin, Izmenovodja")]
+
     public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _context;

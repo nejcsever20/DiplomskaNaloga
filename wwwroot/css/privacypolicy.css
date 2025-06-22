@@ -7,9 +7,9 @@
 }
 
 .card {
-    background-color: #125D98; /* dark blue */
+    background-color: #40474F; /* Hisense grey */
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(18, 93, 152, 0.15);
+    box-shadow: 0 4px 15px rgba(64, 71, 79, 0.15);
     padding: 20px 25px;
     flex: 1 1 320px;
     max-width: 400px;
@@ -19,23 +19,22 @@
 
     .card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(18, 93, 152, 0.25);
+        box-shadow: 0 8px 25px rgba(64, 71, 79, 0.25);
     }
 
     .card h2 {
-        color: #F5A962; /* warm orange */
+        color: #00AAA6; /* Hisense Jade */
         margin-bottom: 15px;
-        border-bottom: 2px solid #F5A962; /* warm yellow */
+        border-bottom: 2px solid #00AAA6; /* Hisense Jade */
         padding-bottom: 6px;
     }
-
 
     .card p {
         color: #FFFFFF; /* white */
     }
 
         .card p strong {
-            color: #F5A962; /* orange for strong */
+            color: #00AAA6; /* Hisense Jade for strong */
         }
 
     .card ul {
@@ -53,17 +52,18 @@
     }
 
         .card a:hover {
-            color: #F5A962; /* warm yellow on hover */
+            color: #00AAA6; /* Hisense Jade on hover */
         }
+
 h1 {
-    color: #125D98;
-    background-color: gray;
+    color: #40474F; /* Hisense grey */
+    background-color: #A6A6A6; /* Arctic silver */
 }
 
-body{
-    background-color: gray;
+body {
+    background-color: #A6A6A6; /* Arctic silver */
 }
 
 p {
-    color: white;
+    color: #FFFFFF; /* white */
 }

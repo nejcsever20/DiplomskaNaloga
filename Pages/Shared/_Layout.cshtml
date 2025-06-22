@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿﻿@using Microsoft.AspNetCore.Identity
 @using System.Globalization
 @using diplomska.Properties
 @inject SignInManager<IdentityUser> SignInManager
@@ -9,12 +9,22 @@
     var currentCulture = CultureInfo.CurrentCulture.Name; // e.g. "en" or "sl"
     string flagCode = currentCulture.ToLowerInvariant() switch
     {
-        "en" or "en-us" => "us",
-        "en-gb" => "gb",
+        "en" => "us",
         "sl" => "si",
         "de" => "de",
         "es" => "es",
         "fr" => "fr",
+        "sq" => "al",
+        "bg" => "bg",
+        "cs" => "cz",
+        "it" => "it",
+        "mk" => "mk",
+        "pl" => "pl",
+        "ro" => "ro",
+        "ru" => "ru",
+        "sr" => "rs",
+        "sk" => "sk",
+        "tr" => "tr",
         _ => "us"
     };
 }
@@ -171,7 +181,24 @@
                                     @currentCulture.ToUpperInvariant()
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
-                                    @foreach (var lang in new[] { ("en", "English"), ("sl", "Slovenščina"), ("de", "German"), ("es", "Spanish"), ("fr", "French") })
+                                    @foreach (var lang in new[] {
+                                ("en", "English"),
+                                ("sl", "Slovenščina"),
+                                ("de", "German"),
+                                ("es", "Spanish"),
+                                ("fr", "French"),
+                                ("sq", "Albanian"),
+                                ("bg", "Bulgarian"),
+                                ("cs", "Czech"),
+                                ("it", "Italian"),
+                                ("mk", "Macedonian"),
+                                ("pl", "Polish"),
+                                ("ro", "Romanian"),
+                                ("ru", "Russian"),
+                                ("sr", "Serbian"),
+                                ("sk", "Slovak"),
+                                ("tr", "Turkish")
+                                })
                                     {
                                         var lc = lang.Item1 switch
                                         {
@@ -180,8 +207,20 @@
                                             "de" => "de",
                                             "es" => "es",
                                             "fr" => "fr",
+                                            "sq" => "al",
+                                            "bg" => "bg",
+                                            "cs" => "cz",
+                                            "it" => "it",
+                                            "mk" => "mk",
+                                            "pl" => "pl",
+                                            "ro" => "ro",
+                                            "ru" => "ru",
+                                            "sr" => "rs",
+                                            "sk" => "sk",
+                                            "tr" => "tr",
                                             _ => "us"
                                         };
+
                                         <li>
                                             <form method="post" asp-page="/SetLanguage" class="d-inline w-100">
                                                 <input type="hidden" name="culture" value="@lang.Item1" />
@@ -192,6 +231,7 @@
                                             </form>
                                         </li>
                                     }
+
                                 </ul>
                             </li>
                         }

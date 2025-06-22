@@ -9,9 +9,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Authorization;
 
 namespace diplomska.Pages.Analitika
 {
+    [Authorize(Roles = "Admin, Analitika")]
+
     public class LoadingCheckOutModel : PageModel
     {
         private readonly ApplicationDbContext _context;

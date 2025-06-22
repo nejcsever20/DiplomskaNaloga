@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace diplomska.Pages.Analitika // 🔧 FIXED: was 'Analitik'
 {
-    [Authorize]
+    [Authorize(Roles = "Admin, Analitika")]
     public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _context;

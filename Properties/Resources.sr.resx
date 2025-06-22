@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ResourceAccessModifier" xml:space="preserve">
+    <value>Јавно</value>
+  </data>
+  <data name="your_developer" xml:space="preserve">
+    <value>Здраво, ја сам твој програмер</value>
+  </data>
+  <data name="passion" xml:space="preserve">
+    <value>Ја сам програмер страственог софтвера са снажним фокусом на изградњи модерних веб апликација, посебно помоћу АСП.НЕТ Разор страница - врло оквир који сам користио за овај пројекат. Ова веб локација је развијена као део моје дипломе да се покаже само моје техничке способности, већ и своју креативност и пажњу корисничком искуству. Током година, радио сам на неколико комплетних апликација у распону од веб локација малих предузећа у интерне алате за предузеће. I enjoy experimenting with different web technologies and staying up-to-date with the latest trends in UI/UX design. Моји омиљени алати и језици укључују Ц #, ХТМЛ, ЦСС и оквире попут репњак за брзо и елегантно УИ дизајн. Такође уживам у роњењу у ЈаваСцрипт, удови, и повремено се промашавају у Питхон-у и ПХП-у за забаву или комуналне скрипте.</value>
+  </data>
+  <data name="show_more" xml:space="preserve">
+    <value>Показати више</value>
+  </data>
+  <data name="contacts" xml:space="preserve">
+    <value>Контакт подаци</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Е-пошта:</value>
+  </data>
+  <data name="gihub" xml:space="preserve">
+    <value>Гитхуб:</value>
+  </data>
+  <data name="github_user" xml:space="preserve">
+    <value>гитхуб.цом / иоурусернаме</value>
+  </data>
+  <data name="linkedin" xml:space="preserve">
+    <value>ЛинкедИн:</value>
+  </data>
+  <data name="linkedin_profile" xml:space="preserve">
+    <value>линкедИн.цом / ин / иоурпрофиле</value>
+  </data>
+  <data name="more_about" xml:space="preserve">
+    <value>Више о мени!</value>
+  </data>
+  <data name="about_me" xml:space="preserve">
+    <value>О мени</value>
+  </data>
+  <data name="resume" xml:space="preserve">
+    <value>Наставити</value>
+  </data>
+  <data name="view_resume" xml:space="preserve">
+    <value>Погледајте мој професионални животопис.</value>
+  </data>
+  <data name="open_reusme" xml:space="preserve">
+    <value>Отворени животопис</value>
+  </data>
+  <data name="programming_languages" xml:space="preserve">
+    <value>Програмирање језика</value>
+  </data>
+  <data name="languages" xml:space="preserve">
+    <value>Језици у којима сам познавао.</value>
+  </data>
+  <data name="view_languages" xml:space="preserve">
+    <value>Погледајте језике</value>
+  </data>
+  <data name="hobbies" xml:space="preserve">
+    <value>Хобији</value>
+  </data>
+  <data name="what_I_enjoy" xml:space="preserve">
+    <value>У чему уживам у слободно време.</value>
+  </data>
+  <data name="view_hobbies" xml:space="preserve">
+    <value>Погледајте хобије</value>
+  </data>
+  <data name="contact_info" xml:space="preserve">
+    <value>Контакт информације</value>
+  </data>
+  <data name="how_to_contact" xml:space="preserve">
+    <value>Како ступити у контакт са мном.</value>
+  </data>
+  <data name="social_media" xml:space="preserve">
+    <value>Друштвени медији</value>
+  </data>
+  <data name="follow_socials" xml:space="preserve">
+    <value>Пратите ме на социјалним платформама.</value>
+  </data>
+  <data name="social_links" xml:space="preserve">
+    <value>Друштвене везе</value>
+  </data>
+  <data name="more_about_me" xml:space="preserve">
+    <value>Више о мени</value>
+  </data>
+  <data name="if_you_want" xml:space="preserve">
+    <value>Ако желите да знате више</value>
+  </data>
+  <data name="about_dev" xml:space="preserve">
+    <value>О Дев</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>Затворити</value>
+  </data>
+  <data name="my_resume" xml:space="preserve">
+    <value>Мој животопис</value>
+  </data>
+  <data name="professional_resume" xml:space="preserve">
+    <value>Професионални резиме:</value>
+  </data>
+  <data name="experiences" xml:space="preserve">
+    <value>Искусни и прилагодљиви програмер софтвера са демонстрираном историјом рада у покретању и корпоративним окружењима. Квалификовани у целокупном програму веб развоја, објектно оријентисано програмирање и реагонски УИ дизајн. Јака позадина у Ц #, .НЕТ технологије и апликацијама које се покрећу базе података. Посвећен сталном учењу и доприносе висококвалитетним, одрженим кодексима.</value>
+  </data>
+  <data name="work_experiences" xml:space="preserve">
+    <value>Радно искуство:</value>
+  </data>
+  <data name="senior_dev" xml:space="preserve">
+    <value>Старији програмер</value>
+  </data>
+  <data name="multi_web_apps" xml:space="preserve">
+    <value>ЛЕД пројекте више веб апликација помоћу АСП.НЕТ Цоре и Разор страница.</value>
+  </data>
+  <data name="improved_apps" xml:space="preserve">
+    <value>Побољшане перформансе апликација за 35% кроз оптимизоване СКЛ упити и стратегије кеширања.</value>
+  </data>
+  <data name="mentored" xml:space="preserve">
+    <value>Менторирани јуниор програмери и спровели су прегледе и радионице интерне шифре.</value>
+  </data>
+  <data name="software_dev" xml:space="preserve">
+    <value>Програмер софтвера</value>
+  </data>
+  <data name="internal_tools" xml:space="preserve">
+    <value>Развијени интерне алате и надзорне плоче користећи Ц #, ВинФормс и СКЛ сервера.</value>
+  </data>
+  <data name="corss_funcitonal" xml:space="preserve">
+    <value>Блиско је сарађивао са међуфункционалним тимовима како би се испоручио софтвер богат карактеристикама на уским роковима.</value>
+  </data>
+  <data name="education" xml:space="preserve">
+    <value>Образовање:</value>
+  </data>
+  <data name="degree" xml:space="preserve">
+    <value>Дипломирани факултет у рачунарској науци - Универзитет у [вашем граду / институцији]</value>
+  </data>
+  <data name="specialization" xml:space="preserve">
+    <value>Специјализовани курсеви у софтверском инжењерингу, веб развоју и дизајну система.</value>
+  </data>
+  <data name="certifications" xml:space="preserve">
+    <value>Сертификати:</value>
+  </data>
+  <data name="certified_microsoft_fundementials" xml:space="preserve">
+    <value>Мицрософт сертификован: Азуре Основе</value>
+  </data>
+  <data name="udemy_certificate" xml:space="preserve">
+    <value>Удеми: Адванцед АСП.НЕТ Цоре Разор Странице (2023)</value>
+  </data>
+  <data name="download_resume" xml:space="preserve">
+    <value>Преузмите животопис</value>
+  </data>
+  <data name="C#" xml:space="preserve">
+    <value>Ц #</value>
+  </data>
+  <data name="JavaScript/TypeScript" xml:space="preserve">
+    <value>ЈаваСцрипт / Типцрипт</value>
+  </data>
+  <data name="php" xml:space="preserve">
+    <value>Пхп</value>
+  </data>
+  <data name="python" xml:space="preserve">
+    <value>Питон</value>
+  </data>
+  <data name="sql" xml:space="preserve">
+    <value>Скл</value>
+  </data>
+  <data name="html_css" xml:space="preserve">
+    <value>ХТМЛ / ЦСС</value>
+  </data>
+  <data name="java" xml:space="preserve">
+    <value>Јава</value>
+  </data>
+  <data name="ruby_on_rails" xml:space="preserve">
+    <value>Рубин на шинама</value>
+  </data>
+  <data name="cpp" xml:space="preserve">
+    <value>Ц ++</value>
+  </data>
+  <data name="dart" xml:space="preserve">
+    <value>Дарт</value>
+  </data>
+  <data name="flutter" xml:space="preserve">
+    <value>Лепршати</value>
+  </data>
+  <data name="pl_sql" xml:space="preserve">
+    <value>Пл / скл</value>
+  </data>
+  <data name="tech_blogs" xml:space="preserve">
+    <value>Читање Тецх блогова</value>
+  </data>
+  <data name="chess" xml:space="preserve">
+    <value>Играње шаха</value>
+  </data>
+  <data name="hiking_walks" xml:space="preserve">
+    <value>Планинарење и пешачење природе</value>
+  </data>
+  <data name="music" xml:space="preserve">
+    <value>Музика</value>
+  </data>
+  <data name="open_source" xml:space="preserve">
+    <value>Допринос отвореног кода</value>
+  </data>
+  <data name="video_games" xml:space="preserve">
+    <value>Видео игре (ретко)</value>
+  </data>
+  <data name="gym" xml:space="preserve">
+    <value>Теретана</value>
+  </data>
+  <data name="github_1" xml:space="preserve">
+    <value>гитхуб</value>
+  </data>
+  <data name="github_2" xml:space="preserve">
+    <value>Гитхуб # 2:</value>
+  </data>
+  <data name="github_3" xml:space="preserve">
+    <value>Гитхуб # 3:</value>
+  </data>
+  <data name="phone" xml:space="preserve">
+    <value>Телефон:</value>
+  </data>
+  <data name="social_media_profiles" xml:space="preserve">
+    <value>Профили друштвених медија</value>
+  </data>
+  <data name="twitter" xml:space="preserve">
+    <value>Нагнути</value>
+  </data>
+  <data name="facebook" xml:space="preserve">
+    <value>Фацебоок</value>
+  </data>
+  <data name="instagrma" xml:space="preserve">
+    <value>Инстаграм</value>
+  </data>
+  <data name="discord" xml:space="preserve">
+    <value>Нескладан</value>
+  </data>
+  <data name="about_the_dev" xml:space="preserve">
+    <value>О програмеру</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Име:</value>
+  </data>
+  <data name="role" xml:space="preserve">
+    <value>Улога:</value>
+  </data>
+  <data name="experience" xml:space="preserve">
+    <value>Искуство:</value>
+  </data>
+  <data name="20yearold" xml:space="preserve">
+    <value>20-годишњи страствени програмер који воли стварање ствари које су важне.</value>
+  </data>
+  <data name="specialities" xml:space="preserve">
+    <value>Специјалитети:</value>
+  </data>
+  <data name="building_web_apps" xml:space="preserve">
+    <value>Изградња скалабилних веб апликација</value>
+  </data>
+  <data name="api_integration" xml:space="preserve">
+    <value>АПИ интеграција и архитектура Извештаја</value>
+  </data>
+  <data name="responisive_designs" xml:space="preserve">
+    <value>Одговарајући УИ / УКС дизајн</value>
+  </data>
+  <data name="database_designs" xml:space="preserve">
+    <value>Дизајн и оптимизација база података</value>
+  </data>
+  <data name="tools" xml:space="preserve">
+    <value>Алати и технологије:</value>
+  </data>
+  <data name="git_docket_postman" xml:space="preserve">
+    <value>Гит, доцкер, поштар</value>
+  </data>
+  <data name="github_actions" xml:space="preserve">
+    <value>ЦИ / ЦД (ГитХуб акције)</value>
+  </data>
+  <data name="agile_scrum" xml:space="preserve">
+    <value>Методологије Агиле / Сцрум</value>
+  </data>
+  <data name="passion_projects" xml:space="preserve">
+    <value>Пројекти страсти:</value>
+  </data>
+  <data name="open_source_contributions" xml:space="preserve">
+    <value>Доприноси отвореног кода на Гитхуб-у</value>
+  </data>
+  <data name="building_educational_tools" xml:space="preserve">
+    <value>Изградња образовних алата за програмере</value>
+  </data>
+  <data name="tech_blogs_tutorials" xml:space="preserve">
+    <value>Писање техничких блогова и туторијала</value>
+  </data>
+  <data name="technical_interrests" xml:space="preserve">
+    <value>Технички интереси:</value>
+  </data>
+  <data name="machine_learning" xml:space="preserve">
+    <value>Машинско учење и АИ интеграција у веб апликацијама</value>
+  </data>
+  <data name="devops_conatiners" xml:space="preserve">
+    <value>ДЕВОПС и контејнерски оркестрација</value>
+  </data>
+  <data name="progressive_web_apps" xml:space="preserve">
+    <value>Прогресивне веб апликације (ПВАС)</value>
+  </data>
+  <data name="clean_architecture" xml:space="preserve">
+    <value>Очистите архитектуре и обрасци дизајна</value>
+  </data>
+  <data name="favourite_projects" xml:space="preserve">
+    <value>Омиљени пројекти:</value>
+  </data>
+  <data name="diploma_web_app" xml:space="preserve">
+    <value>ДИПЛОМА ВЕБ АПП - Изложба вештина у стварном свету у АСП.НЕТ и Броуор страницама.</value>
+  </data>
+  <data name="ecommerce_demo" xml:space="preserve">
+    <value>Е-Цоммерце Демо - руговано изложбу помоћу МВЦ-а и интеграције Стрипе.</value>
+  </data>
+  <data name="personal_cms_app" xml:space="preserve">
+    <value>Лични ЦМС систем - изграђен од нуле за управљање садржајем блога.</value>
+  </data>
+  <data name="achievements" xml:space="preserve">
+    <value>Достигнућа:</value>
+  </data>
+  <data name="full_stack_projects" xml:space="preserve">
+    <value>Завршени 20+ пројеката Фулл-Стацк</value>
+  </data>
+  <data name="maintenance" xml:space="preserve">
+    <value>Одржава више односаних спремишта са 50+ звезда</value>
+  </data>
+  <data name="custom_components" xml:space="preserve">
+    <value>Изграђене прилагођене компоненте у Блазор и АСП.НЕТ језгри</value>
+  </data>
+  <data name="designed_and_deployed" xml:space="preserve">
+    <value>Дизајниран и распоређен решења заснована на облаку путем Азура</value>
+  </data>
+  <data name="learning_goals" xml:space="preserve">
+    <value>Циљеви учења:</value>
+  </data>
+  <data name="type_script_frameworks" xml:space="preserve">
+    <value>Мастер лапцтипт и модерне фронтенд оквире</value>
+  </data>
+  <data name="large_ops_initiatives" xml:space="preserve">
+    <value>Доприносе већим иницијативама отворених извора</value>
+  </data>
+  <data name="explore_mobile_development" xml:space="preserve">
+    <value>Истражите мобилни развој са Флуттер &amp; Дарт</value>
+  </data>
+  <data name="towards_azure_certificate" xml:space="preserve">
+    <value>Радите према Азуре програмеричком сертификату</value>
+  </data>
+  <data name="fun_facts" xml:space="preserve">
+    <value>Забавна чињеница:</value>
+  </data>
+  <data name="drink_coffee" xml:space="preserve">
+    <value>Пијем више уклањање погрешака за кафу него кодирање.</value>
+  </data>
+  <data name="fixed_a_bug" xml:space="preserve">
+    <value>Једном сам поправио грешку у 2 сата - и заборавио како је сутрадан.</value>
+  </data>
+  <data name="back_home" xml:space="preserve">
+    <value>← Повратак кући</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Уређивање рачуна</value>
+  </data>
+  <data name="save_changes" xml:space="preserve">
+    <value>Спремите промене</value>
+  </data>
+  <data name="edit_teheme" xml:space="preserve">
+    <value>Уреди тему</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Грешка.</value>
+  </data>
+  <data name="erorr_processing" xml:space="preserve">
+    <value>Дошло је до грешке приликом обраде вашег захтева.</value>
+  </data>
+  <data name="error_request_id" xml:space="preserve">
+    <value>ИД захтева:</value>
+  </data>
+  <data name="development_mode" xml:space="preserve">
+    <value>Развојни режим</value>
+  </data>
+  <data name="development" xml:space="preserve">
+    <value>Развој</value>
+  </data>
+  <data name="error_development_environment" xml:space="preserve">
+    <value>Околина приказује детаљне информације о грешци која се догодила.</value>
+  </data>
+  <data name="apsnetcore_environment" xml:space="preserve">
+    <value>АСПнетЦореЕнвиронмент</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Добродошли</value>
+  </data>
+  <data name="building_with_ASP" xml:space="preserve">
+    <value>Грађевинске веб апликације са АСП.НЕТ језгро</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Пријавити се</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>Регистар</value>
+  </data>
+  <data name="privacy" xml:space="preserve">
+    <value>Ова политика приватности објашњава како прикупљамо, користимо и откријемо ваше податке када користите нашу услугу. Такође вас обавештава о вашој приватној права и како вас закон штити.</value>
+  </data>
+  <data name="info_we_gather" xml:space="preserve">
+    <value>Информације које сакупимо</value>
+  </data>
+  <data name="types_of_info" xml:space="preserve">
+    <value>Прикупљамо различите врсте информација да бисмо вам пружили и побољшали услугу. Ово укључује:</value>
+  </data>
+  <data name="personal_data" xml:space="preserve">
+    <value>Лични подаци: попут вашег имена, адресе е-поште и подаци за контакт.</value>
+  </data>
+  <data name="usage_data" xml:space="preserve">
+    <value>Подаци о употреби: информације о томе како приступите и користите услугу.</value>
+  </data>
+  <data name="cookies_tracking" xml:space="preserve">
+    <value>Колачићи и технологије праћења: Да бисте пратили активност на нашој услузи и одржали одређене информације.</value>
+  </data>
+  <data name="utilising_info" xml:space="preserve">
+    <value>Како користимо ваше податке</value>
+  </data>
+  <data name="info_we_use" xml:space="preserve">
+    <value>Користимо информације које прикупимо на:</value>
+  </data>
+  <data name="provide_maintain" xml:space="preserve">
+    <value>Обезбедити и одржавати нашу услугу</value>
+  </data>
+  <data name="notify" xml:space="preserve">
+    <value>Обавестите вас о променама наше услуге</value>
+  </data>
+  <data name="customer_support" xml:space="preserve">
+    <value>Обезбедите корисничку подршку</value>
+  </data>
+  <data name="monitoring" xml:space="preserve">
+    <value>Помоћу монитора и побољшајте нашу услугу</value>
+  </data>
+  <data name="working_items" xml:space="preserve">
+    <value>Откривање, спречавање и адресирање техничких питања</value>
+  </data>
+  <data name="disclosure" xml:space="preserve">
+    <value>Откривање ваших података</value>
+  </data>
+  <data name="privacy_information" xml:space="preserve">
+    <value>Не продајемо ваше личне податке. Међутим, можемо да откријемо ваше податке да се придржавају законске обавезе, заштитимо права или спровођење наших политика.</value>
+  </data>
+  <data name="privacy_rights" xml:space="preserve">
+    <value>Ваша права на приватност</value>
+  </data>
+  <data name="your_rights" xml:space="preserve">
+    <value>Имате право да приступите, исправите или избришете своје личне податке. Такође можете имати право да приговарате или ограничите одређену обраду података.</value>
+  </data>
+  <data name="security_of_user_info" xml:space="preserve">
+    <value>Сигурност ваших података</value>
+  </data>
+  <data name="strive" xml:space="preserve">
+    <value>Настојимо да користимо комерцијално прихватљива средства за заштиту ваших личних података, али не могу гарантовати апсолутну сигурност.</value>
+  </data>
+  <data name="changes" xml:space="preserve">
+    <value>Промјене ове политике приватности</value>
+  </data>
+  <data name="policy_updates" xml:space="preserve">
+    <value>Повремено можемо ажурирати своју политику приватности. Обавестићемо вас о било каквим променама постављањем нове политике приватности на овој страници.</value>
+  </data>
+  <data name="contact" xml:space="preserve">
+    <value>Контактирајте нас. Ако имате било каквих питања о овој политици приватности, контактирајте нас на</value>
+  </data>
+  <data name="welcome_admin" xml:space="preserve">
+    <value>Поздрав, администратор!</value>
+  </data>
+  <data name="admin_dashboard" xml:space="preserve">
+    <value>Админ контролна табла</value>
+  </data>
+  <data name="manage_users" xml:space="preserve">
+    <value>Управљање корисницима</value>
+  </data>
+  <data name="manage_roles" xml:space="preserve">
+    <value>Управљање улогама</value>
+  </data>
+  <data name="add_remove_roles" xml:space="preserve">
+    <value>Додајте или уклоните улоге</value>
+  </data>
+  <data name="to_index" xml:space="preserve">
+    <value>Иди на индекс</value>
+  </data>
+  <data name="loading_checkout" xml:space="preserve">
+    <value>Лоадинг Цхецкоут</value>
+  </data>
+  <data name="naklad" xml:space="preserve">
+    <value>Циркулација</value>
+  </data>
+  <data name="approve" xml:space="preserve">
+    <value>Одобрени корисници</value>
+  </data>
+  <data name="download_excel" xml:space="preserve">
+    <value>Преузми екстарно</value>
+  </data>
+  <data name="archived_transports" xml:space="preserve">
+    <value>Архивирани превоз</value>
+  </data>
+  <data name="back_to_archived" xml:space="preserve">
+    <value>Повратак на активне превозе</value>
+  </data>
+  <data name="transport_id" xml:space="preserve">
+    <value>Ид</value>
+  </data>
+  <data name="transpot_st" xml:space="preserve">
+    <value>Стратанспорт</value>
+  </data>
+  <data name="transport_planirna" xml:space="preserve">
+    <value>Планирани долазак</value>
+  </data>
+  <data name="transport_sp" xml:space="preserve">
+    <value>Сп</value>
+  </data>
+  <data name="transport_callback_reason" xml:space="preserve">
+    <value>Поврат разлог</value>
+  </data>
+  <data name="transport_compare" xml:space="preserve">
+    <value>Упоредити</value>
+  </data>
+  <data name="transport_remove_archive" xml:space="preserve">
+    <value>Укинути архиву</value>
+  </data>
+  <data name="transport_delete" xml:space="preserve">
+    <value>Избрисати</value>
+  </data>
+  <data name="callback_transports" xml:space="preserve">
+    <value>Сви превоз</value>
+  </data>
+  <data name="view_archived" xml:space="preserve">
+    <value>Погледајте архивирани превоз!</value>
+  </data>
+  <data name="cb_planiran" xml:space="preserve">
+    <value>Планиран</value>
+  </data>
+  <data name="cb_acitons" xml:space="preserve">
+    <value>Акције</value>
+  </data>
+  <data name="cb_set_callback" xml:space="preserve">
+    <value>Поставити повратни позив</value>
+  </data>
+  <data name="cb_remove_callback" xml:space="preserve">
+    <value>Уклони повратни позив</value>
+  </data>
+  <data name="cb_choose_reason" xml:space="preserve">
+    <value>Изаберите разлог</value>
+  </data>
+  <data name="cb_select_reason" xml:space="preserve">
+    <value>- Изаберите Разлог -</value>
+  </data>
+  <data name="cb_submit" xml:space="preserve">
+    <value>Пошаљите повратни позив</value>
+  </data>
+  <data name="cb_cancel" xml:space="preserve">
+    <value>Отказати</value>
+  </data>
+  <data name="cb_compare" xml:space="preserve">
+    <value>Упоредите повратни превоз</value>
+  </data>
+  <data name="cb_field" xml:space="preserve">
+    <value>Поље</value>
+  </data>
+  <data name="cb_old_transport" xml:space="preserve">
+    <value>Стари транспорт (архивиран)</value>
+  </data>
+  <data name="cb_new_trnasport" xml:space="preserve">
+    <value>Нови превоз</value>
+  </data>
+  <data name="cb_skaldisce" xml:space="preserve">
+    <value>Складиште</value>
+  </data>
+  <data name="cb_vrsta" xml:space="preserve">
+    <value>Врста транспорта</value>
+  </data>
+  <data name="cb_pavza" xml:space="preserve">
+    <value>Возач возача</value>
+  </data>
+  <data name="cb_dolocen_skaldiscnik" xml:space="preserve">
+    <value>Дизајнирана продавница</value>
+  </data>
+  <data name="cb_registracija" xml:space="preserve">
+    <value>Регистрација</value>
+  </data>
+  <data name="cb_navis_zacetek" xml:space="preserve">
+    <value>Навис Зачетек Склада</value>
+  </data>
+  <data name="cb_navis_konec" xml:space="preserve">
+    <value>Навис Конец Склада</value>
+  </data>
+  <data name="cb_is_callback" xml:space="preserve">
+    <value>Је повратни позив</value>
+  </data>
+  <data name="cb_approve" xml:space="preserve">
+    <value>Одобрити регистроване кориснике</value>
+  </data>
+  <data name="cb_pending" xml:space="preserve">
+    <value>Редовно у току</value>
+  </data>
+  <data name="cr_approve" xml:space="preserve">
+    <value>Одобрити</value>
+  </data>
+  <data name="cr_decline" xml:space="preserve">
+    <value>Пад</value>
+  </data>
+  <data name="cr_pregled" xml:space="preserve">
+    <value>Преглед транспортних и искључивих података</value>
+  </data>
+  <data name="de_transpord" xml:space="preserve">
+    <value>Транспорт</value>
+  </data>
+  <data name="de_sk" xml:space="preserve">
+    <value>Ск</value>
+  </data>
+  <data name="de_warehouse" xml:space="preserve">
+    <value>Складиште</value>
+  </data>
+  <data name="de_st" xml:space="preserve">
+    <value>Ст. Транспорт</value>
+  </data>
+  <data name="de_izkladisceno" xml:space="preserve">
+    <value>Искључен</value>
+  </data>
+  <data name="de_kolicina" xml:space="preserve">
+    <value>Количина</value>
+  </data>
+  <data name="de_palete" xml:space="preserve">
+    <value>Палета</value>
+  </data>
+  <data name="de_skadliscnik" xml:space="preserve">
+    <value>Складиште</value>
+  </data>
+  <data name="de_datum" xml:space="preserve">
+    <value>Датум</value>
+  </data>
+  <data name="de_skaldiscnik_id" xml:space="preserve">
+    <value>Магарац</value>
+  </data>
+  <data name="de_download" xml:space="preserve">
+    <value>Преузмите попут Екцел-а</value>
+  </data>
+  <data name="de_back" xml:space="preserve">
+    <value>Уназад</value>
+  </data>
+  <data name="de_edit_user" xml:space="preserve">
+    <value>Уређивање корисника</value>
+  </data>
+  <data name="eu_select_role" xml:space="preserve">
+    <value>Изаберите улогу</value>
+  </data>
+  <data name="index" xml:space="preserve">
+    <value>Индекс</value>
+  </data>
+  <data name="index_import" xml:space="preserve">
+    <value>Увоз екцел</value>
+  </data>
+  <data name="index_create" xml:space="preserve">
+    <value>Креирајте ново</value>
+  </data>
+  <data name="index_no_info" xml:space="preserve">
+    <value>Нема хитова.</value>
+  </data>
+  <data name="index_callback" xml:space="preserve">
+    <value>Повратни позив</value>
+  </data>
+  <data name="index_true" xml:space="preserve">
+    <value>истинит</value>
+  </data>
+  <data name="index_info" xml:space="preserve">
+    <value>ја</value>
+  </data>
+  <data name="Index_details_221" xml:space="preserve">
+    <value>Детаљи</value>
+  </data>
+  <data name="index_x" xml:space="preserve">
+    <value>×</value>
+  </data>
+  <data name="print" xml:space="preserve">
+    <value>Штампа</value>
+  </data>
+  <data name="choose_transport" xml:space="preserve">
+    <value>Изаберите Транспорт за повратни позив</value>
+  </data>
+  <data name="st_transport" xml:space="preserve">
+    <value>Бр. Транспорт:</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>- Изаберите -</value>
+  </data>
+  <data name="reason_callback" xml:space="preserve">
+    <value>Поврат:</value>
+  </data>
+  <data name="confirm_callback" xml:space="preserve">
+    <value>Потврдите повратни позив</value>
+  </data>
+  <data name="import" xml:space="preserve">
+    <value>Да ли желите да увезете транспортне датотеке?</value>
+  </data>
+  <data name="select_files" xml:space="preserve">
+    <value>Изаберите датотеке за увоз:</value>
+  </data>
+  <data name="import_selected" xml:space="preserve">
+    <value>Увоз изабраних датотека</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>Корисничко име:</value>
+  </data>
+  <data name="geslo" xml:space="preserve">
+    <value>Лозинка:</value>
+  </data>
+  <data name="navis" xml:space="preserve">
+    <value>Навис</value>
+  </data>
+  <data name="prijava" xml:space="preserve">
+    <value>Пријавити се</value>
+  </data>
+  <data name="start_of_loading" xml:space="preserve">
+    <value>Почетак учитавања:</value>
+  </data>
+  <data name="end_of_loading" xml:space="preserve">
+    <value>Крај оптерећења:</value>
+  </data>
+  <data name="cmr_number" xml:space="preserve">
+    <value>ЦМР број:</value>
+  </data>
+  <data name="transport_number" xml:space="preserve">
+    <value>Транспортни број:</value>
+  </data>
+  <data name="loaded_quantity" xml:space="preserve">
+    <value>Оптерећена количина:</value>
+  </data>
+  <data name="registration_plates" xml:space="preserve">
+    <value>Регистрационе плоче:</value>
+  </data>
+  <data name="seal" xml:space="preserve">
+    <value>Печат:</value>
+  </data>
+  <data name="signature_warehouse_worker" xml:space="preserve">
+    <value>Име и потпис радника складишта:</value>
+  </data>
+  <data name="signature_driver" xml:space="preserve">
+    <value>Име и потпис возача:</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>Поднети</value>
+  </data>
+  <data name="mr_email" xml:space="preserve">
+    <value>Е-маил</value>
+  </data>
+  <data name="mr_roles" xml:space="preserve">
+    <value>Улога</value>
+  </data>
+  <data name="mr_nousers" xml:space="preserve">
+    <value>Није пронађен ниједан корисник.</value>
+  </data>
+  <data name="mr_select" xml:space="preserve">
+    <value>Изаберите улоге</value>
+  </data>
+  <data name="mr_remove_roles" xml:space="preserve">
+    <value>Уклонити улоге</value>
+  </data>
+  <data name="mr_external" xml:space="preserve">
+    <value>Спољне пријаве</value>
+  </data>
+  <data name="mr_full_name" xml:space="preserve">
+    <value>Пуно име</value>
+  </data>
+  <data name="mr_user_roles" xml:space="preserve">
+    <value>Улога (и)</value>
+  </data>
+  <data name="mr_edit" xml:space="preserve">
+    <value>Уредити</value>
+  </data>
+  <data name="mr_confirm_delete" xml:space="preserve">
+    <value>Потврдите брисање</value>
+  </data>
+  <data name="mr_yes_delete" xml:space="preserve">
+    <value>Да, избришите</value>
+  </data>
+  <data name="end_start_load" xml:space="preserve">
+    <value>Почетак, крај тиража</value>
+  </data>
+  <data name="ramp1" xml:space="preserve">
+    <value>Рампа 1:</value>
+  </data>
+  <data name="ramp2" xml:space="preserve">
+    <value>Рампа 2:</value>
+  </data>
+  <data name="carina" xml:space="preserve">
+    <value>Царински кабл:</value>
+  </data>
+  <data name="izberi" xml:space="preserve">
+    <value>----- Изаберите ---------</value>
+  </data>
+  <data name="prisotna" xml:space="preserve">
+    <value>Присутан</value>
+  </data>
+  <data name="ni_prisotna" xml:space="preserve">
+    <value>Није присутан</value>
+  </data>
+  <data name="ctn" xml:space="preserve">
+    <value>ЦТН</value>
+  </data>
+  <data name="ustreznost" xml:space="preserve">
+    <value>Спровођење возила:</value>
+  </data>
+  <data name="neustrezno" xml:space="preserve">
+    <value>ненеино</value>
+  </data>
+  <data name="ustrezno" xml:space="preserve">
+    <value>на одговарајући начин</value>
+  </data>
+  <data name="delno_neustrezno" xml:space="preserve">
+    <value>делимично неадекватан</value>
+  </data>
+  <data name="delno ustrezno" xml:space="preserve">
+    <value>делимично прикладно</value>
+  </data>
+  <data name="start_date" xml:space="preserve">
+    <value>Почетак циркулације:</value>
+  </data>
+  <data name="set" xml:space="preserve">
+    <value>Сетови</value>
+  </data>
+  <data name="end_date" xml:space="preserve">
+    <value>Крај циркулације:</value>
+  </data>
+  <data name="rejected_by_driver" xml:space="preserve">
+    <value>Возач је одбацио почетак због паузе:</value>
+  </data>
+  <data name="aciton" xml:space="preserve">
+    <value>Акција</value>
+  </data>
+  <data name="no_data" xml:space="preserve">
+    <value>Нема података за искључивање.</value>
+  </data>
+  <data name="add_warehouse" xml:space="preserve">
+    <value>Додајте искључивање</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Сачувати</value>
+  </data>
+  <data name="notes" xml:space="preserve">
+    <value>Белешке</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>Додати</value>
+  </data>
+  <data name="quantity" xml:space="preserve">
+    <value>Количина након складишта</value>
+  </data>
+  <data name="manage" xml:space="preserve">
+    <value>Управљање улогама</value>
+  </data>
+  <data name="remove_roles" xml:space="preserve">
+    <value>Нова улога:</value>
+  </data>
+  <data name="create_roles" xml:space="preserve">
+    <value>Ствара улогу</value>
+  </data>
+  <data name="remove_existing_roles" xml:space="preserve">
+    <value>Постојеће апликације:</value>
+  </data>
+  <data name="choose_for_delete" xml:space="preserve">
+    <value>Изаберите пријаву за брисање:</value>
+  </data>
+  <data name="choose_role_for_delete" xml:space="preserve">
+    <value>Изаберите пријаву за брисање</value>
+  </data>
+  <data name="delete_role" xml:space="preserve">
+    <value>Избришите апликацију</value>
+  </data>
+  <data name="set_smtp_password" xml:space="preserve">
+    <value>Подесите СМТП лозинку</value>
+  </data>
+  <data name="smtp_password_" xml:space="preserve">
+    <value>СМТП лозинка</value>
+  </data>
+  <data name="save_smtp" xml:space="preserve">
+    <value>Сачувати</value>
+  </data>
+  <data name="uae_methods" xml:space="preserve">
+    <value>Корисничке методе приступа</value>
+  </data>
+  <data name="uae_google" xml:space="preserve">
+    <value>Гоогле корисници</value>
+  </data>
+  <data name="uae_username" xml:space="preserve">
+    <value>Корисничко име</value>
+  </data>
+  <data name="uae_login_provider" xml:space="preserve">
+    <value>Пријављивање провајдера</value>
+  </data>
+  <data name="uae_facebook" xml:space="preserve">
+    <value>Фацебоок корисници</value>
+  </data>
+  <data name="uae_microsoft" xml:space="preserve">
+    <value>Мицрософт корисници</value>
+  </data>
+  <data name="uae_github" xml:space="preserve">
+    <value>ГитХуб корисника</value>
+  </data>
+  <data name="uae_yahoo" xml:space="preserve">
+    <value>Корисници Иахоо-а</value>
+  </data>
+  <data name="uae_demo_user" xml:space="preserve">
+    <value>ИахоодЕмоусер</value>
+  </data>
+  <data name="uae_yahoo_" xml:space="preserve">
+    <value>Иахоо</value>
+  </data>
+  <data name="uae_gitlab" xml:space="preserve">
+    <value>Гитлаб корисници</value>
+  </data>
+  <data name="uae_local" xml:space="preserve">
+    <value>Локални корисници</value>
+  </data>
+  <data name="hello_analyst" xml:space="preserve">
+    <value>Здраво, аналитичар!</value>
+  </data>
+  <data name="analyst_page" xml:space="preserve">
+    <value>Ово је аналитичка контролна табла. Испод су ваши доступни задаци и алати.</value>
+  </data>
+  <data name="analyst_download_excel" xml:space="preserve">
+    <value>Преузмите Екцел</value>
+  </data>
+  <data name="create" xml:space="preserve">
+    <value>Створити</value>
+  </data>
+  <data name="transport" xml:space="preserve">
+    <value>Превоз</value>
+  </data>
+  <data name="back_to_list" xml:space="preserve">
+    <value>Повратак на листу</value>
+  </data>
+  <data name="planned_arrival" xml:space="preserve">
+    <value>Планирани долазак:</value>
+  </data>
+  <data name="registration" xml:space="preserve">
+    <value>Регистрација:</value>
+  </data>
+  <data name="driver" xml:space="preserve">
+    <value>Возач:</value>
+  </data>
+  <data name="type_of_transport" xml:space="preserve">
+    <value>Врста превоза:</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>Врста превоза:</value>
+  </data>
+  <data name="warehouse" xml:space="preserve">
+    <value>Складиште:</value>
+  </data>
+  <data name="stop_driver" xml:space="preserve">
+    <value>Пауза возача:</value>
+  </data>
+  <data name="navis_start" xml:space="preserve">
+    <value>Навис зачетек Склада:</value>
+  </data>
+  <data name="navis_end" xml:space="preserve">
+    <value>Навис Конец Склада:</value>
+  </data>
+  <data name="no_transports" xml:space="preserve">
+    <value>Нема превоза за овај ИД</value>
+  </data>
+  <data name="all_warehouses" xml:space="preserve">
+    <value>Све продавнице</value>
+  </data>
+  <data name="transport_details" xml:space="preserve">
+    <value>Детаљи транспорта</value>
+  </data>
+  <data name="tnrasport_info" xml:space="preserve">
+    <value>Информације о превозу</value>
+  </data>
+  <data name="transport_type" xml:space="preserve">
+    <value>Тип Транспорт</value>
+  </data>
+  <data name="pasue" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="trnasport_type" xml:space="preserve">
+    <value>Врста транспорта</value>
+  </data>
+  <data name="details_driver" xml:space="preserve">
+    <value>Возач</value>
+  </data>
+  <data name="details_navisstart" xml:space="preserve">
+    <value>Нависзацетексклада</value>
+  </data>
+  <data name="details_navisend" xml:space="preserve">
+    <value>Нависконецсклада</value>
+  </data>
+  <data name="detailed_assigned" xml:space="preserve">
+    <value>Додељен Складисцник</value>
+  </data>
+  <data name="greeting_shiftmanager" xml:space="preserve">
+    <value>Поздрав, Схифт!</value>
+  </data>
+  <data name="shit_manager" xml:space="preserve">
+    <value>Ово је страница за улогу Изменоводја. Користите везе у наставку да бисте управљали регистрацијама и обављали задатке који се односе на вашу улогу.</value>
+  </data>
+  <data name="confirm_account" xml:space="preserve">
+    <value>Потврдите рачун</value>
+  </data>
+  <data name="app_diplomska" xml:space="preserve">
+    <value>диплома</value>
+  </data>
+  <data name="_layout_home" xml:space="preserve">
+    <value>Дом</value>
+  </data>
+  <data name="_layout_privacy" xml:space="preserve">
+    <value>Приватност</value>
+  </data>
+  <data name="_layout_izmenovodja" xml:space="preserve">
+    <value>Изменоводја контролна табла</value>
+  </data>
+  <data name="_layout_skaldiscnik" xml:space="preserve">
+    <value>Складишчник контролна табла</value>
+  </data>
+  <data name="_Layout_admin" xml:space="preserve">
+    <value>Админ контролна табла</value>
+  </data>
+  <data name="_Layout_analitika" xml:space="preserve">
+    <value>Аналитика контролна табла</value>
+  </data>
+  <data name="_layout_ct" xml:space="preserve">
+    <value>Промена тема</value>
+  </data>
+  <data name="_layout_light" xml:space="preserve">
+    <value>Светло</value>
+  </data>
+  <data name="_layout_dark" xml:space="preserve">
+    <value>Мрак</value>
+  </data>
+  <data name="_layout_custom" xml:space="preserve">
+    <value>Обичај</value>
+  </data>
+  <data name="_layout_logout" xml:space="preserve">
+    <value>Одјава</value>
+  </data>
+  <data name="you_sure" xml:space="preserve">
+    <value>Јесте ли сигурни да желите да то избришете?</value>
+  </data>
+  <data name="quantity_" xml:space="preserve">
+    <value>Количина:</value>
+  </data>
+  <data name="paletes_" xml:space="preserve">
+    <value>Палете:</value>
+  </data>
+  <data name="warehouse_storage" xml:space="preserve">
+    <value>Складиштење:</value>
+  </data>
+  <data name="page_for" xml:space="preserve">
+    <value>Ово је страница за улогу Складишчник.</value>
+  </data>
+  <data name="warehouse_worker_index" xml:space="preserve">
+    <value>Индекс</value>
+  </data>
+</root>

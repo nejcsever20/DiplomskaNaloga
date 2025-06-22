@@ -1,13 +1,13 @@
 ﻿/* Overall styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #DDDDDD;
-    color: #125D98;
+    background-color: #A6A6A6; /* Arctic silver */
+    color: #40474F; /* Hisense grey */
 }
 
 /* Heading styles */
 h2, h3 {
-    color: #125D98;
+    color: #40474F; /* Hisense grey */
     font-size: 1.8em;
     margin-top: 20px;
 }
@@ -22,21 +22,21 @@ h2, h3 {
     .table th, .table td {
         padding: 10px;
         text-align: left;
-        border-bottom: 1px solid #DDDDDD;
+        border-bottom: 1px solid #A6A6A6; /* Arctic silver */
     }
 
     .table th {
-        background-color: #125D98;
-        color: #fff;
+        background-color: #000000; /* Hisense black */
+        color: #A6A6A6; /* Arctic silver */
     }
 
     .table tr:nth-child(even) {
-        background-color: #F9F9F9;
+        background-color: #D6EAE9; /* Light variant of Hisense Jade */
     }
 
 /* Provider group styles */
 .provider-group {
-    background-color: #fff;
+    background-color: #FFFFFF;
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -45,12 +45,12 @@ h2, h3 {
 
 /* 'All Users' table specific styles */
 .all-users {
-    background-color: #E7F7E7;
+    background-color: #D6EAE9; /* Light Hisense Jade */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
     .all-users th {
-        background-color: #125D98;
-        color: #fff;
+        background-color: #000000; /* Hisense black */
+        color: #A6A6A6; /* Arctic silver */
     }

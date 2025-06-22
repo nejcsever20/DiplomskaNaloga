@@ -12,8 +12,8 @@
         }
 
         .dropdown-button {
-            background-color: #125D98;
-            color: white;
+            background-color: #00AAA6; /* Hisense Jade */
+            color: #ffffff;
             padding: 12px 20px;
             border: none;
             border-radius: 8px;
@@ -25,7 +25,7 @@
         }
 
             .dropdown-button:hover {
-                background-color: #3C8DAD;
+                background-color: #40474F; /* Hisense Grey */
             }
 
         .dropdown-content {
@@ -33,18 +33,38 @@
             overflow: hidden;
             transition: max-height 0.5s ease, opacity 0.5s ease;
             opacity: 0;
+            background-color: #f9f9f9; /* light background for dropdown */
+            border: 1px solid #A6A6A6; /* Arctic Silver */
+            border-radius: 6px;
+            padding: 10px;
         }
 
             .dropdown-content.show {
-                max-height: 1000px; /* or an appropriate high value */
+                max-height: 1000px;
                 opacity: 1;
             }
 
             .dropdown-content table {
                 margin-top: 10px;
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.95rem;
             }
 
+            .dropdown-content th,
+            .dropdown-content td {
+                border: 1px solid #A6A6A6;
+                padding: 8px;
+                text-align: left;
+                color: #000000; /* Hisense Black */
+            }
+
+            .dropdown-content th {
+                background-color: #f2f2f2;
+                color: #40474F; /* Hisense Grey */
+            }
     </style>
+
 
     <script>
         function toggleDropdown(id) {

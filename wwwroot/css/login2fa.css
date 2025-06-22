@@ -1,6 +1,6 @@
 ﻿body.twofa-body {
-    background: linear-gradient(to bottom right, #3C8DAD, #125D98);
-    color: #fff;
+    background: linear-gradient(to bottom right, #00AAA6, #40474F); /* Hisense Jade to Hisense grey */
+    color: #FFFFFF; /* keeping white text for contrast */
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
@@ -11,8 +11,8 @@
 }
 
 .twofa-container {
-    background-color: #DDDDDD;
-    color: #125D98;
+    background-color: #A6A6A6; /* API MetaFOIL Arctic silver */
+    color: #000000; /* Hisense Black */
     border-radius: 16px;
     padding: 2.5rem;
     max-width: 500px;
@@ -29,7 +29,7 @@
 }
 
 .divider {
-    border-top: 2px solid #F5A962;
+    border-top: 2px solid #00AAA6; /* Hisense Jade */
     margin-bottom: 1.5rem;
 }
 
@@ -48,8 +48,8 @@
 .btn-auth {
     width: 100%;
     padding: 0.75rem;
-    background-color: #F5A962;
-    color: #fff;
+    background-color: #00AAA6; /* Hisense Jade */
+    color: #FFFFFF;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
@@ -58,24 +58,24 @@
 }
 
     .btn-auth:hover {
-        background-color: #e58e3a;
+        background-color: #008d8a; /* Slightly darker Hisense Jade for hover */
         cursor: pointer;
     }
 
 .remember-box {
-    color: #333;
+    color: #000000; /* Hisense Black */
     font-size: 0.9rem;
 }
 
 .fallback-option {
     margin-top: 2rem;
     font-size: 0.95rem;
-    color: #125D98;
+    color: #40474F; /* Hisense grey */
     text-align: center;
 }
 
     .fallback-option a {
-        color: #3C8DAD;
+        color: #00AAA6; /* Hisense Jade */
         text-decoration: underline;
     }
 

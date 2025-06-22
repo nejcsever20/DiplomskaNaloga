@@ -5,9 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace diplomska.Pages.Admin
 {
+    [Authorize(Roles = "Admin")]
+
     public class RemoveRolesModel : PageModel
     {
         private readonly RoleManager<IdentityRole> _roleManager;

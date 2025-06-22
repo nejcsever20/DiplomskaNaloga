@@ -10,9 +10,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace diplomska.Pages.Admin
 {
+    [Authorize(Roles = "Admin")]
     public class NakladModel : PageModel
     {
         private readonly ApplicationDbContext _context;

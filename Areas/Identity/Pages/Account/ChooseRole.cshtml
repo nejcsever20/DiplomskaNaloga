@@ -17,203 +17,87 @@
 
 <style>
     body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #e3f2fd, #ffffff);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        flex-direction: column;
+        background-color: #40474F;
+        color: #000;
+        font-family: sans-serif;
     }
 
-    .container-wrapper {
-        backdrop-filter: blur(18px);
-        background: rgba(255, 255, 255, 0.75);
-        border-radius: 30px;
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
-        padding: 60px 40px;
-        max-width: 1200px;
-        width: 95%;
+    .choose-role-wrapper {
         display: flex;
+        gap: 2rem;
+        margin-top: 2rem;
+        padding: 2rem;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 40px;
-        animation: fadeInUp 0.9s ease;
-        position: relative;
-        z-index: 1;
-    }
-
-    .main-heading {
-        font-size: 36px;
-        color: #1f2937;
-        font-weight: 800;
-        text-align: center;
-        width: 100%;
-        margin-bottom: 35px;
-    }
-
-    h2 {
-        font-size: 22px;
-        text-align: center;
-        color: #2563eb;
-        margin-bottom: 25px;
-        font-weight: 700;
     }
 
     .choose-role-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
         flex: 1;
         min-width: 280px;
     }
 
-    .description-box {
-        flex: 1;
-        min-width: 300px;
-        background: #f9fafb;
-        border: 2px solid #60a5fa;
-        border-radius: 22px;
-        padding: 28px;
-        font-size: 17px;
-        font-weight: 500;
-        color: #334155;
-        box-shadow: inset 0 0 12px rgba(96, 165, 250, 0.12);
-        min-height: 220px;
-        transition: all 0.3s ease;
-        line-height: 1.7;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
     .role-button {
-        background: linear-gradient(135deg, #3b82f6, #2563eb);
-        color: white;
-        font-size: 16.5px;
-        font-weight: 600;
-        padding: 14px 18px;
-        border: none;
-        border-radius: 18px;
-        margin-bottom: 18px;
-        width: 100%;
         display: flex;
         align-items: center;
-        gap: 14px;
+        gap: 1rem;
+        background-color: #40474F; /* Hisense Grey */
+        color: #000000; /* White text */
+        border: 2px solid #00AAA6; /* Hisense Jade */
+        padding: 1.25rem 2rem;
+        border-radius: 12px;
+        font-size: 1.25rem;
+        font-weight: 600;
         cursor: pointer;
-        box-shadow: 0 10px 24px rgba(59, 130, 246, 0.3);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-        animation: slideFadeIn 0.6s ease forwards;
-        opacity: 0;
-        transform: translateY(30px);
+        transition: all 0.25s ease-in-out;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        margin: 10px;
     }
 
-    .role-button:hover {
-        transform: translateY(-2px) scale(1.02);
-        box-shadow: 0 12px 28px rgba(59, 130, 246, 0.4);
-    }
+        .role-button:hover,
+        .role-button:focus {
+            background-color: #5A6A72; /* Medium gray - lighter than base gray */
+            color: #FFFFFF; /* White text */
+            border-color: #00AAA6; /* Keep jade border */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+
 
     .svg-icon {
-        width: 26px;
-        height: 26px;
-        fill: white;
-        transition: transform 0.3s ease;
+        width: 24px;
+        height: 24px;
+        fill: currentColor;
     }
 
-    .role-button:hover .svg-icon {
-        transform: scale(1.2);
-    }
-
-    .text-danger {
-        font-size: 15px;
-        color: #dc2626;
-        margin-top: 10px;
-        text-align: center;
-    }
-
-    @@keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @@keyframes slideFadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .description-box {
+        flex: 1;
+        background-color: #A6A6A6;
+        padding: 1rem;
+        border-radius: 8px;
+        color: #000;
+        min-height: 150px;
+        font-size: 1rem;
+        transition: opacity 0.3s ease;
     }
 
     .fade {
-        opacity: 0.3 !important;
+        opacity: 0.4;
     }
 
-    .wave-container {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 120px;
-        overflow: hidden;
-        z-index: 0;
-    }
-
-    .wave {
-        position: absolute;
-        width: 200%;
-        height: 100%;
-        background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path fill="%23cfe9ff" d="M0,0V27.35c47.42,22.31,103.83,29.08,158.87,23.57,70.64-7.17,136.68-32.77,207.25-38.77C458.86,3.39,527.19,14.53,593,34.8c72.62,23.1,136.3,54.51,207,60.2,65.42,5.2,130.14-14.68,186.9-43.18C1061.19,15.49,1132.6-3.6,1200,0V0Z"/></svg>') repeat-x;
-        animation: animateWave 8s linear infinite;
-        bottom: 0;
-        left: 0;
-    }
-
-    @@keyframes animateWave {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+    .main-heading {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #00AAA6;
     }
 
     .tooltip-icon {
-        margin-left: 6px;
-        color: #94a3b8;
+        margin-left: 0.5rem;
+        color: #A6A6A6;
         cursor: help;
-    }
-
-    footer {
-        text-align: center;
-        font-size: 14px;
-        color: #6b7280;
-        margin-top: 40px;
-        z-index: 1;
-    }
-
-    @@media (max-width: 768px) {
-        .container-wrapper {
-            flex-direction: column;
-            padding: 40px 20px;
-        }
-
-        .main-heading {
-            font-size: 26px;
-        }
-
-        .description-box {
-            font-size: 15px;
-            min-height: 160px;
-        }
-
-        .role-button {
-            font-size: 15px;
-        }
     }
 </style>
 
@@ -243,20 +127,14 @@
     </span>
 </h1>
 
-<div class="container-wrapper">
+<div class="choose-role-wrapper">
     <div class="choose-role-container">
-        <h2>
-            Select Your Role
-            <span class="tooltip-icon" title="Choose the role that best matches your responsibility.">
-                <i class="fas fa-question-circle"></i>
-            </span>
-        </h2>
         <form method="post">
             <input type="hidden" asp-for="ReturnUrl" />
             @foreach (var role in Model.Roles)
             {
                 var description = roleDescription.ContainsKey(role) ? roleDescription[role] : "Izbrana vloga.";
-
+                var escapedDescription = Html.Raw(System.Text.Encodings.Web.JavaScriptEncoder.Default.Encode(description));
                 string svgIcon = role switch
                 {
                     "SBU" => "<svg class='svg-icon' viewBox='0 0 24 24'><path d='M3 3h18v2H3V3zm0 7h12v2H3v-2zm0 7h18v2H3v-2z' /></svg>",
@@ -272,14 +150,13 @@
                         name="SelectedRole"
                         value="@role"
                         class="role-button"
-                        onmouseover="updateDescription('@description')"
-                        onfocus="updateDescription('@description')"
+                        onmouseover="updateDescription('@escapedDescription')"
+                        onfocus="updateDescription('@escapedDescription')"
                         onmouseout="updateDescription('Hover over a role to see its description.')">
                     @Html.Raw(svgIcon)
                     <span>@role</span>
                 </button>
             }
-
             <span asp-validation-for="SelectedRole" class="text-danger"></span>
         </form>
     </div>
@@ -288,16 +165,6 @@
         Hover over a role to see its description.
     </div>
 </div>
-
-<!-- Wave Animation -->
-<div class="wave-container">
-    <div class="wave"></div>
-</div>
-
-<!-- Footer -->
-<footer>
-    Need help? Contact IT support • Stay productive ✨
-</footer>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

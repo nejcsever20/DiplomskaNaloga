@@ -10,9 +10,12 @@ using System.IO;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using static diplomska.Pages.Izmenovodja.LoadingCheckOutModel;
+using Microsoft.AspNetCore.Authorization;
 
 namespace diplomska.Pages.Skladiščnik
 {
+    [Authorize(Roles = "Skladiščnik, Admin")]
+
     public class LoadingCheckOutModel : PageModel
     {
         private readonly ApplicationDbContext _context;

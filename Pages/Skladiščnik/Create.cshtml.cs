@@ -9,9 +9,12 @@ using diplomska.Data;
 using diplomska.Models;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace diplomska.Pages.Skladiščnik
 {
+    [Authorize(Roles = "Skladiščnik, Admin")]
+
     public class CreateModel : PageModel
     {
         private readonly diplomska.Data.ApplicationDbContext _context;

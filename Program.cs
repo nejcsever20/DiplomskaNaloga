@@ -52,7 +52,10 @@ builder.Services.AddScoped<ISystemLogs, SystemLogs>();
 builder.Services.AddSingleton<IEmailSender, DummyEmailSender>();
 
 // Localization configuration
-var supportedCultures = new[] { "en", "sl", "de", "es", "fr" };
+var supportedCultures = new[]
+{
+    "en", "sl", "de", "es", "fr", "sq", "bg", "cs", "it", "mk", "pl", "ro", "ru", "sr", "sk", "tr"
+};
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
     var cultures = supportedCultures.Select(c => new CultureInfo(c)).ToList();

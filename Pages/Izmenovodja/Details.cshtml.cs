@@ -3,12 +3,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using diplomska.Data;
 using diplomska.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
 namespace diplomska.Pages.Izmenovodja
 {
+    [Authorize(Roles = "Admin, Izmenovodja")]
+
     public class DetailsModel : PageModel
     {
         private readonly ApplicationDbContext _context;

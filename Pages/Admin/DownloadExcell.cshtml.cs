@@ -8,9 +8,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace diplomska.Pages.Admin
 {
+    [Authorize(Roles = "Admin")]
     public class DownloadExcellModel : PageModel
     {
         private readonly ApplicationDbContext _context;

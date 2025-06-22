@@ -28,6 +28,12 @@
           "diplomska.dll": {}
         },
         "resources": {
+          "bg-BG/diplomska.resources.dll": {
+            "locale": "bg-BG"
+          },
+          "cs-CZ/diplomska.resources.dll": {
+            "locale": "cs-CZ"
+          },
           "de/diplomska.resources.dll": {
             "locale": "de"
           },
@@ -36,6 +42,33 @@
           },
           "fr/diplomska.resources.dll": {
             "locale": "fr"
+          },
+          "it-IT/diplomska.resources.dll": {
+            "locale": "it-IT"
+          },
+          "mk-MK/diplomska.resources.dll": {
+            "locale": "mk-MK"
+          },
+          "pl-PL/diplomska.resources.dll": {
+            "locale": "pl-PL"
+          },
+          "ro-RO/diplomska.resources.dll": {
+            "locale": "ro-RO"
+          },
+          "ru/diplomska.resources.dll": {
+            "locale": "ru"
+          },
+          "sk-SK/diplomska.resources.dll": {
+            "locale": "sk-SK"
+          },
+          "sq-AL/diplomska.resources.dll": {
+            "locale": "sq-AL"
+          },
+          "sr/diplomska.resources.dll": {
+            "locale": "sr"
+          },
+          "tr-TR/diplomska.resources.dll": {
+            "locale": "tr-TR"
           }
         }
       },

@@ -1,13 +1,13 @@
-﻿/* Base Layout */
+﻿/* === Base Layout === */
 body {
-    background-color: #DDDDDD;
+    background-color: #A6A6A6; /* Arctic Silver */
     font-family: 'Segoe UI', Tahoma, Verdana, Geneva, sans-serif;
     margin: 0;
     padding: 2rem;
     overflow-x: hidden;
 }
 
-/* Zoom-in animation */
+/* === Zoom-in animation === */
 @keyframes zoomIn {
     0% {
         opacity: 0;
@@ -20,27 +20,26 @@ body {
     }
 }
 
-/* Title */
+/* === Title === */
 h2 {
-    color: #125D98;
+    color: #00AAA6; /* Hisense Jade */
     margin-bottom: 1.5rem;
     text-align: center;
     font-size: 35px;
     animation: zoomIn 0.6s ease-in-out;
 }
 
-/* Form */
+/* === Form === */
 form {
-    background-color: #125D98;
+    background-color: #000000; /* Hisense Black */
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     max-width: 600px;
     margin: 0 auto;
     animation: zoomIn 0.7s ease-in-out;
 }
 
-    /* Form groups */
     form div {
         margin-bottom: 1.5rem;
         transition: transform 0.3s ease;
@@ -50,24 +49,26 @@ form {
             transform: scale(1.02);
         }
 
-/* Labels */
+/* === Labels === */
 label {
     display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #F5A962;
+    color: #00AAA6; /* Hisense Jade */
 }
 
-/* Inputs */
+/* === Inputs === */
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="file"] {
     width: 100%;
     padding: 0.6rem;
-    border: 2px solid #3C8DAD;
+    border: 2px solid #40474F; /* Hisense Grey */
     font-size: 1rem;
     border-radius: 5px;
+    background-color: #A6A6A6; /* Arctic Silver */
+    color: #000000; /* Hisense Black */
     transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -76,21 +77,21 @@ input[type="file"] {
     input[type="password"]:focus,
     input[type="file"]:focus {
         outline: none;
-        border-color: #F5A962;
+        border-color: #00AAA6; /* Hisense Jade */
         transform: scale(1.02);
     }
 
-/* Validation messages */
+/* === Validation messages === */
 span.field-validation-error {
-    color: #F5A962;
+    color: #00AAA6; /* Hisense Jade */
     font-size: 0.9rem;
 }
 
-/* Profile image preview */
+/* === Profile image preview === */
 img {
     margin-top: 0.5rem;
     border-radius: 6px;
-    border: 2px solid #3C8DAD;
+    border: 2px solid #40474F; /* Hisense Grey */
     transition: transform 0.4s ease;
 }
 
@@ -98,10 +99,10 @@ img {
         transform: scale(1.1);
     }
 
-/* Submit Button */
+/* === Submit Button === */
 button[type="submit"] {
-    background-color: #3C8DAD;
-    color: white;
+    background-color: #00AAA6; /* Hisense Jade */
+    color: #000000; /* Hisense Black */
     margin-top: 0.75rem;
     padding: 0.75rem 1.5rem;
     border: none;
@@ -112,11 +113,12 @@ button[type="submit"] {
 }
 
     button[type="submit"]:hover {
-        background-color: #F5A962;
+        background-color: #40474F; /* Hisense Grey */
+        color: #A6A6A6; /* Arctic Silver */
         transform: scale(1.05);
     }
 
-/* File input specific style */
+/* === File input specific style === */
 #ProfileImage {
-    color: #DDDDDD;
+    color: #A6A6A6; /* Arctic Silver */
 }

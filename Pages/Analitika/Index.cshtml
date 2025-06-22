@@ -10,91 +10,75 @@
 </head>
 
 <style>
-    .info-btn {
-        background-color: transparent;
-        border: none;
-        color: blue;
-        font-size: 20px;
-        cursor: pointer;
-        text-decoration: underline;
+
+    /* General styles */
+    body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #123;
+        color: #125D98;
+        position: relative;
     }
 
-    .modal {
-        display: none;
-        position: fixed;
+    /* Content on top of waves */
+    .text-center {
+        position: relative;
         z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.4);
-        padding-top: 60px;
+        padding-top: 100px;
+        text-align: center;
     }
 
-    .modal-content {
-        background-color: #fefefe;
-        margin: 5% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
+    h1 {
+        text-align: center;
+        color: #DDDDDD;
     }
 
-    .close-btn {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
+    p {
+        color: #DDDDDD;
         font-weight: bold;
-        cursor: pointer;
     }
 
-        .close-btn:hover,
-        .close-btn:focus {
-            color: black;
-            text-decoration: none;
-        }
-
-    .st-transporta-btn {
-        background: none;
-        border: none;
-        color: blue;
-        text-decoration: underline;
-        cursor: pointer;
-        font-size: 1em;
-        padding: 0;
+    a {
+        text-decoration: none;
     }
 
-    #loginModal input {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 10px;
-    }
-
-    #loginModal form div {
-        margin-bottom: 15px;
-    }
-
-    .checkbox-group {
+    .auth-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
         margin-top: 20px;
     }
 
-        .checkbox-group label {
-            margin-right: 15px;
+        .auth-buttons a {
+            background-color: #125D98;
+            color: #DDDDDD !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
 
-    #navis-check {
-        margin: 0;
-        padding: 0;
+            .auth-buttons a:hover {
+                background-color: #3C8DAD;
+                color: #FFFFFF !important;
+            }
+
+    .auth-dev-button {
+        background-color: #125D98;
+        color: #DDDDDD;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s ease;
     }
 
-    .zoom-input {
-        transition: transform 0.3s ease;
-    }
-
-        .zoom-input.typing {
-            transform: scale(1.05);
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-            border-color: #007bff;
+        .auth-dev-button:hover {
+            background-color: #3C8DAD;
+            color: #FFFFFF;
         }
 </style>
 

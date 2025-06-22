@@ -10,21 +10,22 @@
 <h1 class="mb-4">@ViewData["Title"]</h1>
 
 <div class="row">
-    <div class="col-md-6" style="background-color: #3C8DAD; padding: 20px; border-radius: 8px; color: white;">
+    <img src="~/images/gorenje/hisense.png" height="200px;" width="20px;"/>
+    <div class="col-md-6" style="background-color: #40474F; padding: 20px; border-radius: 8px; color: #00AAA6;">
         <section>
             <form method="post">
-                <h2 style="color:#F5A962 ">@Resources.prijava</h2>
+                <h2 style="color:#00AAA6 ">@Resources.prijava</h2>
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
 
                 <div class="form-floating mb-3">
-                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" style="color: #00AAA6;" />
                     <label asp-for="Input.Email">@Resources.mr_email</label>
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" style="color: #00AAA6;" />
                     <label asp-for="Input.Password">Password</label>
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
@@ -50,9 +51,9 @@
         </section>
     </div>
 
-    <div class="col-md-6" style="background-color: #3C8DAD; padding: 20px; border-radius: 8px; color: white;">
+    <div class="col-md-6" style="background-color: #40474F; padding: 20px; border-radius: 8px; color: white;">
         <section>
-            <h3 style="color:#F5A962">Use another service to log in</h3>
+            <h3 style="color:#00AAA6">Use another service to log in</h3>
             <hr style="border-color: white;" />
             @if ((Model.ExternalLogins?.Count ?? 0) == 0)
             {

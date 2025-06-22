@@ -5,9 +5,11 @@ using diplomska.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace diplomska.Pages.Admin
 {
+    [Authorize(Roles = "Admin")]
     public class ArchivedTransportsModel : PageModel
     {
         private readonly ApplicationDbContext _context;

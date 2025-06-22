@@ -7,10 +7,7 @@
 <head>
     <link rel="stylesheet" href="~/css/admin.css" />
 </head>
-<style>
-    h2{color: black;}
-</style>
-<h2>@Resources.manage_users</h2>
+<h2 style="color: #000000">@Resources.manage_users</h2>
 <a asp-page="/Admin/UserAccessMethods" class="btn btn-sm btn-secondary">@Resources.mr_external</a>
 
 @if (Model.Users != null && Model.Users.Count > 0)

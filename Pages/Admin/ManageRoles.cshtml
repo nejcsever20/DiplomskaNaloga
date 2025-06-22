@@ -7,98 +7,100 @@
 <head>
     <link rel="stylesheet" href="~/css/admin.css" />
     <style>
-        /* Animations */
-        @@keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+       /* Animations */
+@@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        @@keyframes scaleFadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
+@@keyframes scaleFadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
 
-        .fadeIn {
-            opacity: 0;
-            animation: fadeInUp 0.5s ease forwards;
-        }
+.fadeIn {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
 
-        .fadeIn.delay-1 { animation-delay: 0.1s; }
-        .fadeIn.delay-2 { animation-delay: 0.2s; }
-        .fadeIn.delay-3 { animation-delay: 0.3s; }
+.fadeIn.delay-1 { animation-delay: 0.1s; }
+.fadeIn.delay-2 { animation-delay: 0.2s; }
+.fadeIn.delay-3 { animation-delay: 0.3s; }
 
-        .slide-badge {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
+.slide-badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 
-            width: 100px;
-            height: 32px;
+    width: 100px;
+    height: 32px;
 
-            font-size: 0.85rem;
-            text-align: center;
-            border-radius: 12px;
-            margin: 4px;
+    font-size: 0.85rem;
+    text-align: center;
+    border-radius: 12px;
+    margin: 4px;
 
-            animation: fadeInUp 0.4s ease forwards;
-            animation-delay: 0.2s;
-            animation-fill-mode: forwards;
-            opacity: 0;
-        }
+    animation: fadeInUp 0.4s ease forwards;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
 
-        .btn-primary {
-            transition: transform 0.3s ease;
-        }
+.btn-primary {
+    transition: transform 0.3s ease;
+}
 
-        .btn-primary:hover {
-            transform: scale(1.05);
-        }
+.btn-primary:hover {
+    transform: scale(1.05);
+}
 
-        .modal.fade .modal-dialog {
-            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-            transform: translateY(30px);
-            opacity: 0;
-        }
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
 
-        .modal.fade.show .modal-dialog {
-            transform: translateY(0);
-            opacity: 1;
-        }
+.modal.fade.show .modal-dialog {
+    transform: translateY(0);
+    opacity: 1;
+}
 
-        td {
-            color: #125D98 !important;
-        }
-        .form-select{
-            color: #125D98;
-        }
+td {
+    color: #00AAA6 !important; /* Hisense Jade */
+}
 
-        .form-label{
-            color: #F5A962;
-        }
+.form-select {
+    color: #00AAA6; /* Hisense Jade */
+}
 
-        .form-check-input{
-            color: #F5A962;
-            background-color: #DDDDDD !important;
-        }
+.form-label {
+    color: #A6A6A6; /* Arctic Silver */
+}
 
-        .form-check-label{
-            color: #125D98;
-        }
+.form-check-input {
+    color: #A6A6A6; /* Arctic Silver */
+    background-color: #40474F !important; /* Hisense Grey */
+}
 
-        .modal-body{
-            background-color: #125D98;
-        }
+.form-check-label {
+    color: #00AAA6; /* Hisense Jade */
+}
 
-        h6{
-            color: #F5A962;
-            background-color: #125D98;
-        }
+.modal-body {
+    background-color: #40474F; /* Hisense Grey */
+}
 
-        .bright-box {
-            background-color: #f8f9fa; /* Light gray (Bootstrap's bg-light) */
-            padding: 1rem;
-            border-radius: 8px;
-        }
+h6 {
+    color: #A6A6A6; /* Arctic Silver */
+    background-color: #40474F; /* Hisense Grey */
+}
+
+.bright-box {
+    background-color: #f8f9fa; /* Keeping this light gray for contrast */
+    padding: 1rem;
+    border-radius: 8px;
+}
+
     </style>
 </head>
 

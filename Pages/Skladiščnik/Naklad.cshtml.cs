@@ -7,9 +7,12 @@ using System;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace diplomska.Pages.Skladiščnik
 {
+    [Authorize(Roles = "Skladiščnik, Admin")]
+
     public class NakladModel : PageModel
     {
         private readonly ApplicationDbContext _context;

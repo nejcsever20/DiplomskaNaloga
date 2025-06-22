@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ResourceAccessModifier" xml:space="preserve">
+    <value>Публичный</value>
+  </data>
+  <data name="your_developer" xml:space="preserve">
+    <value>Привет, я твой разработчик</value>
+  </data>
+  <data name="passion" xml:space="preserve">
+    <value>Я страстный разработчик программного обеспечения, уделяя особое внимание созданию современных веб -приложений, особенно с использованием страниц ASP.NET Razor - самой структуры, которую я использовал для этого проекта. Этот веб -сайт был разработан в рамках моей дипломной диссертации, чтобы продемонстрировать не только мои технические способности, но и мое творчество и внимание к опыту пользователя. За прошедшие годы я работал над несколькими приложениями с полным стеком, от веб-сайтов малого бизнеса до внутренних корпоративных инструментов. Мне нравится экспериментировать с различными веб-технологиями и быть в курсе последних тенденций в дизайне UI/UX. Мои любимые инструменты и языки включают C#, HTML, CSS и рамки, такие как TailWindcss для быстрого и элегантного дизайна пользовательского интерфейса. Я также наслаждаюсь погружением в JavaScript, TypeScript и иногда увлекаться Python и PHP для развлечения или коммунальных сценариев.</value>
+  </data>
+  <data name="show_more" xml:space="preserve">
+    <value>Показать больше</value>
+  </data>
+  <data name="contacts" xml:space="preserve">
+    <value>Контактная информация</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Электронная почта:</value>
+  </data>
+  <data name="gihub" xml:space="preserve">
+    <value>GitHub:</value>
+  </data>
+  <data name="github_user" xml:space="preserve">
+    <value>github.com/yourusername</value>
+  </data>
+  <data name="linkedin" xml:space="preserve">
+    <value>LinkedIn:</value>
+  </data>
+  <data name="linkedin_profile" xml:space="preserve">
+    <value>LinkedIn.com/in/yourprofile</value>
+  </data>
+  <data name="more_about" xml:space="preserve">
+    <value>Подробнее обо мне!</value>
+  </data>
+  <data name="about_me" xml:space="preserve">
+    <value>Обо мне</value>
+  </data>
+  <data name="resume" xml:space="preserve">
+    <value>Резюме</value>
+  </data>
+  <data name="view_resume" xml:space="preserve">
+    <value>Посмотреть мое профессиональное резюме.</value>
+  </data>
+  <data name="open_reusme" xml:space="preserve">
+    <value>Открытое резюме</value>
+  </data>
+  <data name="programming_languages" xml:space="preserve">
+    <value>Языки программирования</value>
+  </data>
+  <data name="languages" xml:space="preserve">
+    <value>Языки, в которых я опытный.</value>
+  </data>
+  <data name="view_languages" xml:space="preserve">
+    <value>Просмотреть языки</value>
+  </data>
+  <data name="hobbies" xml:space="preserve">
+    <value>Хобби</value>
+  </data>
+  <data name="what_I_enjoy" xml:space="preserve">
+    <value>Что мне нравится делать в свободное время.</value>
+  </data>
+  <data name="view_hobbies" xml:space="preserve">
+    <value>Посмотреть хобби</value>
+  </data>
+  <data name="contact_info" xml:space="preserve">
+    <value>Контактная информация</value>
+  </data>
+  <data name="how_to_contact" xml:space="preserve">
+    <value>Как связаться со мной.</value>
+  </data>
+  <data name="social_media" xml:space="preserve">
+    <value>Социальные сети</value>
+  </data>
+  <data name="follow_socials" xml:space="preserve">
+    <value>Следуйте за мной на социальных платформах.</value>
+  </data>
+  <data name="social_links" xml:space="preserve">
+    <value>Социальные ссылки</value>
+  </data>
+  <data name="more_about_me" xml:space="preserve">
+    <value>Подробнее обо мне</value>
+  </data>
+  <data name="if_you_want" xml:space="preserve">
+    <value>Если вы хотите узнать больше</value>
+  </data>
+  <data name="about_dev" xml:space="preserve">
+    <value>О разработке</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>Закрывать</value>
+  </data>
+  <data name="my_resume" xml:space="preserve">
+    <value>Мое резюме</value>
+  </data>
+  <data name="professional_resume" xml:space="preserve">
+    <value>Профессиональное резюме:</value>
+  </data>
+  <data name="experiences" xml:space="preserve">
+    <value>Опытный и адаптируемый разработчик программного обеспечения с продемонстрированной историей работы как в стартапе, так и в корпоративной среде. Квалифицированные в целом веб-разработке, объектно-ориентированном программировании и отзывчивом дизайне пользовательского интерфейса. Сильный фон в технологиях C#, .NET и приложениях, управляемых базами данных. Привержены непрерывному обучению и участвуют в высококачественных, поддерживаемых кодовых базах.</value>
+  </data>
+  <data name="work_experiences" xml:space="preserve">
+    <value>Опыт работы:</value>
+  </data>
+  <data name="senior_dev" xml:space="preserve">
+    <value>Старший разработчик</value>
+  </data>
+  <data name="multi_web_apps" xml:space="preserve">
+    <value>Восстановил несколько проектов веб -приложений с использованием ASP.NET Core и Razor Pages.</value>
+  </data>
+  <data name="improved_apps" xml:space="preserve">
+    <value>Повышенная производительность приложения на 35% за счет оптимизированных запросов SQL и стратегий кэширования.</value>
+  </data>
+  <data name="mentored" xml:space="preserve">
+    <value>Наставники младших разработчиков и провели внутренние обзоры и семинары.</value>
+  </data>
+  <data name="software_dev" xml:space="preserve">
+    <value>Разработчик программного обеспечения</value>
+  </data>
+  <data name="internal_tools" xml:space="preserve">
+    <value>Разработали внутренние инструменты и панели мониторинга с использованием C#, Winforms и SQL Server.</value>
+  </data>
+  <data name="corss_funcitonal" xml:space="preserve">
+    <value>В тесном контакте с межфункциональными командами для обеспечения программного обеспечения, богатого функциями, в сжатые сроки.</value>
+  </data>
+  <data name="education" xml:space="preserve">
+    <value>Образование:</value>
+  </data>
+  <data name="degree" xml:space="preserve">
+    <value>Степень бакалавра в области компьютерных наук - Университет [вашего города/учреждения]</value>
+  </data>
+  <data name="specialization" xml:space="preserve">
+    <value>Специализированная курсовая работа в области разработки программного обеспечения, веб -разработки и проектирования системы.</value>
+  </data>
+  <data name="certifications" xml:space="preserve">
+    <value>Сертификаты:</value>
+  </data>
+  <data name="certified_microsoft_fundementials" xml:space="preserve">
+    <value>Microsoft Certified: Основы Azure</value>
+  </data>
+  <data name="udemy_certificate" xml:space="preserve">
+    <value>Udemy: Advanced Asp.net Core Razor Pages (2023)</value>
+  </data>
+  <data name="download_resume" xml:space="preserve">
+    <value>Скачать резюме</value>
+  </data>
+  <data name="C#" xml:space="preserve">
+    <value>C#</value>
+  </data>
+  <data name="JavaScript/TypeScript" xml:space="preserve">
+    <value>JavaScript / TypeScript</value>
+  </data>
+  <data name="php" xml:space="preserve">
+    <value>PHP</value>
+  </data>
+  <data name="python" xml:space="preserve">
+    <value>Питон</value>
+  </data>
+  <data name="sql" xml:space="preserve">
+    <value>SQL</value>
+  </data>
+  <data name="html_css" xml:space="preserve">
+    <value>HTML / CSS</value>
+  </data>
+  <data name="java" xml:space="preserve">
+    <value>Ява</value>
+  </data>
+  <data name="ruby_on_rails" xml:space="preserve">
+    <value>Руби на рельсах</value>
+  </data>
+  <data name="cpp" xml:space="preserve">
+    <value>C ++</value>
+  </data>
+  <data name="dart" xml:space="preserve">
+    <value>Дрэк</value>
+  </data>
+  <data name="flutter" xml:space="preserve">
+    <value>Разветвление</value>
+  </data>
+  <data name="pl_sql" xml:space="preserve">
+    <value>PL/SQL</value>
+  </data>
+  <data name="tech_blogs" xml:space="preserve">
+    <value>Чтение технических блогов</value>
+  </data>
+  <data name="chess" xml:space="preserve">
+    <value>Играя в шахматы</value>
+  </data>
+  <data name="hiking_walks" xml:space="preserve">
+    <value>Поход и прогулки на природе</value>
+  </data>
+  <data name="music" xml:space="preserve">
+    <value>Музыка</value>
+  </data>
+  <data name="open_source" xml:space="preserve">
+    <value>Вклад с открытым исходным кодом</value>
+  </data>
+  <data name="video_games" xml:space="preserve">
+    <value>Видеоигры (редко)</value>
+  </data>
+  <data name="gym" xml:space="preserve">
+    <value>Спортзал</value>
+  </data>
+  <data name="github_1" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="github_2" xml:space="preserve">
+    <value>GitHub #2:</value>
+  </data>
+  <data name="github_3" xml:space="preserve">
+    <value>GitHub #3:</value>
+  </data>
+  <data name="phone" xml:space="preserve">
+    <value>Телефон:</value>
+  </data>
+  <data name="social_media_profiles" xml:space="preserve">
+    <value>Профили социальных сетей</value>
+  </data>
+  <data name="twitter" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="facebook" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="instagrma" xml:space="preserve">
+    <value>Instagram</value>
+  </data>
+  <data name="discord" xml:space="preserve">
+    <value>Раздор</value>
+  </data>
+  <data name="about_the_dev" xml:space="preserve">
+    <value>О разработчике</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Имя:</value>
+  </data>
+  <data name="role" xml:space="preserve">
+    <value>Роль:</value>
+  </data>
+  <data name="experience" xml:space="preserve">
+    <value>Опыт:</value>
+  </data>
+  <data name="20yearold" xml:space="preserve">
+    <value>20-летний страстный разработчик, который любит создавать вещи, которые имеют значение.</value>
+  </data>
+  <data name="specialities" xml:space="preserve">
+    <value>Специальности:</value>
+  </data>
+  <data name="building_web_apps" xml:space="preserve">
+    <value>Создание масштабируемых веб -приложений</value>
+  </data>
+  <data name="api_integration" xml:space="preserve">
+    <value>Интеграция API и архитектура бэкэнд</value>
+  </data>
+  <data name="responisive_designs" xml:space="preserve">
+    <value>Отзывчивый UI/UX Design</value>
+  </data>
+  <data name="database_designs" xml:space="preserve">
+    <value>Конструкция и оптимизация базы данных</value>
+  </data>
+  <data name="tools" xml:space="preserve">
+    <value>Инструменты и технологии:</value>
+  </data>
+  <data name="git_docket_postman" xml:space="preserve">
+    <value>Гит, Докер, почтальон</value>
+  </data>
+  <data name="github_actions" xml:space="preserve">
+    <value>CI/CD (Действия GitHub)</value>
+  </data>
+  <data name="agile_scrum" xml:space="preserve">
+    <value>Методологии Agile / Scrum</value>
+  </data>
+  <data name="passion_projects" xml:space="preserve">
+    <value>Страстные проекты:</value>
+  </data>
+  <data name="open_source_contributions" xml:space="preserve">
+    <value>Вклад с открытым исходным кодом на GitHub</value>
+  </data>
+  <data name="building_educational_tools" xml:space="preserve">
+    <value>Создание образовательных инструментов для разработчиков</value>
+  </data>
+  <data name="tech_blogs_tutorials" xml:space="preserve">
+    <value>Написание технических блогов и учебных пособий</value>
+  </data>
+  <data name="technical_interrests" xml:space="preserve">
+    <value>Технические интересы:</value>
+  </data>
+  <data name="machine_learning" xml:space="preserve">
+    <value>Машинное обучение и интеграция искусственного интеллекта в веб -приложениях</value>
+  </data>
+  <data name="devops_conatiners" xml:space="preserve">
+    <value>DevOps и Orchestration Container</value>
+  </data>
+  <data name="progressive_web_apps" xml:space="preserve">
+    <value>Прогрессивные веб -приложения (PWAS)</value>
+  </data>
+  <data name="clean_architecture" xml:space="preserve">
+    <value>Чистая архитектура и дизайнерские узоры</value>
+  </data>
+  <data name="favourite_projects" xml:space="preserve">
+    <value>Любимые проекты:</value>
+  </data>
+  <data name="diploma_web_app" xml:space="preserve">
+    <value>Дипломное веб-приложение-демонстрация реальных навыков на страницах ASP.NET и Razor.</value>
+  </data>
+  <data name="ecommerce_demo" xml:space="preserve">
+    <value>Демонстрация электронной коммерции-фиктивная витрина с использованием интеграции MVC и полосы.</value>
+  </data>
+  <data name="personal_cms_app" xml:space="preserve">
+    <value>Личная система CMS - созданная с нуля для управления контентом блога.</value>
+  </data>
+  <data name="achievements" xml:space="preserve">
+    <value>Достижения:</value>
+  </data>
+  <data name="full_stack_projects" xml:space="preserve">
+    <value>Завершено более 20 проектов с полным стеком</value>
+  </data>
+  <data name="maintenance" xml:space="preserve">
+    <value>Сохранил несколько репозитории GitHub с более чем 50 звездами</value>
+  </data>
+  <data name="custom_components" xml:space="preserve">
+    <value>Построенные пользовательские компоненты в Blazor и Asp.net Core</value>
+  </data>
+  <data name="designed_and_deployed" xml:space="preserve">
+    <value>Разработанные и развернутые облачные решения через Azure</value>
+  </data>
+  <data name="learning_goals" xml:space="preserve">
+    <value>Цели обучения:</value>
+  </data>
+  <data name="type_script_frameworks" xml:space="preserve">
+    <value>Master TypeScript и современные фронтальные рамки</value>
+  </data>
+  <data name="large_ops_initiatives" xml:space="preserve">
+    <value>Внести свой вклад в более крупные инициативы с открытым исходным кодом</value>
+  </data>
+  <data name="explore_mobile_development" xml:space="preserve">
+    <value>Изучите мобильную разработку с Flutter &amp; Dart</value>
+  </data>
+  <data name="towards_azure_certificate" xml:space="preserve">
+    <value>Работать с сертификацией разработчиков Azure</value>
+  </data>
+  <data name="fun_facts" xml:space="preserve">
+    <value>Забавный факт:</value>
+  </data>
+  <data name="drink_coffee" xml:space="preserve">
+    <value>Я пью больше отладки кофе, чем кодирование.</value>
+  </data>
+  <data name="fixed_a_bug" xml:space="preserve">
+    <value>Однажды я исправил ошибку в 2 часа ночи - и забыл, как на следующий день.</value>
+  </data>
+  <data name="back_home" xml:space="preserve">
+    <value>← Вернуться к дому</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Редактировать аккаунт</value>
+  </data>
+  <data name="save_changes" xml:space="preserve">
+    <value>Сохранить изменения</value>
+  </data>
+  <data name="edit_teheme" xml:space="preserve">
+    <value>Редактировать тему</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Ошибка.</value>
+  </data>
+  <data name="erorr_processing" xml:space="preserve">
+    <value>Произошла ошибка при обработке вашего запроса.</value>
+  </data>
+  <data name="error_request_id" xml:space="preserve">
+    <value>Идентификатор запроса:</value>
+  </data>
+  <data name="development_mode" xml:space="preserve">
+    <value>Режим разработки</value>
+  </data>
+  <data name="development" xml:space="preserve">
+    <value>Разработка</value>
+  </data>
+  <data name="error_development_environment" xml:space="preserve">
+    <value>В среде отображается подробная информация об ошибке, которая произошла.</value>
+  </data>
+  <data name="apsnetcore_environment" xml:space="preserve">
+    <value>Aspnetcoreenvironment</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Добро пожаловать</value>
+  </data>
+  <data name="building_with_ASP" xml:space="preserve">
+    <value>Создание веб -приложений с помощью ASP.net Core</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Авторизоваться</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>Зарегистрировать</value>
+  </data>
+  <data name="privacy" xml:space="preserve">
+    <value>Эта политика конфиденциальности объясняет, как мы собираем, используем и раскрываем вашу информацию, когда вы используете наш сервис. Это также информирует вас о ваших правах на конфиденциальность и о том, как закон защищает вас.</value>
+  </data>
+  <data name="info_we_gather" xml:space="preserve">
+    <value>Информация, которую мы собираем</value>
+  </data>
+  <data name="types_of_info" xml:space="preserve">
+    <value>Мы собираем различные типы информации для предоставления и улучшения наших услуг. Это включает в себя:</value>
+  </data>
+  <data name="personal_data" xml:space="preserve">
+    <value>Персональные данные: например, ваше имя, адрес электронной почты и контактные данные.</value>
+  </data>
+  <data name="usage_data" xml:space="preserve">
+    <value>Данные об использовании: информация о том, как вы получаете доступ и используете Сервис.</value>
+  </data>
+  <data name="cookies_tracking" xml:space="preserve">
+    <value>Файлы cookie и технологии отслеживания: для отслеживания активности в нашем сервисе и хранения определенной информации.</value>
+  </data>
+  <data name="utilising_info" xml:space="preserve">
+    <value>Как мы используем вашу информацию</value>
+  </data>
+  <data name="info_we_use" xml:space="preserve">
+    <value>Мы используем информацию, которую мы собираем:</value>
+  </data>
+  <data name="provide_maintain" xml:space="preserve">
+    <value>Обеспечить и поддерживать наш сервис</value>
+  </data>
+  <data name="notify" xml:space="preserve">
+    <value>Уведомим вас об изменениях в нашем сервисе</value>
+  </data>
+  <data name="customer_support" xml:space="preserve">
+    <value>Обеспечить поддержку клиентов</value>
+  </data>
+  <data name="monitoring" xml:space="preserve">
+    <value>Мониторинг использования и улучшить наш сервис</value>
+  </data>
+  <data name="working_items" xml:space="preserve">
+    <value>Обнаружить, предотвратить и решать технические проблемы</value>
+  </data>
+  <data name="disclosure" xml:space="preserve">
+    <value>Раскрытие вашей информации</value>
+  </data>
+  <data name="privacy_information" xml:space="preserve">
+    <value>Мы не продаем ваши личные данные. Тем не менее, мы можем раскрыть вашу информацию для выполнения юридических обязательств, защиты прав или обеспечения нашей политики.</value>
+  </data>
+  <data name="privacy_rights" xml:space="preserve">
+    <value>Ваши права на конфиденциальность</value>
+  </data>
+  <data name="your_rights" xml:space="preserve">
+    <value>Вы имеете право получить доступ, исправить или удалять свои личные данные. Вы также можете иметь право возражать или ограничить определенную обработку ваших данных.</value>
+  </data>
+  <data name="security_of_user_info" xml:space="preserve">
+    <value>Безопасность вашей информации</value>
+  </data>
+  <data name="strive" xml:space="preserve">
+    <value>Мы стремимся использовать коммерчески приемлемые средства для защиты ваших личных данных, но не можем гарантировать абсолютную безопасность.</value>
+  </data>
+  <data name="changes" xml:space="preserve">
+    <value>Изменения в этой политике конфиденциальности</value>
+  </data>
+  <data name="policy_updates" xml:space="preserve">
+    <value>Мы можем время от времени обновлять нашу политику конфиденциальности. Мы уведомим вас о каких -либо изменениях, опубликовав новую политику конфиденциальности на этой странице.</value>
+  </data>
+  <data name="contact" xml:space="preserve">
+    <value>Связаться с нами. Если у вас есть какие -либо вопросы об этой политике конфиденциальности, пожалуйста, свяжитесь с нами по адресу</value>
+  </data>
+  <data name="welcome_admin" xml:space="preserve">
+    <value>Приветствую, админ!</value>
+  </data>
+  <data name="admin_dashboard" xml:space="preserve">
+    <value>Административная панель</value>
+  </data>
+  <data name="manage_users" xml:space="preserve">
+    <value>Управлять пользователями</value>
+  </data>
+  <data name="manage_roles" xml:space="preserve">
+    <value>Управлять ролями</value>
+  </data>
+  <data name="add_remove_roles" xml:space="preserve">
+    <value>Добавить или удалить роли</value>
+  </data>
+  <data name="to_index" xml:space="preserve">
+    <value>Перейти к индексу</value>
+  </data>
+  <data name="loading_checkout" xml:space="preserve">
+    <value>Загрузка оформления</value>
+  </data>
+  <data name="naklad" xml:space="preserve">
+    <value>Циркуляция</value>
+  </data>
+  <data name="approve" xml:space="preserve">
+    <value>Одобрить пользователей</value>
+  </data>
+  <data name="download_excel" xml:space="preserve">
+    <value>Скачать Excell</value>
+  </data>
+  <data name="archived_transports" xml:space="preserve">
+    <value>Архивированные транспорты</value>
+  </data>
+  <data name="back_to_archived" xml:space="preserve">
+    <value>Вернуться к активным транспортам</value>
+  </data>
+  <data name="transport_id" xml:space="preserve">
+    <value>ИДЕНТИФИКАТОР</value>
+  </data>
+  <data name="transpot_st" xml:space="preserve">
+    <value>Stratansport</value>
+  </data>
+  <data name="transport_planirna" xml:space="preserve">
+    <value>Запланированное прибытие</value>
+  </data>
+  <data name="transport_sp" xml:space="preserve">
+    <value>Шрифт</value>
+  </data>
+  <data name="transport_callback_reason" xml:space="preserve">
+    <value>Причина обратного вызова</value>
+  </data>
+  <data name="transport_compare" xml:space="preserve">
+    <value>Сравнивать</value>
+  </data>
+  <data name="transport_remove_archive" xml:space="preserve">
+    <value>Удалить архив</value>
+  </data>
+  <data name="transport_delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="callback_transports" xml:space="preserve">
+    <value>Все транспорты</value>
+  </data>
+  <data name="view_archived" xml:space="preserve">
+    <value>Посмотреть архивные транспорты!</value>
+  </data>
+  <data name="cb_planiran" xml:space="preserve">
+    <value>Запланировано</value>
+  </data>
+  <data name="cb_acitons" xml:space="preserve">
+    <value>Действия</value>
+  </data>
+  <data name="cb_set_callback" xml:space="preserve">
+    <value>Установить обратный вызов</value>
+  </data>
+  <data name="cb_remove_callback" xml:space="preserve">
+    <value>Удалить обратный вызов</value>
+  </data>
+  <data name="cb_choose_reason" xml:space="preserve">
+    <value>Выберите причину</value>
+  </data>
+  <data name="cb_select_reason" xml:space="preserve">
+    <value>-Выберите разум-</value>
+  </data>
+  <data name="cb_submit" xml:space="preserve">
+    <value>Отправить обратный вызов</value>
+  </data>
+  <data name="cb_cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="cb_compare" xml:space="preserve">
+    <value>Сравните транспорт обратного вызова</value>
+  </data>
+  <data name="cb_field" xml:space="preserve">
+    <value>Поле</value>
+  </data>
+  <data name="cb_old_transport" xml:space="preserve">
+    <value>Старый транспорт (архивировано)</value>
+  </data>
+  <data name="cb_new_trnasport" xml:space="preserve">
+    <value>Новый транспорт</value>
+  </data>
+  <data name="cb_skaldisce" xml:space="preserve">
+    <value>Склад</value>
+  </data>
+  <data name="cb_vrsta" xml:space="preserve">
+    <value>Тип транспорта</value>
+  </data>
+  <data name="cb_pavza" xml:space="preserve">
+    <value>Водитель водителя</value>
+  </data>
+  <data name="cb_dolocen_skaldiscnik" xml:space="preserve">
+    <value>Проектный магазин</value>
+  </data>
+  <data name="cb_registracija" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="cb_navis_zacetek" xml:space="preserve">
+    <value>Навис Зачетек Склада</value>
+  </data>
+  <data name="cb_navis_konec" xml:space="preserve">
+    <value>Навис Конек Склада</value>
+  </data>
+  <data name="cb_is_callback" xml:space="preserve">
+    <value>Это обратный вызов</value>
+  </data>
+  <data name="cb_approve" xml:space="preserve">
+    <value>Одобрить зарегистрированных пользователей</value>
+  </data>
+  <data name="cb_pending" xml:space="preserve">
+    <value>В ожидании регистрации</value>
+  </data>
+  <data name="cr_approve" xml:space="preserve">
+    <value>Утвердить</value>
+  </data>
+  <data name="cr_decline" xml:space="preserve">
+    <value>Отклонить</value>
+  </data>
+  <data name="cr_pregled" xml:space="preserve">
+    <value>Обзор транспортировки и отключенных данных</value>
+  </data>
+  <data name="de_transpord" xml:space="preserve">
+    <value>Транспорт</value>
+  </data>
+  <data name="de_sk" xml:space="preserve">
+    <value>Скандал</value>
+  </data>
+  <data name="de_warehouse" xml:space="preserve">
+    <value>Склад</value>
+  </data>
+  <data name="de_st" xml:space="preserve">
+    <value>Св. Транспорт</value>
+  </data>
+  <data name="de_izkladisceno" xml:space="preserve">
+    <value>Выключенный</value>
+  </data>
+  <data name="de_kolicina" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="de_palete" xml:space="preserve">
+    <value>Палитра</value>
+  </data>
+  <data name="de_skadliscnik" xml:space="preserve">
+    <value>Склад</value>
+  </data>
+  <data name="de_datum" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="de_skaldiscnik_id" xml:space="preserve">
+    <value>Склад Человек</value>
+  </data>
+  <data name="de_download" xml:space="preserve">
+    <value>Скачать как Excel</value>
+  </data>
+  <data name="de_back" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="de_edit_user" xml:space="preserve">
+    <value>Редактировать пользователя</value>
+  </data>
+  <data name="eu_select_role" xml:space="preserve">
+    <value>Выберите роль</value>
+  </data>
+  <data name="index" xml:space="preserve">
+    <value>Индекс</value>
+  </data>
+  <data name="index_import" xml:space="preserve">
+    <value>Импортировать Excel</value>
+  </data>
+  <data name="index_create" xml:space="preserve">
+    <value>Создать новый</value>
+  </data>
+  <data name="index_no_info" xml:space="preserve">
+    <value>Там нет хитов.</value>
+  </data>
+  <data name="index_callback" xml:space="preserve">
+    <value>Перезвонить</value>
+  </data>
+  <data name="index_true" xml:space="preserve">
+    <value>истинный</value>
+  </data>
+  <data name="index_info" xml:space="preserve">
+    <value>я</value>
+  </data>
+  <data name="Index_details_221" xml:space="preserve">
+    <value>Подробности</value>
+  </data>
+  <data name="index_x" xml:space="preserve">
+    <value>×</value>
+  </data>
+  <data name="print" xml:space="preserve">
+    <value>Печать</value>
+  </data>
+  <data name="choose_transport" xml:space="preserve">
+    <value>Выберите транспорт для обратного вызова</value>
+  </data>
+  <data name="st_transport" xml:space="preserve">
+    <value>Нет. Транспорт:</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>- Выбирать -</value>
+  </data>
+  <data name="reason_callback" xml:space="preserve">
+    <value>перезвонить:</value>
+  </data>
+  <data name="confirm_callback" xml:space="preserve">
+    <value>Подтвердите обратный вызов</value>
+  </data>
+  <data name="import" xml:space="preserve">
+    <value>Хотели бы вы импортировать транспортные файлы?</value>
+  </data>
+  <data name="select_files" xml:space="preserve">
+    <value>Выберите файлы для импорта:</value>
+  </data>
+  <data name="import_selected" xml:space="preserve">
+    <value>Импорт выбранных файлов</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>Имя пользователя:</value>
+  </data>
+  <data name="geslo" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="navis" xml:space="preserve">
+    <value>Навис</value>
+  </data>
+  <data name="prijava" xml:space="preserve">
+    <value>Авторизоваться</value>
+  </data>
+  <data name="start_of_loading" xml:space="preserve">
+    <value>Начало загрузки:</value>
+  </data>
+  <data name="end_of_loading" xml:space="preserve">
+    <value>Конец загрузки:</value>
+  </data>
+  <data name="cmr_number" xml:space="preserve">
+    <value>Номер CMR:</value>
+  </data>
+  <data name="transport_number" xml:space="preserve">
+    <value>Транспортный номер:</value>
+  </data>
+  <data name="loaded_quantity" xml:space="preserve">
+    <value>Загруженное количество:</value>
+  </data>
+  <data name="registration_plates" xml:space="preserve">
+    <value>Регистрационные пластины:</value>
+  </data>
+  <data name="seal" xml:space="preserve">
+    <value>Тюлень:</value>
+  </data>
+  <data name="signature_warehouse_worker" xml:space="preserve">
+    <value>Название и подпись работника склада:</value>
+  </data>
+  <data name="signature_driver" xml:space="preserve">
+    <value>Имя и подпись драйвера:</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>Представлять на рассмотрение</value>
+  </data>
+  <data name="mr_email" xml:space="preserve">
+    <value>Электронная почта</value>
+  </data>
+  <data name="mr_roles" xml:space="preserve">
+    <value>Роли</value>
+  </data>
+  <data name="mr_nousers" xml:space="preserve">
+    <value>Пользователей не найдено.</value>
+  </data>
+  <data name="mr_select" xml:space="preserve">
+    <value>Выберите роли</value>
+  </data>
+  <data name="mr_remove_roles" xml:space="preserve">
+    <value>Удалить роли</value>
+  </data>
+  <data name="mr_external" xml:space="preserve">
+    <value>Внешние логины</value>
+  </data>
+  <data name="mr_full_name" xml:space="preserve">
+    <value>Полное имя</value>
+  </data>
+  <data name="mr_user_roles" xml:space="preserve">
+    <value>Роль (S)</value>
+  </data>
+  <data name="mr_edit" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="mr_confirm_delete" xml:space="preserve">
+    <value>Подтвердите удаление</value>
+  </data>
+  <data name="mr_yes_delete" xml:space="preserve">
+    <value>Да, удалить</value>
+  </data>
+  <data name="end_start_load" xml:space="preserve">
+    <value>Начало, конец циркуляции</value>
+  </data>
+  <data name="ramp1" xml:space="preserve">
+    <value>Rampa 1:</value>
+  </data>
+  <data name="ramp2" xml:space="preserve">
+    <value>Rampa 2:</value>
+  </data>
+  <data name="carina" xml:space="preserve">
+    <value>Таможенный шнур:</value>
+  </data>
+  <data name="izberi" xml:space="preserve">
+    <value>----- Выбирать ---------</value>
+  </data>
+  <data name="prisotna" xml:space="preserve">
+    <value>Подарок</value>
+  </data>
+  <data name="ni_prisotna" xml:space="preserve">
+    <value>Не присутствует</value>
+  </data>
+  <data name="ctn" xml:space="preserve">
+    <value>Ctn</value>
+  </data>
+  <data name="ustreznost" xml:space="preserve">
+    <value>Проведение транспортного средства:</value>
+  </data>
+  <data name="neustrezno" xml:space="preserve">
+    <value>непреднамеренно</value>
+  </data>
+  <data name="ustrezno" xml:space="preserve">
+    <value>соответствующим образом</value>
+  </data>
+  <data name="delno_neustrezno" xml:space="preserve">
+    <value>частично неадекватно</value>
+  </data>
+  <data name="delno ustrezno" xml:space="preserve">
+    <value>частично уместно</value>
+  </data>
+  <data name="start_date" xml:space="preserve">
+    <value>Начало циркуляции:</value>
+  </data>
+  <data name="set" xml:space="preserve">
+    <value>Наборы</value>
+  </data>
+  <data name="end_date" xml:space="preserve">
+    <value>Конец циркуляции:</value>
+  </data>
+  <data name="rejected_by_driver" xml:space="preserve">
+    <value>Драйвер отклонил начало из -за паузы:</value>
+  </data>
+  <data name="aciton" xml:space="preserve">
+    <value>Действие</value>
+  </data>
+  <data name="no_data" xml:space="preserve">
+    <value>Нет данных для выхода.</value>
+  </data>
+  <data name="add_warehouse" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Сохранять</value>
+  </data>
+  <data name="notes" xml:space="preserve">
+    <value>Примечания</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>Добавлять</value>
+  </data>
+  <data name="quantity" xml:space="preserve">
+    <value>Количество после склад</value>
+  </data>
+  <data name="manage" xml:space="preserve">
+    <value>Управление ролями</value>
+  </data>
+  <data name="remove_roles" xml:space="preserve">
+    <value>Новая роль:</value>
+  </data>
+  <data name="create_roles" xml:space="preserve">
+    <value>Создает роль</value>
+  </data>
+  <data name="remove_existing_roles" xml:space="preserve">
+    <value>Существующие приложения:</value>
+  </data>
+  <data name="choose_for_delete" xml:space="preserve">
+    <value>Выберите приложение для удаления:</value>
+  </data>
+  <data name="choose_role_for_delete" xml:space="preserve">
+    <value>Выберите приложение для удаления</value>
+  </data>
+  <data name="delete_role" xml:space="preserve">
+    <value>Удалить приложение</value>
+  </data>
+  <data name="set_smtp_password" xml:space="preserve">
+    <value>Установите пароль SMTP</value>
+  </data>
+  <data name="smtp_password_" xml:space="preserve">
+    <value>SMTP пароль</value>
+  </data>
+  <data name="save_smtp" xml:space="preserve">
+    <value>Сохранять</value>
+  </data>
+  <data name="uae_methods" xml:space="preserve">
+    <value>Методы доступа пользователя</value>
+  </data>
+  <data name="uae_google" xml:space="preserve">
+    <value>Пользователи Google</value>
+  </data>
+  <data name="uae_username" xml:space="preserve">
+    <value>Имя пользователя</value>
+  </data>
+  <data name="uae_login_provider" xml:space="preserve">
+    <value>Поставщик входа в систему</value>
+  </data>
+  <data name="uae_facebook" xml:space="preserve">
+    <value>Пользователи Facebook</value>
+  </data>
+  <data name="uae_microsoft" xml:space="preserve">
+    <value>Пользователи Microsoft</value>
+  </data>
+  <data name="uae_github" xml:space="preserve">
+    <value>Пользователи GitHub</value>
+  </data>
+  <data name="uae_yahoo" xml:space="preserve">
+    <value>Пользователи Yahoo</value>
+  </data>
+  <data name="uae_demo_user" xml:space="preserve">
+    <value>Yahoodemouser</value>
+  </data>
+  <data name="uae_yahoo_" xml:space="preserve">
+    <value>Yahoo</value>
+  </data>
+  <data name="uae_gitlab" xml:space="preserve">
+    <value>Пользователи Gitlab</value>
+  </data>
+  <data name="uae_local" xml:space="preserve">
+    <value>Локальные пользователи</value>
+  </data>
+  <data name="hello_analyst" xml:space="preserve">
+    <value>Привет, аналитик!</value>
+  </data>
+  <data name="analyst_page" xml:space="preserve">
+    <value>Это приборная панель Analitik. Ниже приведены ваши доступные задачи и инструменты.</value>
+  </data>
+  <data name="analyst_download_excel" xml:space="preserve">
+    <value>Скачать Excel</value>
+  </data>
+  <data name="create" xml:space="preserve">
+    <value>Создавать</value>
+  </data>
+  <data name="transport" xml:space="preserve">
+    <value>Транспорт</value>
+  </data>
+  <data name="back_to_list" xml:space="preserve">
+    <value>Вернуться к списку</value>
+  </data>
+  <data name="planned_arrival" xml:space="preserve">
+    <value>Запланированное прибытие:</value>
+  </data>
+  <data name="registration" xml:space="preserve">
+    <value>Регистрация:</value>
+  </data>
+  <data name="driver" xml:space="preserve">
+    <value>Водитель:</value>
+  </data>
+  <data name="type_of_transport" xml:space="preserve">
+    <value>Тип транспорта:</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>Тип транспорта:</value>
+  </data>
+  <data name="warehouse" xml:space="preserve">
+    <value>Склад:</value>
+  </data>
+  <data name="stop_driver" xml:space="preserve">
+    <value>Пауза водителя:</value>
+  </data>
+  <data name="navis_start" xml:space="preserve">
+    <value>Navis Začetek Sklada:</value>
+  </data>
+  <data name="navis_end" xml:space="preserve">
+    <value>Навис Конек Склада:</value>
+  </data>
+  <data name="no_transports" xml:space="preserve">
+    <value>Там нет транспорта для этого идентификатора</value>
+  </data>
+  <data name="all_warehouses" xml:space="preserve">
+    <value>Все магазины</value>
+  </data>
+  <data name="transport_details" xml:space="preserve">
+    <value>Транспортные детали</value>
+  </data>
+  <data name="tnrasport_info" xml:space="preserve">
+    <value>Транспортная информация</value>
+  </data>
+  <data name="transport_type" xml:space="preserve">
+    <value>Тип транспорта</value>
+  </data>
+  <data name="pasue" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="trnasport_type" xml:space="preserve">
+    <value>Тип транспорта</value>
+  </data>
+  <data name="details_driver" xml:space="preserve">
+    <value>Водитель</value>
+  </data>
+  <data name="details_navisstart" xml:space="preserve">
+    <value>Naviszaceteksklada</value>
+  </data>
+  <data name="details_navisend" xml:space="preserve">
+    <value>Naviskonecsklada</value>
+  </data>
+  <data name="detailed_assigned" xml:space="preserve">
+    <value>Назначен Skladiscnik</value>
+  </data>
+  <data name="greeting_shiftmanager" xml:space="preserve">
+    <value>Приветствую, сдвиг!</value>
+  </data>
+  <data name="shit_manager" xml:space="preserve">
+    <value>Это страница для роли Izmenovodja. Используйте ссылки ниже, чтобы управлять регистрациями и выполнить задачи, связанные с вашей ролью.</value>
+  </data>
+  <data name="confirm_account" xml:space="preserve">
+    <value>Подтвердить аккаунт</value>
+  </data>
+  <data name="app_diplomska" xml:space="preserve">
+    <value>диплом</value>
+  </data>
+  <data name="_layout_home" xml:space="preserve">
+    <value>Дом</value>
+  </data>
+  <data name="_layout_privacy" xml:space="preserve">
+    <value>Конфиденциальность</value>
+  </data>
+  <data name="_layout_izmenovodja" xml:space="preserve">
+    <value>Приборная панель Izmenovodja</value>
+  </data>
+  <data name="_layout_skaldiscnik" xml:space="preserve">
+    <value>Dashboard Skladiéshnik</value>
+  </data>
+  <data name="_Layout_admin" xml:space="preserve">
+    <value>Административная панель</value>
+  </data>
+  <data name="_Layout_analitika" xml:space="preserve">
+    <value>Приборная панель Analitika</value>
+  </data>
+  <data name="_layout_ct" xml:space="preserve">
+    <value>Изменить тему</value>
+  </data>
+  <data name="_layout_light" xml:space="preserve">
+    <value>Свет</value>
+  </data>
+  <data name="_layout_dark" xml:space="preserve">
+    <value>Темный</value>
+  </data>
+  <data name="_layout_custom" xml:space="preserve">
+    <value>Обычай</value>
+  </data>
+  <data name="_layout_logout" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="you_sure" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить это?</value>
+  </data>
+  <data name="quantity_" xml:space="preserve">
+    <value>Количество:</value>
+  </data>
+  <data name="paletes_" xml:space="preserve">
+    <value>Поддоны:</value>
+  </data>
+  <data name="warehouse_storage" xml:space="preserve">
+    <value>Хранилище:</value>
+  </data>
+  <data name="page_for" xml:space="preserve">
+    <value>Это страница для роли Складишника.</value>
+  </data>
+  <data name="warehouse_worker_index" xml:space="preserve">
+    <value>Магазин индекс</value>
+  </data>
+</root>

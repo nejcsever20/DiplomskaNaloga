@@ -19,8 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="wwwroot\css\detailedinfo.css" />
-    <_ContentIncludedByDefault Remove="wwwroot\css\privacypolicy.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\main.css" />
     <_ContentIncludedByDefault Remove="wwwroot\js\click-tracker.js" />
   </ItemGroup>
 

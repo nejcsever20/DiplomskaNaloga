@@ -1,25 +1,26 @@
 ﻿body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #DDDDDD;
-    color: #125D98;
+    background-color: #A6A6A6; /* Arctic silver */
+    color: #40474F; /* Hisense grey */
     padding: 20px;
 }
+
 h1 {
-    color: #125D98;
-    border-bottom: 2px solid #3C8DAD;
+    color: #40474F; /* Hisense grey */
+    border-bottom: 2px solid #00AAA6; /* Hisense Jade */
     padding-bottom: 10px;
     margin-bottom: 30px;
 }
 
 h4 {
-    color: #3C8DAD;
+    color: #00AAA6; /* Hisense Jade */
     margin-top: 20px;
 }
 
 hr {
     border: none;
     height: 2px;
-    background-color: #125D98;
+    background-color: #40474F; /* Hisense grey */
     margin-bottom: 30px;
 }
 
@@ -27,24 +28,24 @@ dl.row {
     background-color: white;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(18, 93, 152, 0.1);
+    box-shadow: 0 4px 8px rgba(64, 71, 79, 0.1); /* Hisense grey shadow */
 }
 
 dt.col-sm-2 {
     font-weight: bold;
-    color: #125D98;
+    color: #40474F; /* Hisense grey */
     margin-top: 10px;
 }
 
 dd.col-sm-10 {
     margin-bottom: 15px;
-    color: #3C8DAD;
+    color: #00AAA6; /* Hisense Jade */
 }
 
 a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #F5A962;
+    background-color: #00AAA6; /* Hisense Jade */
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -52,7 +53,7 @@ a {
     transition: background-color 0.3s ease;
 }
 
-a:hover {
-    background-color: #e48b3f;
-    color: #fff;
-}
+    a:hover {
+        background-color: #008b86; /* Slightly darker Hisense Jade */
+        color: #fff;
+    }

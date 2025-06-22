@@ -1,7 +1,7 @@
 ﻿/* ===== General styles ===== */
 body {
-    background-color: #DDDDDD;
-    color: #125D98;
+    background-color: #A6A6A6; /* Arctic Silver */
+    color: #00AAA6; /* Hisense Jade */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -9,13 +9,13 @@ body {
 
 h1, h2, h3 {
     text-align: center;
-    color: #125D98;
+    color: #00AAA6; /* Hisense Jade */
     margin-bottom: 20px;
 }
 
 /* ===== Login Form Container ===== */
 #account {
-    background-color: #3C8DAD;
+    background-color: #40474F; /* Hisense Grey */
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -30,16 +30,16 @@ h1, h2, h3 {
 
 /* ===== Input Styles ===== */
 .form-control {
-    border: 1px solid #125D98;
-    background-color: #DDDDDD;
-    color: #125D98;
+    border: 1px solid #00AAA6;
+    background-color: #A6A6A6; /* Arctic Silver */
+    color: #000000; /* Hisense Black */
     padding: 12px;
     border-radius: 8px;
     font-size: 14px;
 }
 
 .form-floating label {
-    color: #125D98;
+    color: #00AAA6;
 }
 
 /* ===== Checkbox and Link Styles ===== */
@@ -63,9 +63,9 @@ a:hover {
     width: 100%;
     height: 50px;
     border-radius: 30px;
-    background-color: #125D98;
-    color: #DDDDDD;
-    border: 2px solid #125D98;
+    background-color: #00AAA6; /* Hisense Jade */
+    color: #000000; /* Hisense Black */
+    border: 2px solid #00AAA6;
     font-size: 16px;
     text-transform: uppercase;
     cursor: pointer;
@@ -75,13 +75,14 @@ a:hover {
 }
 
     #login-submit:hover {
-        background-color: #3C8DAD;
-        border-color: #3C8DAD;
+        background-color: #40474F; /* Hisense Grey */
+        border-color: #40474F;
+        color: #A6A6A6;
     }
 
     #login-submit > span {
         font-size: 18px;
-        color: #DDDDDD;
+        color: #000000;
         position: relative;
         z-index: 2;
     }
@@ -97,7 +98,6 @@ a:hover {
         z-index: 1;
     }
 
-    /* Animations */
     #login-submit:active {
         animation: extend 1s ease-in-out forwards;
     }
@@ -114,22 +114,22 @@ a:hover {
 .text-danger,
 #Input_Password-error,
 #Input_Email-error {
-    color: #F5A962;
+    color: #F5A962; /* Keep alert color for contrast */
     font-size: 14px;
 }
 
 /* ===== External Login Section ===== */
 #external-account {
-    background-color: #6FB1C7; /* Lighter blue like left side */
+    background-color: #00AAA6; /* Hisense Jade */
     padding: 25px;
     border-radius: 12px;
-    color: #125D98;
+    color: #000000; /* Hisense Black */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-left: 40px; /* Push to the right */
+    margin-left: 40px;
 }
 
     #external-account h3 {
-        color: #125D98;
+        color: #000000;
         text-align: center;
         margin-bottom: 15px;
     }
@@ -139,8 +139,8 @@ a:hover {
         align-items: center;
         gap: 10px;
         padding: 10px 20px;
-        background-color: #333;
-        color: white;
+        background-color: #000000;
+        color: #A6A6A6;
         border: none;
         border-radius: 5px;
         margin: 10px auto;
@@ -149,7 +149,7 @@ a:hover {
     }
 
         #external-account button:hover {
-            background-color: #444;
+            background-color: #40474F; /* Hisense Grey */
         }
 
 /* ===== Animations ===== */
@@ -182,7 +182,7 @@ a:hover {
         opacity: 1;
     }
 }
-/* Fade-in animation */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -195,7 +195,6 @@ a:hover {
     }
 }
 
-/* Slide-in from left */
 @keyframes slideInLeft {
     from {
         opacity: 0;
@@ -207,7 +206,7 @@ a:hover {
         transform: translateX(0);
     }
 }
-/* Slide-in from right */
+
 @keyframes slideInRight {
     from {
         opacity: 0;
@@ -219,7 +218,8 @@ a:hover {
         transform: translateX(0);
     }
 }
-/* Entrance styles */
+
+/* Entrance animations */
 form#account {
     animation: slideInLeft 0.6s ease-out;
 }
@@ -234,6 +234,6 @@ button.btn-dark {
 }
 
     button.btn-dark:hover {
-        background-color: #333;
+        background-color: #40474F;
         transform: scale(1.02);
     }

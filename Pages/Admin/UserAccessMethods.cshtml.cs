@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace diplomska.Pages.Admin
 {
-
     [Authorize(Roles = "Admin")]
     public class UserAccessMethodsModel : PageModel
     {

@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace diplomska.Pages.Admin
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _context;

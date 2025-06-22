@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using diplomska.Data;
 using diplomska.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace diplomska.Pages.Admin
 {
+    [Authorize(Roles = "Admin")]
     public class CompareCallbackModel : PageModel
     {
         private readonly ApplicationDbContext _context;

@@ -8,7 +8,7 @@ using diplomska.Data;
 
 namespace diplomska.Pages.Izmenovodja
 {
-    [Authorize] // Allow all authenticated users to access the page
+    [Authorize(Roles = "Admin, Izmenovodja")]
     public class DetailedInfoModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;
