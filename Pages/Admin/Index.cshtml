@@ -279,11 +279,14 @@ else
 
 <!-- Hidden Print Content -->
 <div id="printContent" style="display:none;">
-    <h2>Registracija</h2>
-    <p>Št. Transporta: <span id="print-stTransporta"></span></p>
-    <p>Registracija: <span id="print-registracija"></span></p>
-    <p>Voznik: <span id="print-voznik"></span></p>
+    <h1>Registracija</h1>
+    <p style="font-size: 48pt;">Št. Transporta: <span id="print-stTransporta"></span></p>
+    <p style="font-size: 48pt;">Registracija: <span id="print-registracija"></span></p>
+    <p stlye="font-size: 48pt;">Voznik: <span id="print-voznik"></span></p>
 </div>
+
+<a asp-page="/Admin/AdminPage" class="btn btn-sm btn-secondary">Back to main page</a>
+
 
 @section Scripts {
     <script>

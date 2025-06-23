@@ -104,8 +104,8 @@ h6 {
     </style>
 </head>
 
-<h2 class="fadeIn delay-1">@Resources.manage_roles</h2>
-
+<h2 style="color: black" class="fadeIn delay-1">@Resources.manage_roles</h2>
+<a asp-page="/Admin/AdminPage" class="btn btn-sm btn-secondary">Back to main page</a>
 @if (Model.Users != null && Model.Users.Count > 0)
 {
     <table class="table table-striped fadeIn delay-2">
