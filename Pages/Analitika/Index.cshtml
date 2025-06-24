@@ -1,4 +1,5 @@
 ﻿@page
+@using diplomska.Models
 @using diplomska.Properties
 @model diplomska.Pages.Analitika.IndexModel
 
@@ -6,80 +7,92 @@
     ViewData["Title"] = "Index";
 }
 <head>
-    <link rel="stylesheet" href="~/css/izmenovodja.css" />
+    <link href="~/css/main.css" rel="stylesheet" />
 </head>
 
 <style>
-
-    /* General styles */
-    body {
-        margin: 0;
-        overflow: hidden;
-        background-color: #123;
-        color: #125D98;
-        position: relative;
-    }
-
-    /* Content on top of waves */
-    .text-center {
-        position: relative;
+    .modal {
+        display: none;
+        position: fixed;
         z-index: 1;
-        padding-top: 100px;
-        text-align: center;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4); /* Keep overlay dark */
+        padding-top: 60px;
     }
 
-    h1 {
-        text-align: center;
-        color: #DDDDDD;
+    .modal-content {
+        background-color: #ffffff; /* white */
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #40474F; /* Hisense grey */
+        width: 80%;
     }
 
-    p {
-        color: #DDDDDD;
+    .close-btn {
+        color: #A6A6A6; /* Arctic silver */
+        float: right;
+        font-size: 28px;
         font-weight: bold;
+        cursor: pointer;
     }
 
-    a {
-        text-decoration: none;
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #00AAA6; /* Hisense jade */
+            text-decoration: none;
+        }
+
+    .st-transporta-btn {
+        background: none;
+        border: none;
+        color: #00AAA6; /* Hisense jade */
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 1em;
+        padding: 0;
     }
 
-    .auth-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
+    #loginModal input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #40474F; /* Hisense grey */
+        color: #40474F; /* Hisense grey */
+    }
+
+    #loginModal form div {
+        margin-bottom: 15px;
+    }
+
+    .checkbox-group {
         margin-top: 20px;
     }
 
-        .auth-buttons a {
-            background-color: #125D98;
-            color: #DDDDDD !important;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+        .checkbox-group label {
+            margin-right: 15px;
+            color: #40474F; /* Hisense grey */
         }
 
-            .auth-buttons a:hover {
-                background-color: #3C8DAD;
-                color: #FFFFFF !important;
-            }
-
-    .auth-dev-button {
-        background-color: #125D98;
-        color: #DDDDDD;
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-weight: bold;
-        text-align: center;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-        transition: background-color 0.3s ease;
+    #navis-check {
+        margin: 0;
+        padding: 0;
     }
 
-        .auth-dev-button:hover {
-            background-color: #3C8DAD;
-            color: #FFFFFF;
+    .zoom-input {
+        transition: transform 0.3s ease;
+        border: 1px solid #40474F; /* Hisense grey */
+    }
+
+        .zoom-input.typing {
+            transform: scale(1.05);
+            box-shadow: 0 0 5px rgba(0, 170, 166, 0.5); /* Hisense jade with transparency */
+            border-color: #00AAA6; /* Hisense jade */
         }
+
 </style>
 
 <h1>@Resources.index</h1>
@@ -93,6 +106,7 @@
 <!-- 📂 Import Excel Button -->
 <button id="openImportModalBtn" class="btn btn-secondary">📂 Import Excel</button>
 
+<p><a asp-page="Create">@Resources.index_create</a></p>
 
 @if (Model.Transport.Count == 0)
 {
@@ -101,7 +115,7 @@
 else
 {
     <!-- ✅ CHANGED: Redirects to a new page instead of opening modal -->
-    <a class="btn btn-warning mb-3" href="/Admin/Callback">
+    <a class="btn btn-warning mb-3" href="/Analitika/Callback">
         🔁 Callback / Vrnitev
     </a>
 
@@ -265,11 +279,14 @@ else
 
 <!-- Hidden Print Content -->
 <div id="printContent" style="display:none;">
-    <h2>Registracija</h2>
-    <p>Št. Transporta: <span id="print-stTransporta"></span></p>
-    <p>Registracija: <span id="print-registracija"></span></p>
-    <p>Voznik: <span id="print-voznik"></span></p>
+    <h1 style="text-align: center; justify-content: center;">Registracija</h1>
+    <p style="font-size: 48pt; text-align: center; justify-content: center;">Št. Transporta: <span id="print-stTransporta"></span></p>
+    <p style="font-size: 48pt; text-align: center; justify-content: center;">Registracija: <span id="print-registracija"></span></p>
+    <p style="font-size: 48pt; text-align: center; justify-content: center;">Voznik: <span id="print-voznik"></span></p>
 </div>
+
+<a asp-page="/Analitika/AnalitikaPage" class="btn btn-sm btn-secondary">Back to main page</a>
+
 
 @section Scripts {
     <script>
@@ -324,13 +341,20 @@ else
             const password = document.getElementById("password").value.trim();
             const id = document.getElementById("login-transport-id").value;
             const navis = document.getElementById("navis-check").checked;
-            if (username && password) {
-                loginModal.style.display = "none";
-                const type = navis ? "&type=NAVIS" : "";
-                window.location.href = `/Analitika/Naklad?id=${id}${type}`;
-            } else {
+
+            if (!username || !password) {
                 alert("Prosimo, izpolnite vsa polja.");
+                return;
             }
+
+            if (!navis) {
+                alert("Za prijavo morate potrditi NAVIS.");
+                return;
+            }
+
+            // If all checks passed
+            loginModal.style.display = "none";
+            window.location.href = `/Analitika/Naklad?id=${id}&type=NAVIS`;
         });
 
         // Excel import modal logic

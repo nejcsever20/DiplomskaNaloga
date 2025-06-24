@@ -338,13 +338,20 @@ else
             const password = document.getElementById("password").value.trim();
             const id = document.getElementById("login-transport-id").value;
             const navis = document.getElementById("navis-check").checked;
-            if (username && password) {
-                loginModal.style.display = "none";
-                const type = navis ? "&type=NAVIS" : "";
-                window.location.href = `/Izmenovodja/Naklad?id=${id}${type}`;
-            } else {
+
+            if (!username || !password) {
                 alert("Prosimo, izpolnite vsa polja.");
+                return;
             }
+
+            if (!navis) {
+                alert("Za prijavo morate potrditi NAVIS.");
+                return;
+            }
+
+            // If all checks passed
+            loginModal.style.display = "none";
+            window.location.href = `/Izmenovodja/Naklad?id=${id}&type=NAVIS`;
         });
 
         // Excel import modal logic

@@ -53,7 +53,6 @@ namespace diplomska.Pages.Admin
             if (string.IsNullOrWhiteSpace(userId))
                 return Page();
 
-            // Get all users in "Skladiščnik" role
             var allUsers = await _userManager.Users.ToListAsync();
             var skladiscniki = new List<object>();
 
@@ -67,7 +66,6 @@ namespace diplomska.Pages.Admin
 
             SkladiscnikSelectList = new SelectList(skladiscniki, "FullName", "FullName");
 
-            // Load Izkladisceno entries for current TransportId
             IzkladiscenoList = await _context.Izkladisceno
                 .Where(i => i.TransportId == TransportId)
                 .Select(item => new Izkladisceno
@@ -81,7 +79,6 @@ namespace diplomska.Pages.Admin
                 })
                 .ToListAsync();
 
-            // Get latest transport for default selection if not already provided
             if (TransportId == 0)
             {
                 var transport = await _context.Transport.OrderByDescending(t => t.Id).FirstOrDefaultAsync();
@@ -97,7 +94,6 @@ namespace diplomska.Pages.Admin
                 }
             }
 
-            // Group Izkladisceno by Skladiscnik for chart
             var groupedData = await _context.Izkladisceno
                 .GroupBy(i => i.Skladiscnik)
                 .Select(g => new
@@ -123,7 +119,34 @@ namespace diplomska.Pages.Admin
             return Page();
         }
 
-        // Save Izkladisceno entry
+        public async Task<IActionResult> OnPost()
+        {
+            if (!ModelState.IsValid)
+                return Page();
+
+            var transport = await _context.Transport.FirstOrDefaultAsync(t => t.Id == TransportId);
+            if (transport == null)
+            {
+                TempData["ErrorMessage"] = "Transport ni bil najden.";
+                return RedirectToPage(new { TransportId });
+            }
+
+            transport.NAVISZacetekSklada = ZacetekNaklada;
+            transport.NAVISKonecSklada = KonecNaklada;
+            transport.Rampa1 = Rampa1;
+            transport.Rampa2 = Rampa2;
+            transport.CarinskaVrvicva = CarinskaVrvicva;
+            transport.UstreznostVozilca = UstreznostVozilca;
+            transport.ZavrnilZacetek = ZavrnilZacetek;
+
+            _context.Transport.Update(transport);
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Podatki uspešno shranjeni.";
+
+            return RedirectToPage(new { TransportId });
+        }
+
         public async Task<IActionResult> OnPostSaveData()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -162,8 +185,7 @@ namespace diplomska.Pages.Admin
                 return RedirectToPage();
             }
 
-            // Uncomment and set Notes property if Transport model has Notes field
-            // transport.Notes = Notes;
+             transport.Notes = Notes; // Uncomment if Transport has Notes
 
             _context.Transport.Update(transport);
             await _context.SaveChangesAsync();

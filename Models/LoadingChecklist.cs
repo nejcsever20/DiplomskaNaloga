@@ -21,6 +21,18 @@ namespace diplomska.Models
 
         // Checklist Items
         public ICollection<ChecklistAnswer> ChecklistAnswer { get; set; } = new List<ChecklistAnswer>();
+        public int Rampa1 { get; set; }
+        public int Rampa2 { get; set; }
+
+        public string? CarinskaVrvicva { get; set; }
+        public string? UstreznostVozilca { get; set; }
+
+        public DateTime? ZavrnilZacetek { get; set; }
+
+        // Optional, if not already present:
+        public DateTime? ZacetekNaklada { get; set; }
+        public DateTime? KonecNaklada { get; set; }
+
 
     }
 }

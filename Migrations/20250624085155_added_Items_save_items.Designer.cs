@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using diplomska.Data;
 
@@ -11,9 +12,11 @@ using diplomska.Data;
 namespace diplomska.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250624085155_added_Items_save_items")]
+    partial class added_Items_save_items
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -373,9 +376,6 @@ namespace diplomska.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<string>("CarinskaVrvicva")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("CmrNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -385,17 +385,8 @@ namespace diplomska.Migrations
                     b.Property<DateTime>("EndLoading")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("KonecNaklada")
-                        .HasColumnType("datetime2");
-
                     b.Property<double>("LoadedQuantity")
                         .HasColumnType("float");
-
-                    b.Property<int>("Rampa1")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Rampa2")
-                        .HasColumnType("int");
 
                     b.Property<string>("RegistrationPlates")
                         .HasColumnType("nvarchar(max)");
@@ -409,17 +400,8 @@ namespace diplomska.Migrations
                     b.Property<string>("TransportNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UstreznostVozilca")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("WarehouseSignature")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ZacetekNaklada")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("ZavrnilZacetek")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("id");
 
