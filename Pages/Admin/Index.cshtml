@@ -279,10 +279,10 @@ else
 
 <!-- Hidden Print Content -->
 <div id="printContent" style="display:none;">
-    <h1>Registracija</h1>
-    <p style="font-size: 48pt;">Št. Transporta: <span id="print-stTransporta"></span></p>
-    <p style="font-size: 48pt;">Registracija: <span id="print-registracija"></span></p>
-    <p stlye="font-size: 48pt;">Voznik: <span id="print-voznik"></span></p>
+    <h1 style="text-align: center; justify-content: center;">Registracija</h1>
+    <p style="font-size: 48pt; text-align: center; justify-content: center;">Št. Transporta: <span id="print-stTransporta"></span></p>
+    <p style="font-size: 48pt; text-align: center; justify-content: center;">Registracija: <span id="print-registracija"></span></p>
+    <p style="font-size: 48pt; text-align: center; justify-content: center;">Voznik: <span id="print-voznik"></span></p>
 </div>
 
 <a asp-page="/Admin/AdminPage" class="btn btn-sm btn-secondary">Back to main page</a>
@@ -356,7 +356,6 @@ else
             loginModal.style.display = "none";
             window.location.href = `/Admin/Naklad?id=${id}&type=NAVIS`;
         });
-
 
         // Excel import modal logic
         const importModal = document.getElementById("importExcelModal");

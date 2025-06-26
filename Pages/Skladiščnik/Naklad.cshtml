@@ -11,12 +11,6 @@
 <!DOCTYPE html>
 <html lang="sl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@ViewData["Title"]</title>
-
-    <link rel="stylesheet" href="~/css/skladiscnik.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <style>
         body {
             background-color: #40474F; /* Hisense grey */
@@ -138,8 +132,11 @@
             <span>@Model.StTransporta</span>
         </div>
 
+        <!-- SINGLE FORM START -->
         <form method="post">
+            <!-- Main input fields -->
             <div class="row g-3 mb-4">
+                <input type="hidden" asp-for="TransportId" />
                 <div class="col-md-6">
                     <label class="form-label">@Resources.ramp1</label>
                     <input type="number" class="form-control" asp-for="Rampa1" />
@@ -189,8 +186,73 @@
                 <label class="form-label">Voznik zavrnil začetek zaradi pavze:</label>
                 <input type="datetime-local" class="form-control" asp-for="ZavrnilZacetek" />
             </div>
-        </form>
 
+            <!-- Izkladiščeno Table (read only in form, editing/deleting separately) -->
+            <h3>Izkladiščeno</h3>
+            <table class="table table-bordered table-striped mt-3">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Količina</th>
+                        <th>Palete</th>
+                        <th>Skladiščnik</th>
+                        <th>Datum</th>
+                        <th>@Resources.aciton</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.IzkladiscenoList != null && Model.IzkladiscenoList.Any())
+                    {
+                        foreach (var item in Model.IzkladiscenoList)
+                        {
+                            <tr>
+                                <td>@item.Kolicina</td>
+                                <td>@item.Palete</td>
+                                <td>@item.Skladiscnik</td>
+                                <td>@item.Datum.ToString("dd.MM.yyyy HH:mm")</td>
+                                <td>
+                                    @if (item.Skladiscnik == User.Identity.Name)
+                                    {
+                                        <form method="post" asp-page-handler="Delete" asp-route-id="@item.Id" class="d-inline">
+                                            <button type="submit" class="btn btn-danger btn-sm">@Resources.transport_delete</button>
+                                        </form>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5" style="color:#A6A6A6;">Ni podatkov za izkladiščeno.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <!-- Add Izkladiščeno inputs inside main form -->
+            <h4 class="mt-5">Dodaj izkladiščeno</h4>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">Količina:</label>
+                    <input type="number" class="form-control" asp-for="Kolicina" />
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Palete:</label>
+                    <input type="number" class="form-control" asp-for="Palete" />
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Skladiščnik:</label>
+                    <select class="form-select" asp-for="Skladiscnik" asp-items="Model.SkladiscnikSelectList"></select>
+                </div>
+            </div>
+
+            <!-- Notes -->
+            <h4 class="mt-4">Opombe</h4>
+            <textarea asp-for="Notes" rows="4" class="form-control mb-3" style="background-color:#40474F; color:#F5F5F5; border: 1px solid #00AA46;"></textarea>
+
+            <button type="submit" class="btn btn-primary">Shrani</button>
+        </form>
+        <!-- SINGLE FORM END -->
         @if (TempData["SuccessMessage"] != null)
         {
             <div class="alert alert-success">@TempData["SuccessMessage"]</div>
@@ -201,72 +263,6 @@
             <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
         }
 
-        <h3>Izkladiščeno</h3>
-        <table class="table table-bordered table-striped mt-3">
-            <thead class="table-primary">
-                <tr>
-                    <th>Količina</th>
-                    <th>Palete</th>
-                    <th>Skladiščnik</th>
-                    <th>Datum</th>
-                    <th>@Resources.aciton</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model.IzkladiscenoList != null && Model.IzkladiscenoList.Any())
-                {
-                    foreach (var item in Model.IzkladiscenoList)
-                    {
-                        <tr>
-                            <td>@item.Kolicina</td>
-                            <td>@item.Palete</td>
-                            <td>@item.Skladiscnik</td>
-                            <td>@item.Datum.ToString("dd.MM.yyyy HH:mm")</td>
-                            <td>
-                                @if (item.Skladiscnik == User.Identity.Name)
-                                {
-                                    <form method="post" asp-page-handler="Delete" asp-route-id="@item.Id">
-                                        <button type="submit" class="btn btn-danger">@Resources.transport_delete</button>
-                                    </form>
-                                }
-                            </td>
-                        </tr>
-                    }
-                }
-                else
-                {
-                    <tr>
-                        <td colspan="5" style="color:#A6A6A6;">Ni podatkov za izkladiščeno.</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-
-        <h4 class="mt-5">Dodaj izkladiščeno</h4>
-        <form method="post" asp-page-handler="SaveData" class="mb-4">
-            <div class="row g-3">
-                <div class="col-md-4">
-                    <label class="form-label">Količina:</label>
-                    <input type="number" class="form-control" asp-for="Kolicina" required />
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Palete:</label>
-                    <input type="number" class="form-control" asp-for="Palete" required />
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label">Skladiščnik:</label>
-                    <select class="form-select" asp-for="Skladiscnik" asp-items="Model.SkladiscnikSelectList" required></select>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary mt-3">Dodaj</button>
-        </form>
-
-        <h4>Opombe</h4>
-        <form method="post" asp-page-handler="AddNote">
-            <textarea asp-for="Notes" rows="4" class="form-control mb-2" style="background-color:#40474F; color:#F5F5F5; border: 1px solid #00AA46;"></textarea>
-            <button type="submit" class="btn btn-secondary">Dodaj</button>
-        </form>
-
         <a href="javascript:history.back()" class="btn btn-dark mt-4">Nazaj</a>
 
         <h3 class="text-center mt-5">Količina po skladiščniku</h3>
@@ -275,6 +271,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        // Chart.js and setCurrentTime functions unchanged
         const ctx = document.getElementById('kolicinaChart').getContext('2d');
         const labels = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.ChartLabels));
         const data = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.ChartData));
