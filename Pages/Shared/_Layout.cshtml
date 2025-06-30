@@ -1,4 +1,4 @@
-﻿﻿@using Microsoft.AspNetCore.Identity
+﻿@using Microsoft.AspNetCore.Identity
 @using System.Globalization
 @using diplomska.Properties
 @inject SignInManager<IdentityUser> SignInManager
@@ -6,7 +6,8 @@
 
 @{
     var theme = Context.Request.Cookies["theme"] ?? "light";
-    var currentCulture = CultureInfo.CurrentCulture.Name; // e.g. "en" or "sl"
+    var currentCulture = CultureInfo.CurrentCulture.Name;
+    string userRole = null;
     string flagCode = currentCulture.ToLowerInvariant() switch
     {
         "en" => "us",
@@ -105,25 +106,58 @@
 
                         @if (User.Identity?.IsAuthenticated ?? false)
                         {
-                            if (User.IsInRole("Izmenovodja"))
+                        if (userRole == "SelectingRole")
+                        {
+                        <li class="nav-item">
+                            <a class="nav-link @(Context.Request.Path == "/ChooseRole" ? "active" : "")" asp-page="/ChooseRole">
+                                @Resources.role
+                            </a>
+                        </li>
+                        }
+                            else if (User.IsInRole("Admin"))
+                            {
+                                userRole = "Admin";
+                            }
+                            else if (User.IsInRole("Izmenovodja"))
+                            {
+                                userRole = "Izmenovodja";
+                            }
+                            else if (User.IsInRole("Skladiščnik"))
+                            {
+                                userRole = "Skladiščnik";
+                            }
+                            else if (User.IsInRole("Analitika"))
+                            {
+                                userRole = "Analitika";
+                            }
+
+                            if (userRole == "SelectingRole")
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link @(Context.Request.Path == "/ChooseRole" ? "active" : "")" asp-page="/ChooseRole">
+                                        @Resources.role;
+                                    </a>
+                                </li>
+                            }
+                            else if (userRole == "Izmenovodja")
                             {
                                 <li class="nav-item">
                                     <a class="nav-link" asp-page="/Izmenovodja/IzmenovodjaPage">@Resources._layout_izmenovodja</a>
                                 </li>
                             }
-                            else if (User.IsInRole("Skladiščnik"))
+                            else if (userRole == "Skladiščnik")
                             {
                                 <li class="nav-item">
                                     <a class="nav-link" asp-page="/Skladiščnik/SkladiščnikPage">@Resources._layout_skaldiscnik</a>
                                 </li>
                             }
-                            else if (User.IsInRole("Admin"))
+                            else if (userRole == "Admin")
                             {
                                 <li class="nav-item">
                                     <a class="nav-link" asp-page="/Admin/AdminPage">@Resources._Layout_admin</a>
                                 </li>
                             }
-                            else if (User.IsInRole("Analitika"))
+                            else if (userRole == "Analitika")
                             {
                                 <li class="nav-item">
                                     <a class="nav-link" asp-page="/Analitika/AnalitikaPage">@Resources._Layout_analitika</a>
@@ -135,6 +169,14 @@
                     <ul class="navbar-nav ms-auto align-items-center">
                         @if (User.Identity?.IsAuthenticated ?? false)
                         {
+                            var roleDisplay =
+                            User.IsInRole("SelectingRole") ? "no role":
+                            User.IsInRole("Izmenovodja") ? @Resources._layout_izmenovodja :
+                            User.IsInRole("Skladiščnik") ? @Resources._layout_skaldiscnik :
+                            User.IsInRole("Analitika") ? @Resources._Layout_analitika :
+                            User.IsInRole("Admin") ? @Resources._Layout_admin :
+                            Resources.role;
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
                                     <img src="~/images/profile-icon.png" alt="Profile" width="30" height="30" class="rounded-circle me-2" />
@@ -143,14 +185,7 @@
                                 <ul class="dropdown-menu dropdown-menu-end">
                                     <li>
                                         <span class="dropdown-item-text text-muted">
-                                            Role:
-                                            @(
-                                                User.IsInRole("Izmenovodja") ? "Izmenovodja" :
-                                                User.IsInRole("Skladiščnik") ? "Skladiščnik" :
-                                                User.IsInRole("Analitika") ? "Analitika" :
-                                                User.IsInRole("Admin") ? "Admin" :
-                                                "Unknown"
-                                                )
+                                            Role: @roleDisplay
                                         </span>
                                     </li>
                                     <li>
@@ -231,7 +266,6 @@
                                             </form>
                                         </li>
                                     }
-
                                 </ul>
                             </li>
                         }

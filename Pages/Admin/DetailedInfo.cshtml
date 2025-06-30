@@ -1,0 +1,64 @@
+﻿@page
+@model diplomska.Pages.Admin.DetailedInfoModel
+@{
+    ViewData["Title"] = "Podrobnosti transporta";
+}
+<head>
+    <link rel="stylesheet" href="~/css/detailedinfo.css" />
+</head>
+<h1>Podrobnosti transporta št. @Model.Transport?.Id</h1>
+
+@if (Model.Transport != null)
+{
+    <p><strong>Planiran prihod:</strong> @Model.Transport.PlaniranPrihod?.ToString("dd.MM.yyyy HH:mm")</p>
+    <p><strong>Registracija:</strong> @Model.Transport.Registracija</p>
+    <p><strong>Voznik:</strong> @Model.Transport.Voznik</p>
+    <p><strong>Vrsta prevoznega sredstva:</strong> @Model.Transport.VrstaPrevoznegaSredstva</p>
+    <p><strong>Vrsta transporta:</strong> @Model.Transport.VrstaTransporta</p>
+    <p><strong>Skladišče:</strong> @Model.Transport.Skladisce</p>
+    <p><strong>Pavza voznika:</strong> @Model.Transport.PavzaVoznika</p>
+    <p><strong>NAVIS začetek sklada:</strong> @Model.Transport.NAVISZacetekSklada?.ToString("dd.MM.yyyy HH:mm")</p>
+    <p><strong>NAVIS konec sklada:</strong> @Model.Transport.NAVISKonecSklada?.ToString("dd.MM.yyyy HH:mm")</p>
+}
+
+<hr />
+<h2>Izkladiščeno</h2>
+@if (Model.IzkladiscenoItems != null && Model.IzkladiscenoItems.Any())
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Količina</th>
+                <th>Palete</th>
+                <th>Skladiščnik</th>
+                <th>Datum</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.IzkladiscenoItems)
+            {
+                <tr>
+                    <td>@item.Kolicina</td>
+                    <td>@item.Palete</td>
+                    <td>@item.Skladiscnik</td>
+                    <td>@item.Datum.ToString("dd.MM.yyyy HH:mm")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p><em>Ni izkladiščenih zapisov za ta transport.</em></p>
+}
+
+<hr />
+<h2>Vsi Skladiščniki</h2>
+<ul>
+    @foreach (var user in Model.Skladiscniki)
+    {
+        <li>@user.UserName (@user.Email)</li>
+    }
+</ul>
+
+<a href="javascript:history.back()" class="back-button">Nazaj</a>
