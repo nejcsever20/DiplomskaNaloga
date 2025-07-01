@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 
 namespace diplomska.Areas.Identity.Pages.Account
 {
@@ -39,7 +40,6 @@ namespace diplomska.Areas.Identity.Pages.Account
 
             if (Roles == null || Roles.Count <= 1)
             {
-                // Auto-select the single role and redirect if only one
                 if (Roles.Count == 1)
                 {
                     return await SetUserRoleAndRedirect(user, Roles[0]);
@@ -59,7 +59,6 @@ namespace diplomska.Areas.Identity.Pages.Account
                 return RedirectToPage("/Index");
             }
 
-            // Ensure user is actually in that role
             var userRoles = await _userManager.GetRolesAsync(user);
             if (!userRoles.Contains(SelectedRole))
             {
@@ -72,20 +71,30 @@ namespace diplomska.Areas.Identity.Pages.Account
 
         private async Task<IActionResult> SetUserRoleAndRedirect(IdentityUser user, string role)
         {
-            var identity = (ClaimsIdentity)User.Identity;
-            var existingClaim = identity.FindFirst("SelectedRole");
+            // Sign the user out
+            await _signInManager.SignOutAsync();
 
+            // Create new identity with SelectedRole
+            var userPrincipal = await _signInManager.CreateUserPrincipalAsync(user);
+            var identity = (ClaimsIdentity)userPrincipal.Identity;
+
+            // Remove old SelectedRole claim if exists
+            var existingClaim = identity.FindFirst("SelectedRole");
             if (existingClaim != null)
             {
                 identity.RemoveClaim(existingClaim);
             }
 
+            // Add new SelectedRole claim
             identity.AddClaim(new Claim("SelectedRole", role));
 
-            // Refresh user principal
-            await _signInManager.RefreshSignInAsync(user);
+            // Sign in with the updated claims
+            await HttpContext.SignInAsync(
+                IdentityConstants.ApplicationScheme,
+                new ClaimsPrincipal(identity)
+            );
 
-            // Redirect to role-specific page
+            // Redirect based on role
             return role switch
             {
                 "Admin" => RedirectToPage("/Admin/AdminPage"),

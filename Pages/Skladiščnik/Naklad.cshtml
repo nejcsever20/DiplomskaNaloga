@@ -179,16 +179,15 @@
                 <div class="col-md-6">
                     <label class="form-label">Konec naklada:</label>
                     <input type="datetime-local" class="form-control" asp-for="KonecNaklada" id="konecNakladaInput" onchange="handleDateChange()" />
-
-                    <!-- Button that sets the date and starts redirect timer -->
                     <button type="button" class="btn btn-success mt-2" onclick="setCurrentTimeAndRedirect()">Nastavi</button>
 
-                    <!-- New redirect button - styled for visibility -->
-                    <button type="button"
-                            style="background-color: #00AAA6; color: white; margin-top: 12px; margin-left: 10px; padding: 8px 16px; border-radius: 5px; border: none; cursor: pointer;"
-                            onclick="console.log('Redirect button clicked'); window.location.href='/Skladiščnik/LoadingCheckOut?transportId=@Model.TransportId';">
-                        Pojdi na drugo stran
-                    </button>
+                    <!-- Redirect button aligned just like others -->
+                    <a id="redirectButton"
+                       href="#"
+                       class="btn btn-success mt-2 ms-2 disabled"
+                       style="background-color: #00AAA6; color: white !important; text-decoration: none; pointer-events: none; opacity: 0.5;">
+                        Loading Checkout
+                    </a>
                 </div>
             </div>
 
@@ -326,5 +325,30 @@
             window.location.href = `/Skladiščnik/PageByDate?date=${encodedDate}`;
         }
     </script>
+    <script>
+        const dateInput = document.getElementById('konecNakladaInput');
+        const redirectBtn = document.getElementById('redirectButton');
+
+        function updateRedirectButtonState() {
+            if (dateInput.value) {
+                redirectBtn.href = `/Skladiščnik/LoadingCheckOut?transportId=@Model.TransportId`;
+                redirectBtn.classList.remove("disabled");
+                redirectBtn.style.pointerEvents = "auto";
+                redirectBtn.style.opacity = "1";
+            } else {
+                redirectBtn.href = "#";
+                redirectBtn.classList.add("disabled");
+                redirectBtn.style.pointerEvents = "none";
+                redirectBtn.style.opacity = "0.5";
+            }
+        }
+
+        // Initial check
+        updateRedirectButtonState();
+
+        // Listen to changes in the date field
+        dateInput.addEventListener("input", updateRedirectButtonState);
+    </script>
+
 </body>
 </html>

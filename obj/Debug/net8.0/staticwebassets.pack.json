@@ -109,20 +109,12 @@
       "PackagePath": "staticwebassets\\images\\developer.jpg"
     },
     {
-      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\al.png",
-      "PackagePath": "staticwebassets\\images\\flags\\al.png"
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\bg-BG.png",
+      "PackagePath": "staticwebassets\\images\\flags\\bg-BG.png"
     },
     {
-      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\bg.png",
-      "PackagePath": "staticwebassets\\images\\flags\\bg.png"
-    },
-    {
-      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\cs.png",
-      "PackagePath": "staticwebassets\\images\\flags\\cs.png"
-    },
-    {
-      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\cz.png",
-      "PackagePath": "staticwebassets\\images\\flags\\cz.png"
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\cs-CZ.png",
+      "PackagePath": "staticwebassets\\images\\flags\\cs-CZ.png"
     },
     {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\de.png",
@@ -141,44 +133,44 @@
       "PackagePath": "staticwebassets\\images\\flags\\fr.png"
     },
     {
-      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\it.png",
-      "PackagePath": "staticwebassets\\images\\flags\\it.png"
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\it-IT.png",
+      "PackagePath": "staticwebassets\\images\\flags\\it-IT.png"
     },
     {
-      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\mk.png",
-      "PackagePath": "staticwebassets\\images\\flags\\mk.png"
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\mk-MK.png",
+      "PackagePath": "staticwebassets\\images\\flags\\mk-MK.png"
     },
     {
-      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\pl.png",
-      "PackagePath": "staticwebassets\\images\\flags\\pl.png"
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\pl-PL.png",
+      "PackagePath": "staticwebassets\\images\\flags\\pl-PL.png"
     },
     {
-      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\ro.png",
-      "PackagePath": "staticwebassets\\images\\flags\\ro.png"
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\ro-RO.png",
+      "PackagePath": "staticwebassets\\images\\flags\\ro-RO.png"
     },
     {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\ru.png",
       "PackagePath": "staticwebassets\\images\\flags\\ru.png"
     },
     {
-      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\sk.png",
-      "PackagePath": "staticwebassets\\images\\flags\\sk.png"
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\sk-SK.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sk-SK.png"
     },
     {
-      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\sl.png",
-      "PackagePath": "staticwebassets\\images\\flags\\sl.png"
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\sl-si.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sl-si.png"
     },
     {
-      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\sq.png",
-      "PackagePath": "staticwebassets\\images\\flags\\sq.png"
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\sq-Al.png",
+      "PackagePath": "staticwebassets\\images\\flags\\sq-Al.png"
     },
     {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\sr.png",
       "PackagePath": "staticwebassets\\images\\flags\\sr.png"
     },
     {
-      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\tr.png",
-      "PackagePath": "staticwebassets\\images\\flags\\tr.png"
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\tr-TR.png",
+      "PackagePath": "staticwebassets\\images\\flags\\tr-TR.png"
     },
     {
       "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\us.png",

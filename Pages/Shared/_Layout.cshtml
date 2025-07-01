@@ -10,37 +10,26 @@
     var currentCulture = CultureInfo.CurrentCulture.Name;
 
     var selectedRoleClaim = User?.Claims.FirstOrDefault(c => c.Type == "SelectedRole")?.Value;
-    string userRole = selectedRoleClaim ?? "SelectingRole";
-
-    if (!string.IsNullOrEmpty(selectedRoleClaim))
-    {
-        userRole = selectedRoleClaim;
-    } else if(User.Identity?.IsAuthenticated ?? false)
-    {
-        if (User.IsInRole("Admin")) userRole = "Admin";
-        else if (User.IsInRole("Izmenovodja")) userRole = "Izmenovodja";
-        else if (User.IsInRole("Skladiščnik")) userRole = "Skladiščnik";
-        else if (User.IsInRole("Analitika")) userRole = "Analitika";
-    }
+    string userRole = !string.IsNullOrEmpty(selectedRoleClaim) ? selectedRoleClaim : "SelectingRole";
 
     string flagCode = currentCulture.ToLowerInvariant() switch
     {
         "en" => "us",
-        "sl" => "sl",
+        "sl-si" => "sl-si",
         "de" => "de",
         "es" => "es",
         "fr" => "fr",
-        "sq" => "al",
-        "bg" => "bg",
-        "cs" => "cz",
-        "it" => "it",
-        "mk" => "mk",
-        "pl" => "pl",
-        "ro" => "ro",
+        "sq-Al" => "sq-Al",
+        "bg-BG" => "bg-BG",
+        "cs-CZ" => "cs-CZ",
+        "it-IT" => "it-IT",
+        "mk-MK" => "mk-MK",
+        "pl-PL" => "pl-PL",
+        "ro-RO" => "ro-RO",
         "ru" => "ru",
         "sr" => "sr",
-        "sk" => "sk",
-        "tr" => "tr",
+        "sk-SK" => "sk-SK",
+        "tr-TR" => "tr-TR",
         _ => "us"
     };
 }
@@ -118,36 +107,40 @@
                                 <span class="nav-link disabled">@Resources._layout_privacy</span>
                             </li>
 
-                            @* Role-specific navigation *@
-                            switch (userRole)
+                            @* Role-based navigation shown only AFTER a role is selected *@
+                            @if (userRole == "SelectingRole")
                             {
-                                case "SelectingRole":
-                                    <li class="nav-item">
-                                        <a class="nav-link @(Context.Request.Path == "/ChooseRole" ? "active" : "")" asp-page="/ChooseRole">
-                                            @Resources.role
-                                        </a>
-                                    </li>
-                                    break;
-                                case "Izmenovodja":
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-page="/Izmenovodja/IzmenovodjaPage">@Resources._layout_izmenovodja</a>
-                                    </li>
-                                    break;
-                                case "Skladiščnik":
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-page="/Skladiščnik/SkladiščnikPage">@Resources._layout_skaldiscnik</a>
-                                    </li>
-                                    break;
-                                case "Admin":
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-page="/Admin/AdminPage">@Resources._Layout_admin</a>
-                                    </li>
-                                    break;
-                                case "Analitika":
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-page="/Analitika/AnalitikaPage">@Resources._Layout_analitika</a>
-                                    </li>
-                                    break;
+                                <li class="nav-item">
+                                    <a class="nav-link @(Context.Request.Path == "/ChooseRole" ? "active" : "")" asp-page="/ChooseRole">
+                                        @Resources.role
+                                    </a>
+                                </li>
+                            }
+                            else
+                            {
+                                switch (userRole)
+                                {
+                                    case "Izmenovodja":
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-page="/Izmenovodja/IzmenovodjaPage">@Resources._layout_izmenovodja</a>
+                                        </li>
+                                        break;
+                                    case "Skladiščnik":
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-page="/Skladiščnik/SkladiščnikPage">@Resources._layout_skaldiscnik</a>
+                                        </li>
+                                        break;
+                                    case "Admin":
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-page="/Admin/AdminPage">@Resources._Layout_admin</a>
+                                        </li>
+                                        break;
+                                    case "Analitika":
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-page="/Analitika/AnalitikaPage">@Resources._Layout_analitika</a>
+                                        </li>
+                                        break;
+                                }
                             }
                         }
                     </ul>
@@ -198,35 +191,15 @@
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
                                     @{
                                         var languages = new[] {
-                                ("en", "English"), ("sl", "Slovenščina"), ("de", "German"), ("es", "Spanish"),
-                                ("fr", "French"), ("sq", "Albanian"), ("bg", "Bulgarian"), ("cs", "Czech"),
-                                ("it", "Italian"), ("mk", "Macedonian"), ("pl", "Polish"), ("ro", "Romanian"),
-                                ("ru", "Russian"), ("sr", "Serbian - Cyrilic"), ("sk", "Slovak"), ("tr", "Turkish")
+                                ("en", "English"), ("sl-si", "Slovenščina"), ("de", "German"), ("es", "Spanish"),
+                                ("fr", "French"), ("sq-Al", "Albanian"), ("bg-BG", "Bulgarian"), ("cs-CZ", "Czech"),
+                                ("it-IT", "Italian"), ("mk-MK", "Macedonian"), ("pl-PL", "Polish"), ("ro-RO", "Romanian"),
+                                ("ru", "Russian"), ("sr", "Serbian - Cyrillic"), ("sk-SK", "Slovak"), ("tr-TR", "Turkish")
                                 };
 
                                         foreach (var lang in languages)
                                         {
-                                            var lc = lang.Item1 switch
-                                            {
-                                                "en" => "us",
-                                                "sl" => "sl",
-                                                "de" => "de",
-                                                "es" => "es",
-                                                "fr" => "fr",
-                                                "sq" => "al",
-                                                "bg" => "bg",
-                                                "cs" => "cz",
-                                                "it" => "it",
-                                                "mk" => "mk",
-                                                "pl" => "pl",
-                                                "ro" => "ro",
-                                                "ru" => "ru",
-                                                "sr" => "sr",
-                                                "sk" => "sk",
-                                                "tr" => "tr",
-                                                _ => "us"
-                                            };
-
+                                            var lc = lang.Item1.ToLowerInvariant().Replace("_", "-");
                                             <li>
                                                 <form method="post" asp-page="/SetLanguage" class="d-inline w-100">
                                                     <input type="hidden" name="culture" value="@lang.Item1" />

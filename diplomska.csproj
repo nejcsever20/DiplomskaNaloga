@@ -46,7 +46,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\files\" />
-    <Folder Include="wwwroot\images\flags\" />
   </ItemGroup>
 
   <ItemGroup>
