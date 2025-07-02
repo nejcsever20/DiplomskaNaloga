@@ -7,7 +7,21 @@
 <head>
     <link href="~/css/main.css" rel="stylesheet" />
 </head>
+
 <h2>@Resources.de_edit_user</h2>
+
+@if (!string.IsNullOrEmpty(Model.AvatarPath))
+{
+    <div class="mb-3">
+        <label>Current Avatar:</label><br />
+        <img src="@Model.AvatarPath" alt="User Avatar" style="max-width: 150px; max-height: 150px; border-radius: 8px;" />
+    </div>
+}
+else
+{
+    <p><em>No avatar uploaded.</em></p>
+}
+
 <form method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -41,6 +55,7 @@
 
     <button type="submit" class="btn btn-primary">@Resources.save_changes</button>
     <a asp-page="/Admin/ManageUsers" class="btn btn-secondary">@Resources.cb_cancel</a>
+    <a asp-page="../Profile/UploadAvatar" class="btn btn-sm btn-secondary">Upload image</a>
 </form>
 
 @section Scripts {

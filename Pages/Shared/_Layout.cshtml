@@ -1,9 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject IHttpContextAccessor HttpContextAccessor
-@using System.Globalization
-@using diplomska.Properties
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+@inject diplomska.Data.ApplicationDbContext DbContext
+@using System.Globalization
+@using diplomska.Properties
 
 @{
     var theme = Context.Request.Cookies["theme"] ?? "light";
@@ -15,7 +16,7 @@
     string flagCode = currentCulture.ToLowerInvariant() switch
     {
         "en" => "us",
-        "sl-si" => "sl-si",
+        "si-SI" => "si-SI",
         "de" => "de",
         "es" => "es",
         "fr" => "fr",
@@ -32,6 +33,22 @@
         "tr-TR" => "tr-TR",
         _ => "us"
     };
+
+    // Get the avatar path for the current logged-in user
+    string avatarPath = null;
+    if (User.Identity?.IsAuthenticated ?? false)
+    {
+        var userId = UserManager.GetUserId(User);
+        var profile = DbContext.UserProfiles.FirstOrDefault(p => p.UserId == userId);
+        if (profile != null && !string.IsNullOrEmpty(profile.AvatarPath))
+        {
+            avatarPath = profile.AvatarPath;
+        }
+        else
+        {
+            avatarPath = "~/images/profile-icon.png"; // fallback default icon
+        }
+    }
 }
 
 <!DOCTYPE html>
@@ -159,7 +176,7 @@
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
-                                    <img src="~/images/profile-icon.png" alt="Profile" width="30" height="30" class="rounded-circle me-2" />
+                                    <img src="@avatarPath" alt="Profile" width="30" height="30" class="rounded-circle me-2" />
                                     <span>@User.Identity.Name</span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
@@ -173,6 +190,9 @@
                                                 <option value="custom" selected="@(theme == "custom")">@Resources._layout_custom</option>
                                             </select>
                                         </form>
+                                    </li>
+                                    <li>
+                                        <a asp-page="../Profile/UploadAvatar" class="dropdown-item">Upload image</a>
                                     </li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li>
@@ -190,6 +210,7 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
                                     @{
+
                                         var languages = new[] {
                                 ("en", "English"), ("sl-si", "Slovenščina"), ("de", "German"), ("es", "Spanish"),
                                 ("fr", "French"), ("sq-Al", "Albanian"), ("bg-BG", "Bulgarian"), ("cs-CZ", "Czech"),
@@ -229,11 +250,15 @@
         </nav>
     </header>
 
-    <div class="container pt-5 mt-4">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+<div class="container mt-5 pt-3">
+    @RenderBody()
+</div>
+
+    <footer class="border-top footer text-muted py-3 mt-5">
+        <div class="container">
+            &copy; @DateTime.Now.Year - diplomska
+        </div>
+    </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,26 @@
+﻿@page
+@model UploadAvatarModel
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Upload Avatar";
+}
+
+<h2>Upload Your Avatar</h2>
+
+<form method="post" enctype="multipart/form-data" class="mb-3">
+    <div class="mb-3">
+        <label for="avatarFile" class="form-label">Choose avatar image (jpg, jpeg, png):</label>
+        <input type="file" id="avatarFile" name="AvatarFile" class="form-control" accept=".jpg,.jpeg,.png" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-info mt-3">
+        @Model.Message
+    </div>
+}

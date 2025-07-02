@@ -17,5 +17,16 @@ namespace diplomska.Data
         public DbSet<ChecklistAnswer> ChecklistAnswers { get; set; }
         public DbSet<ArchivedTransport> ArchivedTransports { get; set; }
 
+        public DbSet<UserProfile> UserProfiles { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<UserProfile>()
+                .HasIndex(up => up.UserId)
+                .IsUnique();
+
+            base.OnModelCreating(builder);
+        }
+
     }
 }

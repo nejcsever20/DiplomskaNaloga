@@ -453,6 +453,18 @@
       "PackagePath": "staticwebassets\\pdfs\\LoadingCheckOut_12359_20250508_1527.pdf"
     },
     {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\uploads\\avatars\\599f1635-3d59-4bd8-b903-9d7ef1623fae.png",
+      "PackagePath": "staticwebassets\\uploads\\avatars\\599f1635-3d59-4bd8-b903-9d7ef1623fae.png"
+    },
+    {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\uploads\\avatars\\c5202e08-8f9b-49af-9a92-5d0891c8081e.jpg",
+      "PackagePath": "staticwebassets\\uploads\\avatars\\c5202e08-8f9b-49af-9a92-5d0891c8081e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\uploads\\avatars\\c5202e08-8f9b-49af-9a92-5d0891c8081e.png",
+      "PackagePath": "staticwebassets\\uploads\\avatars\\c5202e08-8f9b-49af-9a92-5d0891c8081e.png"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.diplomska.props",
       "PackagePath": "build\\diplomska.props"
     },

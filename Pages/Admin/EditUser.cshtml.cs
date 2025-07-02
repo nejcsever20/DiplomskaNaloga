@@ -1,8 +1,10 @@
+using diplomska.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,21 +18,30 @@ namespace diplomska.Pages.Admin
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IEmailSender _emailSender;
+        private readonly IWebHostEnvironment _env;
+        private readonly ApplicationDbContext _applicationDbContext;
 
         public EditUserModel(
             UserManager<IdentityUser> userManager,
             RoleManager<IdentityRole> roleManager,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            IWebHostEnvironment env,
+            ApplicationDbContext applicationDbContext)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _emailSender = emailSender;
+            _env = env;
+            _applicationDbContext = applicationDbContext;
         }
 
         [BindProperty]
         public EditUserInputModel Input { get; set; }
 
         public List<string> AllRoles { get; set; }
+
+        // New property to expose avatar URL to the view
+        public string? AvatarPath { get; set; }
 
         public class EditUserInputModel
         {
@@ -65,8 +76,12 @@ namespace diplomska.Pages.Admin
                 Id = user.Id,
                 Email = user.Email,
                 UserName = user.UserName,
-                Role = roles.FirstOrDefault()
+                Role = roles.FirstOrDefault(),
             };
+
+            // Load avatar path from UserProfiles table
+            var profile = await _applicationDbContext.UserProfiles.FirstOrDefaultAsync(p => p.UserId == user.Id);
+            AvatarPath = profile?.AvatarPath;
 
             return Page();
         }
