@@ -1170,4 +1170,67 @@
   <data name="diplomska" xml:space="preserve">
     <value>dyplom</value>
   </data>
+  <data name="to_graphs" xml:space="preserve">
+    <value>Wykresy</value>
+  </data>
+  <data name="Graphs" xml:space="preserve">
+    <value>Wykresy</value>
+  </data>
+  <data name="Heading_GraphViewer" xml:space="preserve">
+    <value>Przeglądarka wykresów</value>
+  </data>
+  <data name="GraphOption1" xml:space="preserve">
+    <value>1. Sumy zagregowane</value>
+  </data>
+  <data name="GraphOption2" xml:space="preserve">
+    <value>2. Liczba magazynu (magazyn)</value>
+  </data>
+  <data name="GraphOption3" xml:space="preserve">
+    <value>3. Liczba pracowników (pracownik magazynowy)</value>
+  </data>
+  <data name="GraphOption4" xml:space="preserve">
+    <value>4. Lista kontrolna Tak/Nie liczy się</value>
+  </data>
+  <data name="GraphOption5" xml:space="preserve">
+    <value>5. Liczba komentarzy na liście kontrolnej</value>
+  </data>
+  <data name="GraphOption6" xml:space="preserve">
+    <value>6. Liczby transportu na pracownika</value>
+  </data>
+  <data name="GraphOption7" xml:space="preserve">
+    <value>7. Niedokończona liczba transportu na pracownika</value>
+  </data>
+  <data name="GraphOption8" xml:space="preserve">
+    <value>8. Oddzwanianie liczy się według rozumu i daty</value>
+  </data>
+  <data name="GraphOption9" xml:space="preserve">
+    <value>9. Oddzwani</value>
+  </data>
+  <data name="YAxis_Sum" xml:space="preserve">
+    <value>Suma</value>
+  </data>
+  <data name="YAxis_Count" xml:space="preserve">
+    <value>Liczyć</value>
+  </data>
+  <data name="YAxis_YesNo" xml:space="preserve">
+    <value>Całkowicie Tak/Nie odpowiedzi</value>
+  </data>
+  <data name="YAxis_Comments" xml:space="preserve">
+    <value>Liczba komentarzy</value>
+  </data>
+  <data name="YAxis_TransportCount" xml:space="preserve">
+    <value>Liczba transportu</value>
+  </data>
+  <data name="YAxis_UnfinishedTransportCount" xml:space="preserve">
+    <value>Niedokończona liczba transportu</value>
+  </data>
+  <data name="YAxis_CallbackCount" xml:space="preserve">
+    <value>Liczba oddzwaniania</value>
+  </data>
+  <data name="XAxis_Category" xml:space="preserve">
+    <value>Kategoria</value>
+  </data>
+  <data name="XAxis_Label" xml:space="preserve">
+    <value>Etykieta</value>
+  </data>
 </root>

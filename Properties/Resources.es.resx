@@ -1167,4 +1167,67 @@
   <data name="warehouse_worker_index" xml:space="preserve">
     <value>Índice de almacenamiento</value>
   </data>
+  <data name="to_graphs" xml:space="preserve">
+    <value>Gráficos</value>
+  </data>
+  <data name="Graphs" xml:space="preserve">
+    <value>Gráficos</value>
+  </data>
+  <data name="Heading_GraphViewer" xml:space="preserve">
+    <value>Visor de gráficos</value>
+  </data>
+  <data name="GraphOption1" xml:space="preserve">
+    <value>1. Sumas agregadas</value>
+  </data>
+  <data name="GraphOption2" xml:space="preserve">
+    <value>2. Conteos de almacén (almacén)</value>
+  </data>
+  <data name="GraphOption3" xml:space="preserve">
+    <value>3. Conde de trabajadores (trabajador del almacén)</value>
+  </data>
+  <data name="GraphOption4" xml:space="preserve">
+    <value>4. Lista de verificación SÍ/NO CONTES</value>
+  </data>
+  <data name="GraphOption5" xml:space="preserve">
+    <value>5. Los comentarios de la lista de verificación cuenta</value>
+  </data>
+  <data name="GraphOption6" xml:space="preserve">
+    <value>6. Números de transporte por trabajador</value>
+  </data>
+  <data name="GraphOption7" xml:space="preserve">
+    <value>7. Conteos de transporte inacabado por trabajador</value>
+  </data>
+  <data name="GraphOption8" xml:space="preserve">
+    <value>8. La devolución de llamada cuenta por motivo y fecha</value>
+  </data>
+  <data name="GraphOption9" xml:space="preserve">
+    <value>9. La devolución de llamada cuenta por motivo y trabajador del almacén</value>
+  </data>
+  <data name="YAxis_Sum" xml:space="preserve">
+    <value>Suma</value>
+  </data>
+  <data name="YAxis_Count" xml:space="preserve">
+    <value>Contar</value>
+  </data>
+  <data name="YAxis_YesNo" xml:space="preserve">
+    <value>Respuestas totales de sí/no</value>
+  </data>
+  <data name="YAxis_Comments" xml:space="preserve">
+    <value>Comentario recuento</value>
+  </data>
+  <data name="YAxis_TransportCount" xml:space="preserve">
+    <value>Conteo de transporte</value>
+  </data>
+  <data name="YAxis_UnfinishedTransportCount" xml:space="preserve">
+    <value>Recuento de transporte inacabado</value>
+  </data>
+  <data name="YAxis_CallbackCount" xml:space="preserve">
+    <value>Recuento de devolución de llamada</value>
+  </data>
+  <data name="XAxis_Category" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="XAxis_Label" xml:space="preserve">
+    <value>Etiqueta</value>
+  </data>
 </root>

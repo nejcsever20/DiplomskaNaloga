@@ -1167,4 +1167,67 @@
   <data name="warehouse_worker_index" xml:space="preserve">
     <value>Магазин индекс</value>
   </data>
+  <data name="to_graphs" xml:space="preserve">
+    <value>Графики</value>
+  </data>
+  <data name="Graphs" xml:space="preserve">
+    <value>Графики</value>
+  </data>
+  <data name="Heading_GraphViewer" xml:space="preserve">
+    <value>График просмотр</value>
+  </data>
+  <data name="GraphOption1" xml:space="preserve">
+    <value>1. Совокупные суммы</value>
+  </data>
+  <data name="GraphOption2" xml:space="preserve">
+    <value>2. Подсчет склада (склад)</value>
+  </data>
+  <data name="GraphOption3" xml:space="preserve">
+    <value>3. Подсчет работников (Warehouse Worker)</value>
+  </data>
+  <data name="GraphOption4" xml:space="preserve">
+    <value>4. Контрольный список да/нет счета</value>
+  </data>
+  <data name="GraphOption5" xml:space="preserve">
+    <value>5. Комментарии контрольного списка подсчеты</value>
+  </data>
+  <data name="GraphOption6" xml:space="preserve">
+    <value>6. Транспортные номера на одного работника</value>
+  </data>
+  <data name="GraphOption7" xml:space="preserve">
+    <value>7. незаконченные транспортные подсчеты на работника</value>
+  </data>
+  <data name="GraphOption8" xml:space="preserve">
+    <value>8. Обратный вызов подсчетам по разуму и дате</value>
+  </data>
+  <data name="GraphOption9" xml:space="preserve">
+    <value>9. Callback Counts по разуму и складам работника</value>
+  </data>
+  <data name="YAxis_Sum" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="YAxis_Count" xml:space="preserve">
+    <value>Считать</value>
+  </data>
+  <data name="YAxis_YesNo" xml:space="preserve">
+    <value>Всего да/нет ответов</value>
+  </data>
+  <data name="YAxis_Comments" xml:space="preserve">
+    <value>Комментарий Count</value>
+  </data>
+  <data name="YAxis_TransportCount" xml:space="preserve">
+    <value>Транспортный счет</value>
+  </data>
+  <data name="YAxis_UnfinishedTransportCount" xml:space="preserve">
+    <value>Незаконченный транспортный счет</value>
+  </data>
+  <data name="YAxis_CallbackCount" xml:space="preserve">
+    <value>Счет обратного вызова</value>
+  </data>
+  <data name="XAxis_Category" xml:space="preserve">
+    <value>Категория</value>
+  </data>
+  <data name="XAxis_Label" xml:space="preserve">
+    <value>Этикетка</value>
+  </data>
 </root>

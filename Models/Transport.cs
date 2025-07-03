@@ -54,5 +54,8 @@ namespace diplomska.Models
         // Optional, if not already present:
         public DateTime? ZacetekNaklada { get; set; }
         public DateTime? KonecNaklada { get; set; }
+
+        public virtual ICollection<LoadingChecklist> LoadingChecklists { get; set; } = new List<LoadingChecklist>();
+
     }
 }

@@ -1170,4 +1170,67 @@
   <data name="diplomska" xml:space="preserve">
     <value>diplomë</value>
   </data>
+  <data name="to_graphs" xml:space="preserve">
+    <value>Grafikë</value>
+  </data>
+  <data name="Graphs" xml:space="preserve">
+    <value>Grafikë</value>
+  </data>
+  <data name="Heading_GraphViewer" xml:space="preserve">
+    <value>Shikues i grafikut</value>
+  </data>
+  <data name="GraphOption1" xml:space="preserve">
+    <value>1. Shuma të përgjithshme</value>
+  </data>
+  <data name="GraphOption2" xml:space="preserve">
+    <value>2. Numërimet e Magazinës (Magazina)</value>
+  </data>
+  <data name="GraphOption3" xml:space="preserve">
+    <value>3. Numërimet e Punëtorëve (Punëtori i Magazinës)</value>
+  </data>
+  <data name="GraphOption4" xml:space="preserve">
+    <value>4. Lista e Kontrollit Po/Jo Numëron</value>
+  </data>
+  <data name="GraphOption5" xml:space="preserve">
+    <value>5. Lista e Kontrollit Numëron komentet</value>
+  </data>
+  <data name="GraphOption6" xml:space="preserve">
+    <value>6. Numrat e transportit për punëtor</value>
+  </data>
+  <data name="GraphOption7" xml:space="preserve">
+    <value>7. Numërime të papërfunduara të transportit për punëtor</value>
+  </data>
+  <data name="GraphOption8" xml:space="preserve">
+    <value>8. Kthimi i thirrjes numëron sipas arsyes dhe datës</value>
+  </data>
+  <data name="GraphOption9" xml:space="preserve">
+    <value>9. Kthimi i kthimit llogarit sipas arsyes dhe punëtorëve të depove</value>
+  </data>
+  <data name="YAxis_Sum" xml:space="preserve">
+    <value>Shumë</value>
+  </data>
+  <data name="YAxis_Count" xml:space="preserve">
+    <value>Numër</value>
+  </data>
+  <data name="YAxis_YesNo" xml:space="preserve">
+    <value>Totale po/jo përgjigje</value>
+  </data>
+  <data name="YAxis_Comments" xml:space="preserve">
+    <value>Numër i komenteve</value>
+  </data>
+  <data name="YAxis_TransportCount" xml:space="preserve">
+    <value>Numër transporti</value>
+  </data>
+  <data name="YAxis_UnfinishedTransportCount" xml:space="preserve">
+    <value>Numër i papërfunduar i transportit</value>
+  </data>
+  <data name="YAxis_CallbackCount" xml:space="preserve">
+    <value>Numër i kthimit</value>
+  </data>
+  <data name="XAxis_Category" xml:space="preserve">
+    <value>Kategori</value>
+  </data>
+  <data name="XAxis_Label" xml:space="preserve">
+    <value>Etiketë</value>
+  </data>
 </root>

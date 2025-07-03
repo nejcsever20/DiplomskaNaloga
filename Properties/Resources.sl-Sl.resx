@@ -1170,4 +1170,67 @@
   <data name="app_diplomska" xml:space="preserve">
     <value>diploma</value>
   </data>
+  <data name="to_graphs" xml:space="preserve">
+    <value>Grafi</value>
+  </data>
+  <data name="Graphs" xml:space="preserve">
+    <value>Grafi</value>
+  </data>
+  <data name="Heading_GraphViewer" xml:space="preserve">
+    <value>Pregledovalnik grafov</value>
+  </data>
+  <data name="GraphOption1" xml:space="preserve">
+    <value>1. skupne vsote</value>
+  </data>
+  <data name="GraphOption2" xml:space="preserve">
+    <value>2. Število skladišč (skladišče)</value>
+  </data>
+  <data name="GraphOption3" xml:space="preserve">
+    <value>3. Število delavcev (skladiščni delavec)</value>
+  </data>
+  <data name="GraphOption4" xml:space="preserve">
+    <value>4. kontrolni seznam Da/ne šteje</value>
+  </data>
+  <data name="GraphOption5" xml:space="preserve">
+    <value>5. Šteje komentarje na kontrolnem seznamu</value>
+  </data>
+  <data name="GraphOption6" xml:space="preserve">
+    <value>6. prevozne številke na delavca</value>
+  </data>
+  <data name="GraphOption7" xml:space="preserve">
+    <value>7. Nedokončano število prevoza na delavca</value>
+  </data>
+  <data name="GraphOption8" xml:space="preserve">
+    <value>8. povratni klic šteje z razlogom in datum</value>
+  </data>
+  <data name="GraphOption9" xml:space="preserve">
+    <value>9. povratni klic šteje z razumom in delavcem v skladišču</value>
+  </data>
+  <data name="YAxis_Sum" xml:space="preserve">
+    <value>Vsota</value>
+  </data>
+  <data name="YAxis_Count" xml:space="preserve">
+    <value>Štetje</value>
+  </data>
+  <data name="YAxis_YesNo" xml:space="preserve">
+    <value>Skupaj da/ne odgovori</value>
+  </data>
+  <data name="YAxis_Comments" xml:space="preserve">
+    <value>Število komentarjev</value>
+  </data>
+  <data name="YAxis_TransportCount" xml:space="preserve">
+    <value>Število prevoza</value>
+  </data>
+  <data name="YAxis_UnfinishedTransportCount" xml:space="preserve">
+    <value>Nedokončano število prevoza</value>
+  </data>
+  <data name="YAxis_CallbackCount" xml:space="preserve">
+    <value>Število povratnih klicev</value>
+  </data>
+  <data name="XAxis_Category" xml:space="preserve">
+    <value>Kategorija</value>
+  </data>
+  <data name="XAxis_Label" xml:space="preserve">
+    <value>Etiketa</value>
+  </data>
 </root>

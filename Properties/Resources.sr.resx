@@ -1167,4 +1167,67 @@
   <data name="warehouse_worker_index" xml:space="preserve">
     <value>Индекс</value>
   </data>
+  <data name="to_graphs" xml:space="preserve">
+    <value>Графови</value>
+  </data>
+  <data name="Graphs" xml:space="preserve">
+    <value>Графови</value>
+  </data>
+  <data name="Heading_GraphViewer" xml:space="preserve">
+    <value>ГРАПХЕ ГРЕЕНТЕР</value>
+  </data>
+  <data name="GraphOption1" xml:space="preserve">
+    <value>1. Агрегатни суми</value>
+  </data>
+  <data name="GraphOption2" xml:space="preserve">
+    <value>2. Бројеве складишта (складиште)</value>
+  </data>
+  <data name="GraphOption3" xml:space="preserve">
+    <value>3. Броји радника (радника складишта)</value>
+  </data>
+  <data name="GraphOption4" xml:space="preserve">
+    <value>4. Контролна листа Да / Не рачуна се</value>
+  </data>
+  <data name="GraphOption5" xml:space="preserve">
+    <value>5. Коментари контролне листе броји</value>
+  </data>
+  <data name="GraphOption6" xml:space="preserve">
+    <value>6 Транспортне бројеве по раднику</value>
+  </data>
+  <data name="GraphOption7" xml:space="preserve">
+    <value>7. Недовршени транспорт броји по раднику</value>
+  </data>
+  <data name="GraphOption8" xml:space="preserve">
+    <value>8 Повратни позив броји због и датума</value>
+  </data>
+  <data name="GraphOption9" xml:space="preserve">
+    <value>9. Повратни позив броји разлогом и радником складишта</value>
+  </data>
+  <data name="YAxis_Sum" xml:space="preserve">
+    <value>Сума</value>
+  </data>
+  <data name="YAxis_Count" xml:space="preserve">
+    <value>Рачунати</value>
+  </data>
+  <data name="YAxis_YesNo" xml:space="preserve">
+    <value>Укупно да / без одговора</value>
+  </data>
+  <data name="YAxis_Comments" xml:space="preserve">
+    <value>Број коментара</value>
+  </data>
+  <data name="YAxis_TransportCount" xml:space="preserve">
+    <value>Пренос</value>
+  </data>
+  <data name="YAxis_UnfinishedTransportCount" xml:space="preserve">
+    <value>Недовршени број транспорта</value>
+  </data>
+  <data name="YAxis_CallbackCount" xml:space="preserve">
+    <value>Бројање повратних позива</value>
+  </data>
+  <data name="XAxis_Category" xml:space="preserve">
+    <value>Категорија</value>
+  </data>
+  <data name="XAxis_Label" xml:space="preserve">
+    <value>Налепница</value>
+  </data>
 </root>

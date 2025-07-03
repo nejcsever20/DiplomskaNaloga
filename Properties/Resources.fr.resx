@@ -1167,4 +1167,67 @@
   <data name="warehouse_worker_index" xml:space="preserve">
     <value>Index des magasins</value>
   </data>
+  <data name="to_graphs" xml:space="preserve">
+    <value>Graphiques</value>
+  </data>
+  <data name="Graphs" xml:space="preserve">
+    <value>Graphiques</value>
+  </data>
+  <data name="Heading_GraphViewer" xml:space="preserve">
+    <value>Visionneuse de graphiques</value>
+  </data>
+  <data name="GraphOption1" xml:space="preserve">
+    <value>1. Sums agrégés</value>
+  </data>
+  <data name="GraphOption2" xml:space="preserve">
+    <value>2. Entrepôt compte (entrepôt)</value>
+  </data>
+  <data name="GraphOption3" xml:space="preserve">
+    <value>3. Counts des travailleurs (travailleur d'entrepôt)</value>
+  </data>
+  <data name="GraphOption4" xml:space="preserve">
+    <value>4. Liste de contrôle oui / non compte</value>
+  </data>
+  <data name="GraphOption5" xml:space="preserve">
+    <value>5. Contrôle des commentaires de la liste de contrôle</value>
+  </data>
+  <data name="GraphOption6" xml:space="preserve">
+    <value>6. Numéros de transport par travailleur</value>
+  </data>
+  <data name="GraphOption7" xml:space="preserve">
+    <value>7. Compte de transport inachevé par travailleur</value>
+  </data>
+  <data name="GraphOption8" xml:space="preserve">
+    <value>8. Le rappel compte par la raison et la date</value>
+  </data>
+  <data name="GraphOption9" xml:space="preserve">
+    <value>9. Le rappel compte par la raison et le travailleur de l'entrepôt</value>
+  </data>
+  <data name="YAxis_Sum" xml:space="preserve">
+    <value>Somme</value>
+  </data>
+  <data name="YAxis_Count" xml:space="preserve">
+    <value>Compter</value>
+  </data>
+  <data name="YAxis_YesNo" xml:space="preserve">
+    <value>Total oui / non réponses</value>
+  </data>
+  <data name="YAxis_Comments" xml:space="preserve">
+    <value>COMMENTS COMMENTS</value>
+  </data>
+  <data name="YAxis_TransportCount" xml:space="preserve">
+    <value>Dénombrement des transports</value>
+  </data>
+  <data name="YAxis_UnfinishedTransportCount" xml:space="preserve">
+    <value>Compte de transport inachevé</value>
+  </data>
+  <data name="YAxis_CallbackCount" xml:space="preserve">
+    <value>Compte de rappel</value>
+  </data>
+  <data name="XAxis_Category" xml:space="preserve">
+    <value>Catégorie</value>
+  </data>
+  <data name="XAxis_Label" xml:space="preserve">
+    <value>Étiquette</value>
+  </data>
 </root>

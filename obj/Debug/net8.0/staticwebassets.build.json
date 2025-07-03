@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9kSCp26ZmuKKWMhkwHBOwSRIn77xzX4WXxj+A88VkSw=",
+  "Hash": "rt+tRwTb+M5RmLvCx2ecuCEnhzghEvT5fGIibHaofFI=",
   "Source": "diplomska",
   "BasePath": "_content/diplomska",
   "Mode": "Default",
@@ -1917,12 +1917,12 @@
       "OriginalItemSpec": "wwwroot\\images\\flags\\sk-SK.png"
     },
     {
-      "Identity": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\sl-si.png",
+      "Identity": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\sl-SL.png",
       "SourceId": "diplomska",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\",
       "BasePath": "_content/diplomska",
-      "RelativePath": "images/flags/sl-si.png",
+      "RelativePath": "images/flags/sl-SL.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1933,7 +1933,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\flags\\sl-si.png"
+      "OriginalItemSpec": "wwwroot\\images\\flags\\sl-SL.png"
     },
     {
       "Identity": "C:\\Users\\nejc.severmihelic\\source\\repos\\diplomska\\diplomska\\wwwroot\\images\\flags\\sq-Al.png",

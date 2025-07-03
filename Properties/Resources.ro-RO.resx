@@ -1170,4 +1170,67 @@
   <data name="diplomska" xml:space="preserve">
     <value>diplomă</value>
   </data>
+  <data name="to_graphs" xml:space="preserve">
+    <value>Grafice</value>
+  </data>
+  <data name="Graphs" xml:space="preserve">
+    <value>Grafice</value>
+  </data>
+  <data name="Heading_GraphViewer" xml:space="preserve">
+    <value>Vizualizator de grafic</value>
+  </data>
+  <data name="GraphOption1" xml:space="preserve">
+    <value>1.. Sume agregate</value>
+  </data>
+  <data name="GraphOption2" xml:space="preserve">
+    <value>2. Numărul de depozite (depozit)</value>
+  </data>
+  <data name="GraphOption3" xml:space="preserve">
+    <value>3. Numărul lucrătorilor (lucrător de depozit)</value>
+  </data>
+  <data name="GraphOption4" xml:space="preserve">
+    <value>4. Lista de verificare Da/Nu contează</value>
+  </data>
+  <data name="GraphOption5" xml:space="preserve">
+    <value>5. Comentarii listei de verificare contează</value>
+  </data>
+  <data name="GraphOption6" xml:space="preserve">
+    <value>6. Numere de transport pe lucrător</value>
+  </data>
+  <data name="GraphOption7" xml:space="preserve">
+    <value>7. Numărul de transport neterminat pe lucrător</value>
+  </data>
+  <data name="GraphOption8" xml:space="preserve">
+    <value>8. Callback contează după rațiune și dată</value>
+  </data>
+  <data name="GraphOption9" xml:space="preserve">
+    <value>9. Callback contează după motiv și lucrător de depozit</value>
+  </data>
+  <data name="YAxis_Sum" xml:space="preserve">
+    <value>Sumă</value>
+  </data>
+  <data name="YAxis_Count" xml:space="preserve">
+    <value>Conta</value>
+  </data>
+  <data name="YAxis_YesNo" xml:space="preserve">
+    <value>Total răspunsuri da/nu</value>
+  </data>
+  <data name="YAxis_Comments" xml:space="preserve">
+    <value>Număr de comentarii</value>
+  </data>
+  <data name="YAxis_TransportCount" xml:space="preserve">
+    <value>Număr de transport</value>
+  </data>
+  <data name="YAxis_UnfinishedTransportCount" xml:space="preserve">
+    <value>Număr de transport neterminat</value>
+  </data>
+  <data name="YAxis_CallbackCount" xml:space="preserve">
+    <value>Număr de apeluri de apel</value>
+  </data>
+  <data name="XAxis_Category" xml:space="preserve">
+    <value>Categorie</value>
+  </data>
+  <data name="XAxis_Label" xml:space="preserve">
+    <value>Eticheta</value>
+  </data>
 </root>

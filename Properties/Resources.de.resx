@@ -1167,4 +1167,67 @@
   <data name="warehouse_worker_index" xml:space="preserve">
     <value>Index speichern</value>
   </data>
+  <data name="to_graphs" xml:space="preserve">
+    <value>Grafiken</value>
+  </data>
+  <data name="Graphs" xml:space="preserve">
+    <value>Grafiken</value>
+  </data>
+  <data name="Heading_GraphViewer" xml:space="preserve">
+    <value>Graph Viewer</value>
+  </data>
+  <data name="GraphOption1" xml:space="preserve">
+    <value>1. Gesamtsummen</value>
+  </data>
+  <data name="GraphOption2" xml:space="preserve">
+    <value>2. Lagerkosten (Lagerhaus)</value>
+  </data>
+  <data name="GraphOption3" xml:space="preserve">
+    <value>3. Arbeiter zählt (Lagerarbeiter)</value>
+  </data>
+  <data name="GraphOption4" xml:space="preserve">
+    <value>4. Checkliste Ja/Nein Zählungen</value>
+  </data>
+  <data name="GraphOption5" xml:space="preserve">
+    <value>5. Checkliste Kommentare zählen</value>
+  </data>
+  <data name="GraphOption6" xml:space="preserve">
+    <value>6. Transportnummern pro Arbeiter</value>
+  </data>
+  <data name="GraphOption7" xml:space="preserve">
+    <value>7. Unvollendete Transportzahlen pro Arbeiter</value>
+  </data>
+  <data name="GraphOption8" xml:space="preserve">
+    <value>8. Rückruf zählt nach Vernunft und Datum</value>
+  </data>
+  <data name="GraphOption9" xml:space="preserve">
+    <value>9. Rückruf zählt durch Vernunft und Lagerarbeiter</value>
+  </data>
+  <data name="YAxis_Sum" xml:space="preserve">
+    <value>Summe</value>
+  </data>
+  <data name="YAxis_Count" xml:space="preserve">
+    <value>Zählen</value>
+  </data>
+  <data name="YAxis_YesNo" xml:space="preserve">
+    <value>Gesamt Ja/Nein Antworten</value>
+  </data>
+  <data name="YAxis_Comments" xml:space="preserve">
+    <value>Kommentarzahl</value>
+  </data>
+  <data name="YAxis_TransportCount" xml:space="preserve">
+    <value>Transportzahl</value>
+  </data>
+  <data name="YAxis_UnfinishedTransportCount" xml:space="preserve">
+    <value>Unvollendete Transportzahl</value>
+  </data>
+  <data name="YAxis_CallbackCount" xml:space="preserve">
+    <value>Rückrufanzahl</value>
+  </data>
+  <data name="XAxis_Category" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="XAxis_Label" xml:space="preserve">
+    <value>Etikett</value>
+  </data>
 </root>

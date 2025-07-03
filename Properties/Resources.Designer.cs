@@ -1440,6 +1440,96 @@ namespace diplomska.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1. Aggregate Sums.
+        /// </summary>
+        public static string GraphOption1 {
+            get {
+                return ResourceManager.GetString("GraphOption1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2. Warehouse Counts (Warehouse).
+        /// </summary>
+        public static string GraphOption2 {
+            get {
+                return ResourceManager.GetString("GraphOption2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3. Worker Counts (Warehouse Worker).
+        /// </summary>
+        public static string GraphOption3 {
+            get {
+                return ResourceManager.GetString("GraphOption3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 4. Checklist Yes/No Counts.
+        /// </summary>
+        public static string GraphOption4 {
+            get {
+                return ResourceManager.GetString("GraphOption4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 5. Checklist Comments Counts.
+        /// </summary>
+        public static string GraphOption5 {
+            get {
+                return ResourceManager.GetString("GraphOption5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 6. Transport Numbers Per Worker.
+        /// </summary>
+        public static string GraphOption6 {
+            get {
+                return ResourceManager.GetString("GraphOption6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 7. Unfinished Transport Counts Per Worker.
+        /// </summary>
+        public static string GraphOption7 {
+            get {
+                return ResourceManager.GetString("GraphOption7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 8. Callback Counts by Reason and Date.
+        /// </summary>
+        public static string GraphOption8 {
+            get {
+                return ResourceManager.GetString("GraphOption8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9. Callback Counts by Reason and Warehouse worker.
+        /// </summary>
+        public static string GraphOption9 {
+            get {
+                return ResourceManager.GetString("GraphOption9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Graphs.
+        /// </summary>
+        public static string Graphs {
+            get {
+                return ResourceManager.GetString("Graphs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Greetings, shift!.
         /// </summary>
         public static string greeting_shiftmanager {
@@ -1454,6 +1544,15 @@ namespace diplomska.Properties {
         public static string gym {
             get {
                 return ResourceManager.GetString("gym", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Graph Viewer.
+        /// </summary>
+        public static string Heading_GraphViewer {
+            get {
+                return ResourceManager.GetString("Heading_GraphViewer", resourceCulture);
             }
         }
         
@@ -2718,6 +2817,15 @@ namespace diplomska.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Graphs.
+        /// </summary>
+        public static string to_graphs {
+            get {
+                return ResourceManager.GetString("to_graphs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Go to Index.
         /// </summary>
         public static string to_index {
@@ -3182,6 +3290,87 @@ namespace diplomska.Properties {
         public static string working_items {
             get {
                 return ResourceManager.GetString("working_items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category.
+        /// </summary>
+        public static string XAxis_Category {
+            get {
+                return ResourceManager.GetString("XAxis_Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Label.
+        /// </summary>
+        public static string XAxis_Label {
+            get {
+                return ResourceManager.GetString("XAxis_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Callback Count.
+        /// </summary>
+        public static string YAxis_CallbackCount {
+            get {
+                return ResourceManager.GetString("YAxis_CallbackCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comment Count.
+        /// </summary>
+        public static string YAxis_Comments {
+            get {
+                return ResourceManager.GetString("YAxis_Comments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Count.
+        /// </summary>
+        public static string YAxis_Count {
+            get {
+                return ResourceManager.GetString("YAxis_Count", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sum.
+        /// </summary>
+        public static string YAxis_Sum {
+            get {
+                return ResourceManager.GetString("YAxis_Sum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transport Count.
+        /// </summary>
+        public static string YAxis_TransportCount {
+            get {
+                return ResourceManager.GetString("YAxis_TransportCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unfinished Transport Count.
+        /// </summary>
+        public static string YAxis_UnfinishedTransportCount {
+            get {
+                return ResourceManager.GetString("YAxis_UnfinishedTransportCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Yes/No Answers.
+        /// </summary>
+        public static string YAxis_YesNo {
+            get {
+                return ResourceManager.GetString("YAxis_YesNo", resourceCulture);
             }
         }
         

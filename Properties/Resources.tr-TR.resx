@@ -1170,4 +1170,67 @@
   <data name="diplomska" xml:space="preserve">
     <value>diploma</value>
   </data>
+  <data name="to_graphs" xml:space="preserve">
+    <value>Grafikler</value>
+  </data>
+  <data name="Graphs" xml:space="preserve">
+    <value>Grafikler</value>
+  </data>
+  <data name="Heading_GraphViewer" xml:space="preserve">
+    <value>Grafik görüntüleyici</value>
+  </data>
+  <data name="GraphOption1" xml:space="preserve">
+    <value>1. Toplam meblağlar</value>
+  </data>
+  <data name="GraphOption2" xml:space="preserve">
+    <value>2. Depo Sayımları (Depo)</value>
+  </data>
+  <data name="GraphOption3" xml:space="preserve">
+    <value>3. İşçi Sayımları (Depo İşçisi)</value>
+  </data>
+  <data name="GraphOption4" xml:space="preserve">
+    <value>4. Kontrol Listesi Evet/Hayır Sayım</value>
+  </data>
+  <data name="GraphOption5" xml:space="preserve">
+    <value>5. Kontrol listesi yorumları önemlidir</value>
+  </data>
+  <data name="GraphOption6" xml:space="preserve">
+    <value>6. İşçi başına ulaşım sayısı</value>
+  </data>
+  <data name="GraphOption7" xml:space="preserve">
+    <value>7. İşçi başına bitmemiş nakliye sayısı</value>
+  </data>
+  <data name="GraphOption8" xml:space="preserve">
+    <value>8. Geri çağrı, gerekçeye ve tarihe göre sayılır</value>
+  </data>
+  <data name="GraphOption9" xml:space="preserve">
+    <value>9. Akıl ve Depo İşçisi tarafından geri arama sayımları</value>
+  </data>
+  <data name="YAxis_Sum" xml:space="preserve">
+    <value>Meblağ</value>
+  </data>
+  <data name="YAxis_Count" xml:space="preserve">
+    <value>Saymak</value>
+  </data>
+  <data name="YAxis_YesNo" xml:space="preserve">
+    <value>Toplam Evet/Hayır Cevaplar</value>
+  </data>
+  <data name="YAxis_Comments" xml:space="preserve">
+    <value>Yorum sayımı</value>
+  </data>
+  <data name="YAxis_TransportCount" xml:space="preserve">
+    <value>Taşıma sayımı</value>
+  </data>
+  <data name="YAxis_UnfinishedTransportCount" xml:space="preserve">
+    <value>Bitmemiş ulaşım sayısı</value>
+  </data>
+  <data name="YAxis_CallbackCount" xml:space="preserve">
+    <value>Geri arama sayısı</value>
+  </data>
+  <data name="XAxis_Category" xml:space="preserve">
+    <value>Kategori</value>
+  </data>
+  <data name="XAxis_Label" xml:space="preserve">
+    <value>Etiket</value>
+  </data>
 </root>

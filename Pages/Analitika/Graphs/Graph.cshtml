@@ -1,0 +1,219 @@
+﻿@page
+@model diplomska.Pages.Analitika.Graphs.GraphModel
+@using diplomska.Properties
+@{
+    ViewData["Title"] = "Charts";
+}
+
+<h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 20px;">@Resources.Heading_GraphViewer</h2>
+
+<!-- Dropdown for graph selection, centered -->
+<div style="display: flex; justify-content: center; margin-bottom: 20px;">
+    <select id="graphSelector" style="font-size: 1.5rem; padding: 10px 18px; border-radius: 6px; border: 1.5px solid #ccc; min-width: 280px;">
+        <option value="1">@Resources.GraphOption1</option>
+        <option value="2">@Resources.GraphOption2</option>
+        <option value="3">@Resources.GraphOption3</option>
+        <option value="4">@Resources.GraphOption4</option>
+        <option value="5">@Resources.GraphOption5</option>
+        <option value="6">@Resources.GraphOption6</option>
+        <option value="7">@Resources.GraphOption7</option>
+        <option value="8">@Resources.GraphOption8</option>
+        <option value="9">@Resources.GraphOption9</option>
+    </select>
+</div>
+
+<!-- Navigation Controls -->
+<div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px;">
+    <button id="prevBtn" style="font-size: 2rem; padding: 8px 14px;">&#8592;</button>
+    <span id="pageDots"></span>
+    <button id="nextBtn" style="font-size: 2rem; padding: 8px 14px;">&#8594;</button>
+</div>
+
+<p id="pageNumber" style="text-align: center; font-weight: bold; font-size: 1.8rem; margin-bottom: 25px;">1/1</p>
+
+<!-- Chart Container -->
+<div style="position: relative; width: 1200px; height: 800px; margin: auto;">
+    <canvas id="transportChart"></canvas>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const aggregateSumsData = @Html.Raw(Model.AggregateSumsJson);
+        const warehouseCountsData = @Html.Raw(Model.WarehouseCountsJson);
+        const workerCountsData = @Html.Raw(Model.WorkerCountsJson);
+        const checklistYesNoCountsData = @Html.Raw(Model.ChecklistYesNoCountsJson);
+        const checklistCommentsCountsData = @Html.Raw(Model.ChecklistCommentsCountsJson);
+        const transportNumbersPerWorkerData = @Html.Raw(Model.TransportNumbersPerWorkerJson);
+        const unfinishedTransportCountsData = @Html.Raw(Model.UnfinishedTransportCountsJson);
+        const callbackByReasonDateData = @Html.Raw(Model.CallbackByReasonDateJson);
+        const callbackByReasonIzkladiscenoData = @Html.Raw(Model.CallbackByReasonIzkladiscenoJson);
+
+        const datasets = [
+            {
+                title: "@Resources.GraphOption1",
+                type: 'bar',
+                labels: aggregateSumsData.map(x => x.Label),
+                data: aggregateSumsData.map(x => x.Value),
+                yLabel: "@Resources.YAxis_Sum"
+            },
+            {
+                title: "@Resources.GraphOption2",
+                type: 'bar',
+                labels: warehouseCountsData.map(x => x.Warehouse),
+                data: warehouseCountsData.map(x => x.Count),
+                yLabel: "@Resources.YAxis_Count"
+            },
+            {
+                title: "@Resources.GraphOption3",
+                type: 'bar',
+                labels: workerCountsData.map(x => x.UserName || x.WorkerId),
+                data: workerCountsData.map(x => x.Count),
+                yLabel: "@Resources.YAxis_Count"
+            },
+            {
+                title: "@Resources.GraphOption4",
+                type: 'bar',
+                labels: checklistYesNoCountsData.map(x => x.TransportNumber),
+                data: checklistYesNoCountsData.map(x => x.YesCount + x.NoCount),
+                yLabel: "@Resources.YAxis_YesNo"
+            },
+            {
+                title: "@Resources.GraphOption5",
+                type: 'bar',
+                labels: checklistCommentsCountsData.map(x => x.TransportNumber),
+                data: checklistCommentsCountsData.map(x => x.CommentCount),
+                yLabel: "@Resources.YAxis_Comments"
+            },
+            {
+                title: "@Resources.GraphOption6",
+                type: 'bar',
+                labels: transportNumbersPerWorkerData.map(x => x.WorkerId),
+                data: transportNumbersPerWorkerData.map(x => x.Count),
+                yLabel: "@Resources.YAxis_TransportCount"
+            },
+            {
+                title: "@Resources.GraphOption7",
+                type: 'bar',
+                labels: unfinishedTransportCountsData.map(x => x.WorkerEmail || x.WorkerId),
+                data: unfinishedTransportCountsData.map(x => x.Count),
+                yLabel: "@Resources.YAxis_UnfinishedTransportCount"
+            },
+            {
+                title: "@Resources.GraphOption8",
+                type: 'bar',
+                labels: callbackByReasonDateData.map(x => x.Date + ' - ' + x.CallbackReason),
+                data: callbackByReasonDateData.map(x => x.Count),
+                yLabel: "@Resources.YAxis_CallbackCount"
+            },
+            {
+                title: "@Resources.GraphOption9",
+                type: 'bar',
+                labels: callbackByReasonIzkladiscenoData.map(x => x.Skladiscnik + ' - ' + x.CallbackReason),
+                data: callbackByReasonIzkladiscenoData.map(x => x.Count),
+                yLabel: "@Resources.YAxis_CallbackCount"
+            }
+        ];
+
+        const graphSelector = document.getElementById("graphSelector");
+        const dotsContainer = document.getElementById("pageDots");
+        const pageNumber = document.getElementById("pageNumber");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        let currentIndex = 0;
+        let chart;
+
+        function renderChart(index) {
+            const ctx = document.getElementById('transportChart').getContext('2d');
+            if (chart) chart.destroy();
+
+            const set = datasets[index];
+
+            chart = new Chart(ctx, {
+                type: set.type,
+                data: {
+                    labels: set.labels,
+                    datasets: [{
+                        label: set.title,
+                        data: set.data,
+                        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: set.title,
+                            font: { size: 30 }
+                        },
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: set.title.includes("Counts") ? "@Resources.XAxis_Category" : "@Resources.XAxis_Label",
+                                font: { size: 22 }
+                            },
+                            ticks: {
+                                font: { size: 18 },
+                                autoSkip: false,
+                                maxRotation: 90,
+                                minRotation: 45
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: set.yLabel,
+                                font: { size: 22 }
+                            },
+                            ticks: {
+                                font: { size: 18 }
+                            }
+                        }
+                    }
+                }
+            });
+
+            updatePageIndicators();
+            graphSelector.value = index + 1;
+            currentIndex = index;
+            pageNumber.textContent = `${currentIndex + 1}/${datasets.length}`;
+        }
+
+        function updatePageIndicators() {
+            dotsContainer.innerHTML = "";
+            for (let i = 0; i < datasets.length; i++) {
+                const dot = document.createElement("span");
+                dot.textContent = "●";
+                dot.style.margin = "0 8px";
+                dot.style.fontSize = "2rem";
+                dot.style.color = i === currentIndex ? "#007bff" : "#bbb";
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        prevBtn.addEventListener("click", () => {
+            let newIndex = (currentIndex - 1 + datasets.length) % datasets.length;
+            renderChart(newIndex);
+        });
+
+        nextBtn.addEventListener("click", () => {
+            let newIndex = (currentIndex + 1) % datasets.length;
+            renderChart(newIndex);
+        });
+
+        graphSelector.addEventListener("change", () => {
+            let selectedIndex = parseInt(graphSelector.value) - 1;
+            renderChart(selectedIndex);
+        });
+
+        // Initial render
+        renderChart(currentIndex);
+    </script>
+}

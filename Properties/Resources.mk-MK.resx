@@ -1167,4 +1167,67 @@
   <data name="warehouse_worker_index" xml:space="preserve">
     <value>Индекс на продавница</value>
   </data>
+  <data name="to_graphs" xml:space="preserve">
+    <value>Графикони</value>
+  </data>
+  <data name="Graphs" xml:space="preserve">
+    <value>Графикони</value>
+  </data>
+  <data name="Heading_GraphViewer" xml:space="preserve">
+    <value>Прегледувач на графикони</value>
+  </data>
+  <data name="GraphOption1" xml:space="preserve">
+    <value>1. Агрегатни суми</value>
+  </data>
+  <data name="GraphOption2" xml:space="preserve">
+    <value>2 брои магацини (магацин)</value>
+  </data>
+  <data name="GraphOption3" xml:space="preserve">
+    <value>Пребројување на работникот (работник во магацин)</value>
+  </data>
+  <data name="GraphOption4" xml:space="preserve">
+    <value>4. Листа за проверка Да/Не брои</value>
+  </data>
+  <data name="GraphOption5" xml:space="preserve">
+    <value>5.</value>
+  </data>
+  <data name="GraphOption6" xml:space="preserve">
+    <value>6 броеви за транспорт по работник</value>
+  </data>
+  <data name="GraphOption7" xml:space="preserve">
+    <value>7. Не недовршено пребројување на транспортот по работник</value>
+  </data>
+  <data name="GraphOption8" xml:space="preserve">
+    <value>8. Пребројување на повратен повик по причина и датум</value>
+  </data>
+  <data name="GraphOption9" xml:space="preserve">
+    <value>9 Пребројувања на повратен повик по разум и работник во магацин</value>
+  </data>
+  <data name="YAxis_Sum" xml:space="preserve">
+    <value>Сума</value>
+  </data>
+  <data name="YAxis_Count" xml:space="preserve">
+    <value>Брои</value>
+  </data>
+  <data name="YAxis_YesNo" xml:space="preserve">
+    <value>Вкупно да/не одговори</value>
+  </data>
+  <data name="YAxis_Comments" xml:space="preserve">
+    <value>Пребројување на коментари</value>
+  </data>
+  <data name="YAxis_TransportCount" xml:space="preserve">
+    <value>Пребројување на транспортот</value>
+  </data>
+  <data name="YAxis_UnfinishedTransportCount" xml:space="preserve">
+    <value>Недовршено броење на транспорт</value>
+  </data>
+  <data name="YAxis_CallbackCount" xml:space="preserve">
+    <value>Пребројување на повратен повик</value>
+  </data>
+  <data name="XAxis_Category" xml:space="preserve">
+    <value>Категорија</value>
+  </data>
+  <data name="XAxis_Label" xml:space="preserve">
+    <value>Етикета</value>
+  </data>
 </root>

@@ -54,7 +54,7 @@ builder.Services.AddSingleton<IEmailSender, DummyEmailSender>();
 // Localization configuration
 var supportedCultures = new[]
 {
-    "en", "sl-si", "de", "es", "fr", "sq-Al", "bg-BG", "cs-CZ", "it-IT", "mk-MK", "pl-PL", "ro-RO", "ru", "sr", "sk-SK", "tr-TR"
+    "en", "sl-SL", "de", "es", "fr", "sq-Al", "bg-BG", "cs-CZ", "it-IT", "mk-MK", "pl-PL", "ro-RO", "ru", "sr", "sk-SK", "tr-TR"
 };
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {

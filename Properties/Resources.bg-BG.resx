@@ -1167,4 +1167,67 @@
   <data name="warehouse_worker_index" xml:space="preserve">
     <value>Индекс на магазина</value>
   </data>
+  <data name="to_graphs" xml:space="preserve">
+    <value>Графики</value>
+  </data>
+  <data name="Graphs" xml:space="preserve">
+    <value>Графики</value>
+  </data>
+  <data name="Heading_GraphViewer" xml:space="preserve">
+    <value>Графика зрител</value>
+  </data>
+  <data name="GraphOption1" xml:space="preserve">
+    <value>1. Агрегирани суми</value>
+  </data>
+  <data name="GraphOption2" xml:space="preserve">
+    <value>2. Броят на склада (склад)</value>
+  </data>
+  <data name="GraphOption3" xml:space="preserve">
+    <value>3. Броят на работниците (работник на склада)</value>
+  </data>
+  <data name="GraphOption4" xml:space="preserve">
+    <value>4. Контролен списък Да/Не се отчитат</value>
+  </data>
+  <data name="GraphOption5" xml:space="preserve">
+    <value>5. броя на коментарите за контролния списък</value>
+  </data>
+  <data name="GraphOption6" xml:space="preserve">
+    <value>6. Транспортни номера на работник</value>
+  </data>
+  <data name="GraphOption7" xml:space="preserve">
+    <value>7. Незавършени броя на транспорта на работник</value>
+  </data>
+  <data name="GraphOption8" xml:space="preserve">
+    <value>8. Броят на обратно извикване по причина и дата</value>
+  </data>
+  <data name="GraphOption9" xml:space="preserve">
+    <value>9. Броят на обратно извикване по разум и работник на склада</value>
+  </data>
+  <data name="YAxis_Sum" xml:space="preserve">
+    <value>Сума</value>
+  </data>
+  <data name="YAxis_Count" xml:space="preserve">
+    <value>Брой</value>
+  </data>
+  <data name="YAxis_YesNo" xml:space="preserve">
+    <value>Общо да/не отговори</value>
+  </data>
+  <data name="YAxis_Comments" xml:space="preserve">
+    <value>Брой коментари</value>
+  </data>
+  <data name="YAxis_TransportCount" xml:space="preserve">
+    <value>Брой на транспорта</value>
+  </data>
+  <data name="YAxis_UnfinishedTransportCount" xml:space="preserve">
+    <value>Недовършен брой транспорт</value>
+  </data>
+  <data name="YAxis_CallbackCount" xml:space="preserve">
+    <value>Брой за обратно извикване</value>
+  </data>
+  <data name="XAxis_Category" xml:space="preserve">
+    <value>Категория</value>
+  </data>
+  <data name="XAxis_Label" xml:space="preserve">
+    <value>Етикет</value>
+  </data>
 </root>

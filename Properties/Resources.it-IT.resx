@@ -1170,4 +1170,67 @@
   <data name="diplomska" xml:space="preserve">
     <value>diploma</value>
   </data>
+  <data name="to_graphs" xml:space="preserve">
+    <value>Grafici</value>
+  </data>
+  <data name="Graphs" xml:space="preserve">
+    <value>Grafici</value>
+  </data>
+  <data name="Heading_GraphViewer" xml:space="preserve">
+    <value>Grafico visualizzatore</value>
+  </data>
+  <data name="GraphOption1" xml:space="preserve">
+    <value>1. Somme aggregate</value>
+  </data>
+  <data name="GraphOption2" xml:space="preserve">
+    <value>2. Conti del magazzino (magazzino)</value>
+  </data>
+  <data name="GraphOption3" xml:space="preserve">
+    <value>3. Conteggio dei lavoratori (Warehouse Worker)</value>
+  </data>
+  <data name="GraphOption4" xml:space="preserve">
+    <value>4. Elenco di controllo Sì/No conta</value>
+  </data>
+  <data name="GraphOption5" xml:space="preserve">
+    <value>5. Conta dei commenti dell'elenco di controllo</value>
+  </data>
+  <data name="GraphOption6" xml:space="preserve">
+    <value>6. Numeri di trasporto per lavoratore</value>
+  </data>
+  <data name="GraphOption7" xml:space="preserve">
+    <value>7. Conti di trasporto incompiuti per lavoratore</value>
+  </data>
+  <data name="GraphOption8" xml:space="preserve">
+    <value>8. Calteback conta per ragione e data</value>
+  </data>
+  <data name="GraphOption9" xml:space="preserve">
+    <value>9. Conti di callback per ragione e magazzino</value>
+  </data>
+  <data name="YAxis_Sum" xml:space="preserve">
+    <value>Somma</value>
+  </data>
+  <data name="YAxis_Count" xml:space="preserve">
+    <value>Contare</value>
+  </data>
+  <data name="YAxis_YesNo" xml:space="preserve">
+    <value>Risposte totali sì/no</value>
+  </data>
+  <data name="YAxis_Comments" xml:space="preserve">
+    <value>Conteggio dei commenti</value>
+  </data>
+  <data name="YAxis_TransportCount" xml:space="preserve">
+    <value>Conteggio dei trasporti</value>
+  </data>
+  <data name="YAxis_UnfinishedTransportCount" xml:space="preserve">
+    <value>Conta dei trasporti incompiuti</value>
+  </data>
+  <data name="YAxis_CallbackCount" xml:space="preserve">
+    <value>Conteggio di callback</value>
+  </data>
+  <data name="XAxis_Category" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="XAxis_Label" xml:space="preserve">
+    <value>Etichetta</value>
+  </data>
 </root>
