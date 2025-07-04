@@ -1581,4 +1581,16 @@
   <data name="XAxis_Label" xml:space="preserve">
     <value>Label</value>
   </data>
+  <data name="GraphsOption10" xml:space="preserve">
+    <value>10. Login Types Distribution</value>
+  </data>
+  <data name="YAxis_LoginTypeCount" xml:space="preserve">
+    <value>User Count</value>
+  </data>
+  <data name="GraphOption11" xml:space="preserve">
+    <value>11. Users per certain role</value>
+  </data>
+  <data name="YAxis_UserCount" xml:space="preserve">
+    <value>User Role count</value>
+  </data>
 </root>

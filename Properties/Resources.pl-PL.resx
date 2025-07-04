@@ -1233,4 +1233,16 @@
   <data name="XAxis_Label" xml:space="preserve">
     <value>Etykieta</value>
   </data>
+  <data name="GraphsOption10" xml:space="preserve">
+    <value>Dystrybucja typów logowania</value>
+  </data>
+  <data name="YAxis_LoginTypeCount" xml:space="preserve">
+    <value>Liczba użytkowników</value>
+  </data>
+  <data name="GraphOption11" xml:space="preserve">
+    <value>Użytkownicy na pewną rolę</value>
+  </data>
+  <data name="YAxis_UserCount" xml:space="preserve">
+    <value>Liczba ról użytkownika</value>
+  </data>
 </root>

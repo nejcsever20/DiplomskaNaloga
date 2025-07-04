@@ -1233,4 +1233,16 @@
   <data name="XAxis_Label" xml:space="preserve">
     <value>Označení</value>
   </data>
+  <data name="GraphsOption10" xml:space="preserve">
+    <value>Distribuce typů přihlášení</value>
+  </data>
+  <data name="YAxis_LoginTypeCount" xml:space="preserve">
+    <value>Počet uživatelů</value>
+  </data>
+  <data name="GraphOption11" xml:space="preserve">
+    <value>Uživatelé na určitou roli</value>
+  </data>
+  <data name="YAxis_UserCount" xml:space="preserve">
+    <value>Počet rolí uživatelů</value>
+  </data>
 </root>

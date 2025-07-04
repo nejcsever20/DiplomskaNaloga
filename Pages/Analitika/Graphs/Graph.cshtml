@@ -5,11 +5,84 @@
     ViewData["Title"] = "Charts";
 }
 
-<h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 20px;">@Resources.Heading_GraphViewer</h2>
+<h2>@Resources.Heading_GraphViewer</h2>
 
-<!-- Dropdown for graph selection, centered -->
-<div style="display: flex; justify-content: center; margin-bottom: 20px;">
-    <select id="graphSelector" style="font-size: 1.5rem; padding: 10px 18px; border-radius: 6px; border: 1.5px solid #ccc; min-width: 280px;">
+<style>
+    h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #40474F; /* Hisense Gray */
+    }
+
+    #graphSelector {
+        font-size: 1.5rem;
+        padding: 10px 18px;
+        border-radius: 6px;
+        border: 1.5px solid #A6A6A6;
+        min-width: 280px;
+        background-color: #fff;
+        color: #40474F;
+    }
+
+    .dropdown-container,
+    .graph-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 15px;
+    }
+
+    .nav-button {
+        font-size: 2rem;
+        padding: 8px 14px;
+        background-color: #00AAA6;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #pageNumber {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        color: #40474F;
+    }
+
+    #pageDots span {
+        margin: 0 8px;
+        font-size: 2rem;
+        color: #bbb;
+    }
+
+        #pageDots span.active {
+            color: #00AAA6;
+        }
+
+    .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        height: 800px;
+        margin: auto;
+        background-color: #f9f9f9;
+        border: 2px solid #A6A6A6;
+        border-radius: 12px;
+        padding: 20px;
+    }
+
+    canvas {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
+<!-- Graph Selector -->
+<div class="dropdown-container">
+    <select id="graphSelector">
         <option value="1">@Resources.GraphOption1</option>
         <option value="2">@Resources.GraphOption2</option>
         <option value="3">@Resources.GraphOption3</option>
@@ -19,20 +92,22 @@
         <option value="7">@Resources.GraphOption7</option>
         <option value="8">@Resources.GraphOption8</option>
         <option value="9">@Resources.GraphOption9</option>
+        <option value="10">@Resources.GraphsOption10</option>
+        <option value="11">@Resources.GraphOption11</option>
     </select>
 </div>
 
 <!-- Navigation Controls -->
-<div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px;">
-    <button id="prevBtn" style="font-size: 2rem; padding: 8px 14px;">&#8592;</button>
+<div class="graph-controls">
+    <button id="prevBtn" class="nav-button">&#8592;</button>
     <span id="pageDots"></span>
-    <button id="nextBtn" style="font-size: 2rem; padding: 8px 14px;">&#8594;</button>
+    <button id="nextBtn" class="nav-button">&#8594;</button>
 </div>
 
-<p id="pageNumber" style="text-align: center; font-weight: bold; font-size: 1.8rem; margin-bottom: 25px;">1/1</p>
+<p id="pageNumber">1/1</p>
 
 <!-- Chart Container -->
-<div style="position: relative; width: 1200px; height: 800px; margin: auto;">
+<div class="chart-container">
     <canvas id="transportChart"></canvas>
 </div>
 
@@ -48,6 +123,8 @@
         const unfinishedTransportCountsData = @Html.Raw(Model.UnfinishedTransportCountsJson);
         const callbackByReasonDateData = @Html.Raw(Model.CallbackByReasonDateJson);
         const callbackByReasonIzkladiscenoData = @Html.Raw(Model.CallbackByReasonIzkladiscenoJson);
+        const internalExternalLoginCountsData = @Html.Raw(Model.InternalExternalLoginCountsJson);
+        const userRolesCountsData = @Html.Raw(Model.UserRolesCountsJson);
 
         const datasets = [
             {
@@ -88,14 +165,14 @@
             {
                 title: "@Resources.GraphOption6",
                 type: 'bar',
-                labels: transportNumbersPerWorkerData.map(x => x.WorkerId),
+                labels: transportNumbersPerWorkerData.map(x => x.UserName || x.WorkerId),
                 data: transportNumbersPerWorkerData.map(x => x.Count),
                 yLabel: "@Resources.YAxis_TransportCount"
             },
             {
                 title: "@Resources.GraphOption7",
                 type: 'bar',
-                labels: unfinishedTransportCountsData.map(x => x.WorkerEmail || x.WorkerId),
+                labels: unfinishedTransportCountsData.map(x => x.UserName || x.WorkerId),
                 data: unfinishedTransportCountsData.map(x => x.Count),
                 yLabel: "@Resources.YAxis_UnfinishedTransportCount"
             },
@@ -109,9 +186,23 @@
             {
                 title: "@Resources.GraphOption9",
                 type: 'bar',
-                labels: callbackByReasonIzkladiscenoData.map(x => x.Skladiscnik + ' - ' + x.CallbackReason),
+                labels: callbackByReasonIzkladiscenoData.map(x => x.UserName + ' - ' + x.CallbackReason),
                 data: callbackByReasonIzkladiscenoData.map(x => x.Count),
                 yLabel: "@Resources.YAxis_CallbackCount"
+            },
+            {
+                title: "@Resources.GraphsOption10",
+                type: 'pie',
+                labels: internalExternalLoginCountsData.map(x => x.LoginType),
+                data: internalExternalLoginCountsData.map(x => x.UserCount),
+                yLabel: "@Resources.YAxis_LoginTypeCount"
+            },
+            {
+                title: "@Resources.GraphOption11",
+                type: 'pie',
+                labels: userRolesCountsData.map(x => x.Role),
+                data: userRolesCountsData.map(x => x.UserCount),
+                yLabel: "@Resources.YAxis_UserCount"
             }
         ];
 
@@ -136,8 +227,12 @@
                     datasets: [{
                         label: set.title,
                         data: set.data,
-                        backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: set.type === 'pie'
+                            ? ['#00AAA6', '#FFB74D', '#4FC3F7', '#9575CD', '#FF8A65', '#81C784']
+                            : 'rgba(54, 162, 235, 0.6)',
+                        borderColor: set.type === 'pie'
+                            ? '#fff'
+                            : 'rgba(54, 162, 235, 1)',
                         borderWidth: 1
                     }]
                 },
@@ -149,13 +244,28 @@
                             text: set.title,
                             font: { size: 30 }
                         },
-                        legend: { display: false }
+                        legend: {
+                            display: set.type === 'pie',
+                            position: 'bottom',
+                            labels: {
+                                font: { size: 18 }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    const value = context.parsed;
+                                    const label = context.label;
+                                    return `${label}: ${value}`;
+                                }
+                            }
+                        }
                     },
-                    scales: {
+                    scales: set.type === 'bar' ? {
                         x: {
                             title: {
                                 display: true,
-                                text: set.title.includes("Counts") ? "@Resources.XAxis_Category" : "@Resources.XAxis_Label",
+                                text: "@Resources.XAxis_Label",
                                 font: { size: 22 }
                             },
                             ticks: {
@@ -176,7 +286,7 @@
                                 font: { size: 18 }
                             }
                         }
-                    }
+                    } : {}
                 }
             });
 
@@ -191,9 +301,7 @@
             for (let i = 0; i < datasets.length; i++) {
                 const dot = document.createElement("span");
                 dot.textContent = "●";
-                dot.style.margin = "0 8px";
-                dot.style.fontSize = "2rem";
-                dot.style.color = i === currentIndex ? "#007bff" : "#bbb";
+                dot.className = i === currentIndex ? "active" : "";
                 dotsContainer.appendChild(dot);
             }
         }

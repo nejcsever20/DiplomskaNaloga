@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace diplomska.Pages.Analitika.Graphs
 {
@@ -14,10 +15,14 @@ namespace diplomska.Pages.Analitika.Graphs
     public class GraphModel : PageModel
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public GraphModel(ApplicationDbContext context)
+        public GraphModel(ApplicationDbContext context, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _context = context;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         // JSON data to be used in Razor page for Chart.js
@@ -35,6 +40,9 @@ namespace diplomska.Pages.Analitika.Graphs
 
         public string CallbackByReasonDateJson { get; set; }
         public string CallbackByReasonIzkladiscenoJson { get; set; }
+
+        public string InternalExternalLoginCountsJson { get; set; } = "[]";
+        public string UserRolesCountsJson { get; set; }
         public async Task<IActionResult> OnGetAsync()
         {
             // 1. Aggregate sums: StTransporta, Kolicina, Palete
@@ -161,7 +169,6 @@ namespace diplomska.Pages.Analitika.Graphs
             ChecklistCommentsCountsJson = JsonSerializer.Serialize(checklistCommentsGrouped);
 
             // 6. Callback counts grouped by CallbackReason and date
-            // 6. Callback counts grouped by CallbackReason and date
             var rawCallbackReasonAndDate = await _context.ArchivedTransports
                 .Where(a => a.IsCallback && !string.IsNullOrEmpty(a.CallbackReason) && a.PlaniranPrihod.HasValue)
                 .GroupBy(a => new
@@ -191,23 +198,60 @@ namespace diplomska.Pages.Analitika.Graphs
 
 
             var callbackByReasonAndIzkladisceno = await (
-    from transport in _context.ArchivedTransports  // Make sure this matches your DbSet name
-    join izk in _context.Izkladisceno on transport.Id equals izk.TransportId
-    where transport.IsCallback && !string.IsNullOrEmpty(transport.CallbackReason)
-    group izk by new { transport.CallbackReason, izk.Skladiscnik } into g
-    select new
-    {
-        CallbackReason = g.Key.CallbackReason,
-        Skladiscnik = g.Key.Skladiscnik ?? "Unknown",
-        Count = g.Count()
-    })
-    .OrderBy(x => x.Skladiscnik)
-    .ThenBy(x => x.CallbackReason)
-    .ToListAsync();
+                from transport in _context.ArchivedTransports  // Make sure this matches your DbSet name
+                join izk in _context.Izkladisceno on transport.Id equals izk.TransportId
+                where transport.IsCallback && !string.IsNullOrEmpty(transport.CallbackReason)
+                group izk by new { transport.CallbackReason, izk.Skladiscnik } into g
+                select new
+                {
+                    CallbackReason = g.Key.CallbackReason,
+                    Skladiscnik = g.Key.Skladiscnik ?? "Unknown",
+                    Count = g.Count()
+                })
+                .OrderBy(x => x.Skladiscnik)
+                .ThenBy(x => x.CallbackReason)
+                .ToListAsync();
 
-            CallbackByReasonDateJson = JsonSerializer.Serialize(callbackReasonAndDate);
-            CallbackByReasonIzkladiscenoJson = JsonSerializer.Serialize(callbackByReasonAndIzkladisceno);
+                        CallbackByReasonDateJson = JsonSerializer.Serialize(callbackReasonAndDate);
+                        CallbackByReasonIzkladiscenoJson = JsonSerializer.Serialize(callbackByReasonAndIzkladisceno);
 
+
+            // 10. get all user logins from AspnetUserLogins
+            var users = await _context.Users.ToListAsync();
+
+            int internalCount = 0;
+            int externalCount = 0;
+
+            foreach (var user in users)
+            {
+                var logins = await _userManager.GetLoginsAsync(user);
+
+                if (logins.Count == 0)
+                    internalCount++;
+
+                else
+                    externalCount++;
+            }
+
+            var loginCounts = new[]
+            {
+                new { LoginType= "Internal", UserCount = internalCount},
+                new {LoginType = "External", UserCount = externalCount}
+            };
+
+            InternalExternalLoginCountsJson = JsonSerializer.Serialize(loginCounts);
+
+            //11. role per user capita
+            var roles = _roleManager.Roles.ToList();
+            var roleCounts = new List<object>();
+
+            foreach (var role in roles)
+            {
+                var usersInRole = await _userManager.GetUsersInRoleAsync(role.Name); 
+                roleCounts.Add(new { Role = role.Name, UserCount = usersInRole.Count });
+            }
+
+            UserRolesCountsJson = JsonSerializer.Serialize(roleCounts);
             return Page();
         }
     }

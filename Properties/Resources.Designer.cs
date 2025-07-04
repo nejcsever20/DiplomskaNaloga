@@ -1449,6 +1449,15 @@ namespace diplomska.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 11. Users per certain role.
+        /// </summary>
+        public static string GraphOption11 {
+            get {
+                return ResourceManager.GetString("GraphOption11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 2. Warehouse Counts (Warehouse).
         /// </summary>
         public static string GraphOption2 {
@@ -1526,6 +1535,15 @@ namespace diplomska.Properties {
         public static string Graphs {
             get {
                 return ResourceManager.GetString("Graphs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 10. Login Types Distribution.
+        /// </summary>
+        public static string GraphsOption10 {
+            get {
+                return ResourceManager.GetString("GraphsOption10", resourceCulture);
             }
         }
         
@@ -3339,6 +3357,15 @@ namespace diplomska.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User Count.
+        /// </summary>
+        public static string YAxis_LoginTypeCount {
+            get {
+                return ResourceManager.GetString("YAxis_LoginTypeCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sum.
         /// </summary>
         public static string YAxis_Sum {
@@ -3362,6 +3389,15 @@ namespace diplomska.Properties {
         public static string YAxis_UnfinishedTransportCount {
             get {
                 return ResourceManager.GetString("YAxis_UnfinishedTransportCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Role count.
+        /// </summary>
+        public static string YAxis_UserCount {
+            get {
+                return ResourceManager.GetString("YAxis_UserCount", resourceCulture);
             }
         }
         

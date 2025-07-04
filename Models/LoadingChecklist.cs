@@ -33,6 +33,8 @@ namespace diplomska.Models
         public DateTime? ZacetekNaklada { get; set; }
         public DateTime? KonecNaklada { get; set; }
 
+        public long TransportId { get; set; }
+        public Transport Transport { get; set; }
 
     }
 }

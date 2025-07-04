@@ -1233,4 +1233,16 @@
   <data name="XAxis_Label" xml:space="preserve">
     <value>Etiketa</value>
   </data>
+  <data name="GraphsOption10" xml:space="preserve">
+    <value>Porazdelitev tipov prijave</value>
+  </data>
+  <data name="YAxis_LoginTypeCount" xml:space="preserve">
+    <value>Štetje uporabnika</value>
+  </data>
+  <data name="GraphOption11" xml:space="preserve">
+    <value>Uporabniki na določeno vlogo</value>
+  </data>
+  <data name="YAxis_UserCount" xml:space="preserve">
+    <value>Število uporabniških vlog</value>
+  </data>
 </root>

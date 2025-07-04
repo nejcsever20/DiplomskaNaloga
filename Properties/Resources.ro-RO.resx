@@ -1233,4 +1233,16 @@
   <data name="XAxis_Label" xml:space="preserve">
     <value>Eticheta</value>
   </data>
+  <data name="GraphsOption10" xml:space="preserve">
+    <value>Distribuția tipurilor de conectare</value>
+  </data>
+  <data name="YAxis_LoginTypeCount" xml:space="preserve">
+    <value>Număr de utilizatori</value>
+  </data>
+  <data name="GraphOption11" xml:space="preserve">
+    <value>Utilizatori pentru un anumit rol</value>
+  </data>
+  <data name="YAxis_UserCount" xml:space="preserve">
+    <value>Numărul de rol al utilizatorului</value>
+  </data>
 </root>

@@ -64,29 +64,44 @@ namespace diplomska.Pages.Izmenovodja
             SkladiscnikSelectList = new SelectList(skladiscniki);
         }
 
-        public async Task<IActionResult> OnGet()
+        public async Task<IActionResult> OnGet(long? stTransporta, long? id)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrWhiteSpace(userId))
-                return Page();
-
             await LoadSkladiscnikSelectListAsync();
 
-            if (TransportId == 0)
+            // If 'id' is used in URL, resolve it to stTransporta
+            if (!stTransporta.HasValue && id.HasValue)
             {
-                var transport = await _context.Transport.OrderByDescending(t => t.Id).FirstOrDefaultAsync();
+                var transport = await _context.Transport.FirstOrDefaultAsync(t => t.Id == id.Value);
                 if (transport != null)
                 {
+                    stTransporta = transport.StTransporta;
                     TransportId = transport.Id;
-                    StTransporta = transport.StTransporta ?? 0;
-                }
-                else
-                {
-                    TransportId = 0;
-                    StTransporta = 0;
                 }
             }
 
+            // If stTransporta is provided, resolve it to TransportId
+            if (stTransporta.HasValue)
+            {
+                var transport = await _context.Transport.FirstOrDefaultAsync(t => t.StTransporta == stTransporta.Value);
+                if (transport != null)
+                {
+                    TransportId = transport.Id;
+                    StTransporta = transport.StTransporta;
+                }
+            }
+
+            // Fallback to most recent transport
+            if (TransportId == 0)
+            {
+                var latestTransport = await _context.Transport.OrderByDescending(t => t.Id).FirstOrDefaultAsync();
+                if (latestTransport != null)
+                {
+                    TransportId = latestTransport.Id;
+                    StTransporta = latestTransport.StTransporta;
+                }
+            }
+
+            // Load related data
             IzkladiscenoList = await _context.Izkladisceno
                 .Where(i => i.TransportId == TransportId)
                 .ToListAsync();
@@ -134,6 +149,7 @@ namespace diplomska.Pages.Izmenovodja
 
 
             // Update Transport - use null-coalescing to avoid errors
+            transport.Id = TransportId;
             transport.NAVISZacetekSklada = ZacetekNaklada;
             transport.NAVISKonecSklada = KonecNaklada;
             transport.Rampa1 = Rampa1 ?? 0;

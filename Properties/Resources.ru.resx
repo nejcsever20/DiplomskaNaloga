@@ -1230,4 +1230,16 @@
   <data name="XAxis_Label" xml:space="preserve">
     <value>Этикетка</value>
   </data>
+  <data name="GraphsOption10" xml:space="preserve">
+    <value>Распределение типов входа в систему</value>
+  </data>
+  <data name="YAxis_LoginTypeCount" xml:space="preserve">
+    <value>Подсчет пользователей</value>
+  </data>
+  <data name="GraphOption11" xml:space="preserve">
+    <value>Пользователи на определенную роль</value>
+  </data>
+  <data name="YAxis_UserCount" xml:space="preserve">
+    <value>Количество ролей пользователей</value>
+  </data>
 </root>

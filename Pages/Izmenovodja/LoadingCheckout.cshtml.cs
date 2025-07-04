@@ -98,7 +98,7 @@ namespace diplomska.Pages.Izmenovodja
         {
             var checklist = new LoadingChecklist
             {
-                StartLoading = this.StartLoading,
+                TransportId = this.TransportId,
                 EndLoading = this.EndLoading,
                 CmrNumber = this.CmrNumber,
                 TransportNumber = this.TransportNumber,

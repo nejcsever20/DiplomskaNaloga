@@ -128,10 +128,13 @@
     <div class="container">
         <h1>Začetek, konec naklada</h1>
 
-        <div class="mb-3">
-            <label class="form-label">Št. transporta:</label>
-            <span>@Model.StTransporta</span>
-        </div>
+        @if(Model.StTransporta != null)
+        {
+            <div class="mb-3">
+                <label class="form-label">Št. transporta:</label>
+                <span>@Model.StTransporta</span>
+            </div>
+        }
 
         <!-- SINGLE FORM START -->
         <form method="post">

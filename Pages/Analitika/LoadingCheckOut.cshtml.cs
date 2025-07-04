@@ -98,6 +98,7 @@ namespace diplomska.Pages.Analitika
         {
             var checklist = new LoadingChecklist
             {
+                TransportId = this.TransportId,
                 StartLoading = this.StartLoading,
                 EndLoading = this.EndLoading,
                 CmrNumber = this.CmrNumber,

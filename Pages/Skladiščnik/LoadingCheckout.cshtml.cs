@@ -99,6 +99,7 @@ namespace diplomska.Pages.Skladiščnik
         {
             var checklist = new LoadingChecklist
             {
+                TransportId = this.TransportId,
                 StartLoading = this.StartLoading,
                 EndLoading = this.EndLoading,
                 CmrNumber = this.CmrNumber,
