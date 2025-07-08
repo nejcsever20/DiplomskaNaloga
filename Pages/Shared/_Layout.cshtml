@@ -91,6 +91,10 @@
             font-size: 0.875rem;
             padding: 0.25rem 0.5rem;
         }
+
+        .card, .border, .border-top, .border-bottom{
+            border: none !important;
+        }
     </style>
 </head>
 
@@ -254,7 +258,7 @@
     @RenderBody()
 </div>
 
-    <footer class="border-top footer text-muted py-3 mt-5">
+    <footer class="border-top footer text-muted py-3 mt-5" style="border-top: none !important; color: transparent !important; padding: 0 !important; margin-top: 0 !important; height: 0;">
         <div class="container">
             &copy; @DateTime.Now.Year - diplomska
         </div>

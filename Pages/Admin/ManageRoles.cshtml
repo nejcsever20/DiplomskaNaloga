@@ -120,15 +120,15 @@ h6 {
             @foreach (var userWithRoles in Model.Users)
             {
                 <tr class="fadeIn delay-3">
-                    <td>@userWithRoles.Email</td>
+                    <td style="color: black !important;">@userWithRoles.Email</td>
                     <td>
                         @foreach (var role in userWithRoles.Roles)
                         {
-                            <span class="badge bg-secondary slide-badge">@role</span>
+                            <span class="badge slide-badge" style="background-color: #e6f7f6; color: #00AAA6;">@role</span>
                         }
                     </td>
                     <td>
-                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#roleModal"
+                        <button class="btn btn-sm btn-jade" data-bs-toggle="modal" data-bs-target="#roleModal"
                                 data-userid="@userWithRoles.UserId"
                                 data-username="@userWithRoles.Email"
                                 data-useremail="@userWithRoles.Email"
@@ -138,6 +138,7 @@ h6 {
                     </td>
                 </tr>
             }
+
         </tbody>
     </table>
 }

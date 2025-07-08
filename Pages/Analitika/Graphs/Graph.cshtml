@@ -60,6 +60,8 @@
 
         #pageDots span.active {
             color: #00AAA6;
+            font-weight: bold;
+            text-decoration: underline;
         }
 
     .chart-container {
@@ -302,9 +304,13 @@
                 const dot = document.createElement("span");
                 dot.textContent = "●";
                 dot.className = i === currentIndex ? "active" : "";
+                dot.style.cursor = "pointer";
+                dot.addEventListener("click", () => renderChart(i));
                 dotsContainer.appendChild(dot);
             }
         }
+
+
 
         prevBtn.addEventListener("click", () => {
             let newIndex = (currentIndex - 1 + datasets.length) % datasets.length;
