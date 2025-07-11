@@ -2,20 +2,51 @@
 @using diplomska.Properties
 @model diplomska.Pages.Izmenovodja.CallbackModel
 
-<!-- Use ONLY your main stylesheet -->
-<link href="~/css/main.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 <link href="~/css/callback.css" rel="stylesheet" />
+
+<style>
+    .modal-dialog {
+        max-width: 600px;
+        margin: 1.75rem auto;
+        pointer-events: auto;
+    }
+
+    .modal-content {
+        max-height: 80vh;
+        overflow-y: auto;
+        border: 2px solid #000000;
+        border-radius: 10px;
+    }
+
+    .modal-header {
+        background-color: #40474F;
+        color: #00AAA6;
+        border-bottom: 1px solid #000000;
+        font-weight: 600;
+    }
+
+    .modal-footer {
+        background-color: #A6A6A6;
+    }
+
+    .form-select:focus {
+        border-color: #00AAA6;
+        box-shadow: 0 0 0 0.2rem rgba(0, 170, 166, 0.25);
+        outline: none;
+    }
+</style>
 
 <h2>@Resources.callback_transports</h2>
 
-<a asp-page="/Izmenovodja/ArchivedTransports" class="button secondary mb-2">
+<a asp-page="/Admin/ArchivedTransports" class="btn btn-outline-secondary mb-3">
     View Archived Transports!
 </a>
 
-<table class="custom-table">
+<table class="table table-striped">
     <thead>
         <tr>
-            <th hidden>Id</th>
+            <th style="display:none;">Id</th>
             <th>StTransporta</th>
             <th>PlaniranPrihod</th>
             <th>@Resources.transport_sp</th>
@@ -28,69 +59,125 @@
         {
             var transport = item.Transport;
             var transportId = transport?.Id ?? 0;
-            var modalId = $"callbackModal_{transportId}";
             var callbackReason = item.CallbackReason ?? "-";
 
-            <tr class="@(item.CallbackReason != null ? "highlight-row" : "")">
-                <td hidden>@transportId</td>
+            <tr class="@(item.CallbackReason != null ? "table-warning" : "")">
+                <td style="display:none;">@transportId</td>
                 <td>@transport?.StTransporta</td>
                 <td>@(transport?.PlaniranPrihod?.ToString("yyyy-MM-dd HH:mm") ?? "-")</td>
                 <td>@(transport?.Sp == true ? "Yes" : "No")</td>
                 <td>@callbackReason</td>
-                <td class="action-buttons">
-                    <button type="button" class="button primary small" onclick="openModal('@modalId')">
-                        Set Callback
-                    </button>
-
-                    @if (item.CallbackReason != null)
+                <td class="d-flex gap-2">
+                    @if (item.CallbackReason == null)
+                    {
+                        <button type="button"
+                                class="btn btn-primary btn-sm callback-btn"
+                                data-transport-id="@transportId"
+                                data-transport-display="@transport?.StTransporta"
+                                data-callback-reason="@callbackReason"
+                                data-bs-toggle="modal" data-bs-target="#callbackModal">
+                            Set Callback
+                        </button>
+                    }
+                    else
                     {
                         <form method="post" asp-page-handler="RemoveCallback"
-                              asp-route-transportId="@transportId" onsubmit="return confirm('Are you sure you want to remove the callback?');">
-                            <button type="submit" class="button danger small">
+                              asp-route-transportId="@transportId"
+                              onsubmit="return confirm('Are you sure you want to remove the callback?');"
+                              class="m-0">
+                            <button type="submit" class="btn btn-danger btn-sm">
                                 Remove Callback
                             </button>
                         </form>
                     }
                 </td>
             </tr>
-
-            <!-- Modal -->
-            <div class="modal" id="@modalId">
-                <div class="modal-content">
-                    <form method="post" asp-page-handler="SubmitCallback">
-                        <div class="modal-header">
-                            <h3>Set Callback Reason (ID: @transportId)</h3>
-                            <span class="modal-close" onclick="closeModal('@modalId')">&times;</span>
-                        </div>
-                        <div class="modal-body">
-                            <input type="hidden" name="SelectedTransportId" value="@transportId" />
-
-                            <label for="reasonSelect_@transportId">Choose a reason</label>
-                            <select name="SelectedReason" id="reasonSelect_@transportId" required>
-                                <option value="" disabled selected>@Resources.cb_select_reason</option>
-                                @foreach (var reason in Model.CallbackReasons)
-                                {
-                                    <option value="@reason">@reason</option>
-                                }
-                            </select>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="button success">@Resources.cb_submit</button>
-                            <button type="button" class="button secondary" onclick="closeModal('@modalId')">@Resources.cb_cancel</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
         }
     </tbody>
 </table>
 
-<script>
-    function openModal(id) {
-        document.getElementById(id).classList.add('open');
-    }
+<!-- Callback Modal -->
+<div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="callbackModalLabel" aria-hidden="true" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="SubmitCallback" id="callbackForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="callbackModalLabel">Set Callback Reason</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="SelectedTransportId" id="SelectedTransportId" value="" />
 
-    function closeModal(id) {
-        document.getElementById(id).classList.remove('open');
-    }
+                    <div class="mb-3">
+                        <label for="reasonSelect" class="form-label">@Resources.cb_select_reason</label>
+                        <select class="form-select" name="SelectedReason" id="reasonSelect" required>
+                            <option value="" disabled selected>@Resources.cb_select_reason</option>
+                            @foreach (var reason in Model.CallbackReasons)
+                            {
+                                if (reason != "Other")
+                                {
+                                    <option value="@reason">@reason</option>
+                                }
+                            }
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3 d-none" id="customReasonGroup">
+                        <label for="customReasonInput" class="form-label">Enter custom reason</label>
+                        <input type="text" class="form-control" name="CustomReason" id="customReasonInput" placeholder="Type your reason here..." />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">@Resources.cb_submit</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Resources.cb_cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const reasonSelect = document.getElementById('reasonSelect');
+    const customReasonGroup = document.getElementById('customReasonGroup');
+    const customReasonInput = document.getElementById('customReasonInput');
+
+    document.querySelectorAll('.callback-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const transportId = this.getAttribute('data-transport-id');
+            const transportDisplay = this.getAttribute('data-transport-display');
+            const callbackReason = this.getAttribute('data-callback-reason');
+
+            document.getElementById('SelectedTransportId').value = transportId;
+            document.getElementById('callbackModalLabel').textContent = `Set Callback Reason (Transport: ${transportDisplay || transportId})`;
+
+            reasonSelect.value = "";
+            customReasonInput.value = "";
+            customReasonGroup.classList.add('d-none');
+
+            if (callbackReason && callbackReason !== "-") {
+                const match = Array.from(reasonSelect.options).find(o => o.value === callbackReason);
+                if (match) {
+                    reasonSelect.value = callbackReason;
+                } else {
+                    reasonSelect.value = "Other";
+                    customReasonInput.value = callbackReason;
+                    customReasonGroup.classList.remove('d-none');
+                }
+            }
+        });
+    });
+
+    reasonSelect.addEventListener('change', function () {
+        if (this.value === "Other") {
+            customReasonGroup.classList.remove('d-none');
+            customReasonInput.setAttribute('required', 'required');
+        } else {
+            customReasonGroup.classList.add('d-none');
+            customReasonInput.removeAttribute('required');
+            customReasonInput.value = "";
+        }
+    });
 </script>

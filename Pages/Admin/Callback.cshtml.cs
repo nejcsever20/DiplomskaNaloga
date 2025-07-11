@@ -40,12 +40,15 @@ namespace diplomska.Pages.Admin
 
         [BindProperty]
         public string SelectedReason { get; set; } = string.Empty;
-        public string? CallbackReason { get; set; }
+
+        [BindProperty]
+        public string? CustomReason { get; set; }
 
         public async Task OnGetAsync()
         {
             Transports = await _context.Transport
-                .Where(t => !t.IsArchived) // 👈 Only show active ones
+                .IgnoreQueryFilters() // ✅ ensure even archived transports are included
+                .AsNoTracking()
                 .OrderByDescending(t => t.PlaniranPrihod)
                 .Select(t => new TransportViewModel
                 {
@@ -64,10 +67,22 @@ namespace diplomska.Pages.Admin
                 return Page();
             }
 
-            var transport = await _context.Transport.FindAsync(SelectedTransportId);
+            var transport = await _context.Transport
+                .IgnoreQueryFilters()
+                .FirstOrDefaultAsync(t => t.Id == SelectedTransportId);
+
             if (transport == null)
             {
                 ModelState.AddModelError(string.Empty, "Selected transport not found.");
+                await OnGetAsync();
+                return Page();
+            }
+
+            var finalReason = SelectedReason == "Other" ? CustomReason?.Trim() : SelectedReason;
+
+            if (string.IsNullOrWhiteSpace(finalReason))
+            {
+                ModelState.AddModelError(string.Empty, "Custom reason is required.");
                 await OnGetAsync();
                 return Page();
             }
@@ -86,31 +101,31 @@ namespace diplomska.Pages.Admin
                 Voznik = transport.Voznik,
                 NAVISZacetekSklada = transport.NAVISZacetekSklada,
                 NAVISKonecSklada = transport.NAVISKonecSklada,
-                CallbackReason = SelectedReason,
+                CallbackReason = finalReason,
                 IsCallback = true
             };
 
             await _context.ArchivedTransports.AddAsync(archived);
 
-            // Update the original transport
             transport.IsCallback = true;
-            transport.SK = SelectedReason;
+            transport.SK = finalReason;
             transport.IsArchived = true;
 
             _context.Transport.Update(transport);
             await _context.SaveChangesAsync();
 
             return RedirectToPage();
-
         }
+
         public async Task<IActionResult> OnPostRemoveCallbackAsync(long transportId)
         {
-            var transport = await _context.Transport.FindAsync(transportId);
+            var transport = await _context.Transport
+                .IgnoreQueryFilters()
+                .FirstOrDefaultAsync(t => t.Id == transportId);
 
             if (transport == null)
             {
                 ModelState.AddModelError(string.Empty, "Transport not found");
-
                 await OnGetAsync();
                 return Page();
             }

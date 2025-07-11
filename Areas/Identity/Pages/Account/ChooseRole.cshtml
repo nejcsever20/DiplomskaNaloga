@@ -157,6 +157,17 @@
                     <span>@role</span>
                 </button>
             }
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="text-danger" style="margin-top: 1rem;">
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <div>@error.ErrorMessage</div>
+                    }
+                </div>
+            }
+
             <span asp-validation-for="SelectedRole" class="text-danger"></span>
         </form>
     </div>

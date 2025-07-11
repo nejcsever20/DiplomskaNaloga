@@ -6,35 +6,32 @@
 <link href="~/css/callback.css" rel="stylesheet" />
 
 <style>
-    /* Modal fixes to ensure full visibility and proper scroll */
     .modal-dialog {
-        max-width: 600px; /* Adjust max width as needed */
-        margin: 1.75rem auto; /* Vertical centering margin */
+        max-width: 600px;
+        margin: 1.75rem auto;
         pointer-events: auto;
     }
 
     .modal-content {
-        max-height: 80vh; /* Limit max height to 80% of viewport */
-        overflow-y: auto; /* Scroll vertically if content overflows */
-        border: 2px solid #000000; /* Your existing style */
+        max-height: 80vh;
+        overflow-y: auto;
+        border: 2px solid #000000;
         border-radius: 10px;
     }
 
-    /* Modal header/footer styling to match your theme */
     .modal-header {
-        background-color: #40474F; /* Hisense Grey */
-        color: #00AAA6; /* Hisense Jade */
+        background-color: #40474F;
+        color: #00AAA6;
         border-bottom: 1px solid #000000;
         font-weight: 600;
     }
 
     .modal-footer {
-        background-color: #A6A6A6; /* Arctic silver */
+        background-color: #A6A6A6;
     }
 
-    /* Optional: improve focus outline for select */
     .form-select:focus {
-        border-color: #00AAA6; /* Hisense Jade */
+        border-color: #00AAA6;
         box-shadow: 0 0 0 0.2rem rgba(0, 170, 166, 0.25);
         outline: none;
     }
@@ -71,18 +68,18 @@
                 <td>@(transport?.Sp == true ? "Yes" : "No")</td>
                 <td>@callbackReason</td>
                 <td class="d-flex gap-2">
-                    <!-- Set Callback Button -->
-                    <button type="button"
-                            class="btn btn-primary btn-sm callback-btn"
-                            data-transport-id="@transportId"
-                            data-transport-display="@transport?.StTransporta"
-                            data-callback-reason="@callbackReason"
-                            data-bs-toggle="modal" data-bs-target="#callbackModal">
-                        Set Callback
-                    </button>
-
-                    <!-- Remove Callback Button -->
-                    @if (item.CallbackReason != null)
+                    @if (item.CallbackReason == null)
+                    {
+                        <button type="button"
+                                class="btn btn-primary btn-sm callback-btn"
+                                data-transport-id="@transportId"
+                                data-transport-display="@transport?.StTransporta"
+                                data-callback-reason="@callbackReason"
+                                data-bs-toggle="modal" data-bs-target="#callbackModal">
+                            Set Callback
+                        </button>
+                    }
+                    else
                     {
                         <form method="post" asp-page-handler="RemoveCallback"
                               asp-route-transportId="@transportId"
@@ -99,19 +96,16 @@
     </tbody>
 </table>
 
-<!-- Single reusable modal -->
+<!-- Callback Modal -->
 <div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="callbackModalLabel" aria-hidden="true" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <form method="post" asp-page-handler="SubmitCallback" id="callbackForm">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="callbackModalLabel">
-                        Set Callback Reason
-                    </h5>
+                    <h5 class="modal-title" id="callbackModalLabel">Set Callback Reason</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-
                     <input type="hidden" name="SelectedTransportId" id="SelectedTransportId" value="" />
 
                     <div class="mb-3">
@@ -120,9 +114,18 @@
                             <option value="" disabled selected>@Resources.cb_select_reason</option>
                             @foreach (var reason in Model.CallbackReasons)
                             {
-                                <option value="@reason">@reason</option>
+                                if (reason != "Other")
+                                {
+                                    <option value="@reason">@reason</option>
+                                }
                             }
+                            <option value="Other">Other</option>
                         </select>
+                    </div>
+
+                    <div class="mb-3 d-none" id="customReasonGroup">
+                        <label for="customReasonInput" class="form-label">Enter custom reason</label>
+                        <input type="text" class="form-control" name="CustomReason" id="customReasonInput" placeholder="Type your reason here..." />
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -137,32 +140,44 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
+    const reasonSelect = document.getElementById('reasonSelect');
+    const customReasonGroup = document.getElementById('customReasonGroup');
+    const customReasonInput = document.getElementById('customReasonInput');
+
     document.querySelectorAll('.callback-btn').forEach(button => {
         button.addEventListener('click', function () {
             const transportId = this.getAttribute('data-transport-id');
             const transportDisplay = this.getAttribute('data-transport-display');
             const callbackReason = this.getAttribute('data-callback-reason');
 
-            // Set hidden input value
             document.getElementById('SelectedTransportId').value = transportId;
+            document.getElementById('callbackModalLabel').textContent = `Set Callback Reason (Transport: ${transportDisplay || transportId})`;
 
-            // Update modal title to include transport display or id
-            const modalTitle = document.getElementById('callbackModalLabel');
-            modalTitle.textContent = `Set Callback Reason (Transport: ${transportDisplay || transportId})`;
-
-            // Reset select box
-            const reasonSelect = document.getElementById('reasonSelect');
             reasonSelect.value = "";
+            customReasonInput.value = "";
+            customReasonGroup.classList.add('d-none');
 
-            // Optionally pre-select callback reason if exists (remove if undesired)
             if (callbackReason && callbackReason !== "-") {
-                for (let option of reasonSelect.options) {
-                    if (option.value === callbackReason) {
-                        reasonSelect.value = callbackReason;
-                        break;
-                    }
+                const match = Array.from(reasonSelect.options).find(o => o.value === callbackReason);
+                if (match) {
+                    reasonSelect.value = callbackReason;
+                } else {
+                    reasonSelect.value = "Other";
+                    customReasonInput.value = callbackReason;
+                    customReasonGroup.classList.remove('d-none');
                 }
             }
         });
+    });
+
+    reasonSelect.addEventListener('change', function () {
+        if (this.value === "Other") {
+            customReasonGroup.classList.remove('d-none');
+            customReasonInput.setAttribute('required', 'required');
+        } else {
+            customReasonGroup.classList.add('d-none');
+            customReasonInput.removeAttribute('required');
+            customReasonInput.value = "";
+        }
     });
 </script>

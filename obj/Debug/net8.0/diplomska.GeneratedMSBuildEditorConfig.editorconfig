@@ -374,6 +374,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Profile/EditAccountDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxFZGl0QWNjb3VudERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nejc.severmihelic/source/repos/diplomska/diplomska/Pages/Profile/UploadAvatar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxVcGxvYWRBdmF0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

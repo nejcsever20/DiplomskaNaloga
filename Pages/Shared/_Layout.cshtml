@@ -5,51 +5,77 @@
 @inject diplomska.Data.ApplicationDbContext DbContext
 @using System.Globalization
 @using diplomska.Properties
+@inherits Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
 
 @{
+    Layout = null;
     var theme = Context.Request.Cookies["theme"] ?? "light";
     var currentCulture = CultureInfo.CurrentCulture.Name;
 
-    var selectedRoleClaim = User?.Claims.FirstOrDefault(c => c.Type == "SelectedRole")?.Value;
-    string userRole = !string.IsNullOrEmpty(selectedRoleClaim) ? selectedRoleClaim : "SelectingRole";
+    string userRole = "SelectingRole";
+    string roleDisplay = "N/A";
+    string avatarPath = "~/images/profile-icon.png";
+
+    if (User.Identity?.IsAuthenticated ?? false)
+    {
+        var user = await UserManager.GetUserAsync(User);
+        if (user != null)
+        {
+            var selectedRoleClaim = User.Claims.FirstOrDefault(c => c.Type == "SelectedRole");
+            if (selectedRoleClaim != null)
+            {
+                userRole = selectedRoleClaim.Value;
+            }
+            else
+            {
+                var roles = await UserManager.GetRolesAsync(user);
+                if (roles.Count == 1)
+                {
+                    userRole = roles.First();
+                }
+            }
+
+            var profile = DbContext.UserProfiles.FirstOrDefault(p => p.UserId == user.Id);
+            if (profile != null && !string.IsNullOrEmpty(profile.AvatarPath))
+            {
+                avatarPath = profile.AvatarPath;
+            }
+        }
+
+        roleDisplay = userRole switch
+        {
+            "Izmenovodja" => Resources._layout_izmenovodja.Replace("Dashboard", "").Trim(),
+            "Skladiščnik" => Resources._layout_skaldiscnik.Replace("Dashboard", "").Trim(),
+            "Analitika" => Resources._Layout_analitika.Replace("Dashboard", "").Trim(),
+            "Admin" => Resources._Layout_admin.Replace("Dashboard", "").Trim(),
+            "Operater" => "Operater",
+            "SBU" => "SBU",
+            _ => "N/A"
+        };
+    }
 
     string flagCode = currentCulture.ToLowerInvariant() switch
     {
         "en" => "us",
-        "sl-SL" => "sl-SL",
+        "sl-sl" => "sl-sl",
         "de" => "de",
         "es" => "es",
         "fr" => "fr",
-        "sq-Al" => "sq-Al",
-        "bg-BG" => "bg-BG",
-        "cs-CZ" => "cs-CZ",
-        "it-IT" => "it-IT",
-        "mk-MK" => "mk-MK",
-        "pl-PL" => "pl-PL",
-        "ro-RO" => "ro-RO",
+        "sq-al" => "sq-al",
+        "bg-bg" => "bg-bg",
+        "cs-cz" => "cs-cz",
+        "it-it" => "it-it",
+        "mk-mk" => "mk-mk",
+        "pl-pl" => "pl-pl",
+        "ro-ro" => "ro-ro",
         "ru" => "ru",
         "sr" => "sr",
-        "sk-SK" => "sk-SK",
-        "tr-TR" => "tr-TR",
+        "sk-sk" => "sk-sk",
+        "tr-tr" => "tr-tr",
         _ => "us"
     };
-
-    // Get the avatar path for the current logged-in user
-    string avatarPath = null;
-    if (User.Identity?.IsAuthenticated ?? false)
-    {
-        var userId = UserManager.GetUserId(User);
-        var profile = DbContext.UserProfiles.FirstOrDefault(p => p.UserId == userId);
-        if (profile != null && !string.IsNullOrEmpty(profile.AvatarPath))
-        {
-            avatarPath = profile.AvatarPath;
-        }
-        else
-        {
-            avatarPath = "~/images/profile-icon.png"; // fallback default icon
-        }
-    }
 }
+
 
 <!DOCTYPE html>
 <html lang="@currentCulture" data-theme="@theme">
@@ -68,6 +94,7 @@
     }
 
     @RenderSection("Styles", required: false)
+    @RenderSection("MetaRefresh", required: false)
 
     <style>
         :root {
@@ -86,14 +113,14 @@
             background-color: var(--card-bg);
         }
 
+        .card, .border, .border-top, .border-bottom {
+            border: none !important;
+        }
+
         select.theme-select {
             width: 100%;
             font-size: 0.875rem;
             padding: 0.25rem 0.5rem;
-        }
-
-        .card, .border, .border-top, .border-bottom{
-            border: none !important;
         }
     </style>
 </head>
@@ -103,8 +130,7 @@
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top py-1">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">diplomska</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -112,23 +138,14 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         @if (!(User.Identity?.IsAuthenticated ?? false))
                         {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-page="/Index">@Resources._layout_home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-page="/Privacy">@Resources._layout_privacy</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" asp-page="/Index">@Resources._layout_home</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-page="/Privacy">@Resources._layout_privacy</a></li>
                         }
                         else
                         {
-                            <li class="nav-item">
-                                <span class="nav-link disabled">@Resources._layout_home</span>
-                            </li>
-                            <li class="nav-item">
-                                <span class="nav-link disabled">@Resources._layout_privacy</span>
-                            </li>
+                            <li class="nav-item"><span class="nav-link disabled">@Resources._layout_home</span></li>
+                            <li class="nav-item"><span class="nav-link disabled">@Resources._layout_privacy</span></li>
 
-                            @* Role-based navigation shown only AFTER a role is selected *@
                             @if (userRole == "SelectingRole")
                             {
                                 <li class="nav-item">
@@ -142,24 +159,16 @@
                                 switch (userRole)
                                 {
                                     case "Izmenovodja":
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-page="/Izmenovodja/IzmenovodjaPage">@Resources._layout_izmenovodja</a>
-                                        </li>
+                                        <li class="nav-item"><a class="nav-link" asp-page="/Izmenovodja/IzmenovodjaPage">@Resources._layout_izmenovodja</a></li>
                                         break;
                                     case "Skladiščnik":
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-page="/Skladiščnik/SkladiščnikPage">@Resources._layout_skaldiscnik</a>
-                                        </li>
-                                        break;
-                                    case "Admin":
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-page="/Admin/AdminPage">@Resources._Layout_admin</a>
-                                        </li>
+                                        <li class="nav-item"><a class="nav-link" asp-page="/Skladiščnik/SkladiščnikPage">@Resources._layout_skaldiscnik</a></li>
                                         break;
                                     case "Analitika":
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-page="/Analitika/AnalitikaPage">@Resources._Layout_analitika</a>
-                                        </li>
+                                        <li class="nav-item"><a class="nav-link" asp-page="/Analitika/AnalitikaPage">@Resources._Layout_analitika</a></li>
+                                        break;
+                                    case "Admin":
+                                        <li class="nav-item"><a class="nav-link" asp-page="/Admin/AdminPage">@Resources._Layout_admin</a></li>
                                         break;
                                 }
                             }
@@ -169,15 +178,6 @@
                     <ul class="navbar-nav ms-auto align-items-center">
                         @if (User.Identity?.IsAuthenticated ?? false)
                         {
-                            string roleDisplay = userRole switch
-                            {
-                                "Izmenovodja" => @Resources._layout_izmenovodja,
-                                "Skladiščnik" => @Resources._layout_skaldiscnik,
-                                "Analitika" => @Resources._Layout_analitika,
-                                "Admin" => @Resources._Layout_admin,
-                                _ => Resources.role
-                            };
-
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
                                     <img src="@avatarPath" alt="Profile" width="30" height="30" class="rounded-circle me-2" />
@@ -185,7 +185,7 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
                                     <li><span class="dropdown-item-text text-muted">Role: @roleDisplay</span></li>
-                                    <li><a class="dropdown-item" asp-page="/EditTheme">@Resources._layout_ct</a></li>
+                                    <li><span class="dropdown-item disabled">@Resources._layout_ct</span></li>
                                     <li class="px-3">
                                         <form method="post" asp-page="/SetTheme">
                                             <select name="theme" class="theme-select form-select form-select-sm" onchange="this.form.submit()">
@@ -195,9 +195,8 @@
                                             </select>
                                         </form>
                                     </li>
-                                    <li>
-                                        <a asp-page="../Profile/UploadAvatar" class="dropdown-item">Upload image</a>
-                                    </li>
+                                    <li><a asp-page="../Profile/EditAccountDetails" class="dropdown-item">Edit details</a></li>
+                                    <li><a asp-page="../Profile/UploadAvatar" class="dropdown-item">Upload image</a></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li>
                                         <form method="post" asp-area="Identity" asp-page="/Account/Logout">
@@ -214,7 +213,6 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
                                     @{
-
                                         var languages = new[] {
                                 ("en", "English"), ("sl-SL", "Slovenščina"), ("de", "German"), ("es", "Spanish"),
                                 ("fr", "French"), ("sq-Al", "Albanian"), ("bg-BG", "Bulgarian"), ("cs-CZ", "Czech"),
@@ -241,12 +239,8 @@
                         }
                         else
                         {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">@Resources.prijava</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">@Resources.register</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" asp-area="Identity" asp-page="/Account/Login">@Resources.prijava</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-area="Identity" asp-page="/Account/Register">@Resources.register</a></li>
                         }
                     </ul>
                 </div>
@@ -254,11 +248,11 @@
         </nav>
     </header>
 
-<div class="container mt-5 pt-3">
-    @RenderBody()
-</div>
+    <div class="container mt-5 pt-3">
+        @RenderBody()
+    </div>
 
-    <footer class="border-top footer text-muted py-3 mt-5" style="border-top: none !important; color: transparent !important; padding: 0 !important; margin-top: 0 !important; height: 0;">
+    <footer class="footer text-muted py-3 mt-5" style="height: 0; padding: 0; margin-top: 0; color: transparent; border-top: none;">
         <div class="container">
             &copy; @DateTime.Now.Year - diplomska
         </div>

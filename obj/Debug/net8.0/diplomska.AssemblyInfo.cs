@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("diplomska")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+666923e101ef5990d5404ee8ad786fd2d8a2b46e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a51ff0bf95ffdc748b38cd572b01d627f7a0c2c5")]
 [assembly: System.Reflection.AssemblyProductAttribute("diplomska")]
 [assembly: System.Reflection.AssemblyTitleAttribute("diplomska")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
